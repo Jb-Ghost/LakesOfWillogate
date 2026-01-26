@@ -1,0 +1,643 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>Fitness Centers — Lakes of Willowgate</title>
+    <link rel="stylesheet" href="index.css">
+    <link rel="stylesheet" href="fitness-center.css">
+    <script src="search.js" defer></script>
+</head>
+<body style="margin: 0">
+    <header>
+        <div class="community-header">
+            <h1 class="lakes"><a href="index.html">Lakes of Willowgate</a></h1>
+        </div>
+        <nav class="nav">
+            <div class="nav-links">
+                <a href="index.html">HOME</a>
+                <a href="pools-parks.html">POOLS & PARKS</a>
+                <a href="fitness-center.html">FITNESS CENTERS</a>
+                <a href="community-events.html">COMMUNITY EVENTS</a>
+                <a href="resource.html">RESOURCES</a>
+            </div>
+            <div class="search-container">
+                <input type="text" class="search-input" id="searchInput" placeholder="Search the site...">
+                <button class="search-btn" onclick="performSearch()" aria-label="Search"></button>
+            </div>
+        </nav>
+    </header>
+
+    <main>
+        <div class="welcome-section">
+            <p class="eyebrow">Lakes of Willowgate</p>
+            <h1>Community Fitness Centers</h1>
+            <p>Find the right trainers, activities, and schedules to support your health goals.</p>
+        </div>
+
+        <!-- Quick Info Section -->
+        <div class="quick-info-section">
+            <div class="info-box info-box-1">
+                <h3>Hours of Operation</h3>
+                <p><strong>Monday–Friday:</strong> 5:00 AM – 10:00 PM</p>
+                <p><strong>Saturday:</strong> 7:00 AM – 8:00 PM</p>
+                <p><strong>Sunday:</strong> 8:00 AM – 6:00 PM</p>
+            </div>
+            <div class="info-box info-box-2">
+                <h3>Locations</h3>
+                <p>Downtown Fitness Hub</p>
+                <p>Lakeside Athletic Complex</p>
+                <p>Riverside Community Center</p>
+                <a href="resource.html" class="view-map-btn">View All Locations →</a>
+            </div>
+            <div class="info-box info-box-3">
+                <h3>Contact Us</h3>
+                <p><strong>Phone:</strong> (555) 123-4567</p>
+                <p><strong>Email:</strong> fitness@willowgate.org</p>
+                <a href="#trainers" class="booking-btn">Book a Trainer</a>
+            </div>
+        </div>
+
+        <!-- Meet Our Trainers Section -->
+        <div class="trainers-section">
+            <h2 id="trainers">Meet Our Trainers</h2>
+            <p class="section-subtitle">Experienced professionals ready to help you achieve your fitness goals</p>
+            
+            <div class="trainers-grid">
+                <div class="trainer-card">
+                    <div class="trainer-avatar">JL</div>
+                    <h3>Jordan Lee</h3>
+                    <p class="specialty">Strength & Conditioning</p>
+                    <div class="trainer-details">
+                        <span class="cert">CPT • NASM</span>
+                        <span class="experience">10+ years</span>
+                    </div>
+                    <p class="rate">$65/session</p>
+                    <a href="#" class="trainer-btn" onclick="openBookingModal('Jordan Lee', 'Strength & Conditioning', '$65/session')">Book Now</a>
+                </div>
+
+                <div class="trainer-card">
+                    <div class="trainer-avatar">AM</div>
+                    <h3>Ava Martinez</h3>
+                    <p class="specialty">Yoga & Mobility</p>
+                    <div class="trainer-details">
+                        <span class="cert">RYT-200 • ACE</span>
+                        <span class="experience">8+ years</span>
+                    </div>
+                    <p class="rate">$55/session</p>
+                    <a href="#" class="trainer-btn" onclick="openBookingModal('Ava Martinez', 'Yoga & Mobility', '$55/session')">Book Now</a>
+                </div>
+
+                <div class="trainer-card">
+                    <div class="trainer-avatar">MR</div>
+                    <h3>Marcus Reid</h3>
+                    <p class="specialty">HIIT & Athletic Training</p>
+                    <div class="trainer-details">
+                        <span class="cert">CPT • ISSF</span>
+                        <span class="experience">12+ years</span>
+                    </div>
+                    <p class="rate">$70/session</p>
+                    <a href="#" class="trainer-btn" onclick="openBookingModal('Marcus Reid', 'HIIT & Athletic Training', '$70/session')">Book Now</a>
+                </div>
+
+                <div class="trainer-card">
+                    <div class="trainer-avatar">SC</div>
+                    <h3>Sophie Chen</h3>
+                    <p class="specialty">Dance Fitness & Pilates</p>
+                    <div class="trainer-details">
+                        <span class="cert">CPT • Pilates Pro</span>
+                        <span class="experience">7+ years</span>
+                    </div>
+                    <p class="rate">$60/session</p>
+                    <a href="#" class="trainer-btn" onclick="openBookingModal('Sophie Chen', 'Dance Fitness & Pilates', '$60/session')">Book Now</a>
+                </div>
+
+                <div class="trainer-card">
+                    <div class="trainer-avatar">DB</div>
+                    <h3>Dylan Brooks</h3>
+                    <p class="specialty">Boxing & Cardio</p>
+                    <div class="trainer-details">
+                        <span class="cert">CPT • Boxing Coach</span>
+                        <span class="experience">9+ years</span>
+                    </div>
+                    <p class="rate">$65/session</p>
+                    <a href="#" class="trainer-btn" onclick="openBookingModal('Dylan Brooks', 'Boxing & Cardio', '$65/session')">Book Now</a>
+                </div>
+
+                <div class="trainer-card">
+                    <div class="trainer-avatar">EC</div>
+                    <h3>Elena Cruz</h3>
+                    <p class="specialty">Nutrition & Training</p>
+                    <div class="trainer-details">
+                        <span class="cert">CPT • Nutritionist</span>
+                        <span class="experience">11+ years</span>
+                    </div>
+                    <p class="rate">$75/session</p>
+                    <a href="#" class="trainer-btn" onclick="openBookingModal('Elena Cruz', 'Nutrition & Training', '$75/session')">Book Now</a>
+                </div>
+            </div>
+        </div>
+
+        <!-- Weekly Schedule Section -->
+        <div class="schedule-section">
+            <h2>Weekly Classes & Activities</h2>
+            <p class="section-subtitle">Find the perfect class for your fitness level</p>
+            
+            <div class="schedule-table">
+                <div class="schedule-day">
+                    <div class="day-name">Monday</div>
+                    <div class="day-activities">
+                        <span class="activity-tag">HIIT Class</span>
+                        <span class="activity-tag">Yoga</span>
+                        <span class="activity-tag">Weight Training</span>
+                    </div>
+                </div>
+
+                <div class="schedule-day">
+                    <div class="day-name">Tuesday</div>
+                    <div class="day-activities">
+                        <span class="activity-tag">Dance Fitness</span>
+                        <span class="activity-tag">Strength 101</span>
+                        <span class="activity-tag">Pilates</span>
+                    </div>
+                </div>
+
+                <div class="schedule-day">
+                    <div class="day-name">Wednesday</div>
+                    <div class="day-activities">
+                        <span class="activity-tag">Zumba</span>
+                        <span class="activity-tag">Wellness Workshop</span>
+                        <span class="activity-tag">Core Training</span>
+                    </div>
+                </div>
+
+                <div class="schedule-day">
+                    <div class="day-name">Thursday</div>
+                    <div class="day-activities">
+                        <span class="activity-tag">Core Crusher</span>
+                        <span class="activity-tag">Stretching</span>
+                        <span class="activity-tag">Bootcamp</span>
+                    </div>
+                </div>
+
+                <div class="schedule-day">
+                    <div class="day-name">Friday</div>
+                    <div class="day-activities">
+                        <span class="activity-tag">Boxing</span>
+                        <span class="activity-tag">Cardio Circuits</span>
+                        <span class="activity-tag">Spin Class</span>
+                    </div>
+                </div>
+
+                <div class="schedule-day">
+                    <div class="day-name">Saturday</div>
+                    <div class="day-activities">
+                        <span class="activity-tag">Family Fitness</span>
+                        <span class="activity-tag">Community Walk</span>
+                        <span class="activity-tag">Functional Training</span>
+                    </div>
+                </div>
+
+                <div class="schedule-day">
+                    <div class="day-name">Sunday</div>
+                    <div class="day-activities">
+                        <span class="activity-tag">Yoga & Meditation</span>
+                        <span class="activity-tag">Mobility</span>
+                        <span class="activity-tag">Relaxation</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Facilities & Amenities Section -->
+        <div class="facilities-section">
+            <h2>Facilities & Amenities</h2>
+            <p class="section-subtitle">Everything you need for a complete workout experience</p>
+            
+            <div class="amenities-grid">
+                <div class="amenity-item">
+                    <h3>Strength Room</h3>
+                    <p>State-of-the-art weights and equipment</p>
+                </div>
+                <div class="amenity-item">
+                    <h3>Cardio Machines</h3>
+                    <p>Treadmills, ellipticals, bikes & more</p>
+                </div>
+                <div class="amenity-item">
+                    <h3>Group Studio</h3>
+                    <p>Classes, group training, workshops</p>
+                </div>
+                <div class="amenity-item">
+                    <h3>Showers & Lockers</h3>
+                    <p>Clean facilities and secure storage</p>
+                </div>
+                <div class="amenity-item">
+                    <h3>Personal Training</h3>
+                    <p>Private training area with expert coaches</p>
+                </div>
+                <div class="amenity-item">
+                    <h3>Outdoor Track</h3>
+                    <p>Half-mile running and walking path</p>
+                </div>
+                <div class="amenity-item">
+                    <h3>Free Wi-Fi</h3>
+                    <p>Stay connected while working out</p>
+                </div>
+                <div class="amenity-item">
+                    <h3>Childcare Available</h3>
+                    <p>Safe, supervised play area</p>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <!-- Booking Modal -->
+    <div id="bookingModal" class="modal">
+        <div class="modal-content">
+            <span class="close-modal" onclick="closeBookingModal()">&times;</span>
+            <h2>Book a Training Session</h2>
+            <div class="modal-trainer-info">
+                <h3 id="modalTrainerName"></h3>
+                <p id="modalTrainerSpecialty"></p>
+                <p id="modalTrainerRate"></p>
+            </div>
+            <form id="bookingForm" onsubmit="submitBooking(event)">
+                <div class="form-group">
+                    <label for="clientName">Your Name *</label>
+                    <input type="text" id="clientName" name="clientName" required placeholder="Enter your full name">
+                </div>
+                <div class="form-group">
+                    <label for="clientEmail">Email Address *</label>
+                    <input type="email" id="clientEmail" name="clientEmail" required placeholder="your.email@example.com">
+                </div>
+                <div class="form-group">
+                    <label for="clientPhone">Phone Number</label>
+                    <input type="tel" id="clientPhone" name="clientPhone" placeholder="(555) 123-4567">
+                </div>
+                <div class="form-group">
+                    <label for="preferredDate">Preferred Date *</label>
+                    <input type="text" id="preferredDate" name="preferredDate" required placeholder="MM/DD/YYYY">
+                </div>
+                <div class="form-group">
+                    <label for="preferredTime">Preferred Time *</label>
+                    <select id="preferredTime" name="preferredTime" required>
+                        <option value="">Select a time</option>
+                        <option value="6:00 AM">6:00 AM</option>
+                        <option value="7:00 AM">7:00 AM</option>
+                        <option value="8:00 AM">8:00 AM</option>
+                        <option value="9:00 AM">9:00 AM</option>
+                        <option value="10:00 AM">10:00 AM</option>
+                        <option value="11:00 AM">11:00 AM</option>
+                        <option value="12:00 PM">12:00 PM</option>
+                        <option value="1:00 PM">1:00 PM</option>
+                        <option value="2:00 PM">2:00 PM</option>
+                        <option value="3:00 PM">3:00 PM</option>
+                        <option value="4:00 PM">4:00 PM</option>
+                        <option value="5:00 PM">5:00 PM</option>
+                        <option value="6:00 PM">6:00 PM</option>
+                        <option value="7:00 PM">7:00 PM</option>
+                        <option value="8:00 PM">8:00 PM</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label for="notes">Additional Notes</label>
+                    <textarea id="notes" name="notes" rows="3" placeholder="Any specific goals or requirements?"></textarea>
+                </div>
+                <div class="modal-actions">
+                    <button type="button" class="btn-cancel" onclick="closeBookingModal()">Cancel</button>
+                    <button type="submit" class="btn-submit">Confirm Booking</button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <footer>
+        <div class="footer-contacts">
+            <h2>Contact Us</h2>
+            <p>Email: community@willowgate.org</p>
+            <p>Phone: (555) 123-4567</p>
+        </div>
+    </footer>
+
+    <script>
+        // Comprehensive content-based search system
+        const siteContent = {
+            'index.html': {
+                title: 'Home - Lakes of Willowgate',
+                keywords: ['home', 'main', 'welcome', 'community'],
+                content: [
+                    'Welcome to Lakes of Willowgate',
+                    'Your Community Hub',
+                    'Discover pools, parks, fitness centers, events, and more',
+                    'Quick Access to Everything',
+                    'Explore pools and parks',
+                    'Book fitness trainers',
+                    'Community events calendar',
+                    'Find resources and contacts',
+                    'Happening Now',
+                    'Whats new in your community',
+                    'Popular Resources',
+                    'How It Works',
+                    'Explore available facilities and activities',
+                    'Sign up for a membership or reserve time',
+                    'Enjoy amenities and connect with neighbors'
+                ]
+            },
+            'pools-parks.html': {
+                title: 'Pools & Parks',
+                keywords: ['pools', 'parks', 'swimming', 'aquatic', 'outdoor', 'recreation'],
+                content: [
+                    'Community Pools & Parks',
+                    'Explore local pools, parks, hours, rules, and activities for all ages',
+                    'Operating Hours',
+                    'Pools & parks have seasonal and daily hours',
+                    'Locations',
+                    'Multiple community locations throughout the neighborhood',
+                    'Safety First',
+                    'Certified lifeguards on duty at all pools',
+                    'Family Friendly',
+                    'Open to all ages with activities and amenities',
+                    'Pool Hours',
+                    'Monday Friday 10:00 AM 8:00 PM',
+                    'Saturday 9:00 AM 9:00 PM',
+                    'Sunday 11:00 AM 7:00 PM',
+                    'Lap Swim',
+                    'Open Swim',
+                    'Adult-Only Swim',
+                    'Pool Rules',
+                    'Safety guidelines',
+                    'Park Locations',
+                    'Activities and amenities',
+                    'Playground equipment',
+                    'Walking trails',
+                    'Picnic areas',
+                    'Sports fields'
+                ]
+            },
+            'fitness-center.html': {
+                title: 'Fitness Centers',
+                keywords: ['fitness', 'gym', 'workout', 'trainers', 'exercise', 'health', 'athletic'],
+                content: [
+                    'Community Fitness Centers',
+                    'Find the right trainers, activities, and schedules',
+                    'Hours of Operation',
+                    'Monday Friday 5:00 AM 10:00 PM',
+                    'Saturday 7:00 AM 8:00 PM',
+                    'Sunday 8:00 AM 6:00 PM',
+                    'Downtown Fitness Hub',
+                    'Lakeside Athletic Complex',
+                    'Riverside Community Center',
+                    'Meet Our Trainers',
+                    'Experienced professionals',
+                    'Jordan Lee',
+                    'Strength & Conditioning',
+                    'Ava Martinez',
+                    'Yoga & Mobility',
+                    'Marcus Reid',
+                    'HIIT & Athletic Training',
+                    'Book a Trainer',
+                    'Personal training',
+                    'Group classes',
+                    'Cardio equipment',
+                    'Weight training',
+                    'Yoga studio',
+                    'Indoor track'
+                ]
+            },
+            'community-events.html': {
+                title: 'Community Events',
+                keywords: ['events', 'calendar', 'activities', 'social', 'gatherings', 'programs'],
+                content: [
+                    'Community Events',
+                    'Discover whats happening around you',
+                    'Events for all ages all year long',
+                    'Todays Events',
+                    'Submit an Event',
+                    'Event Guidelines',
+                    'View Calendar',
+                    'Upcoming Events',
+                    'This Week',
+                    'This Month',
+                    'Sports & Fitness',
+                    'Arts & Culture',
+                    'Family & Kids',
+                    'Social & Networking',
+                    'Volunteer & Service',
+                    'Educational',
+                    'Event submission form',
+                    'Community calendar',
+                    'Weekly activities',
+                    'Special programs',
+                    'Seasonal events',
+                    'Holiday celebrations'
+                ]
+            },
+            'resource.html': {
+                title: 'Resources',
+                keywords: ['resources', 'contacts', 'forms', 'documents', 'information', 'help'],
+                content: [
+                    'Community Resources',
+                    'Resource center',
+                    'Contact information',
+                    'Forms and documents',
+                    'Navigate Lakes of Willowgate',
+                    'Contacts',
+                    'Community Office (555) 123-4567',
+                    'Pools & Parks (555) 234-5678',
+                    'Fitness Centers (555) 345-6789',
+                    'Email community@willowgate.org',
+                    'Forms & Documents',
+                    'Membership Application',
+                    'Event Request Form',
+                    'Facility Reservation Form',
+                    'Community Guidelines',
+                    'Suggest a New Resource',
+                    'Help improve our community',
+                    'Download forms',
+                    'Contact details',
+                    'Important information'
+                ]
+            }
+        };
+
+        function performSearch() {
+            const searchInput = document.getElementById('searchInput');
+            const query = searchInput.value.toLowerCase().trim();
+            
+            if (!query) {
+                alert('Please enter a search term');
+                return;
+            }
+
+            const results = [];
+            
+            // Search through all pages
+            for (const [url, pageData] of Object.entries(siteContent)) {
+                let relevanceScore = 0;
+                const matches = [];
+                
+                // Check if query matches keywords (high priority)
+                for (const keyword of pageData.keywords) {
+                    if (keyword.includes(query) || query.includes(keyword)) {
+                        relevanceScore += 10;
+                        matches.push(keyword);
+                    }
+                }
+                
+                // Check if query matches title
+                if (pageData.title.toLowerCase().includes(query)) {
+                    relevanceScore += 8;
+                }
+                
+                // Check if query matches content
+                for (const contentItem of pageData.content) {
+                    if (contentItem.toLowerCase().includes(query)) {
+                        relevanceScore += 2;
+                        if (matches.length < 3) {
+                            matches.push(contentItem);
+                        }
+                    }
+                }
+                
+                if (relevanceScore > 0) {
+                    results.push({
+                        url: url,
+                        title: pageData.title,
+                        score: relevanceScore,
+                        preview: matches.slice(0, 2).join(' • ')
+                    });
+                }
+            }
+            
+            // Sort by relevance
+            results.sort((a, b) => b.score - a.score);
+            
+            if (results.length === 0) {
+                alert('No results found for: "' + query + '"\n\nTry searching for: pools, fitness, events, trainers, resources, etc.');
+                return;
+            }
+            
+            // If only one result or first result is highly relevant, go directly
+            if (results.length === 1 || results[0].score >= 10) {
+                window.location.href = results[0].url;
+                return;
+            }
+            
+            // Multiple results - show selection
+            let message = 'Found ' + results.length + ' results for "' + query + '":\n\n';
+            results.forEach((result, index) => {
+                message += (index + 1) + '. ' + result.title + '\n';
+                if (result.preview) {
+                    message += '   ' + result.preview.substring(0, 60) + '...\n';
+                }
+                message += '\n';
+            });
+            message += 'Taking you to the most relevant page...';
+            
+            alert(message);
+            window.location.href = results[0].url;
+        }
+
+        // Allow Enter key to search
+        document.addEventListener('DOMContentLoaded', function() {
+            const searchInput = document.getElementById('searchInput');
+            if (searchInput) {
+                searchInput.addEventListener('keypress', function(e) {
+                    if (e.key === 'Enter') {
+                        performSearch();
+                    }
+                });
+            }
+        });
+
+        // Smooth Scroll Fade In/Out Effect using Intersection Observer
+        const observerOptions = {
+            threshold: [0, 0.2, 0.5],
+            rootMargin: '0px 0px -100px 0px'
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    if (!entry.target.dataset.fadedIn) {
+                        entry.target.classList.add('fade-in-view');
+                        entry.target.dataset.fadedIn = 'true';
+                    }
+                    entry.target.classList.remove('fade-out-view');
+                } else {
+                    if (entry.target.dataset.fadedIn && !entry.target.dataset.fadedOut) {
+                        entry.target.classList.add('fade-out-view');
+                        entry.target.dataset.fadedOut = 'true';
+                    }
+                }
+            });
+        }, observerOptions);
+
+        // Observe all scrollable elements
+        document.querySelectorAll('.welcome-section, .quick-info-section, .trainers-section, .schedule-section, .facilities-section, footer').forEach(el => {
+            observer.observe(el);
+        });
+
+        // Booking Modal Functions
+        let selectedTrainer = '';
+
+        function openBookingModal(trainerName, specialty, rate) {
+            selectedTrainer = trainerName;
+            document.getElementById('modalTrainerName').textContent = trainerName;
+            document.getElementById('modalTrainerSpecialty').textContent = specialty;
+            document.getElementById('modalTrainerRate').textContent = rate;
+            document.getElementById('bookingModal').style.display = 'block';
+            document.body.style.overflow = 'hidden';
+        }
+
+        function closeBookingModal() {
+            document.getElementById('bookingModal').style.display = 'none';
+            document.body.style.overflow = 'auto';
+            document.getElementById('bookingForm').reset();
+        }
+
+        function submitBooking(event) {
+            event.preventDefault();
+            
+            const formData = {
+                trainer: selectedTrainer,
+                name: document.getElementById('clientName').value,
+                email: document.getElementById('clientEmail').value,
+                phone: document.getElementById('clientPhone').value,
+                date: document.getElementById('preferredDate').value,
+                time: document.getElementById('preferredTime').value,
+                notes: document.getElementById('notes').value
+            };
+            
+            // Format the date nicely
+            const dateObj = new Date(formData.date + 'T00:00:00');
+            const formattedDate = dateObj.toLocaleDateString('en-US', { 
+                weekday: 'long', 
+                year: 'numeric', 
+                month: 'long', 
+                day: 'numeric' 
+            });
+            
+            // Show confirmation
+            alert(
+                '✓ Booking Request Submitted!\n\n' +
+                'Trainer: ' + formData.trainer + '\n' +
+                'Client: ' + formData.name + '\n' +
+                'Date: ' + formData.date + '\n' +
+                'Time: ' + formData.time + '\n\n' +
+                'We\'ll send a confirmation to ' + formData.email + ' within 24 hours.'
+            );
+            
+            closeBookingModal();
+        }
+
+        // Close modal when clicking outside
+        window.onclick = function(event) {
+            const modal = document.getElementById('bookingModal');
+            if (event.target === modal) {
+                closeBookingModal();
+            }
+        }
+    </script>
+</body>
+</html>

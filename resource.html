@@ -1,0 +1,744 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>Resources — Lakes of Willowgate</title>
+    <link rel="stylesheet" href="index.css">
+    <link rel="stylesheet" href="resource.css">
+    <script src="search.js" defer></script>
+</head>
+<body style="margin: 0">
+    <header>
+        <div class="community-header">
+            <h1 class="lakes"><a href="index.html">Lakes of Willowgate</a></h1>
+        </div>
+        <nav class="nav">
+            <div class="nav-links">
+                <a href="index.html">HOME</a>
+                <a href="pools-parks.html">POOLS & PARKS</a>
+                <a href="fitness-center.html">FITNESS CENTERS</a>
+                <a href="community-events.html">COMMUNITY EVENTS</a>
+                <a href="resource.html">RESOURCES</a>
+            </div>
+            <div class="search-container">
+                <input type="text" class="search-input" id="searchInput" placeholder="Search the site..." autocomplete="off">
+                <button class="search-btn" onclick="performSearch()" aria-label="Search"></button>
+                <div class="search-suggestions" id="searchSuggestions"></div>
+            </div>
+        </nav>
+    </header>
+
+    <main>
+        <section class="welcome-section resources-hero">
+            <div class="hero-text">
+                <p class="eyebrow fade-in-title">Lakes of Willowgate</p>
+                <p class="lede">One place for contacts, hours, forms, parks, fitness, and events. Explore everything happening in our community.</p>
+                <div class="hero-actions">
+                    <a class="pill-btn" href="#contacts">Contact Directory</a>
+                    <a class="pill-btn ghost" href="#forms">Forms & Documents</a>
+                    <a class="pill-btn ghost" href="#hours">Hours & Locations</a>
+                    <a class="pill-btn ghost" href="#map">View Map</a>
+                </div>
+            </div>
+            <div class="hero-stats">
+                <div class="stat-card">
+                    <span class="stat-number">24/7</span>
+                    <span class="stat-label">Emergency support</span>
+                </div>
+                <div class="stat-card">
+                    <span class="stat-number">12+</span>
+                    <span class="stat-label">Parks & pools</span>
+                </div>
+                <div class="stat-card">
+                    <span class="stat-number">30+</span>
+                    <span class="stat-label">Weekly classes</span>
+                </div>
+                <div class="stat-card">
+                    <span class="stat-number">All ages</span>
+                    <span class="stat-label">Programs & events</span>
+                </div>
+            </div>
+        </section>
+
+        <section class="resources-wrapper">
+            <div class="submit-resource-section">
+                <h2>Suggest a New Resource</h2>
+                <p>Help us keep this hub current. Share a service, form, or contact we should add.</p>
+                
+                <form id="submitResourceForm" class="resource-form">
+                    <div class="form-group">
+                        <label for="resourceName">Resource Name</label>
+                        <input type="text" id="resourceName" name="resourceName" required placeholder="e.g., Community Garden">
+                    </div>
+
+                    <div class="form-group">
+                        <label for="resourceCategory">Category</label>
+                        <select id="resourceCategory" name="resourceCategory" required>
+                            <option value="">Select a category...</option>
+                            <option value="contact">Contact Info</option>
+                            <option value="forms">Forms & Documents</option>
+                            <option value="utilities">Utilities & Services</option>
+                            <option value="emergency">Emergency</option>
+                            <option value="other">Other</option>
+                        </select>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="resourceDescription">Description</label>
+                        <textarea id="resourceDescription" name="resourceDescription" rows="4" required placeholder="Tell us about this resource..."></textarea>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="resourceContact">Contact Information (optional)</label>
+                        <input type="text" id="resourceContact" name="resourceContact" placeholder="Phone, email, or website">
+                    </div>
+
+                    <div class="form-group">
+                        <label for="submitterName">Your Name</label>
+                        <input type="text" id="submitterName" name="submitterName" required placeholder="Your name">
+                    </div>
+
+                    <div class="form-group">
+                        <label for="submitterEmail">Your Email</label>
+                        <input type="email" id="submitterEmail" name="submitterEmail" required placeholder="your.email@example.com">
+                    </div>
+
+                    <button type="submit" class="submit-btn">Submit Resource</button>
+                </form>
+
+                <div id="formMessage" class="form-message" style="display: none;"></div>
+            </div>
+        </section>
+
+        <section ID="contacts" class="contacts-section">
+            <div class="scrollable-content">
+                <p class="eyebrow">Directory</p>
+                <h2>Key contacts</h2>
+                <div class="card-grid three">
+                    <div class="info-card">
+                        <div class="info-top">
+                            <span class="pill">Community Office</span>
+                            <span class="contact-value">(555) 123-4567</span>
+                        </div>
+                        <p>Email: community@willowgate.org</p>
+                        <p>General help, memberships, and facility questions.</p>
+                    </div>
+                    <div class="info-card">
+                        <div class="info-top">
+                            <span class="pill">Pools & Parks</span>
+                            <span class="contact-value">(555) 234-5678</span>
+                        </div>
+                        <p>Hours, rules, swim programs, and park reservations.</p>
+                    </div>
+                    <div class="info-card">
+                        <div class="info-top">
+                            <span class="pill">Fitness Centers</span>
+                            <span class="contact-value">(555) 345-6789</span>
+                        </div>
+                        <p>Training, class schedules, and facility access.</p>
+                    </div>
+                    <div class="info-card">
+                        <div class="info-top">
+                            <span class="pill">Events Team</span>
+                            <span class="contact-value">community@willowgate.org</span>
+                        </div>
+                        <p>Submit and manage community events and guidelines.</p>
+                    </div>
+                    <div class="info-card alert">
+                        <div class="info-top">
+                            <span class="pill">Emergency</span>
+                            <span class="contact-value">911</span>
+                        </div>
+                        <p>For critical emergencies only. For property/security: (555) 000-0000</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section ID="forms" class="forms-section">
+            <div class="scrollable-content">
+                <p class="eyebrow">Documents</p>
+                <h2>Forms & downloads</h2>
+                <div class="card-grid two">
+                    <div class="info-card">
+                        <h3>Common forms</h3>
+                        <ul class="plain-list">
+                            <li>Membership Application</li>
+                            <li>Event Request Form</li>
+                            <li>Facility Reservation Form</li>
+                            <li>Community Guidelines</li>
+                        </ul>
+                    </div>
+                    <div class="info-card">
+                        <h3>Programs & classes</h3>
+                        <ul class="plain-list">
+                            <li>Weekly fitness schedule</li>
+                            <li>Swim programs & lessons</li>
+                            <li>Youth programs & camps</li>
+                        </ul>
+                        <a class="link" href="fitness-center.html">Book trainers & classes →</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="hours" class="hours-location-section">
+            <div class="scrollable-content">
+                <p class="eyebrow">Facility Information</p>
+                <h2>Hours & Locations</h2>
+                <div class="card-grid two">
+                    <div class="info-card">
+                        <h3>Community Office</h3>
+                        <div class="location-info">
+                            <p><strong> Location:</strong></p>
+                            <p>1234 Willowgate Drive<br>Willowgate Commons, Suite 100</p>
+                        </div>
+                        <div class="hours-info">
+                            <p><strong> Hours:</strong></p>
+                            <ul class="plain-list">
+                                <li>Monday - Friday: 8:00 AM - 6:00 PM</li>
+                                <li>Saturday: 9:00 AM - 3:00 PM</li>
+                                <li>Sunday: Closed</li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="info-card">
+                        <h3>Pools & Aquatic Centers</h3>
+                        <div class="location-info">
+                            <p><strong> Multiple Locations:</strong></p>
+                            <p>Main Pool: Lakeside Drive<br>North Pool: Riverside Avenue</p>
+                        </div>
+                        <div class="hours-info">
+                            <p><strong> Hours (Seasonal):</strong></p>
+                            <ul class="plain-list">
+                                <li>Monday - Friday: 10:00 AM - 8:00 PM</li>
+                                <li>Saturday: 9:00 AM - 9:00 PM</li>
+                                <li>Sunday: 11:00 AM - 7:00 PM</li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="info-card">
+                        <h3>Fitness Centers</h3>
+                        <div class="location-info">
+                            <p><strong> Locations:</strong></p>
+                            <p>Downtown Fitness Hub<br>Lakeside Athletic Complex<br>Riverside Community Center</p>
+                        </div>
+                        <div class="hours-info">
+                            <p><strong> Hours:</strong></p>
+                            <ul class="plain-list">
+                                <li>Monday - Friday: 5:00 AM - 10:00 PM</li>
+                                <li>Saturday: 7:00 AM - 8:00 PM</li>
+                                <li>Sunday: 8:00 AM - 6:00 PM</li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="info-card">
+                        <h3>Parks & Recreation</h3>
+                        <div class="location-info">
+                            <p><strong> Multiple Locations:</strong></p>
+                            <p>Central Park, Willow Park<br>Meadow Fields, Lakefront Trail</p>
+                        </div>
+                        <div class="hours-info">
+                            <p><strong>🕒 Hours:</strong></p>
+                            <ul class="plain-list">
+                                <li>Daily: Dawn to Dusk</li>
+                                <li>Lighted areas: Until 10:00 PM</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <section class="map-section" id="map">
+        <div class="map-card">
+            <div>
+                <p class="eyebrow">Visit Us</p>
+                <h2>Lakes of Willowgate</h2>
+                <p>Discover our community location. Click and drag to explore the area, zoom in for details, or get directions directly from Google Maps.</p>
+                <a class="pill-btn" href="https://www.google.com/maps/place/30%C2%B027'43.1%22N+95%C2%B036'45.5%22W/@30.461976598667196,-95.61521192421684,17z" target="_blank" rel="noopener noreferrer">Open in Google Maps</a>
+            </div>
+            <div class="map-visual">
+                <iframe 
+                    src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d6779.665337707318!2d-99.069201!3d31.8295496!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x8650cf003747770d%3A0xb889ba19037b5193!2sLakes%20of%20Willowgate!5e0!3m2!1sen!2sus!4v1769403270257!5m2!1sen!2sus" 
+                    width="100%" 
+                    height="450" 
+                    style="border:0; border-radius: 8px; box-shadow: 0 4px 12px rgba(0,0,0,0.1);" 
+                    allowfullscreen="" 
+                    loading="lazy" 
+                    referrerpolicy="no-referrer-when-downgrade"
+                    title="Lakes of Willowgate Location Map">
+                </iframe>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <div class="footer-contacts">
+            <h2>Contact Us</h2>
+            <p>Email: community@willowgate.org</p>
+            <p>Phone: (555) 123-4567</p>
+        </div>
+    </footer>
+
+    <script>
+        // Comprehensive content-based search system
+        const siteContent = {
+            'index.html': {
+                title: 'Home - Lakes of Willowgate',
+                keywords: ['home', 'main', 'welcome', 'community'],
+                content: [
+                    'Welcome to Lakes of Willowgate',
+                    'Your Community Hub',
+                    'Discover pools, parks, fitness centers, events, and more',
+                    'Quick Access to Everything',
+                    'Explore pools and parks',
+                    'Book fitness trainers',
+                    'Community events calendar',
+                    'Find resources and contacts',
+                    'Happening Now',
+                    'Whats new in your community',
+                    'Popular Resources',
+                    'How It Works',
+                    'Explore available facilities and activities',
+                    'Sign up for a membership or reserve time',
+                    'Enjoy amenities and connect with neighbors'
+                ]
+            },
+            'pools-parks.html': {
+                title: 'Pools & Parks',
+                keywords: ['pools', 'parks', 'swimming', 'aquatic', 'outdoor', 'recreation'],
+                content: [
+                    'Community Pools & Parks',
+                    'Explore local pools, parks, hours, rules, and activities for all ages',
+                    'Operating Hours',
+                    'Pools & parks have seasonal and daily hours',
+                    'Locations',
+                    'Multiple community locations throughout the neighborhood',
+                    'Safety First',
+                    'Certified lifeguards on duty at all pools',
+                    'Family Friendly',
+                    'Open to all ages with activities and amenities',
+                    'Pool Hours',
+                    'Monday Friday 10:00 AM 8:00 PM',
+                    'Saturday 9:00 AM 9:00 PM',
+                    'Sunday 11:00 AM 7:00 PM',
+                    'Lap Swim',
+                    'Open Swim',
+                    'Adult-Only Swim',
+                    'Pool Rules',
+                    'Safety guidelines',
+                    'Park Locations',
+                    'Activities and amenities',
+                    'Playground equipment',
+                    'Walking trails',
+                    'Picnic areas',
+                    'Sports fields'
+                ]
+            },
+            'fitness-center.html': {
+                title: 'Fitness Centers',
+                keywords: ['fitness', 'gym', 'workout', 'trainers', 'exercise', 'health', 'athletic'],
+                content: [
+                    'Community Fitness Centers',
+                    'Find the right trainers, activities, and schedules',
+                    'Hours of Operation',
+                    'Monday Friday 5:00 AM 10:00 PM',
+                    'Saturday 7:00 AM 8:00 PM',
+                    'Sunday 8:00 AM 6:00 PM',
+                    'Downtown Fitness Hub',
+                    'Lakeside Athletic Complex',
+                    'Riverside Community Center',
+                    'Meet Our Trainers',
+                    'Experienced professionals',
+                    'Jordan Lee',
+                    'Strength & Conditioning',
+                    'Ava Martinez',
+                    'Yoga & Mobility',
+                    'Marcus Reid',
+                    'HIIT & Athletic Training',
+                    'Book a Trainer',
+                    'Personal training',
+                    'Group classes',
+                    'Cardio equipment',
+                    'Weight training',
+                    'Yoga studio',
+                    'Indoor track'
+                ]
+            },
+            'community-events.html': {
+                title: 'Community Events',
+                keywords: ['events', 'calendar', 'activities', 'social', 'gatherings', 'programs'],
+                content: [
+                    'Community Events',
+                    'Discover whats happening around you',
+                    'Events for all ages all year long',
+                    'Todays Events',
+                    'Submit an Event',
+                    'Event Guidelines',
+                    'View Calendar',
+                    'Upcoming Events',
+                    'This Week',
+                    'This Month',
+                    'Sports & Fitness',
+                    'Arts & Culture',
+                    'Family & Kids',
+                    'Social & Networking',
+                    'Volunteer & Service',
+                    'Educational',
+                    'Event submission form',
+                    'Community calendar',
+                    'Weekly activities',
+                    'Special programs',
+                    'Seasonal events',
+                    'Holiday celebrations'
+                ]
+            },
+            'resource.html': {
+                title: 'Resources',
+                keywords: ['resources', 'contacts', 'forms', 'documents', 'information', 'help'],
+                content: [
+                    'Community Resources',
+                    'Resource center',
+                    'Contact information',
+                    'Forms and documents',
+                    'Navigate Lakes of Willowgate',
+                    'Contacts',
+                    'Community Office (555) 123-4567',
+                    'Pools & Parks (555) 234-5678',
+                    'Fitness Centers (555) 345-6789',
+                    'Email community@willowgate.org',
+                    'Forms & Documents',
+                    'Membership Application',
+                    'Event Request Form',
+                    'Facility Reservation Form',
+                    'Community Guidelines',
+                    'Suggest a New Resource',
+                    'Help improve our community',
+                    'Download forms',
+                    'Contact details',
+                    'Important information'
+                ]
+            }
+        };
+
+        function performSearch() {
+            const searchInput = document.getElementById('searchInput');
+            const query = searchInput.value.toLowerCase().trim();
+            
+            if (!query) {
+                alert('Please enter a search term');
+                return;
+            }
+
+            const results = [];
+            
+            // Search through all pages
+            for (const [url, pageData] of Object.entries(siteContent)) {
+                let relevanceScore = 0;
+                const matches = [];
+                
+                // Check if query matches keywords (high priority)
+                for (const keyword of pageData.keywords) {
+                    if (keyword.includes(query) || query.includes(keyword)) {
+                        relevanceScore += 10;
+                        matches.push(keyword);
+                    }
+                }
+                
+                // Check if query matches title
+                if (pageData.title.toLowerCase().includes(query)) {
+                    relevanceScore += 8;
+                }
+                
+                // Check if query matches content
+                for (const contentItem of pageData.content) {
+                    if (contentItem.toLowerCase().includes(query)) {
+                        relevanceScore += 2;
+                        if (matches.length < 3) {
+                            matches.push(contentItem);
+                        }
+                    }
+                }
+                
+                if (relevanceScore > 0) {
+                    results.push({
+                        url: url,
+                        title: pageData.title,
+                        score: relevanceScore,
+                        preview: matches.slice(0, 2).join(' • ')
+                    });
+                }
+            }
+            
+            // Sort by relevance
+            results.sort((a, b) => b.score - a.score);
+            
+            if (results.length === 0) {
+                alert('No results found for: "' + query + '"\n\nTry searching for: pools, fitness, events, trainers, resources, etc.');
+                return;
+            }
+            
+            // If only one result or first result is highly relevant, go directly
+            if (results.length === 1 || results[0].score >= 10) {
+                window.location.href = results[0].url;
+                return;
+            }
+            
+            // Multiple results - show selection
+            let message = 'Found ' + results.length + ' results for "' + query + '":\n\n';
+            results.forEach((result, index) => {
+                message += (index + 1) + '. ' + result.title + '\n';
+                if (result.preview) {
+                    message += '   ' + result.preview.substring(0, 60) + '...\n';
+                }
+                message += '\n';
+            });
+            message += 'Taking you to the most relevant page...';
+            
+            alert(message);
+            window.location.href = results[0].url;
+        }
+
+        // Google-style autocomplete suggestions
+        let selectedSuggestionIndex = -1;
+        let debounceTimer = null;
+        
+        function showSuggestions(query) {
+            const suggestionsContainer = document.getElementById('searchSuggestions');
+            
+            if (!query || query.length < 2) {
+                suggestionsContainer.classList.remove('active');
+                selectedSuggestionIndex = -1;
+                return;
+            }
+            
+            const suggestions = [];
+            query = query.toLowerCase().trim();
+            
+            // Search through all pages and build suggestions
+            for (const [url, pageData] of Object.entries(siteContent)) {
+                let relevanceScore = 0;
+                const matches = [];
+                
+                // Check keywords
+                for (const keyword of pageData.keywords) {
+                    if (keyword.includes(query)) {
+                        relevanceScore += 10;
+                        if (!matches.includes(keyword)) {
+                            matches.push(keyword);
+                        }
+                    }
+                }
+                
+                // Check title
+                if (pageData.title.toLowerCase().includes(query)) {
+                    relevanceScore += 8;
+                    if (!matches.includes(pageData.title)) {
+                        matches.push(pageData.title);
+                    }
+                }
+                
+                // Check content (limit iterations for performance)
+                let contentMatches = 0;
+                for (const contentItem of pageData.content) {
+                    if (contentMatches >= 2) break;
+                    if (contentItem.toLowerCase().includes(query)) {
+                        relevanceScore += 2;
+                        if (matches.length < 3 && !matches.includes(contentItem)) {
+                            matches.push(contentItem);
+                            contentMatches++;
+                        }
+                    }
+                }
+                
+                if (relevanceScore > 0) {
+                    suggestions.push({
+                        url: url,
+                        title: pageData.title,
+                        score: relevanceScore,
+                        preview: matches.slice(0, 2).join(' • ')
+                    });
+                }
+            }
+            
+            // Sort by relevance
+            suggestions.sort((a, b) => b.score - a.score);
+            
+            // Display top 6 suggestions
+            if (suggestions.length > 0) {
+                const html = suggestions.slice(0, 6).map((item, index) => {
+                    const highlightedText = item.preview.replace(
+                        new RegExp(query, 'gi'),
+                        match => `<span class="suggestion-match">${match}</span>`
+                    );
+                    return `
+                        <div class="suggestion-item" data-url="${item.url}" data-index="${index}">
+                            <div class="suggestion-icon">🔍</div>
+                            <div class="suggestion-content">
+                                <div class="suggestion-title">${item.title}</div>
+                                <div class="suggestion-text">${highlightedText}</div>
+                            </div>
+                        </div>
+                    `;
+                }).join('');
+                
+                suggestionsContainer.innerHTML = html;
+                suggestionsContainer.classList.add('active');
+                
+                selectedSuggestionIndex = -1;
+                
+                // Add click handlers
+                document.querySelectorAll('.suggestion-item').forEach(item => {
+                    item.addEventListener('click', function() {
+                        window.location.href = this.getAttribute('data-url');
+                    });
+                });
+            } else {
+                suggestionsContainer.classList.remove('active');
+            }
+        }
+        
+        function navigateSuggestions(direction) {
+            const items = document.querySelectorAll('.suggestion-item');
+            if (items.length === 0) return;
+            
+            // Remove previous selection
+            if (selectedSuggestionIndex >= 0 && selectedSuggestionIndex < items.length) {
+                items[selectedSuggestionIndex].classList.remove('selected');
+            }
+            
+            // Update index
+            if (direction === 'down') {
+                selectedSuggestionIndex = Math.min(selectedSuggestionIndex + 1, items.length - 1);
+            } else if (direction === 'up') {
+                selectedSuggestionIndex = Math.max(selectedSuggestionIndex - 1, -1);
+            }
+            
+            // Apply new selection
+            if (selectedSuggestionIndex >= 0) {
+                items[selectedSuggestionIndex].classList.add('selected');
+                items[selectedSuggestionIndex].scrollIntoView({ block: 'nearest' });
+            }
+        }
+        
+        function selectCurrentSuggestion() {
+            const items = document.querySelectorAll('.suggestion-item');
+            if (selectedSuggestionIndex >= 0 && selectedSuggestionIndex < items.length) {
+                window.location.href = items[selectedSuggestionIndex].getAttribute('data-url');
+                return true;
+            }
+            return false;
+        }
+
+        // Allow Enter key to search
+        document.addEventListener('DOMContentLoaded', function() {
+            const searchInput = document.getElementById('searchInput');
+            const suggestionsContainer = document.getElementById('searchSuggestions');
+            
+            if (searchInput) {
+                // Input event for live suggestions with debouncing
+                searchInput.addEventListener('input', function(e) {
+                    clearTimeout(debounceTimer);
+                    debounceTimer = setTimeout(() => {
+                        showSuggestions(e.target.value);
+                    }, 150);
+                });
+                
+                // Keyboard navigation
+                searchInput.addEventListener('keydown', function(e) {
+                    const suggestionsActive = suggestionsContainer.classList.contains('active');
+                    
+                    if (e.key === 'ArrowDown' && suggestionsActive) {
+                        e.preventDefault();
+                        navigateSuggestions('down');
+                    } else if (e.key === 'ArrowUp' && suggestionsActive) {
+                        e.preventDefault();
+                        navigateSuggestions('up');
+                    } else if (e.key === 'Escape') {
+                        suggestionsContainer.classList.remove('active');
+                        selectedSuggestionIndex = -1;
+                    } else if (e.key === 'Enter') {
+                        e.preventDefault();
+                        if (!selectCurrentSuggestion()) {
+                            performSearch();
+                        }
+                    }
+                });
+                
+                // Close suggestions when clicking outside
+                document.addEventListener('click', function(e) {
+                    if (!searchInput.contains(e.target) && !suggestionsContainer.contains(e.target)) {
+                        suggestionsContainer.classList.remove('active');
+                    }
+                });
+            }
+        });
+
+        // Form submission
+        document.getElementById('submitResourceForm').addEventListener('submit', (e) => {
+            e.preventDefault();
+
+            const formData = {
+                resourceName: document.getElementById('resourceName').value,
+                resourceCategory: document.getElementById('resourceCategory').value,
+                resourceDescription: document.getElementById('resourceDescription').value,
+                resourceContact: document.getElementById('resourceContact').value,
+                submitterName: document.getElementById('submitterName').value,
+                submitterEmail: document.getElementById('submitterEmail').value,
+                submittedDate: new Date().toLocaleString()
+            };
+
+            // Store in localStorage (in a real app, this would send to a server)
+            const submissions = JSON.parse(localStorage.getItem('resourceSubmissions') || '[]');
+            submissions.push(formData);
+            localStorage.setItem('resourceSubmissions', JSON.stringify(submissions));
+
+            // Show success message
+            const messageDiv = document.getElementById('formMessage');
+            messageDiv.className = 'form-message success';
+            messageDiv.textContent = '✓ Thank you! Your resource suggestion has been submitted. Our team will review it soon!';
+            messageDiv.style.display = 'block';
+
+            // Reset form
+            document.getElementById('submitResourceForm').reset();
+
+            // Hide message after 5 seconds
+            setTimeout(() => {
+                messageDiv.style.display = 'none';
+            }, 5000);
+        });
+
+        // Smooth Scroll Fade In/Out Effect using Intersection Observer
+        const observerOptions = {
+            threshold: [0, 0.2, 0.5],
+            rootMargin: '0px 0px -100px 0px'
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    if (!entry.target.dataset.fadedIn) {
+                        entry.target.classList.add('fade-in-view');
+                        entry.target.dataset.fadedIn = 'true';
+                    }
+                    entry.target.classList.remove('fade-out-view');
+                } else {
+                    if (entry.target.dataset.fadedIn && !entry.target.dataset.fadedOut) {
+                        entry.target.classList.add('fade-out-view');
+                        entry.target.dataset.fadedOut = 'true';
+                    }
+                }
+            });
+        }, observerOptions);
+
+        // Observe scrollable sections (excluding ones with their own CSS animations)
+        document.querySelectorAll('.section-card, footer').forEach(el => {
+            observer.observe(el);
+        });
+    </script>
+</body>
+</html>
+             

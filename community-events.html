@@ -1,0 +1,1030 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>Community Events — Lakes of Willowgate</title>
+    <link rel="stylesheet" href="index.css">
+    <link rel="stylesheet" href="community-events.css">
+    <script src="search.js" defer></script>
+</head>
+<body style="margin: 0">
+    <header>
+        <div class="community-header">
+            <h1 class="lakes"><a href="index.html">Lakes of Willowgate</a></h1>
+        </div>
+        <nav class="nav">
+            <div class="nav-links">
+                <a href="index.html">HOME</a>
+                <a href="pools-parks.html">POOLS & PARKS</a>
+                <a href="fitness-center.html">FITNESS CENTERS</a>
+                <a href="community-events.html">COMMUNITY EVENTS</a>
+                <a href="resource.html">RESOURCES</a>
+            </div>
+            <div class="search-container">
+                <input type="text" class="search-input" id="searchInput" placeholder="Search the site..." autocomplete="off">
+                <button class="search-btn" onclick="performSearch()" aria-label="Search"></button>
+                <div class="search-suggestions" id="searchSuggestions"></div>
+            </div>
+        </nav>
+    </header>
+
+    <main>
+        <!-- Enhanced Page Header -->
+        <div class="welcome-section">
+            <p class="eyebrow">Lakes of Willowgate</p>
+            <h1>Community Events</h1>
+            <p>Discover what's happening around you—events for all ages, all year long.</p>
+            <div class="header-buttons">
+                <a href="#upcoming-list" class="header-btn">Today's Events</a>
+                <a href="#submit-event" class="header-btn">Submit an Event</a>
+                <a href="#guidelines" class="header-btn">Event Guidelines</a>
+                <a href="#calendar" class="header-btn" onclick="scrollToCalendar()">View Calendar</a>
+            </div>
+        </div>
+
+        <!-- Weekly/Upcoming Events List -->
+        <section id="upcoming-list" class="upcoming-section">
+            <h2>Upcoming Events</h2>
+            <div class="event-filters">
+                <button class="filter-btn active" data-filter="all">All Events</button>
+                <button class="filter-btn" data-filter="today">Today</button>
+                <button class="filter-btn" data-filter="week">This Week</button>
+                <button class="filter-btn" data-filter="month">This Month</button>
+            </div>
+            <div class="events-list" id="eventsList"></div>
+        </section>
+
+        <!-- Submit an Event Section -->
+        <section id="submit-event" class="submit-event-section">
+            <h2>Submit an Event</h2>
+            <p>Help your community stay connected! Submit an event to be featured on our calendar.</p>
+            <form class="event-form" id="eventForm">
+                <div class="form-group">
+                    <label for="eventName">Event Name *</label>
+                    <input type="text" id="eventName" name="eventName" placeholder="e.g., Yoga in the Park" required>
+                </div>
+
+                <div class="form-row">
+                    <div class="form-group">
+                        <label for="eventDate">Date *</label>
+                        <input type="text" id="eventDate" name="eventDate" placeholder="MM/DD/YYYY" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="eventTime">Time *</label>
+                        <input type="text" id="eventTime" name="eventTime" placeholder="HH:MM AM/PM" required>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label for="eventLocation">Location *</label>
+                    <input type="text" id="eventLocation" name="eventLocation" placeholder="e.g., Community Park" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="eventCategory">Category *</label>
+                    <select id="eventCategory" name="eventCategory" required>
+                        <option value="">Select a category</option>
+                        <option value="sports">Sports & Fitness</option>
+                        <option value="arts">Arts & Culture</option>
+                        <option value="family">Family & Kids</option>
+                        <option value="social">Social & Networking</option>
+                        <option value="volunteer">Volunteer & Service</option>
+                        <option value="educational">Educational</option>
+                        <option value="other">Other</option>
+                    </select>
+                </div>
+
+                <div class="form-group">
+                    <label for="eventDescription">Description *</label>
+                    <textarea id="eventDescription" name="eventDescription" placeholder="Tell us about your event..." rows="4" required></textarea>
+                </div>
+
+                <div class="form-group">
+                    <label for="organizerName">Organizer Name *</label>
+                    <input type="text" id="organizerName" name="organizerName" placeholder="Your name" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="organizerEmail">Contact Email *</label>
+                    <input type="email" id="organizerEmail" name="organizerEmail" placeholder="your@email.com" required>
+                </div>
+
+                <button type="submit" class="submit-btn">Submit Event</button>
+            </form>
+        </section>
+
+        <!-- Event Guidelines Section -->
+        <section id="guidelines" class="guidelines-section">
+            <h2>Event Guidelines & Rules</h2>
+            <div class="guideline-item">
+                <button class="guideline-header" onclick="toggleGuideline(this)">
+                    <span class="guideline-title">Community Standards</span>
+                    <span class="guideline-toggle">+</span>
+                </button>
+                <div class="guideline-content">
+                    <ul>
+                        <li>Events must be family-friendly and welcoming to all community members</li>
+                        <li>No hate speech, discrimination, or unsafe activities</li>
+                        <li>Events should promote community engagement and positive interaction</li>
+                        <li>Alcohol and tobacco-related events require prior approval</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="guideline-item">
+                <button class="guideline-header" onclick="toggleGuideline(this)">
+                    <span class="guideline-title">Event Information Requirements</span>
+                    <span class="guideline-toggle">+</span>
+                </button>
+                <div class="guideline-content">
+                    <ul>
+                        <li>Accurate date and time must be provided</li>
+                        <li>Correct and verifiable location required</li>
+                        <li>Clear event description (50-500 characters)</li>
+                        <li>Valid organizer contact information</li>
+                        <li>Events should be non-profit or community-oriented</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="guideline-item">
+                <button class="guideline-header" onclick="toggleGuideline(this)">
+                    <span class="guideline-title">Approval & Moderation</span>
+                    <span class="guideline-toggle">+</span>
+                </button>
+                <div class="guideline-content">
+                    <ul>
+                        <li>All events are subject to approval by the Community Events Team</li>
+                        <li>Approval typically takes 2-3 business days</li>
+                        <li>We reserve the right to edit event details for clarity</li>
+                        <li>Events may be removed if they violate these guidelines</li>
+                        <li>Repeated violations may result in submission restrictions</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="guideline-item">
+                <button class="guideline-header" onclick="toggleGuideline(this)">
+                    <span class="guideline-title">What We Can & Cannot Accept</span>
+                    <span class="guideline-toggle">+</span>
+                </button>
+                <div class="guideline-content">
+                    <ul>
+                        <li><strong>Accepted:</strong> Community gatherings, workshops, classes, cleanups, sports events, arts festivals</li>
+                        <li><strong>Not Accepted:</strong> Commercial promotions, political campaigns, religious conversion events, multi-level marketing</li>
+                        <li>Mixed-purpose events will be evaluated individually</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <div class="calendar-section">
+            <h2>Community Calendar</h2>
+            <div class="calendar-container">
+                <div class="calendar-header">
+                    <button class="calendar-nav-btn" id="prevMonth">◀ Previous</button>
+                    <h3 id="monthYear"></h3>
+                    <button class="calendar-nav-btn" id="nextMonth">Next ▶</button>
+                </div>
+                <div class="calendar-weekdays">
+                    <div class="weekday">Sun</div>
+                    <div class="weekday">Mon</div>
+                    <div class="weekday">Tue</div>
+                    <div class="weekday">Wed</div>
+                    <div class="weekday">Thu</div>
+                    <div class="weekday">Fri</div>
+                    <div class="weekday">Sat</div>
+                </div>
+                <div class="calendar-days" id="calendarDays"></div>
+            </div>
+            <div class="calendar-legend">
+                <div class="legend-item">
+                    <span class="legend-box event-day"></span>
+                    <span>Event Day</span>
+                </div>
+                <div class="legend-item">
+                    <span class="legend-box today"></span>
+                    <span>Today</span>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <footer>
+        <div class="footer-contacts">
+            <h2>Contact Us</h2>
+            <p>Email: community@willowgate.org</p>
+            <p>Phone: (555) 123-4567</p>
+        </div>
+    </footer>
+
+    <script>
+        // Community events with full details
+        const eventDetails = {
+            '2026-01-09': {
+                name: 'New Year Community Kickoff',
+                time: '6:00 PM – 8:00 PM',
+                location: 'Community Center Main Hall',
+                description: 'Meet neighbors, learn about upcoming events, and help shape the community\'s goals for the year.'
+            },
+            '2026-02-16': {
+                name: 'Winter Wellness Walk',
+                time: '9:00 AM – 10:30 AM',
+                location: 'Riverside Walking Trail (Meet at Entrance)',
+                description: 'A relaxed group walk to stay active and social during winter.'
+            },
+            '2026-03-12': {
+                name: 'Local Business Spotlight Night',
+                time: '6:30 PM – 8:30 PM',
+                location: 'Community Center Multipurpose Room',
+                description: 'Local businesses share what they offer and connect with residents.'
+            },
+            '2026-04-05': {
+                name: 'Spring Clean-Up Day',
+                time: '8:30 AM – 12:00 PM',
+                location: 'Neighborhood Park & Surrounding Streets',
+                description: 'Help clean shared outdoor spaces and make the neighborhood look great.'
+            },
+            '2026-04-22': {
+                name: 'Community Gardening Day',
+                time: '4:00 PM – 6:00 PM',
+                location: 'Community Garden Plot',
+                description: 'Plant flowers or vegetables and learn basic gardening tips.'
+            },
+            '2026-05-09': {
+                name: 'Teen & Youth Game Night',
+                time: '7:00 PM – 9:00 PM',
+                location: 'Youth Center Recreation Room',
+                description: 'Board games, card games, and friendly competitions for teens.'
+            },
+            '2026-06-19': {
+                name: 'Outdoor Movie Night',
+                time: '7:30 PM – 10:00 PM',
+                location: 'Community Park Lawn',
+                description: 'Family-friendly movie night—bring blankets or lawn chairs.'
+            },
+            '2026-06-23': {
+                name: 'Summer Fitness Pop-Up',
+                time: '6:00 PM – 7:00 PM',
+                location: 'Community Park Pavilion',
+                description: 'Free group workout led by a local fitness instructor.'
+            },
+            '2026-07-13': {
+                name: 'Neighborhood BBQ & Potluck',
+                time: '12:00 PM – 3:00 PM',
+                location: 'Community Center Outdoor Area',
+                description: 'Share food, music, and casual games with neighbors.'
+            },
+            '2026-08-20': {
+                name: 'Back-to-School Supply Drive',
+                time: '5:30 PM – 7:30 PM',
+                location: 'Community Center Lobby',
+                description: 'Donate or pick up school supplies and support local families.'
+            },
+            '2026-09-12': {
+                name: 'Community Talent Showcase',
+                time: '7:00 PM – 9:00 PM',
+                location: 'Community Center Auditorium',
+                description: 'Open mic night featuring music, poetry, and performances.'
+            },
+            '2026-10-18': {
+                name: 'Fall Festival & Craft Fair',
+                time: '2:00 PM – 6:00 PM',
+                location: 'Town Square',
+                description: 'Seasonal games, crafts, food booths, and local vendors.'
+            },
+            '2026-10-28': {
+                name: 'Community Safety & Resource Night',
+                time: '6:00 PM – 8:00 PM',
+                location: 'Community Center Meeting Rooms',
+                description: 'Learn about safety tips, emergency resources, and local services.'
+            },
+            '2026-11-13': {
+                name: 'Thank-You Volunteers Dinner',
+                time: '6:00 PM – 8:30 PM',
+                location: 'Community Center Banquet Hall',
+                description: 'Appreciation dinner honoring community volunteers.'
+            },
+            '2026-12-07': {
+                name: 'Holiday Market & Toy Drive',
+                time: '12:00 PM – 4:00 PM',
+                location: 'Community Center & Outdoor Plaza',
+                description: 'Shop local vendors and donate toys for families in need.'
+            },
+            '2026-12-17': {
+                name: 'Winter Arts & Crafts Workshop',
+                time: '6:00 PM – 8:00 PM',
+                location: 'Community Center Classroom A',
+                description: 'Make winter-themed crafts in a relaxed, creative setting.'
+            }
+        };
+
+        const communityEvents = Object.keys(eventDetails);
+
+        let currentDate = new Date();
+
+        function renderCalendar() {
+            const year = currentDate.getFullYear();
+            const month = currentDate.getMonth();
+            
+            // Update month/year display
+            const monthNames = ['January', 'February', 'March', 'April', 'May', 'June',
+                              'July', 'August', 'September', 'October', 'November', 'December'];
+            document.getElementById('monthYear').textContent = `${monthNames[month]} ${year}`;
+            
+            // Clear calendar
+            const calendarDays = document.getElementById('calendarDays');
+            calendarDays.innerHTML = '';
+            
+            // Get first day of month and number of days
+            const firstDay = new Date(year, month, 1).getDay();
+            const daysInMonth = new Date(year, month + 1, 0).getDate();
+            
+            // Add empty cells for days before month starts
+            for (let i = 0; i < firstDay; i++) {
+                const emptyCell = document.createElement('div');
+                emptyCell.className = 'calendar-day empty';
+                calendarDays.appendChild(emptyCell);
+            }
+            
+            // Add days of month
+            const today = new Date();
+            for (let day = 1; day <= daysInMonth; day++) {
+                const dayCell = document.createElement('div');
+                dayCell.className = 'calendar-day';
+                dayCell.textContent = day;
+                
+                const dateString = `${year}-${String(month + 1).padStart(2, '0')}-${String(day).padStart(2, '0')}`;
+                
+                // Check if it's an event day
+                if (communityEvents.includes(dateString)) {
+                    dayCell.classList.add('event-day');
+                    dayCell.setAttribute('data-date', dateString);
+                    
+                    // Add hover listeners for tooltip
+                    dayCell.addEventListener('mouseenter', (e) => showEventTooltip(e, dateString));
+                    dayCell.addEventListener('mouseleave', hideEventTooltip);
+                }
+                
+                // Check if it's today
+                if (day === today.getDate() && month === today.getMonth() && year === today.getFullYear()) {
+                    dayCell.classList.add('today');
+                }
+                
+                calendarDays.appendChild(dayCell);
+            }
+        }
+
+        document.getElementById('prevMonth').addEventListener('click', () => {
+            currentDate.setMonth(currentDate.getMonth() - 1);
+            renderCalendar();
+        });
+
+        document.getElementById('nextMonth').addEventListener('click', () => {
+            currentDate.setMonth(currentDate.getMonth() + 1);
+            renderCalendar();
+        });
+
+        // Initial render
+        renderCalendar();
+
+        // Tooltip functions
+        function showEventTooltip(e, dateString) {
+            const event = eventDetails[dateString];
+            if (!event) return;
+            
+            // Remove existing tooltip
+            const existingTooltip = document.querySelector('.event-tooltip');
+            if (existingTooltip) existingTooltip.remove();
+            
+            // Create tooltip
+            const tooltip = document.createElement('div');
+            tooltip.className = 'event-tooltip';
+            tooltip.innerHTML = `
+                <div class="tooltip-content">
+                    <h3>${event.name}</h3>
+                    <div class="tooltip-detail">
+                        <span class="detail-label">Time:</span>
+                        <span>${event.time}</span>
+                    </div>
+                    <div class="tooltip-detail">
+                        <span class="detail-label">Location:</span>
+                        <span>${event.location}</span>
+                    </div>
+                    <div class="tooltip-detail">
+                        <span class="detail-label">Description:</span>
+                        <span>${event.description}</span>
+                    </div>
+                </div>
+            `;
+            
+            document.body.appendChild(tooltip);
+            
+            // Position tooltip
+            const rect = e.target.getBoundingClientRect();
+            tooltip.style.left = (rect.left + rect.width / 2) + 'px';
+            tooltip.style.top = (rect.top - 10) + 'px';
+            
+            // Adjust if tooltip goes off-screen
+            setTimeout(() => {
+                const tooltipRect = tooltip.getBoundingClientRect();
+                if (tooltipRect.right > window.innerWidth) {
+                    tooltip.style.left = (rect.left - tooltipRect.width / 2 + rect.width / 2) + 'px';
+                }
+                if (tooltipRect.left < 0) {
+                    tooltip.style.left = '10px';
+                }
+            }, 0);
+        }
+
+        function hideEventTooltip() {
+            const tooltip = document.querySelector('.event-tooltip');
+            if (tooltip) {
+                tooltip.classList.add('fade-out');
+                setTimeout(() => tooltip.remove(), 200);
+            }
+        }
+
+        // Comprehensive content-based search system
+        const siteContent = {
+            'index.html': {
+                title: 'Home - Lakes of Willowgate',
+                keywords: ['home', 'main', 'welcome', 'community'],
+                content: [
+                    'Welcome to Lakes of Willowgate',
+                    'Your Community Hub',
+                    'Discover pools, parks, fitness centers, events, and more',
+                    'Quick Access to Everything',
+                    'Explore pools and parks',
+                    'Book fitness trainers',
+                    'Community events calendar',
+                    'Find resources and contacts',
+                    'Happening Now',
+                    'Whats new in your community',
+                    'Popular Resources',
+                    'How It Works',
+                    'Explore available facilities and activities',
+                    'Sign up for a membership or reserve time',
+                    'Enjoy amenities and connect with neighbors'
+                ]
+            },
+            'pools-parks.html': {
+                title: 'Pools & Parks',
+                keywords: ['pools', 'parks', 'swimming', 'aquatic', 'outdoor', 'recreation'],
+                content: [
+                    'Community Pools & Parks',
+                    'Explore local pools, parks, hours, rules, and activities for all ages',
+                    'Operating Hours',
+                    'Pools & parks have seasonal and daily hours',
+                    'Locations',
+                    'Multiple community locations throughout the neighborhood',
+                    'Safety First',
+                    'Certified lifeguards on duty at all pools',
+                    'Family Friendly',
+                    'Open to all ages with activities and amenities',
+                    'Pool Hours',
+                    'Monday Friday 10:00 AM 8:00 PM',
+                    'Saturday 9:00 AM 9:00 PM',
+                    'Sunday 11:00 AM 7:00 PM',
+                    'Lap Swim',
+                    'Open Swim',
+                    'Adult-Only Swim',
+                    'Pool Rules',
+                    'Safety guidelines',
+                    'Park Locations',
+                    'Activities and amenities',
+                    'Playground equipment',
+                    'Walking trails',
+                    'Picnic areas',
+                    'Sports fields'
+                ]
+            },
+            'fitness-center.html': {
+                title: 'Fitness Centers',
+                keywords: ['fitness', 'gym', 'workout', 'trainers', 'exercise', 'health', 'athletic'],
+                content: [
+                    'Community Fitness Centers',
+                    'Find the right trainers, activities, and schedules',
+                    'Hours of Operation',
+                    'Monday Friday 5:00 AM 10:00 PM',
+                    'Saturday 7:00 AM 8:00 PM',
+                    'Sunday 8:00 AM 6:00 PM',
+                    'Downtown Fitness Hub',
+                    'Lakeside Athletic Complex',
+                    'Riverside Community Center',
+                    'Meet Our Trainers',
+                    'Experienced professionals',
+                    'Jordan Lee',
+                    'Strength & Conditioning',
+                    'Ava Martinez',
+                    'Yoga & Mobility',
+                    'Marcus Reid',
+                    'HIIT & Athletic Training',
+                    'Book a Trainer',
+                    'Personal training',
+                    'Group classes',
+                    'Cardio equipment',
+                    'Weight training',
+                    'Yoga studio',
+                    'Indoor track'
+                ]
+            },
+            'community-events.html': {
+                title: 'Community Events',
+                keywords: ['events', 'calendar', 'activities', 'social', 'gatherings', 'programs'],
+                content: [
+                    'Community Events',
+                    'Discover whats happening around you',
+                    'Events for all ages all year long',
+                    'Todays Events',
+                    'Submit an Event',
+                    'Event Guidelines',
+                    'View Calendar',
+                    'Upcoming Events',
+                    'This Week',
+                    'This Month',
+                    'Sports & Fitness',
+                    'Arts & Culture',
+                    'Family & Kids',
+                    'Social & Networking',
+                    'Volunteer & Service',
+                    'Educational',
+                    'Event submission form',
+                    'Community calendar',
+                    'Weekly activities',
+                    'Special programs',
+                    'Seasonal events',
+                    'Holiday celebrations'
+                ]
+            },
+            'resource.html': {
+                title: 'Resources',
+                keywords: ['resources', 'contacts', 'forms', 'documents', 'information', 'help'],
+                content: [
+                    'Community Resources',
+                    'Resource center',
+                    'Contact information',
+                    'Forms and documents',
+                    'Navigate Lakes of Willowgate',
+                    'Contacts',
+                    'Community Office (555) 123-4567',
+                    'Pools & Parks (555) 234-5678',
+                    'Fitness Centers (555) 345-6789',
+                    'Email community@willowgate.org',
+                    'Forms & Documents',
+                    'Membership Application',
+                    'Event Request Form',
+                    'Facility Reservation Form',
+                    'Community Guidelines',
+                    'Suggest a New Resource',
+                    'Help improve our community',
+                    'Download forms',
+                    'Contact details',
+                    'Important information'
+                ]
+            }
+        };
+
+        function performSearch() {
+            const searchInput = document.getElementById('searchInput');
+            const query = searchInput.value.toLowerCase().trim();
+            
+            if (!query) {
+                alert('Please enter a search term');
+                return;
+            }
+
+            const results = [];
+            
+            // Search through all pages
+            for (const [url, pageData] of Object.entries(siteContent)) {
+                let relevanceScore = 0;
+                const matches = [];
+                
+                // Check if query matches keywords (high priority)
+                for (const keyword of pageData.keywords) {
+                    if (keyword.includes(query) || query.includes(keyword)) {
+                        relevanceScore += 10;
+                        matches.push(keyword);
+                    }
+                }
+                
+                // Check if query matches title
+                if (pageData.title.toLowerCase().includes(query)) {
+                    relevanceScore += 8;
+                }
+                
+                // Check if query matches content
+                for (const contentItem of pageData.content) {
+                    if (contentItem.toLowerCase().includes(query)) {
+                        relevanceScore += 2;
+                        if (matches.length < 3) {
+                            matches.push(contentItem);
+                        }
+                    }
+                }
+                
+                if (relevanceScore > 0) {
+                    results.push({
+                        url: url,
+                        title: pageData.title,
+                        score: relevanceScore,
+                        preview: matches.slice(0, 2).join(' • ')
+                    });
+                }
+            }
+            
+            // Sort by relevance
+            results.sort((a, b) => b.score - a.score);
+            
+            if (results.length === 0) {
+                alert('No results found for: "' + query + '"\n\nTry searching for: pools, fitness, events, trainers, resources, etc.');
+                return;
+            }
+            
+            // If only one result or first result is highly relevant, go directly
+            if (results.length === 1 || results[0].score >= 10) {
+                window.location.href = results[0].url;
+                return;
+            }
+            
+            // Multiple results - show selection
+            let message = 'Found ' + results.length + ' results for "' + query + '":\n\n';
+            results.forEach((result, index) => {
+                message += (index + 1) + '. ' + result.title + '\n';
+                if (result.preview) {
+                    message += '   ' + result.preview.substring(0, 60) + '...\n';
+                }
+                message += '\n';
+            });
+            message += 'Taking you to the most relevant page...';
+            
+            alert(message);
+            window.location.href = results[0].url;
+        }
+
+        // Google-style autocomplete suggestions
+        let selectedSuggestionIndex = -1;
+        let debounceTimer = null;
+        
+        function showSuggestions(query) {
+            const suggestionsContainer = document.getElementById('searchSuggestions');
+            
+            if (!query || query.length < 2) {
+                suggestionsContainer.classList.remove('active');
+                selectedSuggestionIndex = -1;
+                return;
+            }
+            
+            const suggestions = [];
+            query = query.toLowerCase().trim();
+            
+            // Search through all pages and build suggestions
+            for (const [url, pageData] of Object.entries(siteContent)) {
+                let relevanceScore = 0;
+                const matches = [];
+                
+                // Check keywords
+                for (const keyword of pageData.keywords) {
+                    if (keyword.includes(query)) {
+                        relevanceScore += 10;
+                        if (!matches.includes(keyword)) {
+                            matches.push(keyword);
+                        }
+                    }
+                }
+                
+                // Check title
+                if (pageData.title.toLowerCase().includes(query)) {
+                    relevanceScore += 8;
+                    if (!matches.includes(pageData.title)) {
+                        matches.push(pageData.title);
+                    }
+                }
+                
+                // Check content (limit iterations for performance)
+                let contentMatches = 0;
+                for (const contentItem of pageData.content) {
+                    if (contentMatches >= 2) break;
+                    if (contentItem.toLowerCase().includes(query)) {
+                        relevanceScore += 2;
+                        if (matches.length < 3 && !matches.includes(contentItem)) {
+                            matches.push(contentItem);
+                            contentMatches++;
+                        }
+                    }
+                }
+                
+                if (relevanceScore > 0) {
+                    suggestions.push({
+                        url: url,
+                        title: pageData.title,
+                        score: relevanceScore,
+                        preview: matches.slice(0, 2).join(' • ')
+                    });
+                }
+            }
+            
+            // Sort by relevance
+            suggestions.sort((a, b) => b.score - a.score);
+            
+            // Display top 6 suggestions
+            if (suggestions.length > 0) {
+                const html = suggestions.slice(0, 6).map((item, index) => {
+                    const highlightedText = item.preview.replace(
+                        new RegExp(query, 'gi'),
+                        match => `<span class="suggestion-match">${match}</span>`
+                    );
+                    return `
+                        <div class="suggestion-item" data-url="${item.url}" data-index="${index}">
+                            <div class="suggestion-icon">🔍</div>
+                            <div class="suggestion-content">
+                                <div class="suggestion-title">${item.title}</div>
+                                <div class="suggestion-text">${highlightedText}</div>
+                            </div>
+                        </div>
+                    `;
+                }).join('');
+                
+                suggestionsContainer.innerHTML = html;
+                suggestionsContainer.classList.add('active');
+                
+                selectedSuggestionIndex = -1;
+                
+                // Add click handlers
+                document.querySelectorAll('.suggestion-item').forEach(item => {
+                    item.addEventListener('click', function() {
+                        window.location.href = this.getAttribute('data-url');
+                    });
+                });
+            } else {
+                suggestionsContainer.classList.remove('active');
+            }
+        }
+        
+        function navigateSuggestions(direction) {
+            const items = document.querySelectorAll('.suggestion-item');
+            if (items.length === 0) return;
+            
+            // Remove previous selection
+            if (selectedSuggestionIndex >= 0 && selectedSuggestionIndex < items.length) {
+                items[selectedSuggestionIndex].classList.remove('selected');
+            }
+            
+            // Update index
+            if (direction === 'down') {
+                selectedSuggestionIndex = Math.min(selectedSuggestionIndex + 1, items.length - 1);
+            } else if (direction === 'up') {
+                selectedSuggestionIndex = Math.max(selectedSuggestionIndex - 1, -1);
+            }
+            
+            // Apply new selection
+            if (selectedSuggestionIndex >= 0) {
+                items[selectedSuggestionIndex].classList.add('selected');
+                items[selectedSuggestionIndex].scrollIntoView({ block: 'nearest' });
+            }
+        }
+        
+        function selectCurrentSuggestion() {
+            const items = document.querySelectorAll('.suggestion-item');
+            if (selectedSuggestionIndex >= 0 && selectedSuggestionIndex < items.length) {
+                window.location.href = items[selectedSuggestionIndex].getAttribute('data-url');
+                return true;
+            }
+            return false;
+        }
+
+        // Allow Enter key to search
+        document.addEventListener('DOMContentLoaded', function() {
+            const searchInput = document.getElementById('searchInput');
+            const suggestionsContainer = document.getElementById('searchSuggestions');
+            
+            if (searchInput) {
+                // Input event for live suggestions with debouncing
+                searchInput.addEventListener('input', function(e) {
+                    clearTimeout(debounceTimer);
+                    debounceTimer = setTimeout(() => {
+                        showSuggestions(e.target.value);
+                    }, 150);
+                });
+                
+                // Keyboard navigation
+                searchInput.addEventListener('keydown', function(e) {
+                    const suggestionsActive = suggestionsContainer.classList.contains('active');
+                    
+                    if (e.key === 'ArrowDown' && suggestionsActive) {
+                        e.preventDefault();
+                        navigateSuggestions('down');
+                    } else if (e.key === 'ArrowUp' && suggestionsActive) {
+                        e.preventDefault();
+                        navigateSuggestions('up');
+                    } else if (e.key === 'Escape') {
+                        suggestionsContainer.classList.remove('active');
+                        selectedSuggestionIndex = -1;
+                    } else if (e.key === 'Enter') {
+                        e.preventDefault();
+                        if (!selectCurrentSuggestion()) {
+                            performSearch();
+                        }
+                    }
+                });
+                
+                // Close suggestions when clicking outside
+                document.addEventListener('click', function(e) {
+                    if (!searchInput.contains(e.target) && !suggestionsContainer.contains(e.target)) {
+                        suggestionsContainer.classList.remove('active');
+                    }
+                });
+            }
+        });
+
+        // Upcoming Events List Functionality
+        let currentFilter = 'all';
+
+        function getEventsList() {
+            const today = new Date();
+            const events = [];
+
+            // Convert event details to array format
+            for (const [dateStr, details] of Object.entries(eventDetails)) {
+                const eventDate = new Date(dateStr);
+                events.push({
+                    date: eventDate,
+                    dateStr: dateStr,
+                    ...details
+                });
+            }
+
+            // Sort by date
+            events.sort((a, b) => a.date - b.date);
+
+            return events;
+        }
+
+        function filterEvents(filter) {
+            const today = new Date();
+            today.setHours(0, 0, 0, 0);
+            const allEvents = getEventsList();
+
+            if (filter === 'today') {
+                return allEvents.filter(e => {
+                    const eventDate = new Date(e.dateStr);
+                    eventDate.setHours(0, 0, 0, 0);
+                    return eventDate.getTime() === today.getTime();
+                });
+            } else if (filter === 'week') {
+                const weekEnd = new Date(today);
+                weekEnd.setDate(weekEnd.getDate() + 7);
+                return allEvents.filter(e => {
+                    const eventDate = new Date(e.dateStr);
+                    return eventDate >= today && eventDate <= weekEnd;
+                });
+            } else if (filter === 'month') {
+                const monthEnd = new Date(today);
+                monthEnd.setMonth(monthEnd.getMonth() + 1);
+                return allEvents.filter(e => {
+                    const eventDate = new Date(e.dateStr);
+                    return eventDate >= today && eventDate <= monthEnd;
+                });
+            }
+            return allEvents.filter(e => e.date >= today);
+        }
+
+        function renderEventsList() {
+            const events = filterEvents(currentFilter);
+            const listContainer = document.getElementById('eventsList');
+            
+            if (events.length === 0) {
+                listContainer.innerHTML = '<p class="no-events">No events found for this period.</p>';
+                return;
+            }
+
+            listContainer.innerHTML = events.map(event => {
+                const dateObj = new Date(event.dateStr);
+                const options = { weekday: 'short', month: 'short', day: 'numeric' };
+                const formattedDate = dateObj.toLocaleDateString('en-US', options);
+                
+                return `
+                    <div class="event-card">
+                        <div class="event-date-badge">
+                            <div class="event-day">${dateObj.getDate()}</div>
+                            <div class="event-month">${dateObj.toLocaleDateString('en-US', { month: 'short' })}</div>
+                        </div>
+                        <div class="event-content">
+                            <h3>${event.name}</h3>
+                            <p class="event-meta"><strong>Time:</strong> ${event.time}</p>
+                            <p class="event-meta"><strong>Location:</strong> ${event.location}</p>
+                            <p class="event-description">${event.description}</p>
+                        </div>
+                    </div>
+                `;
+            }).join('');
+        }
+
+        // Filter button event listeners
+        document.querySelectorAll('.filter-btn').forEach(btn => {
+            btn.addEventListener('click', function() {
+                document.querySelectorAll('.filter-btn').forEach(b => b.classList.remove('active'));
+                this.classList.add('active');
+                currentFilter = this.getAttribute('data-filter');
+                renderEventsList();
+            });
+        });
+
+        // Scroll to calendar with smooth animation
+        function scrollToCalendar() {
+            const calendarSection = document.querySelector('.calendar-section');
+            if (calendarSection) {
+                calendarSection.scrollIntoView({ behavior: 'smooth', block: 'start' });
+            }
+        }
+
+        // Event Form Submission
+        document.getElementById('eventForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            const formData = {
+                name: document.getElementById('eventName').value,
+                date: document.getElementById('eventDate').value,
+                time: document.getElementById('eventTime').value,
+                location: document.getElementById('eventLocation').value,
+                category: document.getElementById('eventCategory').value,
+                description: document.getElementById('eventDescription').value,
+                organizer: document.getElementById('organizerName').value,
+                email: document.getElementById('organizerEmail').value
+            };
+
+            // Show success message
+            const form = this;
+            const originalText = form.querySelector('.submit-btn').textContent;
+            form.querySelector('.submit-btn').textContent = 'Event Submitted!';
+            form.querySelector('.submit-btn').disabled = true;
+
+            setTimeout(() => {
+                form.reset();
+                form.querySelector('.submit-btn').textContent = originalText;
+                form.querySelector('.submit-btn').disabled = false;
+                alert('Thank you! Your event has been submitted for review. You should hear from us within 2-3 business days.');
+            }, 1500);
+
+            console.log('Form data:', formData);
+        });
+
+        // Guideline Toggle Functionality
+        function toggleGuideline(button) {
+            const content = button.nextElementSibling;
+            const isOpen = content.classList.contains('active');
+            
+            // Close all other guidelines
+            document.querySelectorAll('.guideline-content.active').forEach(el => {
+                if (el !== content) {
+                    el.classList.remove('active');
+                    el.previousElementSibling.querySelector('.guideline-toggle').textContent = '+';
+                }
+            });
+
+            // Toggle current
+            content.classList.toggle('active');
+            button.querySelector('.guideline-toggle').textContent = isOpen ? '+' : '−';
+        }
+
+        // Initialize events list on page load with today's events as default
+        document.addEventListener('DOMContentLoaded', function() {
+            currentFilter = 'today';
+            document.querySelector('[data-filter="today"]').classList.add('active');
+            document.querySelector('[data-filter="all"]').classList.remove('active');
+            renderEventsList();
+        });
+
+        // Smooth Scroll Fade In/Out Effect using Intersection Observer
+        const observerOptions = {
+            threshold: [0, 0.2, 0.5],
+            rootMargin: '0px 0px -100px 0px'
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    if (!entry.target.dataset.fadedIn) {
+                        entry.target.classList.add('fade-in-view');
+                        entry.target.dataset.fadedIn = 'true';
+                    }
+                    entry.target.classList.remove('fade-out-view');
+                } else {
+                    if (entry.target.dataset.fadedIn && !entry.target.dataset.fadedOut) {
+                        entry.target.classList.add('fade-out-view');
+                        entry.target.dataset.fadedOut = 'true';
+                    }
+                }
+            });
+        }, observerOptions);
+
+        // Observe all scrollable elements
+        document.querySelectorAll('.welcome-section, .upcoming-section, .submit-event-section, .guidelines-section, footer').forEach(el => {
+            observer.observe(el);
+        });
+    </script>
+</body>
+</html>
+</html>
