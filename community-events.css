@@ -341,7 +341,6 @@ html {
     text-shadow: 2px 2px 5px rgba(0, 52, 163, 0.1);
     position: relative;
     z-index: 1;
-    animation: floatTitle 3s ease-in-out infinite;
 }
 
 .event-filters {
@@ -731,7 +730,6 @@ html {
     text-shadow: 2px 2px 5px rgba(0, 52, 163, 0.1);
     position: relative;
     z-index: 1;
-    animation: floatTitle 3.2s ease-in-out infinite;
 }
 
 .guideline-item {
@@ -758,7 +756,7 @@ html {
     width: 0;
     height: 100%;
     background: linear-gradient(90deg, rgba(0, 82, 163, 0.1), transparent);
-    transition: width 0.5s ease;
+    transition: width 0.5s ease-in-out;
     z-index: -1;
     pointer-events: none;
 }
@@ -776,7 +774,7 @@ html {
     justify-content: space-between;
     align-items: center;
     cursor: pointer;
-    transition: all 0.3s cubic-bezier(0.34, 1.56, 0.64, 1);
+    transition: all 0.5s ease-in-out;
     font-weight: 700;
     color: #003d82;
     font-size: 16px;
@@ -798,7 +796,7 @@ html {
 
 .guideline-toggle {
     font-size: 24px;
-    transition: all 0.3s cubic-bezier(0.34, 1.56, 0.64, 1);
+    transition: all 0.5s ease-in-out;
     display: inline-flex;
     align-items: center;
     justify-content: center;
@@ -811,7 +809,7 @@ html {
     background: white;
     max-height: 0;
     overflow: hidden;
-    transition: max-height 0.4s cubic-bezier(0.34, 1.56, 0.64, 1), padding 0.4s ease;
+    transition: max-height 0.6s ease-in-out, padding 0.6s ease-in-out;
     padding: 0 16px;
 }
 
@@ -1012,7 +1010,6 @@ html {
     letter-spacing: 1px;
     position: relative;
     z-index: 1;
-    animation: floatTitle 4s ease-in-out infinite;
 }
 
 .calendar-container {
