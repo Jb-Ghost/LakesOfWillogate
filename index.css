@@ -1011,7 +1011,7 @@ html {
 
   .nav a {
     padding: 3px 6px !important;
-    font-size: 6px !important;
+    font-size: 4.5px !important;
     height: 18px !important;
     display: flex !important;
     align-items: center !important;
@@ -1159,7 +1159,7 @@ html {
 
   .nav a {
     padding: 2px 4px !important;
-    font-size: 6.5px !important;
+    font-size: 5px !important;
     height: 16px !important;
   }
 
@@ -1209,6 +1209,12 @@ html {
     letter-spacing: 0.1px !important;
     white-space: nowrap !important;
     line-height: 1 !important;
+  }
+
+  .nav a {
+    padding: 2px 3px !important;
+    font-size: 4px !important;
+    height: 14px !important;
   }
 }
 
