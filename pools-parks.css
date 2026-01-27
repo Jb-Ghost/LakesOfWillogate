@@ -12,24 +12,6 @@ html {
     scroll-behavior: smooth;
 }
 
-/* Header Title Styling */
-.lakes {
-    font-family: 'Cinzel', serif;
-    font-size: 95px;
-    font-weight: 700;
-    font-style: normal;
-    color: white;
-    letter-spacing: 4px;
-    margin: 0;
-    animation: slideInDown 0.6s ease-out;
-    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3), 0 0 20px rgba(0, 102, 204, 0.4);
-}
-
-.lakes a {
-    color: white;
-    text-decoration: none;
-}
-
 /* Animations */
 @keyframes fadeIn {
     from { opacity: 0; }
@@ -54,11 +36,6 @@ html {
 /* Responsive breakpoints */
 /* 1366x768 resolution */
 @media (max-width: 1366px) and (max-height: 768px) {
-    .lakes {
-        font-size: 50px !important;
-        letter-spacing: 1px !important;
-    }
-
     .welcome-section {
         padding: 50px 25px;
         min-height: 300px;
@@ -67,11 +44,6 @@ html {
     .welcome-section h1 {
         font-size: 36px;
     }
-}
-
-@keyframes fadeInScale {
-    from { opacity: 0; transform: scale(0.95); }
-    to { opacity: 1; transform: scale(1); }
 }
 
 @keyframes buttonHover {
