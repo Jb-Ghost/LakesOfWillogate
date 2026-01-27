@@ -1324,6 +1324,7 @@ html {
     .welcome-section {
         padding: 50px 20px;
         margin-bottom: 30px;
+        text-align: center !important;
     }
 
     .welcome-section h1 {

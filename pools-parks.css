@@ -684,6 +684,7 @@ html {
     
     .welcome-section {
         padding: 40px 15px;
+        text-align: center !important;
     }
 
     .welcome-section h1 {
@@ -733,6 +734,7 @@ html {
 
     .welcome-section {
         padding: 30px 10px;
+        text-align: center !important;
     }
 
     .welcome-section h1 {
@@ -742,6 +744,7 @@ html {
 @media (max-width: 768px) {
     .welcome-section {
         padding: 50px 20px;
+        text-align: center !important;
     }
 
     .welcome-section h1 {

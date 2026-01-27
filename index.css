@@ -612,16 +612,16 @@ html {
 
 @media (max-width: 1366px) {
   .nav-links {
-    gap: 1px !important;
+    gap: 12px !important;
     flex-wrap: nowrap !important;
   }
 
   .nav a {
-    padding: 2px 3px !important;
-    font-size: 8px !important;
+    padding: 6px 10px !important;
+    font-size: 18px !important;
     min-width: 0px !important;
     letter-spacing: 0px !important;
-    height: 20px !important;
+    height: 28px !important;
     white-space: nowrap !important;
     flex-shrink: 1 !important;
   }
@@ -631,20 +631,20 @@ html {
   }
 
   .search-input {
-    width: 80px !important;
-    font-size: 9px !important;
-    padding: 4px 6px !important;
+    width: 250px !important;
+    font-size: 18px !important;
+    padding: 6px 18px !important;
   }
 
   .search-container {
-    padding: 2px 4px !important;
+    padding: 4px 6px !important;
     flex-shrink: 0 !important;
   }
 
   .search-btn {
-    width: 18px !important;
-    height: 18px !important;
-    font-size: 11px !important;
+    width: 24px !important;
+    height: 24px !important;
+    font-size: 13px !important;
   }
 
   .hero-section {
@@ -728,7 +728,20 @@ html {
   }
 
   .search-input {
-    width: 180px;
+    width: 90px;
+    font-size: 10px;
+    padding: 5px 6px;
+  }
+
+  .search-container {
+    padding: 2px 4px;
+    flex-shrink: 0;
+  }
+
+  .search-btn {
+    width: 20px;
+    height: 20px;
+    font-size: 12px;
   }
 
   .community-header::before {
@@ -778,7 +791,20 @@ html {
   }
 
   .search-input {
-    width: 160px;
+    width: 90px;
+    font-size: 10px;
+    padding: 5px 6px;
+  }
+
+  .search-container {
+    padding: 2px 4px;
+    flex-shrink: 0;
+  }
+
+  .search-btn {
+    width: 20px;
+    height: 20px;
+    font-size: 12px;
   }
 
   .community-header::before {
@@ -805,6 +831,24 @@ html {
     flex: 1 1 140px;
     min-width: 140px;
   }
+  
+  .search-input {
+    width: 90px;
+    font-size: 10px;
+    padding: 5px 6px;
+  }
+
+  .search-container {
+    padding: 2px 4px;
+    flex-shrink: 0;
+  }
+
+  .search-btn {
+    width: 20px;
+    height: 20px;
+    font-size: 12px;
+  }
+
 }
 
 @media (max-width: 640px) {
@@ -825,37 +869,46 @@ html {
     width: 100%;
     flex-direction: row;
     flex-wrap: wrap;
-    gap: 6px;
+    gap: 10px;
     justify-content: center;
   }
 
   .nav a {
-    padding: 4px 7px;
-    font-size: 7px;
+    padding: 3px 6px;
+    font-size: 7.5px;
     min-width: 0px;
     width: auto;
     text-align: center;
     justify-content: center;
     white-space: nowrap;
     flex-shrink: 1;
-    height: 20px;
+    height: 18px;
     display: flex;
     align-items: center;
   }
 
-  .search-container {
-    width: 100%;
-    justify-content: center;
+  .search-input {
+    width: 70px;
+    font-size: 9px;
+    padding: 4px 5px;
   }
 
-  .search-input {
-    flex: 1;
-    max-width: 300px;
+  .search-container {
+    padding: 2px 4px;
+    flex-shrink: 0;
   }
+
+  .search-btn {
+    width: 18px;
+    height: 18px;
+    font-size: 11px;
+  }
+
 
   .hero-section {
     padding: 35px 12px !important;
     min-height: 260px !important;
+    text-align: center !important;
   }
 
   .hero-section h1 {
@@ -889,20 +942,20 @@ html {
   }
 
   .nav-links {
-    gap: 8px;
+    gap: 12px;
   }
 
   .nav a {
-    padding: 4px 8px !important;
-    font-size: 7px !important;
-    height: 20px !important;
+    padding: 3px 6px !important;
+    font-size: 6px !important;
+    height: 18px !important;
     display: flex !important;
     align-items: center !important;
   }
 
   .lakes {
-    font-size: 24px !important;
-    letter-spacing: 0.3px !important;
+    font-size: 20px !important;
+    letter-spacing: 0.2px !important;
   }
 
   .community-header::before {
@@ -918,6 +971,7 @@ html {
   .hero-section {
     padding: 25px 10px !important;
     min-height: 220px !important;
+    text-align: center !important;
   }
 
   .hero-section h1 {
@@ -982,8 +1036,8 @@ html {
   }
   
   .lakes {
-    font-size: 32px;
-    letter-spacing: 1px;
+    font-size: 28px;
+    letter-spacing: 0.8px;
     white-space: nowrap;
     line-height: 1;
   }
@@ -1003,8 +1057,8 @@ html {
   }
   
   .lakes {
-    font-size: 26px;
-    letter-spacing: 0.5px;
+    font-size: 22px;
+    letter-spacing: 0.4px;
     white-space: nowrap;
     line-height: 1;
   }
@@ -1021,8 +1075,8 @@ html {
   }
   
   .lakes {
-    font-size: 22px;
-    letter-spacing: 0.3px;
+    font-size: 18px;
+    letter-spacing: 0.2px;
     white-space: nowrap;
     line-height: 1;
   }
