@@ -617,6 +617,52 @@ html {
 }
 
 /* Responsive Design */
+
+/* Small laptops and large tablets (1024px - 1199px) */
+@media (max-width: 1199px) {
+    .welcome-section {
+        padding: 80px 35px;
+    }
+
+    .welcome-section h1 {
+        font-size: 52px;
+    }
+
+    .quick-info-section {
+        grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+        gap: 20px;
+        padding: 0 35px;
+    }
+
+    .pools-section,
+    .parks-section,
+    .activities-section,
+    .seasonal-notices {
+        padding: 50px 35px;
+    }
+}
+
+/* Tablets landscape (900px - 1023px) */
+@media (max-width: 1023px) {
+    .welcome-section {
+        padding: 70px 30px;
+    }
+
+    .welcome-section h1 {
+        font-size: 46px;
+    }
+
+    .hero-buttons {
+        gap: 12px;
+    }
+
+    .quick-info-section {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 18px;
+        padding: 0 30px;
+    }
+}
+
 @media (max-width: 1024px) {
     .pools-section,
     .parks-section,
@@ -632,20 +678,75 @@ html {
         font-size: 36px;
     }
 }
+/* Small phones */
+@media (max-width: 480px) {
+    .welcome-section {
+        padding: 40px 15px;
+    }
 
+    .welcome-section h1 {
+        font-size: 28px;
+    }
+
+    .welcome-section p {
+        font-size: 14px;
+    }
+
+    .hero-btn {
+        padding: 10px 20px;
+        font-size: 13px;
+    }
+
+    .info-card h3 {
+        font-size: 16px;
+    }
+
+    .info-card p {
+        font-size: 13px;
+    }
+
+    .pools-section,
+    .parks-section,
+    .activities-section,
+    .seasonal-notices {
+        padding: 25px 15px;
+    }
+
+    .pools-section h2,
+    .parks-section h2,
+    .activities-section h2,
+    .seasonal-notices h2 {
+        font-size: 24px;
+    }
+}
 @media (max-width: 768px) {
+    .welcome-section {
+        padding: 50px 20px;
+    }
+
+    .welcome-section h1 {
+        font-size: 36px;
+    }
+
+    .welcome-section p {
+        font-size: 15px;
+    }
+
     .quick-info-section {
         grid-template-columns: 1fr;
-        padding: 0 15px;
+        padding: 0 20px;
+        gap: 15px;
     }
 
     .hero-buttons {
         flex-direction: column;
         gap: 10px;
+        width: 100%;
     }
 
     .hero-btn {
         width: 100%;
+        max-width: 300px;
     }
 
     .pools-section,

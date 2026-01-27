@@ -750,7 +750,7 @@
 
 /* Hours & Location Section */
 .hours-location-section {
-    background: #fff8f0;
+    background: #ffffff;
     border-radius: 20px;
     padding: 36px 28px;
     border-top: 4px solid #0052a3;
@@ -1014,6 +1014,50 @@
 }
 
 /* Responsive Design */
+
+/* Small laptops (1024px - 1199px) */
+@media (max-width: 1199px) {
+    .resources-hero {
+        padding: 35px 35px 0 35px;
+        gap: 40px;
+    }
+
+    .hero-actions {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 14px;
+    }
+
+    .resources-wrapper {
+        padding: 0 35px;
+    }
+
+    .section-card {
+        padding: 28px;
+    }
+}
+
+/* Tablets landscape (900px - 1023px) */
+@media (max-width: 1023px) {
+    .resources-hero {
+        grid-template-columns: 1fr;
+        padding: 30px 30px 0 30px;
+        gap: 30px;
+    }
+
+    .hero-stats {
+        grid-template-columns: repeat(4, 1fr);
+    }
+
+    .resources-wrapper {
+        padding: 0 30px;
+    }
+
+    .resources-content .section-container {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 28px;
+    }
+}
+
 @media (max-width: 1024px) {
     .resources-wrapper {
         grid-template-columns: 1fr;
@@ -1102,6 +1146,63 @@
     .submit-btn {
         padding: 10px 16px;
         font-size: 12px;
+    }
+}
+
+/* Small phones */
+@media (max-width: 480px) {
+    .resources-hero {
+        padding: 20px 15px 0 15px;
+    }
+
+    .resources-hero h1 {
+        font-size: 28px;
+    }
+
+    .resources-hero .lede {
+        font-size: 14px;
+    }
+
+    .hero-actions {
+        grid-template-columns: 1fr;
+        gap: 12px;
+        padding: 15px;
+    }
+
+    .pill-btn {
+        font-size: 14px;
+        padding: 12px 20px;
+    }
+
+    .hero-stats {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 12px;
+    }
+
+    .stat-card {
+        padding: 18px 20px;
+    }
+
+    .stat-number {
+        font-size: 24px;
+    }
+
+    .resources-content .section-container {
+        grid-template-columns: 1fr;
+        gap: 20px;
+    }
+
+    .section-card {
+        padding: 20px;
+    }
+
+    .section-card h2 {
+        font-size: 24px;
+    }
+
+    .info-card {
+        padding: 18px;
+        min-height: 180px;
     }
 }
 

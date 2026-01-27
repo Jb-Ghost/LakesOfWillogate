@@ -363,7 +363,8 @@ html {
     width: 200px;
     font-family: inherit;
     border-radius: 25px;
-}.search-cont
+    transition: width 0.3s ease;
+}
 
 .search-input::placeholder {
     color: #999;
@@ -504,9 +505,9 @@ html {
 
 .nav a {
     color: white;
-    padding: 6px 12px;
+    padding: 6px 10px;
     font-weight: 600;
-    font-size: 17px;
+    font-size: 15px;
     text-decoration: none;
     transition: color 0.3s ease, background 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease;
     position: relative;
@@ -515,10 +516,10 @@ html {
     display: inline-flex;
     align-items: center;
     justify-content: center;
-  min-width: 110px;
-  height: 32px;
+    min-width: 95px;
+    height: 32px;
     text-align: center;
-    letter-spacing: 0.5px;
+    letter-spacing: 0.3px;
     background: rgba(255, 255, 255, 0.05);
     backdrop-filter: blur(10px);
     border: 1px solid rgba(255, 255, 255, 0.1);
@@ -565,6 +566,87 @@ html {
   transform: translateY(-2px);
 }
 
+/* Responsive breakpoints for all devices */
+
+/* Small laptops (1024px - 1199px) */
+@media (max-width: 1199px) {
+  .nav {
+    font-size: 18px;
+    padding: 12px 18px;
+  }
+
+  .nav-links {
+    gap: 35px;
+  }
+
+  .nav a {
+    padding: 8px 18px;
+    font-size: 16px;
+  }
+
+  .search-input {
+    width: 180px;
+  }
+
+  .community-header::before {
+    width: 130px;
+    height: 130px;
+  }
+
+  .lakes {
+    font-size: 75px;
+  }
+
+  .hero-section {
+    padding: 90px 35px;
+    background-position: center center;
+    min-height: 380px;
+  }
+
+  .hero-section h1 {
+    font-size: 52px;
+  }
+
+  .quick-access-section {
+    padding: 55px 35px;
+  }
+
+  .tiles-grid {
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 18px;
+  }
+}
+
+/* Tablets landscape (900px - 1023px) */
+@media (max-width: 1023px) {
+  .nav {
+    font-size: 17px;
+    padding: 10px 15px;
+  }
+
+  .nav-links {
+    gap: 25px;
+  }
+
+  .nav a {
+    padding: 8px 16px;
+    font-size: 15px;
+  }
+
+  .search-input {
+    width: 160px;
+  }
+
+  .community-header::before {
+    width: 110px;
+    height: 110px;
+  }
+
+  .lakes {
+    font-size: 65px;
+  }
+}
+
 @media (max-width: 900px) {
   .nav {
     padding: 10px 16px;
@@ -583,18 +665,32 @@ html {
 
 @media (max-width: 640px) {
   .nav {
-    justify-content: center;
+    flex-direction: column;
+    height: auto;
+    gap: 15px;
+    padding: 15px;
   }
 
   .nav-links {
     width: 100%;
-    justify-content: center;
+    flex-direction: column;
+    gap: 10px;
   }
 
   .nav a {
-    flex: 1 1 45%;
-    min-width: 140px;
-    max-width: 180px;
+    width: 100%;
+    text-align: center;
+    justify-content: center;
+  }
+
+  .search-container {
+    width: 100%;
+    justify-content: center;
+  }
+
+  .search-input {
+    flex: 1;
+    max-width: 300px;
   }
 }
 
@@ -715,6 +811,9 @@ html {
 @media (max-width: 768px) {
   .hero-section {
     padding: 60px 20px;
+    background-position: center 40%;
+    background-attachment: scroll;
+    min-height: 350px;
   }
   
   .hero-section h1 {
@@ -759,6 +858,8 @@ html {
 @media (max-width: 600px) {
   .hero-section {
     padding: 40px 15px;
+    background-position: center 35%;
+    min-height: 320px;
   }
   
   .hero-section h1 {
@@ -805,6 +906,8 @@ html {
 @media (max-width: 475px) {
   .hero-section {
     padding: 30px 10px;
+    background-position: center 30%;
+    min-height: 280px;
   }
   
   .hero-section h1 {
@@ -855,6 +958,16 @@ html {
     padding: 10px 20px;
     font-size: 12px;
   }
+
+  .search-input {
+    font-size: 13px;
+  }
+
+  .search-btn {
+    width: 32px;
+    height: 32px;
+    font-size: 12px;
+  }
 }
 
 /* Main content */
@@ -868,14 +981,20 @@ main {
 
 /* Hero Section */
 .hero-section {
-    background: #4488bc;
+    background: 
+        linear-gradient(rgba(68, 136, 188, 0.7), rgba(68, 136, 188, 0.7)),
+        url(Lake.jpg);
+    background-size: cover;
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-attachment: scroll;
     color: white;
     padding: 100px 40px;
     text-align: center;
     animation: slideInDown 0.8s ease-out;
     position: relative;
     overflow: hidden;
-    opacity: .7;
+    min-height: 400px;
 }
 
 .hero-section::before {
@@ -2599,10 +2718,10 @@ html, body {
 /* Navigation */
 .nav {
     display: flex;
-    justify-content: flex-end;
+    justify-content: space-between;
     align-items: center;
     padding: 15px 20px;
-    font-size: 20px;
+    font-size: 17px;
     font-family: Roboto, Arial, sans-serif;
     background-color: #0052a3;
     height: 35px;
@@ -2610,7 +2729,10 @@ html, body {
 
 .nav-links {
     display: flex;
-    gap: 50px;
+    gap: 30px;
+    flex: 1;
+    justify-content: center;
+    flex-wrap: wrap;
 }
 
 .search-btn {

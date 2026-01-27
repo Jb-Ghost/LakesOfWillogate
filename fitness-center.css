@@ -602,6 +602,53 @@ html {
 .amenity-item:nth-child(8) { animation-delay: 0.4s; }
 
 /* Responsive Design */
+
+/* Small laptops (1024px - 1199px) */
+@media (max-width: 1199px) {
+    .welcome-section {
+        padding: 80px 35px;
+    }
+
+    .welcome-section h1 {
+        font-size: 52px;
+    }
+
+    .trainers-section,
+    .schedule-section,
+    .facilities-section {
+        padding: 50px 35px;
+    }
+
+    .trainers-grid {
+        grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    }
+}
+
+/* Tablets landscape (900px - 1023px) */
+@media (max-width: 1023px) {
+    .welcome-section {
+        padding: 70px 30px;
+    }
+
+    .welcome-section h1 {
+        font-size: 46px;
+    }
+
+    .hero-buttons {
+        gap: 12px;
+    }
+
+    .trainers-section,
+    .schedule-section,
+    .facilities-section {
+        padding: 45px 30px;
+    }
+
+    .trainers-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
 @media (max-width: 768px) {
     .welcome-section {
         padding: 40px 20px;
@@ -697,6 +744,45 @@ html {
 
     .info-box h3 {
         font-size: 18px;
+    }
+}
+
+/* Small phones */
+@media (max-width: 480px) {
+    .welcome-section {
+        padding: 40px 15px;
+    }
+
+    .welcome-section h1 {
+        font-size: 28px;
+    }
+
+    .welcome-section p {
+        font-size: 14px;
+    }
+
+    .hero-btn {
+        padding: 10px 20px;
+        font-size: 13px;
+    }
+
+    .trainers-section h2,
+    .schedule-section h2,
+    .facilities-section h2 {
+        font-size: 22px;
+    }
+
+    .trainer-card h3 {
+        font-size: 15px;
+    }
+
+    .trainer-card .specialty,
+    .trainer-card p {
+        font-size: 13px;
+    }
+
+    .quick-info-section .info-card {
+        padding: 15px;
     }
 }
 

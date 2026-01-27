@@ -1278,24 +1278,77 @@ html {
 }
 
 /* Responsive Design */
+
+/* Small laptops (1024px - 1199px) */
+@media (max-width: 1199px) {
+    .welcome-section {
+        padding: 80px 35px;
+    }
+
+    .welcome-section h1 {
+        font-size: 52px;
+    }
+
+    .calendar-grid {
+        max-width: 900px;
+    }
+
+    .upcoming-events-section,
+    .submit-event-section {
+        padding: 45px 35px;
+    }
+}
+
+/* Tablets landscape (900px - 1023px) */
+@media (max-width: 1023px) {
+    .welcome-section {
+        padding: 70px 30px;
+    }
+
+    .welcome-section h1 {
+        font-size: 46px;
+    }
+
+    .hero-buttons {
+        gap: 12px;
+    }
+
+    .calendar-grid {
+        max-width: 750px;
+    }
+
+    .upcoming-events-section,
+    .submit-event-section {
+        padding: 40px 30px;
+    }
+}
+
 @media (max-width: 768px) {
     .welcome-section {
-        padding: 30px 20px;
+        padding: 50px 20px;
         margin-bottom: 30px;
     }
 
     .welcome-section h1 {
-        font-size: 32px;
+        font-size: 36px;
         margin-bottom: 10px;
     }
 
     .welcome-section p {
-        font-size: 16px;
+        font-size: 15px;
         margin-bottom: 20px;
     }
 
+    .hero-buttons,
     .header-buttons {
+        flex-direction: column;
         gap: 10px;
+        width: 100%;
+    }
+
+    .hero-btn {
+        width: 100%;
+        max-width: 300px;
     }
 
     .header-btn {
