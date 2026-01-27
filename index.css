@@ -589,6 +589,70 @@ html {
 
 /* Laptops with 1366x768 resolution */
 /* Laptop 1366x768 resolution - using max-width only for better compatibility */
+
+/* High resolution displays (2880x1864, 2560x1600) */
+@media (min-width: 2560px) {
+  .community-header {
+    height: 220px !important;
+    padding: 0 80px !important;
+  }
+
+  .lakes {
+    font-size: 120px !important;
+    letter-spacing: 6px !important;
+  }
+
+  .community-header::before {
+    width: 200px !important;
+    height: 200px !important;
+  }
+
+  .nav {
+    height: 50px !important;
+    padding: 20px 40px !important;
+  }
+
+  .nav a {
+    font-size: 20px !important;
+    padding: 12px 20px !important;
+    height: 40px !important;
+  }
+
+  .nav-links {
+    gap: 30px !important;
+  }
+
+  .search-input {
+    width: 300px !important;
+    font-size: 18px !important;
+    padding: 12px 20px !important;
+  }
+
+  .search-btn {
+    width: 40px !important;
+    height: 40px !important;
+    font-size: 20px !important;
+  }
+
+  .hero-section {
+    padding: 150px 80px !important;
+    min-height: 600px !important;
+  }
+
+  .hero-section h1 {
+    font-size: 72px !important;
+  }
+
+  .hero-section p {
+    font-size: 28px !important;
+  }
+
+  .hero-btn {
+    padding: 20px 50px !important;
+    font-size: 20px !important;
+  }
+}
+
 @media (max-width: 1400px) {
   .community-header {
     height: 100px !important;
@@ -874,34 +938,34 @@ html {
   }
 
   .nav a {
-    padding: 3px 6px;
-    font-size: 7.5px;
+    padding: 2px 5px;
+    font-size: 7px;
     min-width: 0px;
     width: auto;
     text-align: center;
     justify-content: center;
     white-space: nowrap;
     flex-shrink: 1;
-    height: 18px;
+    height: 16px;
     display: flex;
     align-items: center;
   }
 
   .search-input {
-    width: 70px;
-    font-size: 9px;
-    padding: 4px 5px;
+    width: 60px;
+    font-size: 8px;
+    padding: 3px 4px;
   }
 
   .search-container {
-    padding: 2px 4px;
+    padding: 2px 3px;
     flex-shrink: 0;
   }
 
   .search-btn {
-    width: 18px;
-    height: 18px;
-    font-size: 11px;
+    width: 16px;
+    height: 16px;
+    font-size: 10px;
   }
 
 
@@ -1036,8 +1100,8 @@ html {
   }
   
   .lakes {
-    font-size: 28px;
-    letter-spacing: 0.8px;
+    font-size: 10px !important;
+    letter-spacing: 0.2px !important;
     white-space: nowrap;
     line-height: 1;
   }
@@ -1064,6 +1128,72 @@ html {
   }
 }
 
+/* Mobile 425px width */
+@media (max-width: 425px) {
+  .community-header {
+    height: 85px !important;
+    padding: 8px !important;
+    gap: 8px !important;
+  }
+
+  .lakes {
+    font-size: 10px !important;
+    letter-spacing: 0.2px !important;
+    white-space: nowrap !important;
+    line-height: 1 !important;
+  }
+
+  .community-header::before {
+    width: 45px !important;
+    height: 45px !important;
+  }
+
+  .nav {
+    padding: 6px !important;
+    gap: 5px !important;
+  }
+
+  .nav-links {
+    gap: 8px !important;
+  }
+
+  .nav a {
+    padding: 2px 4px !important;
+    font-size: 6.5px !important;
+    height: 16px !important;
+  }
+
+  .search-input {
+    width: 55px !important;
+    font-size: 7px !important;
+    padding: 3px !important;
+  }
+
+  .search-btn {
+    width: 14px !important;
+    height: 14px !important;
+    font-size: 9px !important;
+  }
+
+  .hero-section {
+    padding: 20px 8px !important;
+    min-height: 200px !important;
+  }
+
+  .hero-section h1 {
+    font-size: 17px !important;
+  }
+
+  .hero-section p {
+    font-size: 10px !important;
+  }
+
+  .hero-btn {
+    padding: 8px 16px !important;
+    font-size: 10px !important;
+  }
+}
+
 @media (max-width: 375px) {
   .community-header {
     overflow: hidden;
@@ -1075,10 +1205,10 @@ html {
   }
   
   .lakes {
-    font-size: 18px;
-    letter-spacing: 0.2px;
-    white-space: nowrap;
-    line-height: 1;
+    font-size: 8px !important;
+    letter-spacing: 0.1px !important;
+    white-space: nowrap !important;
+    line-height: 1 !important;
   }
 }
 
@@ -2484,8 +2614,8 @@ footer.fade-out-view {
 /* Tablets and small screens */
 @media (max-width: 600px) {
   .lakes {
-    font-size: 32px;
-    letter-spacing: 2px;
+    font-size: 10px !important;
+    letter-spacing: 0.2px !important;
   }
   
   .nav {
@@ -2525,8 +2655,8 @@ footer.fade-out-view {
 /* Extra small screens */
 @media (max-width: 375px) {
   .lakes {
-    font-size: 24px;
-    letter-spacing: 2px;
+    font-size: 8px !important;
+    letter-spacing: 0.1px !important;
   }
   
   .nav {
@@ -3757,8 +3887,8 @@ footer.fade-out-view {
 /* Tablets and small screens */
 @media (max-width: 600px) {
   .lakes {
-    font-size: 32px;
-    letter-spacing: 2px;
+    font-size: 10px !important;
+    letter-spacing: 0.2px !important;
   }
   
   .nav {
@@ -3798,8 +3928,8 @@ footer.fade-out-view {
 /* Extra small screens */
 @media (max-width: 375px) {
   .lakes {
-    font-size: 24px;
-    letter-spacing: 2px;
+    font-size: 8px !important;
+    letter-spacing: 0.1px !important;
   }
   
   .nav {
