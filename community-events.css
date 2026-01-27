@@ -1,28 +1,19 @@
 /* Import Cinzel Font */
 @import url('https://fonts.googleapis.com/css2?family=Cinzel:wght@400;500;600;700;800;900&display=swap');
 
+:root {
+    --primary: #0052a3;
+    --text: #1a1a1a;
+    --muted: #5a5a5a;
+    --border: #ddd;
+}
+
 /* Smooth Scroll Behavior */
 html {
     scroll-behavior: smooth;
 }
 
-/* Header Title Styling */
-.lakes {
-    font-family: 'Cinzel', serif;
-    font-size: 95px;
-    font-weight: 700;
-    font-style: normal;
-    color: white;
-    letter-spacing: 4px;
-    margin: 0;
-    animation: slideInDown 0.6s ease-out;
-    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3), 0 0 20px rgba(0, 102, 204, 0.4);
-}
-
-.lakes a {
-    color: white;
-    text-decoration: none;
-}
+/* Header styles inherited from index.css */
 
 /* Event Tooltip Styles */
 
@@ -263,56 +254,44 @@ html {
     color: #003d82;
     margin: 0 0 30px 0;
     line-height: 1.6;
+    opacity: 0;
+    animation: slideInUp 0.8s ease-out 0.6s forwards;
 }
 
-.header-buttons {
+/* Hero Buttons */
+
+.hero-buttons {
     display: flex;
     gap: 15px;
     justify-content: center;
     flex-wrap: wrap;
+    margin-top: 30px;
+    opacity: 0;
+    animation: fadeIn 0.8s ease-out 0.8s forwards;
 }
 
-.header-btn {
-    background: linear-gradient(135deg, #0052a3, #0066cc);
+.hero-btn {
+    padding: 12px 28px;
+    background: var(--primary);
     color: white;
     text-decoration: none;
-    padding: 12px 28px;
-    border-radius: 8px;
+    border-radius: 4px;
     font-weight: 600;
     font-size: 14px;
     transition: all 0.3s ease;
-    position: relative;
-    overflow: hidden;
-    box-shadow: 0 4px 15px rgba(0, 52, 163, 0.2);
-    transform: translateY(0);
+    border: none;
+    cursor: pointer;
+    box-shadow: 0 4px 12px rgba(0,52,163,0.2);
+    text-transform: none;
 }
 
-.header-btn::before {
-    content: '';
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    width: 0;
-    height: 0;
-    border-radius: 50%;
-    background: rgba(255, 255, 255, 0.3);
-    transform: translate(-50%, -50%);
-    transition: width 0.6s ease, height 0.6s ease;
+.hero-btn:hover {
+    animation: buttonHover 0.4s ease-out forwards;
+    color: white;
 }
 
-.header-btn:hover {
-    transform: translateY(-5px) scale(1.05);
-    box-shadow: 0 12px 30px rgba(0, 82, 163, 0.4);
-}
-
-.header-btn:hover::before {
-    width: 300px;
-    height: 300px;
-}
-
-.header-btn:active {
-    transform: translateY(-2px) scale(1.02);
-    transition: all 0.1s ease;
+.hero-btn:active {
+    animation: buttonPress 0.2s ease-out forwards;
 }
 
 /* Upcoming Events List Section */

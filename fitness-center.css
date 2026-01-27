@@ -13,23 +13,7 @@ html {
     scroll-behavior: smooth;
 }
 
-/* Header Title Styling */
-.lakes {
-    font-family: 'Cinzel', serif;
-    font-size: 95px;
-    font-weight: 700;
-    font-style: normal;
-    color: white;
-    letter-spacing: 4px;
-    margin: 0;
-    animation: slideInDown 0.6s ease-out;
-    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3), 0 0 20px rgba(0, 102, 204, 0.4);
-}
-
-.lakes a {
-    color: white;
-    text-decoration: none;
-}
+/* Header styles inherited from index.css */
 
 /* Fade in/out on scroll animations */
 .fade-in-view {
@@ -497,27 +481,6 @@ html {
     overflow: hidden;
 }
 
-.schedule-day::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: -100%;
-    width: 100%;
-    height: 3px;
-    background: linear-gradient(90deg, transparent, var(--primary), transparent);
-    transition: left 0.6s ease;
-}
-
-.schedule-day:hover::before {
-    left: 100%;
-}
-
-.schedule-day:hover {
-    border-color: var(--primary);
-    box-shadow: 0 8px 20px rgba(0, 82, 163, 0.15);
-    transform: translateY(-5px);
-}
-
 .day-name {
     font-size: 18px;
     font-weight: 700;
@@ -525,21 +488,6 @@ html {
     margin-bottom: 15px;
     position: relative;
     display: inline-block;
-}
-
-.day-name::after {
-    content: '';
-    position: absolute;
-    bottom: -5px;
-    left: 0;
-    width: 0;
-    height: 2px;
-    background: var(--primary);
-    transition: width 0.4s ease;
-}
-
-.schedule-day:hover .day-name::after {
-    width: 100%;
 }
 
 .day-activities {
@@ -573,29 +521,6 @@ html {
     border-radius: 50%;
     background: rgba(255, 255, 255, 0.2);
     transform: translate(-50%, -50%);
-    transition: width 0.4s, height 0.4s;
-}
-
-.activity-tag:hover::before {
-    width: 200px;
-    height: 200px;
-}
-
-.activity-tag:nth-child(1) {
-    animation-delay: 0.1s;
-}
-
-.activity-tag:nth-child(2) {
-    animation-delay: 0.2s;
-}
-
-.activity-tag:nth-child(3) {
-    animation-delay: 0.3s;
-}
-
-.activity-tag:hover {
-    transform: scale(1.05);
-    box-shadow: 0 4px 12px rgba(0, 82, 163, 0.3);
 }
 
 @keyframes fadeInTag {
@@ -645,70 +570,12 @@ html {
     cursor: pointer;
 }
 
-.amenity-item::before {
-    content: '';
-    position: absolute;
-    bottom: 0;
-    left: 0;
-    width: 0;
-    height: 3px;
-    background: linear-gradient(90deg, var(--primary), #0073e6);
-    transition: width 0.5s ease;
-}
-
-.amenity-item::after {
-    content: '';
-    position: absolute;
-    top: -50%;
-    right: -50%;
-    width: 200%;
-    height: 200%;
-    background: radial-gradient(circle, rgba(0, 82, 163, 0.05) 0%, transparent 70%);
-    opacity: 0;
-    transition: opacity 0.5s ease, transform 0.5s ease;
-    transform: scale(0);
-}
-
-.amenity-item:hover::before {
-    width: 100%;
-}
-
-.amenity-item:hover::after {
-    opacity: 1;
-    transform: scale(1);
-}
-
-.amenity-item:hover {
-    box-shadow: 0 10px 30px rgba(0, 82, 163, 0.2);
-    border-color: var(--primary);
-    transform: translateY(-8px) scale(1.02);
-}
-
 .amenity-item h3 {
     font-size: 18px;
     color: var(--primary);
     margin: 0 0 10px 0;
     position: relative;
     transition: all 0.3s ease;
-}
-
-.amenity-item:hover h3 {
-    transform: translateX(5px);
-    text-shadow: 0 2px 8px rgba(0, 82, 163, 0.2);
-}
-
-.amenity-item h3::before {
-    content: '→';
-    position: absolute;
-    left: -20px;
-    opacity: 0;
-    transition: all 0.3s ease;
-    color: var(--primary);
-}
-
-.amenity-item:hover h3::before {
-    left: -25px;
-    opacity: 1;
 }
 
 .amenity-item p {
