@@ -592,6 +592,7 @@ html {
   .community-header {
     height: 120px !important;
     padding: 0 20px !important;
+    overflow: hidden !important;
   }
 
   .lakes {
@@ -817,13 +818,13 @@ html {
     width: 100%;
     flex-direction: row;
     flex-wrap: wrap;
-    gap: 4px;
+    gap: 3px;
     justify-content: center;
   }
 
   .nav a {
-    padding: 4px 6px;
-    font-size: 9px;
+    padding: 3px 5px;
+    font-size: 8px;
     min-width: 0px;
     width: auto;
     text-align: center;
@@ -841,6 +842,26 @@ html {
     flex: 1;
     max-width: 300px;
   }
+
+  .hero-section {
+    padding: 40px 15px !important;
+    min-height: 280px !important;
+  }
+
+  .hero-section h1 {
+    font-size: 26px !important;
+    margin: 0 0 15px 0 !important;
+  }
+
+  .hero-section p {
+    font-size: 14px !important;
+    margin: 0 0 25px 0 !important;
+  }
+
+  .hero-btn {
+    padding: 12px 24px !important;
+    font-size: 13px !important;
+  }
 }
 
 /* Extra small mobile (360x640 and similar) */
@@ -855,9 +876,9 @@ html {
   }
 
   .nav a {
-    padding: 3px 4px !important;
-    font-size: 8px !important;
-    height: 22px !important;
+    padding: 2px 3px !important;
+    font-size: 7px !important;
+    height: 18px !important;
   }
 
   .lakes {
@@ -873,6 +894,32 @@ html {
   .search-input {
     font-size: 11px;
     padding: 6px 8px;
+  }
+
+  .hero-section {
+    padding: 30px 12px !important;
+    min-height: 240px !important;
+  }
+
+  .hero-section h1 {
+    font-size: 22px !important;
+    margin: 0 0 12px 0 !important;
+  }
+
+  .hero-section p {
+    font-size: 13px !important;
+    margin: 0 0 20px 0 !important;
+  }
+
+  .hero-btn {
+    padding: 10px 20px !important;
+    font-size: 12px !important;
+    width: 100% !important;
+    max-width: 250px !important;
+  }
+
+  .hero-buttons {
+    gap: 12px !important;
   }
 }
 
@@ -1005,6 +1052,11 @@ html {
   .hero-section p {
     font-size: 16px;
     margin: 0 0 30px 0;
+  }
+  
+  .hero-btn {
+    padding: 14px 28px;
+    font-size: 14px;
   }
   
   .quick-access-section {
