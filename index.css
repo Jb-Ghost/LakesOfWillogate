@@ -593,11 +593,14 @@ html {
     height: 120px !important;
     padding: 0 20px !important;
     overflow: hidden !important;
+    gap: 15px !important;
   }
 
   .lakes {
-    font-size: 50px !important;
+    font-size: 42px !important;
     letter-spacing: 1px !important;
+    white-space: nowrap !important;
+    line-height: 1 !important;
   }
 
   .nav-links {
@@ -636,14 +639,9 @@ html {
     font-size: 11px !important;
   }
 
-  .lakes {
-    font-size: 50px !important;
-    letter-spacing: 1px !important;
-  }
-
   .community-header::before {
-    width: 80px !important;
-    height: 80px !important;
+    width: 60px !important;
+    height: 60px !important;
   }
 
   .hero-section {
@@ -807,30 +805,39 @@ html {
 }
 
 @media (max-width: 640px) {
+  .community-header {
+    height: 140px;
+    padding: 10px 20px;
+  }
+
   .nav {
     flex-direction: column;
     height: auto;
-    gap: 8px;
-    padding: 10px;
+    gap: 6px;
+    padding: 8px;
+    margin-top: 5px;
   }
 
   .nav-links {
     width: 100%;
     flex-direction: row;
     flex-wrap: wrap;
-    gap: 3px;
+    gap: 4px;
     justify-content: center;
   }
 
   .nav a {
-    padding: 3px 5px;
-    font-size: 8px;
+    padding: 4px 6px;
+    font-size: 7px;
     min-width: 0px;
     width: auto;
     text-align: center;
     justify-content: center;
     white-space: nowrap;
     flex-shrink: 1;
+    height: 20px;
+    display: flex;
+    align-items: center;
   }
 
   .search-container {
@@ -866,19 +873,28 @@ html {
 
 /* Extra small mobile (360x640 and similar) */
 @media (max-width: 400px) {
+  .community-header {
+    height: 110px !important;
+    padding: 8px 15px !important;
+    gap: 10px !important;
+  }
+
   .nav {
-    padding: 8px;
-    gap: 6px;
+    padding: 6px;
+    gap: 4px;
+    margin-top: 8px;
   }
 
   .nav-links {
-    gap: 2px;
+    gap: 3px;
   }
 
   .nav a {
-    padding: 2px 3px !important;
-    font-size: 7px !important;
+    padding: 3px 5px !important;
+    font-size: 6.5px !important;
     height: 18px !important;
+    display: flex !important;
+    align-items: center !important;
   }
 
   .lakes {
