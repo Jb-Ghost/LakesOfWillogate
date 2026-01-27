@@ -588,21 +588,29 @@ html {
 /* Responsive breakpoints for all devices */
 
 /* Laptops with 1366x768 resolution */
-@media (max-width: 1366px) and (max-height: 768px) {
+/* Laptop 1366x768 resolution - using max-width only for better compatibility */
+@media (max-width: 1400px) {
   .community-header {
-    height: 120px !important;
-    padding: 0 20px !important;
+    height: 100px !important;
+    padding: 0 15px !important;
     overflow: hidden !important;
-    gap: 15px !important;
+    gap: 10px !important;
   }
 
   .lakes {
-    font-size: 42px !important;
-    letter-spacing: 1px !important;
+    font-size: 67px !important;
+    letter-spacing: 0.5px !important;
     white-space: nowrap !important;
     line-height: 1 !important;
   }
 
+  .community-header::before {
+    width: 50px !important;
+    height: 50px !important;
+  }
+}
+
+@media (max-width: 1366px) {
   .nav-links {
     gap: 1px !important;
     flex-wrap: nowrap !important;
@@ -637,11 +645,6 @@ html {
     width: 18px !important;
     height: 18px !important;
     font-size: 11px !important;
-  }
-
-  .community-header::before {
-    width: 60px !important;
-    height: 60px !important;
   }
 
   .hero-section {
@@ -822,12 +825,12 @@ html {
     width: 100%;
     flex-direction: row;
     flex-wrap: wrap;
-    gap: 4px;
+    gap: 6px;
     justify-content: center;
   }
 
   .nav a {
-    padding: 4px 6px;
+    padding: 4px 7px;
     font-size: 7px;
     min-width: 0px;
     width: auto;
@@ -851,70 +854,8 @@ html {
   }
 
   .hero-section {
-    padding: 40px 15px !important;
-    min-height: 280px !important;
-  }
-
-  .hero-section h1 {
-    font-size: 26px !important;
-    margin: 0 0 15px 0 !important;
-  }
-
-  .hero-section p {
-    font-size: 14px !important;
-    margin: 0 0 25px 0 !important;
-  }
-
-  .hero-btn {
-    padding: 12px 24px !important;
-    font-size: 13px !important;
-  }
-}
-
-/* Extra small mobile (360x640 and similar) */
-@media (max-width: 400px) {
-  .community-header {
-    height: 110px !important;
-    padding: 8px 15px !important;
-    gap: 10px !important;
-  }
-
-  .nav {
-    padding: 6px;
-    gap: 4px;
-    margin-top: 8px;
-  }
-
-  .nav-links {
-    gap: 3px;
-  }
-
-  .nav a {
-    padding: 3px 5px !important;
-    font-size: 6.5px !important;
-    height: 18px !important;
-    display: flex !important;
-    align-items: center !important;
-  }
-
-  .lakes {
-    font-size: 32px !important;
-    letter-spacing: 1px !important;
-  }
-
-  .community-header::before {
-    width: 60px !important;
-    height: 60px !important;
-  }
-
-  .search-input {
-    font-size: 11px;
-    padding: 6px 8px;
-  }
-
-  .hero-section {
-    padding: 30px 12px !important;
-    min-height: 240px !important;
+    padding: 35px 12px !important;
+    min-height: 260px !important;
   }
 
   .hero-section h1 {
@@ -923,19 +864,81 @@ html {
   }
 
   .hero-section p {
-    font-size: 13px !important;
+    font-size: 12px !important;
     margin: 0 0 20px 0 !important;
   }
 
   .hero-btn {
     padding: 10px 20px !important;
-    font-size: 12px !important;
+    font-size: 11px !important;
+  }
+}
+
+/* Extra small mobile (360x640 and similar) */
+@media (max-width: 400px) {
+  .community-header {
+    height: 90px !important;
+    padding: 8px 10px !important;
+    gap: 8px !important;
+  }
+
+  .nav {
+    padding: 8px !important;
+    gap: 6px !important;
+    margin-top: 8px;
+  }
+
+  .nav-links {
+    gap: 8px;
+  }
+
+  .nav a {
+    padding: 4px 8px !important;
+    font-size: 7px !important;
+    height: 20px !important;
+    display: flex !important;
+    align-items: center !important;
+  }
+
+  .lakes {
+    font-size: 24px !important;
+    letter-spacing: 0.3px !important;
+  }
+
+  .community-header::before {
+    width: 40px !important;
+    height: 40px !important;
+  }
+
+  .search-input {
+    font-size: 10px;
+    padding: 5px 7px;
+  }
+
+  .hero-section {
+    padding: 25px 10px !important;
+    min-height: 220px !important;
+  }
+
+  .hero-section h1 {
+    font-size: 18px !important;
+    margin: 0 0 10px 0 !important;
+  }
+
+  .hero-section p {
+    font-size: 11px !important;
+    margin: 0 0 16px 0 !important;
+  }
+
+  .hero-btn {
+    padding: 9px 18px !important;
+    font-size: 11px !important;
     width: 100% !important;
-    max-width: 250px !important;
+    max-width: 240px !important;
   }
 
   .hero-buttons {
-    gap: 12px !important;
+    gap: 10px !important;
   }
 }
 
@@ -970,6 +973,7 @@ html {
   .community-header {
     gap: 15px;
     padding: 20px 15px;
+    overflow: hidden;
   }
   
   .community-header::before {
@@ -978,8 +982,10 @@ html {
   }
   
   .lakes {
-    font-size: 36px;
-    letter-spacing: 2px;
+    font-size: 32px;
+    letter-spacing: 1px;
+    white-space: nowrap;
+    line-height: 1;
   }
 }
 
@@ -988,6 +994,7 @@ html {
     flex-direction: column;
     gap: 10px;
     padding: 20px 10px;
+    overflow: hidden;
   }
   
   .community-header::before {
@@ -996,19 +1003,28 @@ html {
   }
   
   .lakes {
-    font-size: 28px;
-    letter-spacing: 1px;
+    font-size: 26px;
+    letter-spacing: 0.5px;
+    white-space: nowrap;
+    line-height: 1;
   }
 }
 
 @media (max-width: 375px) {
+  .community-header {
+    overflow: hidden;
+  }
+
   .community-header::before {
     width: 50px;
     height: 50px;
   }
   
   .lakes {
-    font-size: 24px;
+    font-size: 22px;
+    letter-spacing: 0.3px;
+    white-space: nowrap;
+    line-height: 1;
   }
 }
 
