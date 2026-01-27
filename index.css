@@ -871,6 +871,18 @@ html {
     margin: 0 0 20px 0;
   }
   
+  .nav a {
+    font-size: 11px;
+    padding: 5px 8px;
+    min-width: 70px;
+    height: 28px;
+    letter-spacing: 0.2px;
+  }
+  
+  .nav-links {
+    gap: 8px;
+  }
+  
   .quick-access-section {
     padding: 30px 15px;
     margin: 20px 10px;
