@@ -952,3 +952,33 @@ html {
         width: 100%;
     }
 }
+
+/* Ultra-compact mobile - 320px */
+@media (max-width: 320px) {
+    .welcome-section {
+        padding: 20px 8px !important;
+    }
+
+    .welcome-section h1 {
+        font-size: 22px !important;
+    }
+
+    .welcome-section p {
+        font-size: 11px !important;
+    }
+}
+
+/* Extreme ultra-compact - 280px */
+@media (max-width: 280px) {
+    .welcome-section {
+        padding: 18px 5px !important;
+    }
+
+    .welcome-section h1 {
+        font-size: 20px !important;
+    }
+
+    .welcome-section p {
+        font-size: 10px !important;
+    }
+}

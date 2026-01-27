@@ -899,3 +899,42 @@ html {
         font-size: 13px;
     }
 }
+
+/* Ultra-compact mobile - 320px */
+@media (max-width: 320px) {
+    .lakes {
+        font-size: 7px !important;
+        letter-spacing: 0.05px !important;
+    }
+
+    .welcome-section {
+        padding: 20px 8px !important;
+    }
+
+    .welcome-section h1 {
+        font-size: 18px !important;
+    }
+
+    .welcome-section p {
+        font-size: 10px !important;
+    }
+}
+
+/* Extreme ultra-compact - 280px */
+@media (max-width: 280px) {
+    .lakes {
+        font-size: 6px !important;
+    }
+
+    .welcome-section {
+        padding: 15px 5px !important;
+    }
+
+    .welcome-section h1 {
+        font-size: 16px !important;
+    }
+
+    .welcome-section p {
+        font-size: 9px !important;
+    }
+}

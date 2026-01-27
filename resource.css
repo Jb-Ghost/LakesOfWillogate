@@ -1245,3 +1245,41 @@
         justify-content: center;
     }
 }
+
+/* Ultra-compact mobile - 320px */
+@media (max-width: 320px) {
+    .resources-hero {
+        padding: 0 8px !important;
+    }
+
+    .resources-wrapper {
+        padding: 0 8px !important;
+    }
+
+    .section-card {
+        padding: 12px !important;
+    }
+
+    .section-card h2 {
+        font-size: 18px !important;
+    }
+}
+
+/* Extreme ultra-compact - 280px */
+@media (max-width: 280px) {
+    .resources-hero {
+        padding: 0 5px !important;
+    }
+
+    .resources-wrapper {
+        padding: 0 5px !important;
+    }
+
+    .section-card {
+        padding: 10px !important;
+    }
+
+    .section-card h2 {
+        font-size: 16px !important;
+    }
+}

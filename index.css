@@ -1028,8 +1028,15 @@ html {
   }
 
   .search-input {
-    font-size: 10px;
-    padding: 5px 7px;
+    width: 45px !important;
+    font-size: 6px !important;
+    padding: 2px 4px !important;
+  }
+
+  .search-btn {
+    width: 14px !important;
+    height: 14px !important;
+    font-size: 7px !important;
   }
 
   .hero-section {
@@ -1164,15 +1171,15 @@ html {
   }
 
   .search-input {
-    width: 55px !important;
-    font-size: 7px !important;
-    padding: 3px !important;
+    width: 40px !important;
+    font-size: 6px !important;
+    padding: 2px !important;
   }
 
   .search-btn {
-    width: 14px !important;
-    height: 14px !important;
-    font-size: 9px !important;
+    width: 12px !important;
+    height: 12px !important;
+    font-size: 7px !important;
   }
 
   .hero-section {
@@ -1215,6 +1222,116 @@ html {
     padding: 2px 3px !important;
     font-size: 4px !important;
     height: 14px !important;
+  }
+}
+
+/* Ultra-compact mobile - 320px */
+@media (max-width: 320px) {
+  .community-header {
+    height: 70px !important;
+    padding: 5px !important;
+    gap: 5px !important;
+  }
+
+  .lakes {
+    font-size: 7px !important;
+    letter-spacing: 0.05px !important;
+  }
+
+  .community-header::before {
+    width: 35px !important;
+    height: 35px !important;
+  }
+
+  .nav {
+    padding: 4px !important;
+    gap: 3px !important;
+  }
+
+  .nav a {
+    padding: 1px 2px !important;
+    font-size: 3.5px !important;
+    height: 12px !important;
+  }
+
+  .search-input {
+    width: 30px !important;
+    font-size: 4px !important;
+    padding: 1px !important;
+  }
+
+  .search-btn {
+    width: 10px !important;
+    height: 10px !important;
+    font-size: 5px !important;
+  }
+
+  .hero-section {
+    padding: 15px 5px !important;
+    min-height: 180px !important;
+  }
+
+  .hero-section h1 {
+    font-size: 14px !important;
+  }
+
+  .hero-section p {
+    font-size: 8px !important;
+  }
+}
+
+/* Extreme ultra-compact - 280px */
+@media (max-width: 280px) {
+  .community-header {
+    height: 60px !important;
+    padding: 4px !important;
+    gap: 4px !important;
+  }
+
+  .lakes {
+    font-size: 6px !important;
+    letter-spacing: 0px !important;
+  }
+
+  .community-header::before {
+    width: 30px !important;
+    height: 30px !important;
+  }
+
+  .nav {
+    padding: 3px !important;
+    gap: 2px !important;
+  }
+
+  .nav a {
+    padding: 1px !important;
+    font-size: 3px !important;
+    height: 10px !important;
+  }
+
+  .search-input {
+    width: 25px !important;
+    font-size: 3px !important;
+    padding: 1px !important;
+  }
+
+  .search-btn {
+    width: 8px !important;
+    height: 8px !important;
+    font-size: 4px !important;
+  }
+
+  .hero-section {
+    padding: 12px 4px !important;
+    min-height: 160px !important;
+  }
+
+  .hero-section h1 {
+    font-size: 12px !important;
+  }
+
+  .hero-section p {
+    font-size: 7px !important;
   }
 }
 
@@ -1337,11 +1454,11 @@ html {
   }
   
   .nav a {
-    font-size: 11px;
-    padding: 5px 8px;
-    min-width: 70px;
-    height: 28px;
-    letter-spacing: 0.2px;
+    font-size: 7px !important;
+    padding: 3px 5px !important;
+    min-width: 50px !important;
+    height: 20px !important;
+    letter-spacing: 0.1px !important;
   }
   
   .nav-links {
@@ -1405,11 +1522,11 @@ html {
   }
   
   .nav a {
-    font-size: 10px;
-    padding: 4px 6px;
-    min-width: 60px;
-    height: 26px;
-    letter-spacing: 0.1px;
+    font-size: 6px !important;
+    padding: 2px 4px !important;
+    min-width: 45px !important;
+    height: 18px !important;
+    letter-spacing: 0.05px !important;
   }
   
   .nav-links {
@@ -2634,15 +2751,15 @@ footer.fade-out-view {
   }
 
   .search-input {
-    width: 110px;
-    padding: 7px 11px;
-    font-size: 12px;
+    width: 50px !important;
+    padding: 3px 5px !important;
+    font-size: 7px !important;
   }
 
   .search-btn {
-    width: 32px;
-    height: 32px;
-    font-size: 11px;
+    width: 18px !important;
+    height: 18px !important;
+    font-size: 8px !important;
   }
   
   .welcome-section h1 {
@@ -2671,19 +2788,19 @@ footer.fade-out-view {
   }
 
   .search-container {
-    padding: 3px 3px;
+    padding: 2px 2px !important;
   }
 
   .search-input {
-    width: 90px;
-    padding: 5px 10px;
-    font-size: 11px;
+    width: 35px !important;
+    padding: 2px 3px !important;
+    font-size: 5px !important;
   }
 
   .search-btn {
-    width: 30px;
-    height: 30px;
-    font-size: 11px;
+    width: 12px !important;
+    height: 12px !important;
+    font-size: 6px !important;
   }
   
   .welcome-section h1 {
@@ -3907,15 +4024,15 @@ footer.fade-out-view {
   }
 
   .search-input {
-    width: 110px;
-    padding: 7px 11px;
-    font-size: 12px;
+    width: 50px !important;
+    padding: 3px 5px !important;
+    font-size: 7px !important;
   }
 
   .search-btn {
-    width: 32px;
-    height: 32px;
-    font-size: 11px;
+    width: 18px !important;
+    height: 18px !important;
+    font-size: 8px !important;
   }
   
   .welcome-section h1 {
@@ -3944,19 +4061,19 @@ footer.fade-out-view {
   }
 
   .search-container {
-    padding: 3px 3px;
+    padding: 2px 2px !important;
   }
 
   .search-input {
-    width: 90px;
-    padding: 5px 10px;
-    font-size: 11px;
+    width: 35px !important;
+    padding: 2px 3px !important;
+    font-size: 5px !important;
   }
 
   .search-btn {
-    width: 30px;
-    height: 30px;
-    font-size: 11px;
+    width: 12px !important;
+    height: 12px !important;
+    font-size: 6px !important;
   }
   
   .welcome-section h1 {
