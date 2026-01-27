@@ -680,6 +680,11 @@ html {
 }
 /* Small phones */
 @media (max-width: 480px) {
+    .lakes {
+        font-size: 36px;
+        letter-spacing: 2px;
+    }
+    
     .welcome-section {
         padding: 40px 15px;
     }
@@ -785,6 +790,11 @@ html {
 }
 
 @media (max-width: 600px) {
+    .lakes {
+        font-size: 42px;
+        letter-spacing: 2px;
+    }
+    
     .quick-info-section {
         padding: 0 10px;
         gap: 15px;
