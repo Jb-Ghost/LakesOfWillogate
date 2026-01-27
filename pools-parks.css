@@ -51,6 +51,29 @@ html {
     to { opacity: 1; transform: scale(1); }
 }
 
+/* Responsive breakpoints */
+/* 1366x768 resolution */
+@media (max-width: 1366px) and (max-height: 768px) {
+    .lakes {
+        font-size: 50px !important;
+        letter-spacing: 1px !important;
+    }
+
+    .welcome-section {
+        padding: 50px 25px;
+        min-height: 300px;
+    }
+
+    .welcome-section h1 {
+        font-size: 36px;
+    }
+}
+
+@keyframes fadeInScale {
+    from { opacity: 0; transform: scale(0.95); }
+    to { opacity: 1; transform: scale(1); }
+}
+
 @keyframes buttonHover {
     0% { transform: translateY(0); }
     100% { transform: translateY(-3px); }
@@ -721,6 +744,22 @@ html {
     .parks-section h2,
     .activities-section h2,
     .seasonal-notices h2 {
+        font-size: 24px;
+    }
+}
+
+/* Extra small mobile (360x640) */
+@media (max-width: 400px) {
+    .lakes {
+        font-size: 32px !important;
+        letter-spacing: 1px !important;
+    }
+
+    .welcome-section {
+        padding: 30px 10px;
+    }
+
+    .welcome-section h1 {
         font-size: 24px;
     }
 }
