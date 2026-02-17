@@ -278,8 +278,6 @@ header {
   top: 0;
   z-index: 1100;
   transition: box-shadow 0.2s ease, transform 0.2s ease;
-  margin: 0;
-  padding: 0;
 }
 
 header.is-compact {
@@ -337,7 +335,6 @@ header.is-compact .search-btn {
     height: 170px;
     text-align: center;
     padding: 0 40px;
-    margin: 0;
   transition: height 0.2s ease, padding 0.2s ease;
 }
 
@@ -400,7 +397,6 @@ header.is-compact .search-btn {
     font-family: Roboto, Arial, sans-serif;
     background-color: #0052a3;
     height: 35px;
-  margin: 0;
     transition: height 0.2s ease, padding 0.2s ease;
 }
 
@@ -831,7 +827,7 @@ header.is-compact .search-btn {
   }
 
   .hero-section {
-    padding: 180px 22px !important;
+    padding: 100px 22px !important;
     min-height: 290px !important;
   }
 

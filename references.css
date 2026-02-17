@@ -29,10 +29,15 @@
     background-repeat: no-repeat;
     color: #ffffff;
     border-radius: 0;
-    padding: 80px 40px;
+    padding: 40px 24px;
     margin: 0;
     border-bottom: 2px solid #ddd;
     min-height: auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
 }
 
 .hero-section::before {
@@ -51,7 +56,7 @@
 }
 
 .hero-section h1 {
-    font-size: 56px;
+    font-size: 40px;
     font-family: BungeeInline;
     margin: 0 0 20px 0;
     line-height: 1.2;
@@ -61,8 +66,8 @@
 }
 
 .hero-section p {
-    font-size: 22px;
-    margin: 0 0 40px 0;
+    font-size: 16px;
+    margin: 0 0 24px 0;
     line-height: 1.4;
     opacity: 1 !important;
     animation: none !important;
@@ -447,16 +452,35 @@
 
 /* Responsive Design */
 
-/* Small laptops (1024px - 1199px) */
-@media (max-width: 1199px) {
+@media (max-width: 2560px) and (min-width: 1921px) {
     .hero-section {
-        padding: 90px 35px;
+        padding: 50px 32px;
         background-position: center center;
-        min-height: 380px;
+        min-height: 240px;
     }
 
     .hero-section h1 {
-        font-size: 52px;
+        font-size: 48px;
+    }
+
+    .dual-section-container {
+        padding: 0 40px;
+    }
+    .worklog-section,
+    .copyright-section,
+    .references-section {
+        padding: 50px 40px;
+    }
+}
+@media (max-width:1920px) and (min-width: 1200px) {
+    .hero-section {
+        padding: 50px 30px;
+        background-position: center center;
+        min-height: 240px;
+    }
+
+    .hero-section h1 {
+        font-size: 40px;
     }
 
     .dual-section-container {
@@ -470,10 +494,32 @@
     }
 }
 
+@media (max-width: 1530px) and (min-width: 1200px) {
+    .hero-section {
+        padding: 45px 28px;
+        background-position: center center;
+        min-height: 220px;
+    }
+
+    .hero-section h1 {
+        font-size: 38px;
+    }
+
+    .dual-section-container {
+        padding: 0 30px;
+    }
+
+    .worklog-section,
+    .copyright-section,
+    .references-section {
+        padding: 40px 30px;
+    }
+}
+
 /* Tablets landscape (900px - 1023px) */
 @media (max-width: 1023px) {
     .hero-section h1 {
-        font-size: 46px;
+        font-size: 36px;
     }
 
     .dual-section-container {
@@ -490,18 +536,19 @@
 /* Tablets portrait (768px - 899px) */
 @media (max-width: 768px) {
     .hero-section {
-        padding: 60px 20px;
+        padding: 45px 18px;
         background-position: center 40%;
         background-attachment: scroll;
-        min-height: 350px;
+        min-height: 240px;
     }
 
     .hero-section h1 {
-        font-size: 36px;
+        font-size: 32px;
     }
 
     .hero-section p {
-        font-size: 16px;
+        font-size: 15px;
+        margin-bottom: 20px;
     }
 
     .dual-section-container {
@@ -660,5 +707,37 @@
     .copyright-section,
     .references-section {
         padding: 18px 5px !important;
+    }
+}
+
+@media (min-width: 1200px) {
+    .hero-section.references-hero {
+        padding: 36px 24px !important;
+        min-height: 210px !important;
+    }
+
+    .hero-section.references-hero h1 {
+        font-size: 38px !important;
+    }
+
+    .hero-section.references-hero p {
+        font-size: 16px !important;
+        margin-bottom: 22px !important;
+    }
+}
+
+@media (max-width: 1920px) {
+    .hero-section.references-hero {
+        padding: 36px 24px !important;
+        min-height: 210px !important;
+    }
+
+    .hero-section.references-hero h1 {
+        font-size: 38px !important;
+    }
+
+    .hero-section.references-hero p {
+        font-size: 16px !important;
+        margin-bottom: 22px !important;
     }
 }
