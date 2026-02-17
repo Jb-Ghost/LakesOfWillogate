@@ -6,6 +6,7 @@
     <title>Resources — Lakes of Willowgate</title>
     <link rel="stylesheet" href="index.css">
     <link rel="stylesheet" href="resource.css">
+    <link rel="stylesheet" href="forms-styles.css">
     <script src="search.js" defer></script>
 </head>
 <body style="margin: 0">
@@ -36,9 +37,9 @@
                 <p class="eyebrow fade-in-title">Lakes of Willowgate</p>
                 <p class="lede">One place for contacts, hours, forms, parks, fitness, and events. Explore everything happening in our community.</p>
                 <div class="hero-actions">
-                    <a class="pill-btn" href="#contacts">Contact Directory</a>
-                    <a class="pill-btn ghost" href="#forms">Forms & Documents</a>
+                    <a class="pill-btn ghost" href="#community-forms-hub">Community Forms Hub</a>
                     <a class="pill-btn ghost" href="#hours">Hours & Locations</a>
+                    <a class="pill-btn" href="#resource-duo">Resources & Contacts</a>
                     <a class="pill-btn ghost" href="#map">View Map</a>
                 </div>
             </div>
@@ -62,124 +63,105 @@
             </div>
         </section>
 
-        <section class="resources-wrapper">
-            <div class="submit-resource-section">
-                <h2>Suggest a New Resource</h2>
-                <p>Help us keep this hub current. Share a service, form, or contact we should add.</p>
-                
-                <form id="submitResourceForm" class="resource-form">
-                    <div class="form-group">
-                        <label for="resourceName">Resource Name</label>
-                        <input type="text" id="resourceName" name="resourceName" required placeholder="e.g., Community Garden">
-                    </div>
-
-                    <div class="form-group">
-                        <label for="resourceCategory">Category</label>
-                        <select id="resourceCategory" name="resourceCategory" required>
-                            <option value="">Select a category...</option>
-                            <option value="contact">Contact Info</option>
-                            <option value="forms">Forms & Documents</option>
-                            <option value="utilities">Utilities & Services</option>
-                            <option value="emergency">Emergency</option>
-                            <option value="other">Other</option>
-                        </select>
-                    </div>
-
-                    <div class="form-group">
-                        <label for="resourceDescription">Description</label>
-                        <textarea id="resourceDescription" name="resourceDescription" rows="4" required placeholder="Tell us about this resource..."></textarea>
-                    </div>
-
-                    <div class="form-group">
-                        <label for="resourceContact">Contact Information (optional)</label>
-                        <input type="text" id="resourceContact" name="resourceContact" placeholder="Phone, email, or website">
-                    </div>
-
-                    <div class="form-group">
-                        <label for="submitterName">Your Name</label>
-                        <input type="text" id="submitterName" name="submitterName" required placeholder="Your name">
-                    </div>
-
-                    <div class="form-group">
-                        <label for="submitterEmail">Your Email</label>
-                        <input type="email" id="submitterEmail" name="submitterEmail" required placeholder="your.email@example.com">
-                    </div>
-
-                    <button type="submit" class="submit-btn">Submit Resource</button>
-                </form>
-
-                <div id="formMessage" class="form-message" style="display: none;"></div>
-            </div>
-        </section>
-
-        <section ID="contacts" class="contacts-section">
-            <div class="scrollable-content">
-                <p class="eyebrow">Directory</p>
-                <h2>Key contacts</h2>
-                <div class="card-grid three">
-                    <div class="info-card">
-                        <div class="info-top">
-                            <span class="pill">Community Office</span>
-                            <span class="contact-value">(555) 123-4567</span>
-                        </div>
-                        <p>Email: community@willowgate.org</p>
-                        <p>General help, memberships, and facility questions.</p>
-                    </div>
-                    <div class="info-card">
-                        <div class="info-top">
-                            <span class="pill">Pools & Parks</span>
-                            <span class="contact-value">(555) 234-5678</span>
-                        </div>
-                        <p>Hours, rules, swim programs, and park reservations.</p>
-                    </div>
-                    <div class="info-card">
-                        <div class="info-top">
-                            <span class="pill">Fitness Centers</span>
-                            <span class="contact-value">(555) 345-6789</span>
-                        </div>
-                        <p>Training, class schedules, and facility access.</p>
-                    </div>
-                    <div class="info-card">
-                        <div class="info-top">
-                            <span class="pill">Events Team</span>
-                            <span class="contact-value">community@willowgate.org</span>
-                        </div>
-                        <p>Submit and manage community events and guidelines.</p>
-                    </div>
-                    <div class="info-card alert">
-                        <div class="info-top">
-                            <span class="pill">Emergency</span>
-                            <span class="contact-value">911</span>
-                        </div>
-                        <p>For critical emergencies only. For property/security: (555) 000-0000</p>
-                    </div>
+        <!-- Community Forms Hub -->
+        <section class="community-forms-hub" id="community-forms-hub">
+            <div class="forms-hub-container">
+                <div class="forms-hub-header">
+                    <p class="eyebrow">Community Services</p>
+                    <h2>Community Forms Hub</h2>
+                    <p class="hub-description">Access all the forms and services you need to connect with our community resources.</p>
                 </div>
-            </div>
-        </section>
 
-        <section ID="forms" class="forms-section">
-            <div class="scrollable-content">
-                <p class="eyebrow">Documents</p>
-                <h2>Forms & downloads</h2>
-                <div class="card-grid two">
-                    <div class="info-card">
-                        <h3>Common forms</h3>
-                        <ul class="plain-list">
-                            <li>Membership Application</li>
-                            <li>Event Request Form</li>
-                            <li>Facility Reservation Form</li>
-                            <li>Community Guidelines</li>
-                        </ul>
-                    </div>
-                    <div class="info-card">
-                        <h3>Programs & classes</h3>
-                        <ul class="plain-list">
-                            <li>Weekly fitness schedule</li>
-                            <li>Swim programs & lessons</li>
-                            <li>Youth programs & camps</li>
-                        </ul>
-                        <a class="link" href="fitness-center.html">Book trainers & classes</a>
-                    </div>
+                <div class="forms-list">
+                    <!-- 1. Resource Request Form -->
+                    <button class="form-list-card" onclick="openFormModal('resourceRequest')">
+                        <div class="form-list-content">
+                            <h3>Resource Request Form</h3>
+                            <p>Request specific help or materials for housing, tutoring, food, jobs, mental health, and more.</p>
+                        </div>
+                        <div class="form-list-arrow">→</div>
+                    </button>
+
+                    <!-- 2. Volunteer Sign-Up Form -->
+                    <button class="form-list-card" onclick="openFormModal('volunteer')">
+                        <div class="form-list-content">
+                            <h3>Volunteer Sign-Up Form</h3>
+                            <p>Join our community volunteers and share your skills in teaching, tech help, event planning, and more.</p>
+                        </div>
+                        <div class="form-list-arrow">→</div>
+                    </button>
+
+                    <!-- 3. Resource Submission Form -->
+                    <button class="form-list-card" onclick="openFormModal('resourceSubmission')">
+                        <div class="form-list-content">
+                            <h3>Resource Submission Form</h3>
+                            <p>Suggest new resources and organizations that could help our community members.</p>
+                        </div>
+                        <div class="form-list-arrow">→</div>
+                    </button>
+
+                    <!-- 4. Feedback Form -->
+                    <button class="form-list-card" onclick="openFormModal('feedback')">
+                        <div class="form-list-content">
+                            <h3>Feedback Form</h3>
+                            <p>Share your thoughts on our services and help us improve the community hub experience.</p>
+                        </div>
+                        <div class="form-list-arrow">→</div>
+                    </button>
+
+                    <!-- 5. Event Registration Form -->
+                    <button class="form-list-card" onclick="openFormModal('eventRegistration')">
+                        <div class="form-list-content">
+                            <h3>Event Registration Form</h3>
+                            <p>Register for workshops, info sessions, or community events happening in our area.</p>
+                        </div>
+                        <div class="form-list-arrow">→</div>
+                    </button>
+
+                    <!-- 6. Mentorship Match Form -->
+                    <button class="form-list-card" onclick="openFormModal('mentorship')">
+                        <div class="form-list-content">
+                            <h3>Mentorship Match Form</h3>
+                            <p>Connect with mentors or become a mentor to support others in our community.</p>
+                        </div>
+                        <div class="form-list-arrow">→</div>
+                    </button>
+
+                    <!-- 7. Emergency Assistance Intake Form -->
+                    <button class="form-list-card urgent" onclick="openFormModal('emergency')">
+                        <div class="form-list-content">
+                            <h3>Emergency Assistance Intake Form</h3>
+                            <p>Request immediate assistance for urgent household or safety needs.</p>
+                        </div>
+                        <div class="form-list-arrow">→</div>
+                    </button>
+
+                    <!-- 8. Community Skills Exchange Form -->
+                    <button class="form-list-card" onclick="openFormModal('skillsExchange')">
+                        <div class="form-list-content">
+                            <h3>Community Skills Exchange Form</h3>
+                            <p>Trade skills with neighbors and build a stronger, more connected community.</p>
+                        </div>
+                        <div class="form-list-arrow">→</div>
+                    </button>
+
+                    <!-- 9. Survey on Community Needs -->
+                    <button class="form-list-card" onclick="openFormModal('survey')">
+                        <div class="form-list-content">
+                            <h3>Survey on Community Needs</h3>
+                            <p>Help us understand gaps in services and what resources are most needed.</p>
+                        </div>
+                        <div class="form-list-arrow">→</div>
+                    </button>
+
+                    <!-- 10. Success Story Submission Form -->
+                    <button class="form-list-card" onclick="openFormModal('successStory')">
+                        <div class="form-list-content">
+                            <h3>Success Story Submission Form</h3>
+                            <p>Share your inspiring story and help build trust within our community.</p>
+                        </div>
+                        <div class="form-list-arrow">→</div>
+                    </button>
                 </div>
             </div>
         </section>
@@ -251,6 +233,101 @@
                 </div>
             </div>
         </section>
+
+        <section class="resource-duo" id="resource-duo">
+            <div class="submit-resource-section">
+                <h2>Suggest a New Resource</h2>
+                <p>Help us keep this hub current. Share a service, form, or contact we should add.</p>
+                
+                <form id="submitResourceForm" class="resource-form">
+                    <div class="form-group">
+                        <label for="resourceName">Resource Name</label>
+                        <input type="text" id="resourceName" name="resourceName" required placeholder="e.g., Community Garden">
+                    </div>
+
+                    <div class="form-group">
+                        <label for="resourceCategory">Category</label>
+                        <select id="resourceCategory" name="resourceCategory" required>
+                            <option value="">Select a category...</option>
+                            <option value="contact">Contact Info</option>
+                            <option value="forms">Forms & Documents</option>
+                            <option value="utilities">Utilities & Services</option>
+                            <option value="emergency">Emergency</option>
+                            <option value="other">Other</option>
+                        </select>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="resourceDescription">Description</label>
+                        <textarea id="resourceDescription" name="resourceDescription" rows="4" required placeholder="Tell us about this resource..."></textarea>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="resourceContact">Contact Information (optional)</label>
+                        <input type="text" id="resourceContact" name="resourceContact" placeholder="Phone, email, or website">
+                    </div>
+
+                    <div class="form-group">
+                        <label for="submitterName">Your Name</label>
+                        <input type="text" id="submitterName" name="submitterName" required placeholder="Your name">
+                    </div>
+
+                    <div class="form-group">
+                        <label for="submitterEmail">Your Email</label>
+                        <input type="email" id="submitterEmail" name="submitterEmail" required placeholder="your.email@example.com">
+                    </div>
+
+                    <button type="submit" class="submit-btn">Submit Resource</button>
+                </form>
+
+                <div id="formMessage" class="form-message" style="display: none;"></div>
+            </div>
+
+            <section id="contacts" class="contacts-section">
+                <div class="scrollable-content">
+                    <p class="eyebrow">Directory</p>
+                    <h2>Key contacts</h2>
+                    <div class="card-grid three">
+                        <div class="info-card">
+                            <div class="info-top">
+                                <span class="pill">Community Office</span>
+                                <span class="contact-value">(555) 123-4567</span>
+                            </div>
+                            <p>Email: community@willowgate.org</p>
+                            <p>General help, memberships, and facility questions.</p>
+                        </div>
+                        <div class="info-card">
+                            <div class="info-top">
+                                <span class="pill">Pools & Parks</span>
+                                <span class="contact-value">(555) 234-5678</span>
+                            </div>
+                            <p>Hours, rules, swim programs, and park reservations.</p>
+                        </div>
+                        <div class="info-card">
+                            <div class="info-top">
+                                <span class="pill">Fitness Centers</span>
+                                <span class="contact-value">(555) 345-6789</span>
+                            </div>
+                            <p>Training, class schedules, and facility access.</p>
+                        </div>
+                        <div class="info-card">
+                            <div class="info-top">
+                                <span class="pill">Events Team</span>
+                                <span class="contact-value">community@willowgate.org</span>
+                            </div>
+                            <p>Submit and manage community events and guidelines.</p>
+                        </div>
+                        <div class="info-card alert">
+                            <div class="info-top">
+                                <span class="pill">Emergency</span>
+                                <span class="contact-value">911</span>
+                            </div>
+                            <p>For critical emergencies only. For property/security: (555) 000-0000</p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </section>
     </main>
 
     <section class="map-section" id="map">
@@ -277,11 +354,858 @@
         </div>
     </section>
 
+    <!-- Form Modals -->
+    <div id="membershipModal" class="form-modal">
+        <div class="form-modal-content">
+            <span class="form-modal-close" onclick="closeFormModal('membership')">&times;</span>
+            <h2>Membership Application</h2>
+            <p class="form-modal-desc">Join the Lakes of Willowgate community and gain access to all facilities and programs.</p>
+            <form id="membershipForm" class="modal-form" onsubmit="submitFormData(event, 'membership')">
+                <div class="form-row">
+                    <div class="form-field">
+                        <label for="memFirstName">First Name *</label>
+                        <input type="text" id="memFirstName" name="firstName" required>
+                    </div>
+                    <div class="form-field">
+                        <label for="memLastName">Last Name *</label>
+                        <input type="text" id="memLastName" name="lastName" required>
+                    </div>
+                </div>
+                <div class="form-field">
+                    <label for="memEmail">Email Address *</label>
+                    <input type="email" id="memEmail" name="email" required>
+                </div>
+                <div class="form-field">
+                    <label for="memPhone">Phone Number *</label>
+                    <input type="tel" id="memPhone" name="phone" required>
+                </div>
+                <div class="form-field">
+                    <label for="memAddress">Home Address *</label>
+                    <input type="text" id="memAddress" name="address" required>
+                </div>
+                <div class="form-field">
+                    <label for="memType">Membership Type *</label>
+                    <select id="memType" name="membershipType" required>
+                        <option value="">Select type</option>
+                        <option value="individual">Individual - $50/year</option>
+                        <option value="family">Family - $100/year</option>
+                        <option value="senior">Senior (55+) - $35/year</option>
+                        <option value="student">Student - $30/year</option>
+                    </select>
+                </div>
+                <div class="form-field">
+                    <label for="memComments">Additional Comments</label>
+                    <textarea id="memComments" name="comments" rows="3"></textarea>
+                </div>
+                <div class="form-actions">
+                    <button type="button" class="btn-secondary" onclick="closeFormModal('membership')">Cancel</button>
+                    <button type="submit" class="btn-primary">Submit Application</button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <div id="eventModal" class="form-modal">
+        <div class="form-modal-content">
+            <span class="form-modal-close" onclick="closeFormModal('event')">&times;</span>
+            <h2>Event Request Form</h2>
+            <p class="form-modal-desc">Request permission to host an event at our community facilities.</p>
+            <form id="eventForm" class="modal-form" onsubmit="submitFormData(event, 'event')">
+                <div class="form-field">
+                    <label for="eventName">Event Name *</label>
+                    <input type="text" id="eventName" name="eventName" required>
+                </div>
+                <div class="form-row">
+                    <div class="form-field">
+                        <label for="eventOrganizer">Organizer Name *</label>
+                        <input type="text" id="eventOrganizer" name="organizer" required>
+                    </div>
+                    <div class="form-field">
+                        <label for="eventEmail">Email *</label>
+                        <input type="email" id="eventEmail" name="email" required>
+                    </div>
+                </div>
+                <div class="form-row">
+                    <div class="form-field">
+                        <label for="eventDate">Event Date *</label>
+                        <input type="date" id="eventDate" name="eventDate" required>
+                    </div>
+                    <div class="form-field">
+                        <label for="eventTime">Start Time *</label>
+                        <input type="time" id="eventTime" name="eventTime" required>
+                    </div>
+                </div>
+                <div class="form-row">
+                    <div class="form-field">
+                        <label for="eventDuration">Duration *</label>
+                        <select id="eventDuration" name="duration" required>
+                            <option value="">Select duration</option>
+                            <option value="1">1 hour</option>
+                            <option value="2">2 hours</option>
+                            <option value="3">3 hours</option>
+                            <option value="4">4 hours</option>
+                            <option value="all-day">All day</option>
+                        </select>
+                    </div>
+                    <div class="form-field">
+                        <label for="eventAttendees">Expected Attendees *</label>
+                        <input type="number" id="eventAttendees" name="attendees" min="1" required>
+                    </div>
+                </div>
+                <div class="form-field">
+                    <label for="eventDescription">Event Description *</label>
+                    <textarea id="eventDescription" name="description" rows="4" required></textarea>
+                </div>
+                <div class="form-actions">
+                    <button type="button" class="btn-secondary" onclick="closeFormModal('event')">Cancel</button>
+                    <button type="submit" class="btn-primary">Submit Request</button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <div id="facilityModal" class="form-modal">
+        <div class="form-modal-content">
+            <span class="form-modal-close" onclick="closeFormModal('facility')">&times;</span>
+            <h2>Facility Reservation Form</h2>
+            <p class="form-modal-desc">Reserve community facilities for your personal or group use.</p>
+            <form id="facilityForm" class="modal-form" onsubmit="submitFormData(event, 'facility')">
+                <div class="form-row">
+                    <div class="form-field">
+                        <label for="facName">Your Name *</label>
+                        <input type="text" id="facName" name="name" required>
+                    </div>
+                    <div class="form-field">
+                        <label for="facEmail">Email *</label>
+                        <input type="email" id="facEmail" name="email" required>
+                    </div>
+                </div>
+                <div class="form-field">
+                    <label for="facPhone">Phone Number *</label>
+                    <input type="tel" id="facPhone" name="phone" required>
+                </div>
+                <div class="form-field">
+                    <label for="facType">Facility Type *</label>
+                    <select id="facType" name="facilityType" required>
+                        <option value="">Select facility</option>
+                        <option value="pool">Pool/Aquatic Center</option>
+                        <option value="fitness">Fitness Center</option>
+                        <option value="park">Park/Outdoor Space</option>
+                        <option value="meeting">Meeting Room</option>
+                        <option value="sports">Sports Court/Field</option>
+                    </select>
+                </div>
+                <div class="form-row">
+                    <div class="form-field">
+                        <label for="facDate">Reservation Date *</label>
+                        <input type="date" id="facDate" name="date" required>
+                    </div>
+                    <div class="form-field">
+                        <label for="facTime">Time Slot *</label>
+                        <select id="facTime" name="timeSlot" required>
+                            <option value="">Select time</option>
+                            <option value="morning">Morning (8 AM - 12 PM)</option>
+                            <option value="afternoon">Afternoon (12 PM - 5 PM)</option>
+                            <option value="evening">Evening (5 PM - 9 PM)</option>
+                            <option value="fullday">Full Day</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="form-field">
+                    <label for="facPurpose">Purpose of Reservation *</label>
+                    <textarea id="facPurpose" name="purpose" rows="3" required></textarea>
+                </div>
+                <div class="form-actions">
+                    <button type="button" class="btn-secondary" onclick="closeFormModal('facility')">Cancel</button>
+                    <button type="submit" class="btn-primary">Submit Reservation</button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <div id="guidelinesModal" class="form-modal">
+        <div class="form-modal-content guidelines-content">
+            <span class="form-modal-close" onclick="closeFormModal('guidelines')">&times;</span>
+            <h2>Community Guidelines</h2>
+            <div class="guidelines-text">
+                <h3>General Community Rules</h3>
+                <ul>
+                    <li>Treat all community members, staff, and facilities with respect</li>
+                    <li>Follow posted hours of operation for all facilities</li>
+                    <li>Children under 14 must be accompanied by an adult</li>
+                    <li>Proper attire required at all facilities</li>
+                    <li>No smoking, alcohol, or illegal substances on community property</li>
+                </ul>
+                
+                <h3>Pool & Aquatic Center Guidelines</h3>
+                <ul>
+                    <li>Swim at your own risk - lifeguards on duty during posted hours</li>
+                    <li>Shower before entering the pool</li>
+                    <li>No running, diving in shallow areas, or rough play</li>
+                    <li>Appropriate swimwear required</li>
+                    <li>Glass containers prohibited in pool areas</li>
+                </ul>
+                
+                <h3>Fitness Center Guidelines</h3>
+                <ul>
+                    <li>Wipe down equipment after each use</li>
+                    <li>Return weights and equipment to proper storage</li>
+                    <li>Wear athletic shoes and appropriate workout attire</li>
+                    <li>Use headphones for personal audio devices</li>
+                    <li>Time limits may apply during peak hours</li>
+                </ul>
+                
+                <h3>Parks & Recreation Guidelines</h3>
+                <ul>
+                    <li>Keep parks clean - dispose of trash properly</li>
+                    <li>Pets must be leashed and waste must be picked up</li>
+                    <li>Respect designated areas for sports and activities</li>
+                    <li>No motorized vehicles on trails or lawns</li>
+                    <li>Park closes at dusk unless otherwise posted</li>
+                </ul>
+            </div>
+            <form id="guidelinesForm" class="modal-form" onsubmit="submitFormData(event, 'guidelines')">
+                <div class="form-field">
+                    <label for="guideName">Full Name *</label>
+                    <input type="text" id="guideName" name="name" required>
+                </div>
+                <div class="form-field">
+                    <label for="guideEmail">Email Address *</label>
+                    <input type="email" id="guideEmail" name="email" required>
+                </div>
+                <div class="form-field checkbox-field">
+                    <input type="checkbox" id="guideAgree" name="agree" required>
+                    <label for="guideAgree">I have read and agree to abide by these community guidelines *</label>
+                </div>
+                <div class="form-actions">
+                    <button type="button" class="btn-secondary" onclick="closeFormModal('guidelines')">Close</button>
+                    <button type="submit" class="btn-primary">Acknowledge & Submit</button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <!-- Community Forms Hub Modals -->
+    
+    <!-- 1. Resource Request Modal -->
+    <div id="resourceRequestModal" class="form-modal">
+        <div class="form-modal-content">
+            <span class="form-modal-close" onclick="closeFormModal('resourceRequest')">&times;</span>
+            <h2>Resource Request Form</h2>
+            <p class="form-modal-desc">Request specific assistance or resources to help you and your family.</p>
+            <form id="resourceRequestForm" class="modal-form" onsubmit="submitFormData(event, 'resourceRequest')">
+                <div class="form-field">
+                    <label for="rrName">Name (Optional)</label>
+                    <input type="text" id="rrName" name="name" placeholder="Your name">
+                </div>
+                <div class="form-field">
+                    <label for="rrEmail">Email *</label>
+                    <input type="email" id="rrEmail" name="email" required placeholder="your.email@example.com">
+                </div>
+                <div class="form-field">
+                    <label for="rrResourceType">What type of resource do you need? *</label>
+                    <select id="rrResourceType" name="resourceType" required>
+                        <option value="">Select a type...</option>
+                        <option value="housing">Housing Assistance</option>
+                        <option value="tutoring">Tutoring/Education</option>
+                        <option value="food">Food Assistance</option>
+                        <option value="jobs">Job/Employment Support</option>
+                        <option value="mental-health">Mental Health Services</option>
+                        <option value="childcare">Childcare</option>
+                        <option value="transportation">Transportation</option>
+                        <option value="utilities">Utility Assistance</option>
+                        <option value="other">Other</option>
+                    </select>
+                </div>
+                <div class="form-field">
+                    <label for="rrDescription">Describe your request *</label>
+                    <textarea id="rrDescription" name="description" rows="4" required placeholder="Please provide details about what you need..."></textarea>
+                </div>
+                <div class="form-field">
+                    <label for="rrUrgency">Urgency Level *</label>
+                    <select id="rrUrgency" name="urgency" required>
+                        <option value="">Select urgency...</option>
+                        <option value="immediate">Immediate (within 24 hours)</option>
+                        <option value="urgent">Urgent (within 1 week)</option>
+                        <option value="soon">Soon (within 2-4 weeks)</option>
+                        <option value="flexible">Flexible timeline</option>
+                    </select>
+                </div>
+                <div class="form-field">
+                    <label for="rrContact">Preferred Contact Method *</label>
+                    <select id="rrContact" name="contactMethod" required>
+                        <option value="">Select method...</option>
+                        <option value="email">Email</option>
+                        <option value="phone">Phone Call</option>
+                        <option value="text">Text Message</option>
+                        <option value="any">Any method</option>
+                    </select>
+                </div>
+                <div class="form-actions">
+                    <button type="button" class="btn-secondary" onclick="closeFormModal('resourceRequest')">Cancel</button>
+                    <button type="submit" class="btn-primary">Submit Request</button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <!-- 2. Volunteer Sign-Up Modal -->
+    <div id="volunteerModal" class="form-modal">
+        <div class="form-modal-content">
+            <span class="form-modal-close" onclick="closeFormModal('volunteer')">&times;</span>
+            <h2>Volunteer Sign-Up Form</h2>
+            <p class="form-modal-desc">Join our team of community volunteers and make a difference!</p>
+            <form id="volunteerForm" class="modal-form" onsubmit="submitFormData(event, 'volunteer')">
+                <div class="form-row">
+                    <div class="form-field">
+                        <label for="volFirstName">First Name *</label>
+                        <input type="text" id="volFirstName" name="firstName" required>
+                    </div>
+                    <div class="form-field">
+                        <label for="volLastName">Last Name *</label>
+                        <input type="text" id="volLastName" name="lastName" required>
+                    </div>
+                </div>
+                <div class="form-row">
+                    <div class="form-field">
+                        <label for="volEmail">Email *</label>
+                        <input type="email" id="volEmail" name="email" required>
+                    </div>
+                    <div class="form-field">
+                        <label for="volPhone">Phone *</label>
+                        <input type="tel" id="volPhone" name="phone" required>
+                    </div>
+                </div>
+                <div class="form-field">
+                    <label for="volSkills">Skills (select all that apply) *</label>
+                    <div class="checkbox-group">
+                        <label><input type="checkbox" name="skills" value="teaching"> Teaching/Tutoring</label>
+                        <label><input type="checkbox" name="skills" value="tech"> Tech Help</label>
+                        <label><input type="checkbox" name="skills" value="events"> Event Planning</label>
+                        <label><input type="checkbox" name="skills" value="admin"> Administrative Support</label>
+                        <label><input type="checkbox" name="skills" value="marketing"> Marketing/Communications</label>
+                        <label><input type="checkbox" name="skills" value="maintenance"> Maintenance/Repairs</label>
+                        <label><input type="checkbox" name="skills" value="childcare"> Childcare</label>
+                        <label><input type="checkbox" name="skills" value="other"> Other</label>
+                    </div>
+                </div>
+                <div class="form-field">
+                    <label for="volAvailability">Availability *</label>
+                    <select id="volAvailability" name="availability" required>
+                        <option value="">Select availability...</option>
+                        <option value="weekday-mornings">Weekday Mornings</option>
+                        <option value="weekday-afternoons">Weekday Afternoons</option>
+                        <option value="weekday-evenings">Weekday Evenings</option>
+                        <option value="weekends">Weekends</option>
+                        <option value="flexible">Flexible</option>
+                    </select>
+                </div>
+                <div class="form-field">
+                    <label for="volArea">Preferred Volunteer Area *</label>
+                    <select id="volArea" name="preferredArea" required>
+                        <option value="">Select area...</option>
+                        <option value="youth-programs">Youth Programs</option>
+                        <option value="senior-services">Senior Services</option>
+                        <option value="community-events">Community Events</option>
+                        <option value="facility-support">Facility Support</option>
+                        <option value="administration">Administration</option>
+                        <option value="any">Any area needed</option>
+                    </select>
+                </div>
+                <div class="form-field checkbox-field">
+                    <input type="checkbox" id="volBackground" name="backgroundCheck" required>
+                    <label for="volBackground">I consent to a background check if needed for my volunteer role *</label>
+                </div>
+                <div class="form-actions">
+                    <button type="button" class="btn-secondary" onclick="closeFormModal('volunteer')">Cancel</button>
+                    <button type="submit" class="btn-primary">Submit Application</button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <!-- 3. Resource Submission Modal -->
+    <div id="resourceSubmissionModal" class="form-modal">
+        <div class="form-modal-content">
+            <span class="form-modal-close" onclick="closeFormModal('resourceSubmission')">&times;</span>
+            <h2>Resource Submission Form</h2>
+            <p class="form-modal-desc">Help us expand our resource directory by suggesting new organizations and services.</p>
+            <form id="resourceSubmissionForm" class="modal-form" onsubmit="submitFormData(event, 'resourceSubmission')">
+                <div class="form-field">
+                    <label for="rsOrgName">Organization Name *</label>
+                    <input type="text" id="rsOrgName" name="orgName" required placeholder="Name of the organization">
+                </div>
+                <div class="form-field">
+                    <label for="rsServiceType">Type of Service *</label>
+                    <select id="rsServiceType" name="serviceType" required>
+                        <option value="">Select service type...</option>
+                        <option value="housing">Housing/Shelter</option>
+                        <option value="food">Food Bank/Pantry</option>
+                        <option value="health">Healthcare</option>
+                        <option value="mental-health">Mental Health</option>
+                        <option value="education">Education/Tutoring</option>
+                        <option value="employment">Employment Services</option>
+                        <option value="legal">Legal Aid</option>
+                        <option value="transportation">Transportation</option>
+                        <option value="childcare">Childcare</option>
+                        <option value="senior">Senior Services</option>
+                        <option value="other">Other</option>
+                    </select>
+                </div>
+                <div class="form-row">
+                    <div class="form-field">
+                        <label for="rsWebsite">Website (Optional)</label>
+                        <input type="url" id="rsWebsite" name="website" placeholder="https://example.org">
+                    </div>
+                    <div class="form-field">
+                        <label for="rsPhone">Phone (Optional)</label>
+                        <input type="tel" id="rsPhone" name="phone" placeholder="(555) 123-4567">
+                    </div>
+                </div>
+                <div class="form-field">
+                    <label for="rsLocation">Location/Address *</label>
+                    <input type="text" id="rsLocation" name="location" required placeholder="City or full address">
+                </div>
+                <div class="form-field">
+                    <label for="rsDescription">Short Description *</label>
+                    <textarea id="rsDescription" name="description" rows="3" required placeholder="Briefly describe the services they offer..."></textarea>
+                </div>
+                <div class="form-field">
+                    <label for="rsAudience">Who is this for? *</label>
+                    <div class="checkbox-group">
+                        <label><input type="checkbox" name="audience" value="teens"> Teens</label>
+                        <label><input type="checkbox" name="audience" value="young-adults"> Young Adults</label>
+                        <label><input type="checkbox" name="audience" value="families"> Families</label>
+                        <label><input type="checkbox" name="audience" value="seniors"> Seniors</label>
+                        <label><input type="checkbox" name="audience" value="all-ages"> All Ages</label>
+                    </div>
+                </div>
+                <div class="form-actions">
+                    <button type="button" class="btn-secondary" onclick="closeFormModal('resourceSubmission')">Cancel</button>
+                    <button type="submit" class="btn-primary">Submit Resource</button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <!-- 4. Feedback Modal -->
+    <div id="feedbackModal" class="form-modal">
+        <div class="form-modal-content">
+            <span class="form-modal-close" onclick="closeFormModal('feedback')">&times;</span>
+            <h2>Feedback Form</h2>
+            <p class="form-modal-desc">Your feedback helps us improve our community hub and services.</p>
+            <form id="feedbackForm" class="modal-form" onsubmit="submitFormData(event, 'feedback')">
+                <div class="form-field">
+                    <label for="fbEase">How easy was it to find what you needed? *</label>
+                    <select id="fbEase" name="easeOfUse" required>
+                        <option value="">Select rating...</option>
+                        <option value="5">5 - Very Easy</option>
+                        <option value="4">4 - Easy</option>
+                        <option value="3">3 - Neutral</option>
+                        <option value="2">2 - Difficult</option>
+                        <option value="1">1 - Very Difficult</option>
+                    </select>
+                </div>
+                <div class="form-field">
+                    <label for="fbLiked">What did you like?</label>
+                    <textarea id="fbLiked" name="liked" rows="3" placeholder="Tell us what worked well..."></textarea>
+                </div>
+                <div class="form-field">
+                    <label for="fbConfusing">What was confusing or difficult?</label>
+                    <textarea id="fbConfusing" name="confusing" rows="3" placeholder="Help us understand what needs improvement..."></textarea>
+                </div>
+                <div class="form-field">
+                    <label for="fbSuggestions">What should we add or change?</label>
+                    <textarea id="fbSuggestions" name="suggestions" rows="3" placeholder="Share your ideas..."></textarea>
+                </div>
+                <div class="form-field">
+                    <label for="fbRating">Overall Rating *</label>
+                    <select id="fbRating" name="overall" required>
+                        <option value="">Select rating...</option>
+                        <option value="5">⭐⭐⭐⭐⭐ Excellent</option>
+                        <option value="4">⭐⭐⭐⭐ Good</option>
+                        <option value="3">⭐⭐⭐ Fair</option>
+                        <option value="2">⭐⭐ Needs Improvement</option>
+                        <option value="1">⭐ Poor</option>
+                    </select>
+                </div>
+                <div class="form-field">
+                    <label for="fbEmail">Email (Optional)</label>
+                    <input type="email" id="fbEmail" name="email" placeholder="If you'd like us to follow up">
+                </div>
+                <div class="form-actions">
+                    <button type="button" class="btn-secondary" onclick="closeFormModal('feedback')">Cancel</button>
+                    <button type="submit" class="btn-primary">Submit Feedback</button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <!-- 5. Event Registration Modal -->
+    <div id="eventRegistrationModal" class="form-modal">
+        <div class="form-modal-content">
+            <span class="form-modal-close" onclick="closeFormModal('eventRegistration')">&times;</span>
+            <h2>Event Registration Form</h2>
+            <p class="form-modal-desc">Register for upcoming community events, workshops, and information sessions.</p>
+            <form id="eventRegistrationForm" class="modal-form" onsubmit="submitFormData(event, 'eventRegistration')">
+                <div class="form-field">
+                    <label for="erEvent">Event Name *</label>
+                    <select id="erEvent" name="eventName" required>
+                        <option value="">Select an event...</option>
+                        <option value="community-cookout">Summer Community Cookout</option>
+                        <option value="financial-literacy">Financial Literacy Workshop</option>
+                        <option value="job-fair">Community Job Fair</option>
+                        <option value="youth-sports">Youth Sports Day</option>
+                        <option value="health-screening">Free Health Screening</option>
+                        <option value="tech-basics">Technology Basics Class</option>
+                        <option value="arts-crafts">Arts & Crafts Fair</option>
+                    </select>
+                </div>
+                <div class="form-row">
+                    <div class="form-field">
+                        <label for="erFirstName">First Name *</label>
+                        <input type="text" id="erFirstName" name="firstName" required>
+                    </div>
+                    <div class="form-field">
+                        <label for="erLastName">Last Name *</label>
+                        <input type="text" id="erLastName" name="lastName" required>
+                    </div>
+                </div>
+                <div class="form-row">
+                    <div class="form-field">
+                        <label for="erEmail">Email *</label>
+                        <input type="email" id="erEmail" name="email" required>
+                    </div>
+                    <div class="form-field">
+                        <label for="erPhone">Phone *</label>
+                        <input type="tel" id="erPhone" name="phone" required>
+                    </div>
+                </div>
+                <div class="form-field">
+                    <label for="erAttendees">Number of Attendees *</label>
+                    <input type="number" id="erAttendees" name="attendees" min="1" max="20" required placeholder="Including yourself">
+                </div>
+                <div class="form-field">
+                    <label for="erAccommodations">Special Accommodations Needed</label>
+                    <textarea id="erAccommodations" name="accommodations" rows="2" placeholder="Dietary restrictions, accessibility needs, etc."></textarea>
+                </div>
+                <div class="form-actions">
+                    <button type="button" class="btn-secondary" onclick="closeFormModal('eventRegistration')">Cancel</button>
+                    <button type="submit" class="btn-primary">Register for Event</button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <!-- 6. Mentorship Match Modal -->
+    <div id="mentorshipModal" class="form-modal">
+        <div class="form-modal-content">
+            <span class="form-modal-close" onclick="closeFormModal('mentorship')">&times;</span>
+            <h2>Mentorship Match Form</h2>
+            <p class="form-modal-desc">Connect through our mentorship program to learn, grow, and support each other.</p>
+            <form id="mentorshipForm" class="modal-form" onsubmit="submitFormData(event, 'mentorship')">
+                <div class="form-field">
+                    <label for="mmRole">Are you looking for a mentor or to be a mentor? *</label>
+                    <select id="mmRole" name="role" required>
+                        <option value="">Select role...</option>
+                        <option value="seeking-mentor">Looking for a Mentor</option>
+                        <option value="be-mentor">Want to Be a Mentor</option>
+                        <option value="both">Open to Both</option>
+                    </select>
+                </div>
+                <div class="form-row">
+                    <div class="form-field">
+                        <label for="mmName">Full Name *</label>
+                        <input type="text" id="mmName" name="name" required>
+                    </div>
+                    <div class="form-field">
+                        <label for="mmAge">Age/Grade (if relevant)</label>
+                        <input type="text" id="mmAge" name="age" placeholder="e.g., 15, 10th grade, 25 years old">
+                    </div>
+                </div>
+                <div class="form-row">
+                    <div class="form-field">
+                        <label for="mmEmail">Email *</label>
+                        <input type="email" id="mmEmail" name="email" required>
+                    </div>
+                    <div class="form-field">
+                        <label for="mmPhone">Phone *</label>
+                        <input type="tel" id="mmPhone" name="phone" required>
+                    </div>
+                </div>
+                <div class="form-field">
+                    <label for="mmInterests">Areas of Interest *</label>
+                    <div class="checkbox-group">
+                        <label><input type="checkbox" name="interests" value="academics"> Academics/Tutoring</label>
+                        <label><input type="checkbox" name="interests" value="career"> Career Development</label>
+                        <label><input type="checkbox" name="interests" value="tech"> Technology</label>
+                        <label><input type="checkbox" name="interests" value="arts"> Arts & Creativity</label>
+                        <label><input type="checkbox" name="interests" value="sports"> Sports & Fitness</label>
+                        <label><input type="checkbox" name="interests" value="life-skills"> Life Skills</label>
+                        <label><input type="checkbox" name="interests" value="leadership"> Leadership</label>
+                        <label><input type="checkbox" name="interests" value="other"> Other</label>
+                    </div>
+                </div>
+                <div class="form-field">
+                    <label for="mmGoals">Goals *</label>
+                    <textarea id="mmGoals" name="goals" rows="3" required placeholder="What do you hope to achieve through mentorship?"></textarea>
+                </div>
+                <div class="form-field">
+                    <label for="mmFormat">Preferred Meeting Format *</label>
+                    <select id="mmFormat" name="format" required>
+                        <option value="">Select format...</option>
+                        <option value="virtual">Virtual/Online Only</option>
+                        <option value="in-person">In-Person Only</option>
+                        <option value="hybrid">Hybrid (Both)</option>
+                    </select>
+                </div>
+                <div class="form-actions">
+                    <button type="button" class="btn-secondary" onclick="closeFormModal('mentorship')">Cancel</button>
+                    <button type="submit" class="btn-primary">Submit Application</button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <!-- 7. Emergency Assistance Modal -->
+    <div id="emergencyModal" class="form-modal">
+        <div class="form-modal-content">
+            <span class="form-modal-close" onclick="closeFormModal('emergency')">&times;</span>
+            <h2>🚨 Emergency Assistance Intake Form</h2>
+            <p class="form-modal-desc">For urgent needs requiring immediate assistance. All information is kept confidential.</p>
+            <form id="emergencyForm" class="modal-form" onsubmit="submitFormData(event, 'emergency')">
+                <div class="form-field">
+                    <label for="eaType">Type of Assistance Needed *</label>
+                    <select id="eaType" name="assistanceType" required>
+                        <option value="">Select type...</option>
+                        <option value="housing">Emergency Housing</option>
+                        <option value="food">Food/Hunger Relief</option>
+                        <option value="utilities">Utility Shutoff Prevention</option>
+                        <option value="medical">Medical Emergency</option>
+                        <option value="safety">Safety Concern</option>
+                        <option value="financial">Financial Crisis</option>
+                        <option value="other">Other Urgent Need</option>
+                    </select>
+                </div>
+                <div class="form-field">
+                    <label for="eaHousehold">Household Size *</label>
+                    <input type="number" id="eaHousehold" name="householdSize" min="1" required placeholder="Number of people in household">
+                </div>
+                <div class="form-field">
+                    <label for="eaZip">Zip Code *</label>
+                    <input type="text" id="eaZip" name="zipCode" required pattern="[0-9]{5}" placeholder="12345">
+                </div>
+                <div class="form-field">
+                    <label for="eaSafety">Immediate Safety Concerns? *</label>
+                    <select id="eaSafety" name="safetyConcern" required>
+                        <option value="">Select...</option>
+                        <option value="yes">Yes - Immediate danger</option>
+                        <option value="no">No - But need urgent help</option>
+                    </select>
+                </div>
+                <div class="form-field">
+                    <label for="eaContact">Best Way to Contact You *</label>
+                    <select id="eaContact" name="contactMethod" required>
+                        <option value="">Select method...</option>
+                        <option value="phone">Phone Call</option>
+                        <option value="text">Text Message</option>
+                        <option value="email">Email</option>
+                        <option value="any">Any method</option>
+                    </select>
+                </div>
+                <div class="form-field">
+                    <label for="eaPhone">Phone Number *</label>
+                    <input type="tel" id="eaPhone" name="phone" required>
+                </div>
+                <div class="form-field">
+                    <label for="eaDetails">Additional Details (Optional but helpful)</label>
+                    <textarea id="eaDetails" name="details" rows="3" placeholder="Any additional information that would help us assist you..."></textarea>
+                </div>
+                <div class="form-actions">
+                    <button type="button" class="btn-secondary" onclick="closeFormModal('emergency')">Cancel</button>
+                    <button type="submit" class="btn-primary urgent-btn">Submit Urgent Request</button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <!-- 8. Community Skills Exchange Modal -->
+    <div id="skillsExchangeModal" class="form-modal">
+        <div class="form-modal-content">
+            <span class="form-modal-close" onclick="closeFormModal('skillsExchange')">&times;</span>
+            <h2>Community Skills Exchange Form</h2>
+            <p class="form-modal-desc">Trade skills with your neighbors! Offer what you're good at and learn something new.</p>
+            <form id="skillsExchangeForm" class="modal-form" onsubmit="submitFormData(event, 'skillsExchange')">
+                <div class="form-row">
+                    <div class="form-field">
+                        <label for="seFirstName">First Name *</label>
+                        <input type="text" id="seFirstName" name="firstName" required>
+                    </div>
+                    <div class="form-field">
+                        <label for="seLastName">Last Name *</label>
+                        <input type="text" id="seLastName" name="lastName" required>
+                    </div>
+                </div>
+                <div class="form-row">
+                    <div class="form-field">
+                        <label for="seEmail">Email *</label>
+                        <input type="email" id="seEmail" name="email" required>
+                    </div>
+                    <div class="form-field">
+                        <label for="sePhone">Phone (Optional)</label>
+                        <input type="tel" id="sePhone" name="phone">
+                    </div>
+                </div>
+                <div class="form-field">
+                    <label for="seOffer">What can you offer? *</label>
+                    <textarea id="seOffer" name="canOffer" rows="3" required placeholder="e.g., Computer help, cooking lessons, gardening, language tutoring, handyman services..."></textarea>
+                </div>
+                <div class="form-field">
+                    <label for="seSeeking">What are you looking for? *</label>
+                    <textarea id="seSeeking" name="seeking" rows="3" required placeholder="e.g., Help with taxes, learning to play guitar, photography tips..."></textarea>
+                </div>
+                <div class="form-field">
+                    <label for="seAvailability">Availability *</label>
+                    <select id="seAvailability" name="availability" required>
+                        <option value="">Select availability...</option>
+                        <option value="weekdays">Weekdays</option>
+                        <option value="weekends">Weekends</option>
+                        <option value="evenings">Evenings</option>
+                        <option value="flexible">Flexible</option>
+                    </select>
+                </div>
+                <div class="form-field">
+                    <label for="seContactPref">Contact Preference *</label>
+                    <select id="seContactPref" name="contactPreference" required>
+                        <option value="">Select preference...</option>
+                        <option value="email">Email</option>
+                        <option value="phone">Phone</option>
+                        <option value="text">Text</option>
+                        <option value="any">Any method</option>
+                    </select>
+                </div>
+                <div class="form-actions">
+                    <button type="button" class="btn-secondary" onclick="closeFormModal('skillsExchange')">Cancel</button>
+                    <button type="submit" class="btn-primary">Join Skills Exchange</button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <!-- 9. Survey on Community Needs Modal -->
+    <div id="surveyModal" class="form-modal">
+        <div class="form-modal-content">
+            <span class="form-modal-close" onclick="closeFormModal('survey')">&times;</span>
+            <h2>Survey on Community Needs</h2>
+            <p class="form-modal-desc">Help us understand what our community needs most. Your input shapes our programs and services.</p>
+            <form id="surveyForm" class="modal-form" onsubmit="submitFormData(event, 'survey')">
+                <div class="form-field">
+                    <label for="svChallenge">What is the biggest challenge in our community right now? *</label>
+                    <textarea id="svChallenge" name="biggestChallenge" rows="3" required placeholder="Share your perspective..."></textarea>
+                </div>
+                <div class="form-field">
+                    <label for="svAccess">What resources are hardest to access? *</label>
+                    <div class="checkbox-group">
+                        <label><input type="checkbox" name="hardToAccess" value="housing"> Affordable Housing</label>
+                        <label><input type="checkbox" name="hardToAccess" value="food"> Food Assistance</label>
+                        <label><input type="checkbox" name="hardToAccess" value="healthcare"> Healthcare</label>
+                        <label><input type="checkbox" name="hardToAccess" value="mental-health"> Mental Health Services</label>
+                        <label><input type="checkbox" name="hardToAccess" value="childcare"> Childcare</label>
+                        <label><input type="checkbox" name="hardToAccess" value="transportation"> Transportation</label>
+                        <label><input type="checkbox" name="hardToAccess" value="education"> Education/Training</label>
+                        <label><input type="checkbox" name="hardToAccess" value="employment"> Employment Opportunities</label>
+                    </div>
+                </div>
+                <div class="form-field">
+                    <label for="svAgeGroup">What age group needs the most support? *</label>
+                    <select id="svAgeGroup" name="ageGroup" required>
+                        <option value="">Select age group...</option>
+                        <option value="children">Children (0-12)</option>
+                        <option value="teens">Teens (13-17)</option>
+                        <option value="young-adults">Young Adults (18-25)</option>
+                        <option value="adults">Adults (26-54)</option>
+                        <option value="seniors">Seniors (55+)</option>
+                        <option value="all">All ages equally</option>
+                    </select>
+                </div>
+                <div class="form-field">
+                    <label for="svMissing">What services or resources are missing from our community?</label>
+                    <textarea id="svMissing" name="missingResources" rows="3" placeholder="What would make the biggest difference?"></textarea>
+                </div>
+                <div class="form-field">
+                    <label for="svImprovement">How can we improve communication about available resources?</label>
+                    <textarea id="svImprovement" name="improveCommunication" rows="2" placeholder="Share your ideas..."></textarea>
+                </div>
+                <div class="form-field">
+                    <label for="svEmail">Email (Optional)</label>
+                    <input type="email" id="svEmail" name="email" placeholder="If you'd like to receive survey results">
+                </div>
+                <div class="form-actions">
+                    <button type="button" class="btn-secondary" onclick="closeFormModal('survey')">Cancel</button>
+                    <button type="submit" class="btn-primary">Submit Survey</button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <!-- 10. Success Story Submission Modal -->
+    <div id="successStoryModal" class="form-modal">
+        <div class="form-modal-content">
+            <span class="form-modal-close" onclick="closeFormModal('successStory')">&times;</span>
+            <h2>Success Story Submission Form</h2>
+            <p class="form-modal-desc">Inspire others by sharing your story! Your experience can give hope to community members facing similar challenges.</p>
+            <form id="successStoryForm" class="modal-form" onsubmit="submitFormData(event, 'successStory')">
+                <div class="form-field">
+                    <label for="ssStory">Your Story *</label>
+                    <textarea id="ssStory" name="story" rows="6" required placeholder="Share your experience... How did you overcome a challenge? What resource or program helped you? What positive change occurred?"></textarea>
+                </div>
+                <div class="form-field">
+                    <label for="ssResource">Which resource or program helped you most? *</label>
+                    <input type="text" id="ssResource" name="resourceUsed" required placeholder="e.g., Job training program, food bank, mentorship...">
+                </div>
+                <div class="form-field">
+                    <label for="ssName">Your Name (Optional)</label>
+                    <input type="text" id="ssName" name="name" placeholder="You can submit anonymously">
+                </div>
+                <div class="form-field">
+                    <label for="ssEmail">Email (Optional)</label>
+                    <input type="email" id="ssEmail" name="email" placeholder="If you'd like us to contact you">
+                </div>
+                <div class="form-field">
+                    <label for="ssShare">Can we share this story publicly? *</label>
+                    <select id="ssShare" name="canShare" required>
+                        <option value="">Select option...</option>
+                        <option value="yes-with-name">Yes, with my name</option>
+                        <option value="yes-anonymous">Yes, but anonymously</option>
+                        <option value="no">No, for internal use only</option>
+                    </select>
+                </div>
+                <div class="form-field">
+                    <label for="ssPhoto">Photo Upload (Optional)</label>
+                    <input type="file" id="ssPhoto" name="photo" accept="image/*">
+                    <small style="color: #6a7a90;">If sharing publicly, we'll contact you about photo usage rights</small>
+                </div>
+                <div class="form-actions">
+                    <button type="button" class="btn-secondary" onclick="closeFormModal('successStory')">Cancel</button>
+                    <button type="submit" class="btn-primary">Submit Story</button>
+                </div>
+            </form>
+        </div>
+    </div>
+
     <footer>
-        <div class="footer-contacts">
-            <h2>Contact Us</h2>
-            <p>Email: community@willowgate.org</p>
-            <p>Phone: (555) 123-4567</p>
+        <div class="footer-inner">
+            <div class="footer-contacts">
+                <h2>Contact Us</h2>
+                <p>Email: community@willowgate.org</p>
+                <p>Phone: (555) 123-4567</p>
+            </div>
+            <div class="footer-meta">
+                <p class="footer-line">Lakes of Willowgate Community Association</p>
+                <p class="footer-line">Copyright (c) 2026 Lakes of Willowgate. All rights reserved.</p>
+                <p class="footer-line">Lakes of Willowgate and the Lakes of Willowgate logo are trademarks of the Lakes of Willowgate Community Association.</p>
+                <p class="footer-line">This site is for community information only.</p>
+            </div>
         </div>
     </footer>
 
@@ -739,6 +1663,61 @@
         // Observe scrollable sections (excluding ones with their own CSS animations)
         document.querySelectorAll('.section-card, footer').forEach(el => {
             observer.observe(el);
+        });
+
+        // Form Modal Functions
+        function openFormModal(formType) {
+            const modalId = formType + 'Modal';
+            const modal = document.getElementById(modalId);
+            if (modal) {
+                modal.style.display = 'flex';
+                document.body.style.overflow = 'hidden';
+            }
+        }
+
+        function closeFormModal(formType) {
+            const modalId = formType + 'Modal';
+            const modal = document.getElementById(modalId);
+            if (modal) {
+                modal.style.display = 'none';
+                document.body.style.overflow = 'auto';
+                const form = modal.querySelector('form');
+                if (form) form.reset();
+            }
+        }
+
+        function submitFormData(event, formType) {
+            event.preventDefault();
+            
+            const formData = new FormData(event.target);
+            const data = Object.fromEntries(formData.entries());
+            data.formType = formType;
+            data.submittedDate = new Date().toLocaleString();
+            
+            const submissions = JSON.parse(localStorage.getItem('formSubmissions') || '[]');
+            submissions.push(data);
+            localStorage.setItem('formSubmissions', JSON.stringify(submissions));
+            
+            const messages = {
+                'membership': 'Thank you for your membership application! We will review your submission and contact you within 2-3 business days.',
+                'event': 'Your event request has been submitted successfully! Our events team will review and contact you within 48 hours.',
+                'facility': 'Your facility reservation request has been received! We will confirm availability and contact you within 24 hours.',
+                'guidelines': 'Thank you for acknowledging our community guidelines. A confirmation has been sent to your email.'
+            };
+            
+            alert('✓ Submission Successful!\n\n' + messages[formType]);
+            closeFormModal(formType);
+        }
+
+        window.addEventListener('click', function(event) {
+            if (event.target.classList.contains('form-modal')) {
+                const modals = ['membership', 'event', 'facility', 'guidelines'];
+                modals.forEach(type => {
+                    if (event.target.id === type + 'Modal') {
+                        closeFormModal(type);
+                    }
+                });
+            }
         });
     </script>
 </body>

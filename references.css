@@ -19,6 +19,22 @@
     animation: none !important;
 }
 
+.hero-section {
+    --hero-image: url("reference.jpg");
+    background:
+        linear-gradient(rgba(68, 136, 188, 0.7), rgba(68, 136, 188, 0.7)),
+        var(--hero-image);
+    background-size: cover;
+    background-position: center 30%;
+    background-repeat: no-repeat;
+    color: #ffffff;
+    border-radius: 0;
+    padding: 80px 40px;
+    margin: 0;
+    border-bottom: 2px solid #ddd;
+    min-height: auto;
+}
+
 .hero-section::before {
     display: none;
 }
@@ -50,6 +66,18 @@
     line-height: 1.4;
     opacity: 1 !important;
     animation: none !important;
+}
+
+.hero-section .eyebrows {
+    color: rgba(255, 255, 255, 0.8);
+}
+
+.hero-section h1 {
+    color: #ffffff;
+}
+
+.hero-section p {
+    color: rgba(255, 255, 255, 0.9);
 }
 
 /* Dual Section Container */

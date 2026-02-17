@@ -205,6 +205,21 @@ html {
     opacity: 1 !important;
 }
 
+.welcome-section {
+    --hero-image: url("community events.jpg");
+    background:
+        linear-gradient(rgba(68, 136, 188, 0.7), rgba(68, 136, 188, 0.7)),
+        var(--hero-image);
+    background-size: cover;
+    background-position: center 30%;
+    background-repeat: no-repeat;
+    color: #ffffff;
+    border-radius: 0;
+    padding: 60px 40px;
+    margin: 0;
+    border-bottom: 2px solid #ddd;
+}
+
 .welcome-section.fade-out-view {
     opacity: 1 !important;
     animation: none !important;
@@ -256,6 +271,18 @@ html {
     line-height: 1.6;
     opacity: 0;
     animation: slideInUp 0.8s ease-out 0.6s forwards;
+}
+
+.welcome-section .eyebrow {
+    color: rgba(255, 255, 255, 0.8);
+}
+
+.welcome-section h1 {
+    color: #ffffff;
+}
+
+.welcome-section p:not(.eyebrow) {
+    color: rgba(255, 255, 255, 0.9);
 }
 
 /* Hero Buttons */
@@ -1185,6 +1212,7 @@ html {
         0 4px 15px rgba(0,52,163,0.4),
         inset 0 1px 0 rgba(255,255,255,0.3);
     position: relative;
+    text-shadow: 0 0 3px rgba(0, 0, 0, 0.5), 0 1px 2px rgba(0, 0, 0, 0.3);
 }
 
 .calendar-day.event-day::after {

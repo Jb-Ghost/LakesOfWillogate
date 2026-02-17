@@ -83,7 +83,15 @@ html {
 
 /* Welcome Section */
 .welcome-section {
-    background: #FFFFFF;
+    --hero-image: url("Pools and Parks.jpg");
+    background:
+        linear-gradient(rgba(68, 136, 188, 0.7), rgba(68, 136, 188, 0.7)),
+        var(--hero-image);
+    background-size: cover;
+    background-position: center 30%;
+    background-repeat: no-repeat;
+    color: #ffffff;
+    border-radius: 0;
     padding: 80px 40px;
     margin: 0;
     text-align: center;
@@ -96,7 +104,7 @@ html {
     font-weight: 700;
     letter-spacing: 2px;
     text-transform: uppercase;
-    color: var(--primary);
+    color: rgba(255, 255, 255, 0.8);
     margin-bottom: 10px;
     opacity: 0;
     animation: slideInDown 0.8s ease-out 0.2s forwards;
@@ -105,7 +113,7 @@ html {
 .welcome-section h1 {
     font-size: 48px;
     font-family: BungeeInline;
-    color: var(--primary);
+    color: #ffffff;
     margin: 0 0 15px 0;
     text-shadow: 2px 2px 5px rgba(0, 52, 163, 0.1);
     opacity: 0;
@@ -114,7 +122,7 @@ html {
 
 .welcome-section p {
     font-size: 18px;
-    color: #666;
+    color: rgba(255, 255, 255, 0.9);
     margin: 0 0 30px 0;
     line-height: 1.6;
     opacity: 0;
@@ -128,6 +136,7 @@ html {
     justify-content: center;
     flex-wrap: wrap;
     margin-top: 30px;
+    
 }
 
 .hero-btn {
@@ -135,14 +144,15 @@ html {
     background: var(--primary);
     color: white;
     text-decoration: none;
-    border-radius: 4px;
+    border-radius: 0;
     font-weight: 600;
     font-size: 14px;
     transition: all 0.3s ease;
-    border: none;
+    border: 2px solid #ffffff;
     cursor: pointer;
     box-shadow: 0 4px 12px rgba(0,52,163,0.2);
     text-transform: none;
+    border-radius: 4px;
 }
 
 .hero-btn:hover {

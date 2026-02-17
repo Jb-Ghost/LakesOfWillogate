@@ -589,11 +589,31 @@ function performSearch() {
     navigateToResult(results[0]);
 }
 
+function initializeHeaderBehavior() {
+    const siteHeader = document.querySelector('header');
+    if (!siteHeader) {
+        return;
+    }
+
+    const updateHeaderState = () => {
+        const shouldCompact = window.scrollY > 40;
+        siteHeader.classList.toggle('is-compact', shouldCompact);
+    };
+
+    window.addEventListener('scroll', updateHeaderState, { passive: true });
+    window.addEventListener('resize', updateHeaderState);
+    updateHeaderState();
+}
+
 // Initialize when DOM is loaded
 if (document.readyState === 'loading') {
-    document.addEventListener('DOMContentLoaded', initializeSearch);
+    document.addEventListener('DOMContentLoaded', function() {
+        initializeSearch();
+        initializeHeaderBehavior();
+    });
 } else {
     initializeSearch();
+    initializeHeaderBehavior();
 }
 
 /*
