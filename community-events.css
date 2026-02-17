@@ -206,7 +206,7 @@ html {
 }
 
 .welcome-section {
-    --hero-image: url("community events.jpg");
+    --hero-image: url("Community events.jpg");
     background:
         linear-gradient(rgba(68, 136, 188, 0.7), rgba(68, 136, 188, 0.7)),
         var(--hero-image);
