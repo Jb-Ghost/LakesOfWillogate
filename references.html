@@ -5,8 +5,44 @@
     <meta name="viewport" content="width=device-width,initial-scale=1">
     <title>References — Lakes of Willowgate</title>
     <link rel="stylesheet" href="index.css">
+    <link rel="stylesheet" href="index-new.css">
     <link rel="stylesheet" href="references.css">
+    <link rel="stylesheet" href="animations.css">
     <script src="search.js" defer></script>
+    <script src="animations.js" defer></script>
+    <script>
+        // Compact header on scroll - More robust version
+        document.addEventListener('DOMContentLoaded', function() {
+            // Reset any lingering body styles from previous page modals
+            document.body.style.position = '';
+            document.body.style.top = '';
+            document.body.style.width = '';
+            document.body.style.overflow = '';
+            
+            const header = document.querySelector('header');
+            const scrollThreshold = 100;
+            
+            if (!header) {
+                console.warn('Header element not found');
+                return;
+            }
+            
+            console.log('Scroll listener initialized');
+            
+            window.addEventListener('scroll', function() {
+                const isCompact = window.scrollY > scrollThreshold;
+                const hasCompactClass = header.classList.contains('is-compact');
+                
+                if (isCompact && !hasCompactClass) {
+                    header.classList.add('is-compact');
+                    console.log('Header compacted at scroll:', window.scrollY);
+                } else if (!isCompact && hasCompactClass) {
+                    header.classList.remove('is-compact');
+                    console.log('Header expanded');
+                }
+            }, { passive: true });
+        });
+    </script>
 </head>
 <body style="margin: 0">
     <header>
@@ -16,8 +52,7 @@
         <nav class="nav">
             <div class="nav-links">
                 <a href="index.html">HOME</a>
-                <a href="pools-parks.html">POOLS & PARKS</a>
-                <a href="fitness-center.html">FITNESS CENTERS</a>
+                <a href="amenities.html">AMENITIES</a>
                 <a href="community-events.html">COMMUNITY EVENTS</a>
                 <a href="resource.html">RESOURCES</a>
                 <a href="references.html">REFERENCES</a>
@@ -32,9 +67,9 @@
     <main>
         <!-- Hero Section -->
         <div class="hero-section references-hero">
-            <p class="eyebrows">Lakes of Willowgate</p>
+            <p class="eyebrow">Lakes of Willowgate</p>
             <h1>References & Documentation</h1>
-            <p>Project worklog and source attributions for the Lakes of Willowgate website.</p>
+            <p>Comprehensive documentation of our development process, design inspiration, and attribution for all resources used in creating the Lakes of Willowgate website.</p>
         </div>
 
         <!-- Worklog & Copyright Section Container -->
@@ -117,13 +152,37 @@
                     <!-- <div class="source-item"><a href="YOUR_URL_HERE" target="_blank" class="source-link">YOUR_URL_HERE</a></div> -->
                     
                     <div class="source-item">
-                        <a href="https://pixabay.com/photos/herman-park-houston-texas-skyline-2832128/" target="_blank" class="source-link">https://pixabay.com/photos/herman-park-houston-texas-skyline-2832128/</a>
+                        <a href="https://pixabay.com/photos/wooden-bridge-herman-national-park-5384858/" target="_blank" class="source-link">https://pixabay.com/photos/wooden-bridge-herman-national-park-5384858/</a>
+                    </div>
+                    <div class="source-item">
+                        <a href="https://pixabay.com/photos/lake-water-texoma-texas-nature-4570229/" target="_blank" class="source-link">https://pixabay.com/photos/lake-water-texoma-texas-nature-4570229/</a>
+                    </div>
+                    <div class="source-item">
+                        <a href="https://pixabay.com/photos/hill-country-texas-fence-row-3661240/" target="_blank" class="source-link">https://pixabay.com/photos/hill-country-texas-fence-row-3661240/</a>
+                    </div>
+                    <div class="source-item">
+                        <a href="https://unsplash.com/photos/a-gym-filled-with-lots-of-machines-and-windows-L4BybD8pvgE" target="_blank" class="source-link">https://unsplash.com/photos/a-gym-filled-with-lots-of-machines-and-windows-L4BybD8pvgE</a>
+                    </div>
+                    <div class="source-item">
+                        <a href="https://unsplash.com/photos/an-aerial-view-of-a-house-with-a-swimming-pool-4mcc0wEhmlM" target="_blank" class="source-link">https://unsplash.com/photos/an-aerial-view-of-a-house-with-a-swimming-pool-4mcc0wEhmlM</a>
+                    </div>
+                    <div class="source-item">
+                        <a href="https://pixabay.com/photos/pond-house-water-fountain-fehmarn-5450012/" target="_blank" class="source-link">https://pixabay.com/photos/pond-house-water-fountain-fehmarn-5450012/</a>
                     </div>
                     <div class="source-item">
                         <a href="https://pixabay.com/photos/waterslide-leisure-pool-water-park-117317/" target="_blank" class="source-link">https://pixabay.com/photos/waterslide-leisure-pool-water-park-117317/</a>
                     </div>
                     <div class="source-item">
-                        <a href="https://pixabay.com/photos/treadmill-workout-fitness-gym-5030966/" target="_blank" class="source-link">https://pixabay.com/photos/treadmill-workout-fitness-gym-5030966/</a>
+                        <a href="https://pixabay.com/photos/port-meldorf-port-ships-boats-7528170/" target="_blank" class="source-link">https://pixabay.com/photos/port-meldorf-port-ships-boats-7528170/</a>
+                    </div>
+                    <div class="source-item">
+                        <a href="https://pixabay.com/photos/dock-boy-water-sitting-playing-4573120/" target="_blank" class="source-link">https://pixabay.com/photos/dock-boy-water-sitting-playing-4573120/</a>
+                    </div>
+                    <div class="source-item">
+                        <a href="https://pixabay.com/photos/bonding-boy-children-enjoyment-1868513/" target="_blank" class="source-link">https://pixabay.com/photos/bonding-boy-children-enjoyment-1868513/</a>
+                    </div>
+                    <div class="source-item">
+                        <a href="https://pixabay.com/photos/buckhorn-lake-resort-kerrville-2701615/" target="_blank" class="source-link">https://pixabay.com/photos/buckhorn-lake-resort-kerrville-2701615/</a>
                     </div>
                     <!-- Add more sources by copying the div above -->
                 </div>
@@ -131,18 +190,39 @@
         </section>
     </main>
 
-    <footer class="fade-in-view">
+    <footer>
         <div class="footer-inner">
-            <div class="footer-contacts">
-                <h2>Contact Us</h2>
-                <p>Email: community@willowgate.org</p>
-                <p>Phone: (555) 123-4567</p>
+            <!-- Contact Section -->
+            <div class="footer-section footer-contacts">
+                <h3>Contact</h3>
+                <a href="mailto:community@willowgate.org" class="footer-link">📧 community@willowgate.org</a>
+                <a href="tel:+15551234567" class="footer-link">📞 (555) 123-4567</a>
             </div>
-            <div class="footer-meta">
-                <p class="footer-line">Lakes of Willowgate Community Association</p>
-                <p class="footer-line">Copyright (c) 2026 Lakes of Willowgate. All rights reserved.</p>
-                <p class="footer-line">Lakes of Willowgate and the Lakes of Willowgate logo are trademarks of the Lakes of Willowgate Community Association.</p>
-                <p class="footer-line">This site is for community information only.</p>
+            
+            <!-- Quick Links -->
+            <div class="footer-section footer-links">
+                <h3>Quick Links</h3>
+                <a href="index.html" class="footer-link">Home</a>
+                <a href="amenities.html" class="footer-link">Amenities</a>
+                <a href="pools-parks.html" class="footer-link">Pools & Parks</a>
+                <a href="fitness-center.html" class="footer-link">Fitness Center</a>
+                <a href="community-events.html" class="footer-link">Events</a>
+                <a href="resource.html" class="footer-link">Resources</a>
+                <a href="references.html" class="footer-link">References</a>
+            </div>
+            
+            <!-- Hours Section -->
+            <div class="footer-section footer-hours">
+                <h3>Hours</h3>
+                <p class="footer-hours-text"><strong>Facilities:</strong></p>
+                <p class="footer-hours-text">Mon-Fri: 5:00 AM - 10:00 PM</p>
+                <p class="footer-hours-text">Weekends: 7:00 AM - 8:00 PM</p>
+            </div>
+            
+            <!-- Copyright -->
+            <div class="footer-section footer-legal">
+                <p class="footer-copyright">&copy; 2026 Lakes of Willowgate Community Association. All rights reserved.</p>
+                <p class="footer-small">This site is for community information only.</p>
             </div>
         </div>
     </footer>

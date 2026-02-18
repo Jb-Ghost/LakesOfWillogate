@@ -5,8 +5,64 @@
     <meta name="viewport" content="width=device-width,initial-scale=1">
     <title>Community Events — Lakes of Willowgate</title>
     <link rel="stylesheet" href="index.css">
+    <link rel="stylesheet" href="index-new.css">
     <link rel="stylesheet" href="community-events.css">
+    <link rel="stylesheet" href="animations.css">
     <script src="search.js" defer></script>
+    <script src="animations.js" defer></script>
+    <script>
+        // Compact header on scroll - More robust version
+        document.addEventListener('DOMContentLoaded', function() {
+            // Reset any lingering body styles from previous page modals
+            document.body.style.position = '';
+            document.body.style.top = '';
+            document.body.style.width = '';
+            document.body.style.overflow = '';
+            
+            const header = document.querySelector('header');
+            const scrollThreshold = 100;
+            
+            if (!header) {
+                console.warn('Header element not found');
+                return;
+            }
+            
+            console.log('Scroll listener initialized');
+            
+            window.addEventListener('scroll', function() {
+                const isCompact = window.scrollY > scrollThreshold;
+                const hasCompactClass = header.classList.contains('is-compact');
+                
+                if (isCompact && !hasCompactClass) {
+                    header.classList.add('is-compact');
+                    console.log('Header compacted at scroll:', window.scrollY);
+                } else if (!isCompact && hasCompactClass) {
+                    header.classList.remove('is-compact');
+                    console.log('Header expanded');
+                }
+            }, { passive: true });
+
+            // Scroll indicator click handler
+            const scrollIndicator = document.querySelector('.scroll-indicator');
+            if (scrollIndicator) {
+                scrollIndicator.addEventListener('click', function() {
+                    const upcomingSection = document.querySelector('#upcoming-list');
+                    if (upcomingSection) {
+                        upcomingSection.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                    }
+                });
+
+                // Hide scroll indicator when user scrolls
+                let hasScrolled = false;
+                window.addEventListener('scroll', function() {
+                    if (!hasScrolled && window.scrollY > 50) {
+                        hasScrolled = true;
+                        scrollIndicator.classList.add('hidden');
+                    }
+                }, { passive: true });
+            }
+        });
+    </script>
 </head>
 <body style="margin: 0">
     <header>
@@ -16,8 +72,7 @@
         <nav class="nav">
             <div class="nav-links">
                 <a href="index.html">HOME</a>
-                <a href="pools-parks.html">POOLS & PARKS</a>
-                <a href="fitness-center.html">FITNESS CENTERS</a>
+                <a href="amenities.html">AMENITIES</a>
                 <a href="community-events.html">COMMUNITY EVENTS</a>
                 <a href="resource.html">RESOURCES</a>
                 <a href="references.html">REFERENCES</a>
@@ -32,15 +87,28 @@
 
     <main>
         <!-- Enhanced Page Header -->
-        <div class="welcome-section">
+        <div class="welcome-section fade-in-view">
+            <div class="hero-image-container">
+                <img src="Community Events.jpg" alt="Community Events" class="hero-background">
+                <div class="hero-overlay"></div>
+            </div>
+            <div class="hero-content">
             <p class="eyebrow">Lakes of Willowgate</p>
             <h1>Community Events</h1>
-            <p>Discover what's happening around you—events for all ages, all year long.</p>
+            <p>Connect with your neighbors at exciting events throughout the year. From fitness challenges to seasonal celebrations, discover what’s happening in your vibrant community and create unforgettable memories together.</p>
             <div class="hero-buttons">
-                <a href="#upcoming-list" class="hero-btn">Today's Events</a>
-                <a href="#submit-event" class="hero-btn">Submit an Event</a>
-                <a href="#guidelines" class="hero-btn">Event Guidelines</a>
-                <a href="#calendar" class="hero-btn" onclick="scrollToCalendar()">View Calendar</a>
+                <a href="#upcoming-list" class="hero-btn primary-btn">Today's Events</a>
+                <a href="#submit-event" class="hero-btn secondary-btn">Submit an Event</a>
+                <a href="#calendar" class="hero-btn secondary-btn" onclick="scrollToCalendar()">View Calendar</a>
+            </div>
+            <div class="scroll-indicator">
+                <div class="scroll-text">Scroll Down</div>
+                <div class="scroll-arrow">
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M12 5L12 19M12 19L6 13M12 19L18 13" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                    </svg>
+                </div>
+            </div>
             </div>
         </div>
 
@@ -180,7 +248,7 @@
             </div>
         </section>
 
-        <div class="calendar-section">
+        <div class="calendar-section" id="calendar">
             <h2>Community Calendar</h2>
             <div class="calendar-container">
                 <div class="calendar-header">
@@ -212,18 +280,30 @@
         </div>
     </main>
 
-    <footer>
+    <footer class="fade-in-view">
         <div class="footer-inner">
-            <div class="footer-contacts">
-                <h2>Contact Us</h2>
-                <p>Email: community@willowgate.org</p>
-                <p>Phone: (555) 123-4567</p>
+            <div class="footer-section footer-contacts">
+                <h3>Contact</h3>
+                <a href="mailto:community@willowgate.org" class="footer-link">📧 community@willowgate.org</a>
+                <a href="tel:+15551234567" class="footer-link">📞 (555) 123-4567</a>
             </div>
-            <div class="footer-meta">
-                <p class="footer-line">Lakes of Willowgate Community Association</p>
-                <p class="footer-line">Copyright (c) 2026 Lakes of Willowgate. All rights reserved.</p>
-                <p class="footer-line">Lakes of Willowgate and the Lakes of Willowgate logo are trademarks of the Lakes of Willowgate Community Association.</p>
-                <p class="footer-line">This site is for community information only.</p>
+            <div class="footer-section footer-links">
+                <h3>Quick Links</h3>
+                <a href="index.html" class="footer-link">Home</a>
+                <a href="amenities.html" class="footer-link">Amenities</a>
+                <a href="fitness-center.html" class="footer-link">Fitness Center</a>
+                <a href="pools-parks.html" class="footer-link">Pools & Parks</a>
+                <a href="community-events.html" class="footer-link">Events</a>
+                <a href="resource.html" class="footer-link">Resources</a>
+                <a href="references.html" class="footer-link">References</a>
+            </div>
+            <div class="footer-section footer-hours">
+                <h3>Hours</h3>
+                <p class="footer-hours-text">Office Hours: Mon-Fri 9am-5pm<br>Facilities: 6am-11pm Daily<br>Emergencies: 24/7</p>
+            </div>
+            <div class="footer-section footer-legal">
+                <p class="footer-copyright">© 2026 Lakes of Willowgate Community Association</p>
+                <p class="footer-small">All rights reserved. Lakes of Willowgate and the Lakes of Willowgate logo are trademarks of the Lakes of Willowgate Community Association.</p>
             </div>
         </div>
     </footer>

@@ -66,7 +66,7 @@ const searchDatabase = [
     // FITNESS CENTER - Trainers Section
     { 
         title: "Personal Trainers", 
-        url: "fitness-center.html#trainers", 
+        url: "amenities.html#trainers", 
         category: "Fitness",
         keywords: ["trainers", "personal trainer", "fitness trainer", "book trainer", "training", "coaching", "personal training", "fitness coach", "certified trainer", "Jordan Lee", "Ava Martinez", "Marcus Reid", "Sophie Chen", "Dylan Brooks", "Elena Cruz"],
         description: "Meet our certified personal trainers and book sessions"
@@ -75,8 +75,7 @@ const searchDatabase = [
     // FITNESS CENTER - Classes
     { 
         title: "Fitness Classes Schedule", 
-        url: "fitness-center.html", 
-        scrollTo: ".schedule-section",
+        url: "amenities.html#classes", 
         category: "Fitness",
         keywords: ["classes", "fitness classes", "group classes", "class schedule", "weekly classes", "yoga", "pilates", "zumba", "spin", "hiit", "boxing", "dance fitness", "bootcamp", "cardio", "strength training", "core training", "stretching", "meditation", "wellness workshop"],
         description: "View weekly fitness class schedule and activities"
@@ -85,8 +84,7 @@ const searchDatabase = [
     // FITNESS CENTER - Hours
     { 
         title: "Fitness Center Hours", 
-        url: "fitness-center.html", 
-        scrollTo: ".quick-info-section",
+        url: "amenities.html#fitness", 
         category: "Fitness",
         keywords: ["gym hours", "fitness hours", "fitness center hours", "operating hours", "open hours", "when open", "hours of operation", "gym schedule"],
         description: "Fitness center operating hours and schedule"
@@ -95,8 +93,7 @@ const searchDatabase = [
     // FITNESS CENTER - Locations
     { 
         title: "Fitness Center Locations", 
-        url: "fitness-center.html", 
-        scrollTo: ".quick-info-section",
+        url: "amenities.html#fitness", 
         category: "Fitness",
         keywords: ["gym location", "fitness location", "fitness centers", "downtown fitness hub", "lakeside athletic complex", "riverside community center", "where is gym", "gym address"],
         description: "Find fitness center locations and addresses"
@@ -105,8 +102,7 @@ const searchDatabase = [
     // FITNESS CENTER - Facilities
     { 
         title: "Fitness Facilities & Amenities", 
-        url: "fitness-center.html", 
-        scrollTo: ".facilities-section",
+        url: "amenities.html#fitness", 
         category: "Fitness",
         keywords: ["gym equipment", "facilities", "amenities", "strength room", "cardio machines", "weights", "treadmill", "elliptical", "locker rooms", "showers", "childcare", "wifi", "outdoor track", "group studio"],
         description: "View all fitness center facilities and amenities"
@@ -115,7 +111,7 @@ const searchDatabase = [
     // POOLS & PARKS - Pool Hours
     { 
         title: "Pool Hours & Schedule", 
-        url: "pools-parks.html#pool-hours", 
+        url: "amenities.html#pool-hours", 
         category: "Pools & Parks",
         keywords: ["pool hours", "pool schedule", "swimming hours", "when is pool open", "pool times", "lap swim", "open swim", "adult swim", "family swim", "swim times", "aquatic hours"],
         description: "View operating hours for all community pools"
@@ -124,8 +120,7 @@ const searchDatabase = [
     // POOLS & PARKS - Pool Locations
     { 
         title: "Pool Locations", 
-        url: "pools-parks.html", 
-        scrollTo: ".pools-grid",
+        url: "amenities.html#pools", 
         category: "Pools & Parks",
         keywords: ["pool location", "pools", "swimming pool", "aquatic center", "lakeside aquatic center", "riverside community pool", "downtown fitness pool", "where to swim", "pool address"],
         description: "Find all pool locations and addresses"
@@ -134,7 +129,7 @@ const searchDatabase = [
     // POOLS & PARKS - Pool Rules
     { 
         title: "Pool Rules & Safety", 
-        url: "pools-parks.html#pool-rules", 
+        url: "amenities.html#pool-rules", 
         category: "Pools & Parks",
         keywords: ["pool rules", "pool safety", "swimming rules", "pool regulations", "safety guidelines", "pool requirements", "lifeguard", "pool policy"],
         description: "Safety guidelines and pool regulations"
@@ -143,7 +138,7 @@ const searchDatabase = [
     // POOLS & PARKS - Park Locations
     { 
         title: "Park Locations", 
-        url: "pools-parks.html#park-locations", 
+        url: "amenities.html#park-locations", 
         category: "Pools & Parks",
         keywords: ["park", "parks", "park locations", "playground", "outdoor", "central park", "lakeside park", "sports complex", "nature reserve", "where is park", "park address"],
         description: "Find parks and their addresses"
@@ -152,7 +147,7 @@ const searchDatabase = [
     // POOLS & PARKS - Activities
     { 
         title: "Park & Pool Activities", 
-        url: "pools-parks.html#activities", 
+        url: "amenities.html#activities", 
         category: "Pools & Parks",
         keywords: ["activities", "things to do", "park activities", "swimming", "hiking", "walking", "sports", "basketball", "tennis", "soccer", "picnic", "playground", "splash pad", "fishing", "trails", "bike paths"],
         description: "Activities available at community parks and pools"
@@ -161,8 +156,7 @@ const searchDatabase = [
     // POOLS & PARKS - Specific Facilities
     { 
         title: "Splash Pad", 
-        url: "pools-parks.html", 
-        scrollTo: ".pools-grid",
+        url: "amenities.html#pools", 
         category: "Pools & Parks",
         keywords: ["splash pad", "water play", "kids splash", "children water", "spray park"],
         description: "Splash pad information and location"
@@ -226,21 +220,21 @@ const searchDatabase = [
     // SPECIFIC TRAINER SEARCHES
     { 
         title: "Jordan Lee - Strength Training", 
-        url: "fitness-center.html#trainers", 
+        url: "amenities.html#trainers", 
         category: "Fitness",
         keywords: ["jordan lee", "strength", "conditioning", "weight training", "muscle building", "powerlifting"],
         description: "Book Jordan Lee for strength and conditioning training"
     },
     { 
         title: "Ava Martinez - Yoga", 
-        url: "fitness-center.html#trainers", 
+        url: "amenities.html#trainers", 
         category: "Fitness",
         keywords: ["ava martinez", "yoga", "mobility", "flexibility", "meditation", "mindfulness"],
         description: "Book Ava Martinez for yoga and mobility sessions"
     },
     { 
         title: "Marcus Reid - HIIT Training", 
-        url: "fitness-center.html#trainers", 
+        url: "amenities.html#trainers", 
         category: "Fitness",
         keywords: ["marcus reid", "hiit", "high intensity", "athletic training", "interval training", "sports training"],
         description: "Book Marcus Reid for HIIT and athletic training"
@@ -249,24 +243,21 @@ const searchDatabase = [
     // SPECIFIC CLASS TYPES
     { 
         title: "Yoga Classes", 
-        url: "fitness-center.html", 
-        scrollTo: ".schedule-section",
+        url: "amenities.html#classes", 
         category: "Fitness",
         keywords: ["yoga", "yoga class", "meditation", "mindfulness", "zen", "relaxation"],
         description: "Yoga and meditation class schedule"
     },
     { 
         title: "Dance & Zumba", 
-        url: "fitness-center.html", 
-        scrollTo: ".schedule-section",
+        url: "amenities.html#classes", 
         category: "Fitness",
         keywords: ["dance", "zumba", "dance fitness", "latin dance", "cardio dance"],
         description: "Dance fitness and Zumba classes"
     },
     { 
         title: "Spin & Cycling", 
-        url: "fitness-center.html", 
-        scrollTo: ".schedule-section",
+        url: "amenities.html#classes", 
         category: "Fitness",
         keywords: ["spin", "spin class", "cycling", "bike", "indoor cycling", "stationary bike"],
         description: "Indoor cycling and spin classes"
@@ -284,8 +275,7 @@ const searchDatabase = [
     // SEASONAL & SPECIAL
     { 
         title: "Holiday Hours", 
-        url: "pools-parks.html", 
-        scrollTo: ".seasonal-notices",
+        url: "amenities.html#pools", 
         category: "Pools & Parks",
         keywords: ["holiday", "holiday hours", "christmas", "new year", "seasonal", "winter schedule", "summer schedule"],
         description: "Holiday and seasonal facility hours"
@@ -605,15 +595,200 @@ function initializeHeaderBehavior() {
     updateHeaderState();
 }
 
+function initializeRatingPrompt() {
+    if (window.__ratingGlobalInitialized) {
+        return;
+    }
+
+    window.__ratingGlobalInitialized = true;
+    window.__ratingGlobal = true;
+
+    const minDelayMs = 180000;
+    const maxDelayMs = 180000;
+    const pageId = (window.location.pathname.split('/').pop() || 'index').replace('.html', '') || 'index';
+    const ratingStoreKey = 'pageRatings:' + pageId;
+    let ratingTimerId = null;
+
+    const ensureRatingModal = () => {
+        let modal = document.getElementById('siteRatingModal');
+        if (modal) {
+            return modal;
+        }
+
+        modal = document.createElement('div');
+        modal.id = 'siteRatingModal';
+        modal.className = 'rating-modal';
+        modal.setAttribute('role', 'dialog');
+        modal.setAttribute('aria-modal', 'true');
+        modal.setAttribute('aria-hidden', 'true');
+        modal.setAttribute('aria-labelledby', 'ratingTitle');
+        modal.innerHTML = `
+            <div class="rating-modal-content">
+                <button type="button" class="rating-close" aria-label="Close">&times;</button>
+                <p class="eyebrow">Feedback</p>
+                <h2 id="ratingTitle">Rate site functionality</h2>
+                <p class="rating-desc">How well did the site function for what you needed?</p>
+                <form id="ratingForm" class="modal-form">
+                    <div class="rating-stars" role="radiogroup" aria-label="Star rating">
+                        <input type="radio" id="rating-5" name="rating" value="5">
+                        <label for="rating-5" aria-label="5 stars">★</label>
+                        <input type="radio" id="rating-4" name="rating" value="4">
+                        <label for="rating-4" aria-label="4 stars">★</label>
+                        <input type="radio" id="rating-3" name="rating" value="3">
+                        <label for="rating-3" aria-label="3 stars">★</label>
+                        <input type="radio" id="rating-2" name="rating" value="2">
+                        <label for="rating-2" aria-label="2 stars">★</label>
+                        <input type="radio" id="rating-1" name="rating" value="1">
+                        <label for="rating-1" aria-label="1 star">★</label>
+                    </div>
+                    <div class="form-field">
+                        <label for="ratingComment">Comment (optional)</label>
+                        <textarea id="ratingComment" name="comment" rows="3" placeholder="Tell us what worked or what did not function as expected."></textarea>
+                    </div>
+                    <div class="form-actions">
+                        <button type="button" class="btn-secondary">Not now</button>
+                        <button type="submit" class="btn-primary">Send Feedback</button>
+                    </div>
+                </form>
+                <p class="rating-note">This feedback is stored locally for demo purposes.</p>
+            </div>
+        `;
+
+        document.body.appendChild(modal);
+        return modal;
+    };
+
+    const openRatingModal = () => {
+        const modal = ensureRatingModal();
+        if (!modal) {
+            return;
+        }
+
+        const scrollY = window.scrollY || window.pageYOffset;
+        const scrollbarWidth = window.innerWidth - document.documentElement.clientWidth;
+        modal.style.display = 'flex';
+        modal.setAttribute('aria-hidden', 'false');
+        modal.classList.add('is-open');
+        document.body.style.position = 'fixed';
+        document.body.style.top = `-${scrollY}px`;
+        document.body.style.width = '100%';
+        document.body.style.overflowX = 'hidden';
+        document.body.style.paddingRight = `${scrollbarWidth}px`;
+        document.body.dataset.scrollY = scrollY;
+    };
+
+    const closeRatingModal = () => {
+        const modal = document.getElementById('siteRatingModal');
+        if (!modal) {
+            return;
+        }
+
+        modal.style.display = 'none';
+        modal.setAttribute('aria-hidden', 'true');
+        modal.classList.remove('is-open');
+        const scrollY = parseInt(document.body.dataset.scrollY || '0', 10);
+        document.body.style.position = '';
+        document.body.style.top = '';
+        document.body.style.width = '';
+        document.body.style.overflowX = '';
+        document.body.style.paddingRight = '';
+        delete document.body.dataset.scrollY;
+        window.scrollTo(0, scrollY);
+        const form = modal.querySelector('#ratingForm');
+        if (form) {
+            form.reset();
+        }
+        scheduleNextPrompt();
+    };
+
+    const getRandomDelay = () => {
+        return Math.floor(Math.random() * (maxDelayMs - minDelayMs + 1)) + minDelayMs;
+    };
+
+    const scheduleNextPrompt = () => {
+        if (ratingTimerId) {
+            clearTimeout(ratingTimerId);
+        }
+
+        const delay = getRandomDelay();
+        ratingTimerId = setTimeout(() => {
+            const modal = ensureRatingModal();
+            if (!modal) {
+                scheduleNextPrompt();
+                return;
+            }
+
+            if (modal.classList.contains('is-open')) {
+                scheduleNextPrompt();
+                return;
+            }
+
+            openRatingModal();
+        }, delay);
+    };
+
+    const modal = ensureRatingModal();
+    if (!modal) {
+        return;
+    }
+
+    const form = modal.querySelector('#ratingForm');
+    const closeButton = modal.querySelector('.rating-close');
+    const dismissButton = modal.querySelector('.btn-secondary');
+
+    if (closeButton) {
+        closeButton.addEventListener('click', closeRatingModal);
+    }
+
+    if (dismissButton) {
+        dismissButton.addEventListener('click', closeRatingModal);
+    }
+
+    modal.addEventListener('click', (event) => {
+        if (event.target === modal) {
+            closeRatingModal();
+        }
+    });
+
+    if (form) {
+        form.addEventListener('submit', (event) => {
+            event.preventDefault();
+            const selectedRating = modal.querySelector('input[name="rating"]:checked');
+            if (!selectedRating) {
+                alert('Please choose a star rating before submitting.');
+                return;
+            }
+
+            const payload = {
+                rating: selectedRating.value,
+                comment: modal.querySelector('#ratingComment').value.trim(),
+                submittedDate: new Date().toLocaleString(),
+                page: pageId
+            };
+
+            const ratings = JSON.parse(localStorage.getItem(ratingStoreKey) || '[]');
+            ratings.push(payload);
+            localStorage.setItem(ratingStoreKey, JSON.stringify(ratings));
+
+            alert('Thanks for your feedback!');
+            closeRatingModal();
+        });
+    }
+
+    scheduleNextPrompt();
+}
+
 // Initialize when DOM is loaded
 if (document.readyState === 'loading') {
     document.addEventListener('DOMContentLoaded', function() {
         initializeSearch();
         initializeHeaderBehavior();
+        initializeRatingPrompt();
     });
 } else {
     initializeSearch();
     initializeHeaderBehavior();
+    initializeRatingPrompt();
 }
 
 /*

@@ -5,9 +5,44 @@
     <meta name="viewport" content="width=device-width,initial-scale=1">
     <title>Resources — Lakes of Willowgate</title>
     <link rel="stylesheet" href="index.css">
+    <link rel="stylesheet" href="index-new.css">
     <link rel="stylesheet" href="resource.css">
-    <link rel="stylesheet" href="forms-styles.css">
+    <link rel="stylesheet" href="animations.css">
     <script src="search.js" defer></script>
+    <script src="animations.js" defer></script>
+    <script>
+        // Compact header on scroll - More robust version
+        document.addEventListener('DOMContentLoaded', function() {
+            // Reset any lingering body styles from previous page modals
+            document.body.style.position = '';
+            document.body.style.top = '';
+            document.body.style.width = '';
+            document.body.style.overflow = '';
+            
+            const header = document.querySelector('header');
+            const scrollThreshold = 100;
+            
+            if (!header) {
+                console.warn('Header element not found');
+                return;
+            }
+            
+            console.log('Scroll listener initialized');
+            
+            window.addEventListener('scroll', function() {
+                const isCompact = window.scrollY > scrollThreshold;
+                const hasCompactClass = header.classList.contains('is-compact');
+                
+                if (isCompact && !hasCompactClass) {
+                    header.classList.add('is-compact');
+                    console.log('Header compacted at scroll:', window.scrollY);
+                } else if (!isCompact && hasCompactClass) {
+                    header.classList.remove('is-compact');
+                    console.log('Header expanded');
+                }
+            }, { passive: true });
+        });
+    </script>
 </head>
 <body style="margin: 0">
     <header>
@@ -17,8 +52,7 @@
         <nav class="nav">
             <div class="nav-links">
                 <a href="index.html">HOME</a>
-                <a href="pools-parks.html">POOLS & PARKS</a>
-                <a href="fitness-center.html">FITNESS CENTERS</a>
+                <a href="amenities.html">AMENITIES</a>
                 <a href="community-events.html">COMMUNITY EVENTS</a>
                 <a href="resource.html">RESOURCES</a>
                 <a href="references.html">REFERENCES</a>
@@ -32,10 +66,11 @@
     </header>
 
     <main>
-        <section class="welcome-section resources-hero">
+        <section class="welcome-section resources-hero fade-in-view">
             <div class="hero-text">
                 <p class="eyebrow fade-in-title">Lakes of Willowgate</p>
-                <p class="lede">One place for contacts, hours, forms, parks, fitness, and events. Explore everything happening in our community.</p>
+                <h1 style="font-family: BungeeInline; font-size: 48px; color: #003d82; margin: 0 0 15px 0;">Community Resources Hub</h1>
+                <p class="lede">Your complete guide to community contacts, forms, facility hours, maps, and essential resources. Everything you need to get involved and make the most of your community.</p>
                 <div class="hero-actions">
                     <a class="pill-btn ghost" href="#community-forms-hub">Community Forms Hub</a>
                     <a class="pill-btn ghost" href="#hours">Hours & Locations</a>
@@ -64,7 +99,7 @@
         </section>
 
         <!-- Community Forms Hub -->
-        <section class="community-forms-hub" id="community-forms-hub">
+        <section class="community-forms-hub fade-in-up" id="community-forms-hub">
             <div class="forms-hub-container">
                 <div class="forms-hub-header">
                     <p class="eyebrow">Community Services</p>
@@ -238,7 +273,7 @@
             <div class="submit-resource-section">
                 <h2>Suggest a New Resource</h2>
                 <p>Help us keep this hub current. Share a service, form, or contact we should add.</p>
-                
+
                 <form id="submitResourceForm" class="resource-form">
                     <div class="form-group">
                         <label for="resourceName">Resource Name</label>
@@ -353,6 +388,38 @@
             </div>
         </div>
     </section>
+
+    <div id="siteRatingModal" class="rating-modal" role="dialog" aria-modal="true" aria-hidden="true" aria-labelledby="ratingTitle">
+        <div class="rating-modal-content">
+            <button type="button" class="rating-close" aria-label="Close" onclick="closeRatingModal()">&times;</button>
+            <p class="eyebrow">Feedback</p>
+            <h2 id="ratingTitle">Rate site functionality</h2>
+            <p class="rating-desc">How well did the site function for what you needed?</p>
+            <form id="ratingForm" class="modal-form">
+                <div class="rating-stars" role="radiogroup" aria-label="Star rating">
+                    <input type="radio" id="rating-5" name="rating" value="5">
+                    <label for="rating-5" aria-label="5 stars">★</label>
+                    <input type="radio" id="rating-4" name="rating" value="4">
+                    <label for="rating-4" aria-label="4 stars">★</label>
+                    <input type="radio" id="rating-3" name="rating" value="3">
+                    <label for="rating-3" aria-label="3 stars">★</label>
+                    <input type="radio" id="rating-2" name="rating" value="2">
+                    <label for="rating-2" aria-label="2 stars">★</label>
+                    <input type="radio" id="rating-1" name="rating" value="1">
+                    <label for="rating-1" aria-label="1 star">★</label>
+                </div>
+                <div class="form-field">
+                    <label for="ratingComment">Comment (optional)</label>
+                    <textarea id="ratingComment" name="comment" rows="3" placeholder="Tell us what worked or what did not function as expected."></textarea>
+                </div>
+                <div class="form-actions">
+                    <button type="button" class="btn-secondary" onclick="closeRatingModal()">Not now</button>
+                    <button type="submit" class="btn-primary">Send Feedback</button>
+                </div>
+            </form>
+            <p class="rating-note">This feedback is stored locally for demo purposes.</p>
+        </div>
+    </div>
 
     <!-- Form Modals -->
     <div id="membershipModal" class="form-modal">
@@ -1193,18 +1260,30 @@
         </div>
     </div>
 
-    <footer>
+    <footer class="fade-in-view">
         <div class="footer-inner">
-            <div class="footer-contacts">
-                <h2>Contact Us</h2>
-                <p>Email: community@willowgate.org</p>
-                <p>Phone: (555) 123-4567</p>
+            <div class="footer-section footer-contacts">
+                <h3>Contact</h3>
+                <a href="mailto:community@willowgate.org" class="footer-link">📧 community@willowgate.org</a>
+                <a href="tel:+15551234567" class="footer-link">📞 (555) 123-4567</a>
             </div>
-            <div class="footer-meta">
-                <p class="footer-line">Lakes of Willowgate Community Association</p>
-                <p class="footer-line">Copyright (c) 2026 Lakes of Willowgate. All rights reserved.</p>
-                <p class="footer-line">Lakes of Willowgate and the Lakes of Willowgate logo are trademarks of the Lakes of Willowgate Community Association.</p>
-                <p class="footer-line">This site is for community information only.</p>
+            <div class="footer-section footer-links">
+                <h3>Quick Links</h3>
+                <a href="index.html" class="footer-link">Home</a>
+                <a href="amenities.html" class="footer-link">Amenities</a>
+                <a href="pools-parks.html" class="footer-link">Pools & Parks</a>
+                <a href="fitness-center.html" class="footer-link">Fitness Center</a>
+                <a href="community-events.html" class="footer-link">Events</a>
+                <a href="resource.html" class="footer-link">Resources</a>
+                <a href="references.html" class="footer-link">References</a>
+            </div>
+            <div class="footer-section footer-hours">
+                <h3>Hours</h3>
+                <p class="footer-hours-text">Office Hours: Mon-Fri 9am-5pm<br>Facilities: 6am-11pm Daily<br>Emergencies: 24/7</p>
+            </div>
+            <div class="footer-section footer-legal">
+                <p class="footer-copyright">© 2026 Lakes of Willowgate Community Association</p>
+                <p class="footer-small">All rights reserved. Lakes of Willowgate and the Lakes of Willowgate logo are trademarks of the Lakes of Willowgate Community Association.</p>
             </div>
         </div>
     </footer>
@@ -1593,6 +1672,7 @@
                         }
                     }
                 });
+
                 
                 // Close suggestions when clicking outside
                 document.addEventListener('click', function(e) {
@@ -1601,42 +1681,89 @@
                     }
                 });
             }
+
+            if (!window.__ratingGlobal) {
+                const ratingForm = document.getElementById('ratingForm');
+                const ratingModal = document.getElementById('siteRatingModal');
+                const ratingPageId = 'resource';
+                const ratingPromptKey = 'ratingPrompted:v2:' + ratingPageId;
+                const ratingStoreKey = 'pageRatings:' + ratingPageId;
+                const ratingIntervalMs = 24 * 60 * 60 * 1000;
+                const ratingDelayMs = 30000;
+
+                if (ratingModal) {
+                    const lastPrompt = parseInt(localStorage.getItem(ratingPromptKey), 10);
+                    const shouldPrompt = !lastPrompt || (Date.now() - lastPrompt) > ratingIntervalMs;
+
+                    if (shouldPrompt) {
+                        setTimeout(() => {
+                            openRatingModal();
+                            localStorage.setItem(ratingPromptKey, Date.now().toString());
+                        }, ratingDelayMs);
+                    }
+                }
+
+                if (ratingForm) {
+                    ratingForm.addEventListener('submit', function(e) {
+                        e.preventDefault();
+                        const selectedRating = document.querySelector('input[name="rating"]:checked');
+                        if (!selectedRating) {
+                            alert('Please choose a star rating before submitting.');
+                            return;
+                        }
+
+                        const payload = {
+                            rating: selectedRating.value,
+                            comment: document.getElementById('ratingComment').value.trim(),
+                            submittedDate: new Date().toLocaleString()
+                        };
+
+                        const ratings = JSON.parse(localStorage.getItem(ratingStoreKey) || '[]');
+                        ratings.push(payload);
+                        localStorage.setItem(ratingStoreKey, JSON.stringify(ratings));
+
+                        ratingForm.reset();
+                        alert('Thanks for your feedback!');
+                        closeRatingModal();
+                    });
+                }
+            }
         });
+
+        // Submit resource form
+        const submitResourceForm = document.getElementById('submitResourceForm');
+        if (submitResourceForm) {
+            submitResourceForm.addEventListener('submit', (e) => {
+                e.preventDefault();
+
+                const formData = {
+                    resourceName: document.getElementById('resourceName').value,
+                    resourceCategory: document.getElementById('resourceCategory').value,
+                    resourceDescription: document.getElementById('resourceDescription').value,
+                    resourceContact: document.getElementById('resourceContact').value,
+                    submitterName: document.getElementById('submitterName').value,
+                    submitterEmail: document.getElementById('submitterEmail').value,
+                    submittedDate: new Date().toLocaleString()
+                };
+
+                const submissions = JSON.parse(localStorage.getItem('resourceSubmissions') || '[]');
+                submissions.push(formData);
+                localStorage.setItem('resourceSubmissions', JSON.stringify(submissions));
+
+                const messageDiv = document.getElementById('formMessage');
+                messageDiv.className = 'form-message success';
+                messageDiv.textContent = '✓ Thank you! Your resource suggestion has been submitted. Our team will review it soon!';
+                messageDiv.style.display = 'block';
+
+                submitResourceForm.reset();
+
+                setTimeout(() => {
+                    messageDiv.style.display = 'none';
+                }, 5000);
+            });
+        }
 
         // Form submission
-        document.getElementById('submitResourceForm').addEventListener('submit', (e) => {
-            e.preventDefault();
-
-            const formData = {
-                resourceName: document.getElementById('resourceName').value,
-                resourceCategory: document.getElementById('resourceCategory').value,
-                resourceDescription: document.getElementById('resourceDescription').value,
-                resourceContact: document.getElementById('resourceContact').value,
-                submitterName: document.getElementById('submitterName').value,
-                submitterEmail: document.getElementById('submitterEmail').value,
-                submittedDate: new Date().toLocaleString()
-            };
-
-            // Store in localStorage (in a real app, this would send to a server)
-            const submissions = JSON.parse(localStorage.getItem('resourceSubmissions') || '[]');
-            submissions.push(formData);
-            localStorage.setItem('resourceSubmissions', JSON.stringify(submissions));
-
-            // Show success message
-            const messageDiv = document.getElementById('formMessage');
-            messageDiv.className = 'form-message success';
-            messageDiv.textContent = '✓ Thank you! Your resource suggestion has been submitted. Our team will review it soon!';
-            messageDiv.style.display = 'block';
-
-            // Reset form
-            document.getElementById('submitResourceForm').reset();
-
-            // Hide message after 5 seconds
-            setTimeout(() => {
-                messageDiv.style.display = 'none';
-            }, 5000);
-        });
-
         // Smooth Scroll Fade In/Out Effect using Intersection Observer
         const observerOptions = {
             threshold: [0, 0.2, 0.5],
@@ -1670,8 +1797,17 @@
             const modalId = formType + 'Modal';
             const modal = document.getElementById(modalId);
             if (modal) {
+                const scrollY = window.scrollY || window.pageYOffset;
                 modal.style.display = 'flex';
+                requestAnimationFrame(() => {
+                    modal.classList.add('is-open');
+                });
+                document.body.classList.add('modal-open');
+                document.body.style.position = 'fixed';
+                document.body.style.top = `-${scrollY}px`;
+                document.body.style.width = '100%';
                 document.body.style.overflow = 'hidden';
+                document.body.dataset.scrollY = scrollY;
             }
         }
 
@@ -1679,9 +1815,59 @@
             const modalId = formType + 'Modal';
             const modal = document.getElementById(modalId);
             if (modal) {
-                modal.style.display = 'none';
-                document.body.style.overflow = 'auto';
+                const modalContent = modal.querySelector('.form-modal-content');
+                if (modalContent) {
+                    modalContent.classList.add('closing');
+                }
+                modal.classList.remove('is-open');
+                setTimeout(() => {
+                    modal.style.display = 'none';
+                    if (modalContent) {
+                        modalContent.classList.remove('closing');
+                    }
+                }, 200);
+                document.body.classList.remove('modal-open');
+                const scrollY = parseInt(document.body.dataset.scrollY || '0', 10);
+                document.body.style.position = '';
+                document.body.style.top = '';
+                document.body.style.width = '';
+                document.body.style.overflow = '';
+                document.body.style.paddingRight = '';
+                delete document.body.dataset.scrollY;
+                window.scrollTo(0, scrollY);
                 const form = modal.querySelector('form');
+                if (form) form.reset();
+            }
+        }
+
+        function openRatingModal() {
+            const modal = document.getElementById('siteRatingModal');
+            if (modal) {
+                const scrollY = window.scrollY || window.pageYOffset;
+                modal.style.display = 'flex';
+                modal.setAttribute('aria-hidden', 'false');
+                document.body.style.position = 'fixed';
+                document.body.style.top = `-${scrollY}px`;
+                document.body.style.width = '100%';
+                document.body.style.overflow = 'hidden';
+                document.body.dataset.scrollY = scrollY;
+            }
+        }
+
+        function closeRatingModal() {
+            const modal = document.getElementById('siteRatingModal');
+            if (modal) {
+                modal.style.display = 'none';
+                modal.setAttribute('aria-hidden', 'true');
+                const scrollY = parseInt(document.body.dataset.scrollY || '0', 10);
+                document.body.style.position = '';
+                document.body.style.top = '';
+                document.body.style.width = '';
+                document.body.style.overflow = '';
+                document.body.style.paddingRight = '';
+                delete document.body.dataset.scrollY;
+                window.scrollTo(0, scrollY);
+                const form = document.getElementById('ratingForm');
                 if (form) form.reset();
             }
         }
@@ -1717,6 +1903,10 @@
                         closeFormModal(type);
                     }
                 });
+            }
+
+            if (event.target.id === 'siteRatingModal') {
+                closeRatingModal();
             }
         });
     </script>

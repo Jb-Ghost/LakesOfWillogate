@@ -5,7 +5,65 @@
     <meta name="viewport" content="width=device-width,initial-scale=1">
     <title>Lakes of Willowgate — Home</title>
     <link rel="stylesheet" href="index.css">
+    <link rel="stylesheet" href="index-new.css">
+    <link rel="stylesheet" href="carousel.css">
+    <link rel="stylesheet" href="animations.css">
     <script src="search.js" defer></script>
+    <script src="animations.js" defer></script>
+    <script src="carousel.js" defer></script>
+    <script>
+        // Compact header on scroll - More robust version
+        document.addEventListener('DOMContentLoaded', function() {
+            // Reset any lingering body styles from previous page modals
+            document.body.style.position = '';
+            document.body.style.top = '';
+            document.body.style.width = '';
+            document.body.style.overflow = '';
+            
+            const header = document.querySelector('header');
+            const scrollThreshold = 100;
+            
+            if (!header) {
+                console.warn('Header element not found');
+                return;
+            }
+            
+            console.log('Scroll listener initialized');
+            
+            window.addEventListener('scroll', function() {
+                const isCompact = window.scrollY > scrollThreshold;
+                const hasCompactClass = header.classList.contains('is-compact');
+                
+                if (isCompact && !hasCompactClass) {
+                    header.classList.add('is-compact');
+                    console.log('Header compacted at scroll:', window.scrollY);
+                } else if (!isCompact && hasCompactClass) {
+                    header.classList.remove('is-compact');
+                    console.log('Header expanded');
+                }
+            }, { passive: true });
+
+            // Scroll indicator click handler
+            const scrollIndicator = document.querySelector('.scroll-indicator');
+            if (scrollIndicator) {
+                scrollIndicator.addEventListener('click', function() {
+                    const featuredSection = document.querySelector('.featured-pages-section');
+                    if (featuredSection) {
+                        featuredSection.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                    }
+                });
+
+                // Hide scroll indicator when user scrolls
+                let hasScrolled = false;
+                window.addEventListener('scroll', function() {
+                    if (!hasScrolled && window.scrollY > 50) {
+                        hasScrolled = true;
+                        scrollIndicator.classList.add('hidden');
+                    }
+                }, { passive: true });
+            }
+        });
+    </script>
 </head>
 <body style="margin: 0">
     <header>
@@ -15,8 +73,7 @@
         <nav class="nav">
             <div class="nav-links">
                 <a href="index.html">HOME</a>
-                <a href="pools-parks.html">POOLS & PARKS</a>
-                <a href="fitness-center.html">FITNESS CENTERS</a>
+                <a href="amenities.html">AMENITIES</a>
                 <a href="community-events.html">COMMUNITY EVENTS</a>
                 <a href="resource.html">RESOURCES</a>
                 <a href="references.html">REFERENCES</a>
@@ -29,140 +86,154 @@
     </header>
 
     <main>
-        <!-- Hero Section -->
+        <!-- Hero Section with Image -->
         <div class="hero-section fade-in-view">
-            <p class="eyebrow">Lakes of Willowgate</p>
-            <h1>Everything Your Community Needs—All in One Place</h1>
-            <p>Find events, fitness centers, parks, pools, and local resources near you.</p>
-            <div class="hero-buttons">
-                <a href="resource.html" class="hero-btn primary-btn">Explore Community Resources</a>
-                <a href="community-events.html" class="hero-btn secondary-btn">View Events Calendar</a>
+            <div class="hero-image-container">
+                <img src="Hero-Index.jpg" alt="Lakes of Willowgate Community" class="hero-background">
+                <div class="hero-overlay"></div>
             </div>
-        </div>
-
-        <!-- Quick Access Tiles -->
-        <div class="quick-access-section fade-in-view">
-            <p class="eyebrow">Start here</p>
-            <h2>Quick Access</h2>
-            <p>Find what you need in seconds</p>
-            <div class="tiles-grid">
-                <a href="fitness-center.html" class="access-tile">
-                    <h3>Fitness Centers</h3>
-                    <p>Gyms, classes, and trainers</p>
-                </a>
-                <a href="pools-parks.html" class="access-tile">
-                    <h3>Pools & Parks</h3>
-                    <p>Swimming and outdoor fun</p>
-                </a>
-                <a href="community-events.html" class="access-tile">
-                    <h3>Community Events</h3>
-                    <p>Calendar and activities</p>
-                </a>
-                <a href="resource.html" class="access-tile">
-                    <h3>Programs & Classes</h3>
-                    <p>Educational opportunities</p>
-                </a>
-                <a href="resource.html" class="access-tile">
-                    <h3>Health & Wellness</h3>
-                    <p>Local health resources</p>
-                </a>
-                <a href="community-events.html" class="access-tile">
-                    <h3>Volunteer</h3>
-                    <p>Get involved in your community</p>
-                </a>
-            </div>
-        </div>
-
-        <!-- What's Happening Now -->
-        <div class="happening-now-section fade-in-view">
-            <h2>What's Happening Now</h2>
-            <div class="happening-content">
-                <div class="happening-card featured">
-                    <h3>Summer Pool Season Starts</h3>
-                    <p>All pools are now open with extended hours. Family swim nights every Friday at 6 PM. Sign up for swim lessons this week!</p>
-                    <a href="pools-parks.html" class="card-link">View Pool Hours</a>
+            <div class="hero-content">
+                <p class="eyebrow">Lakes of Willowgate</p>
+                <h1>Welcome Home to Your Perfect Community</h1>
+                <p>Experience exceptional living with world-class amenities, vibrant events, and a welcoming neighborhood where memories are made.</p>
+                <div class="hero-buttons">
+                    <a href="resource.html#map" class="hero-btn primary-btn">Neighborhood Map</a>
+                    <a href="community-events.html#upcoming-list" class="hero-btn secondary-btn">View Events</a>
                 </div>
-                <div class="happening-card">
-                    <h3>Community 5K Fun Run</h3>
-                    <p>Saturday morning, June 15th at Miller Park. All ages and fitness levels welcome. Free registration!</p>
-                    <a href="community-events.html" class="card-link">Learn More</a>
-                </div>
-                <div class="happening-card">
-                    <h3>Dog Hangout Day</h3>
-                    <p>Join us for a fun day at the park with your furry friends! Activities include socializing and games for dogs of all sizes.</p>
-                    <a href="fitness-center.html" class="card-link">View Schedule</a>
+                <div class="scroll-indicator">
+                    <div class="scroll-text">Scroll Down</div>
+                    <div class="scroll-arrow">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M12 5L12 19M12 19L6 13M12 19L18 13" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                        </svg>
+                    </div>
                 </div>
             </div>
         </div>
 
-        <!-- Community Spotlight -->
-        <div class="spotlight-section fade-in-view">
-            <h2>Community Spotlight</h2>
-            <div class="spotlight-content">
-                <h3>Volunteer Spotlight: Sarah's Summer Initiative</h3>
-                <p>Sarah, a longtime community member, has launched a free art program for kids this summer at the recreation center. Every Tuesday and Thursday, she teaches drawing, painting, and sculpting. "Seeing the kids create something they're proud of is the best part of my week," Sarah shares. Join us in celebrating her dedication to our community!</p>
-                <p class="spotlight-attribution">— Community Highlights</p>
-                <a href="community-events.html" class="spotlight-link">View Volunteer Opportunities</a>
+        <!-- Featured Sections: One for Each Page -->
+        <div class="featured-pages-section">
+            <!-- Amenities Feature -->
+            <div class="page-feature amenities-feature fade-in-left hover-lift">
+                <div class="feature-image">
+                    <img src="Hero-amenities.jpg" alt="Community Amenities">
+                    <div class="feature-overlay"></div>
+                </div>
+                <div class="feature-content">
+                    <p class="feature-eyebrow">Discover</p>
+                    <h2>World-Class Amenities</h2>
+                    <p>Dive into crystal-clear pools, train with expert fitness instructors, and explore beautiful parks and green spaces. Our state-of-the-art facilities are designed for your wellness and enjoyment.</p>
+                    <ul class="feature-highlights">
+                        <li>Personal trainers & fitness classes</li>
+                        <li>Indoor & outdoor pools</li>
+                        <li>Parks, trails & playgrounds</li>
+                        <li>Sports courts & recreation areas</li>
+                    </ul>
+                    <a href="amenities.html#fitness" class="feature-btn">Explore All Amenities</a>
+                </div>
+            </div>
+
+            <!-- Community Events Feature -->
+            <div class="page-feature events-feature fade-in-right hover-lift reverse">
+                <div class="feature-image">
+                    <img src="Hero-community events.jpg" alt="Community Events">
+                    <div class="feature-overlay"></div>
+                </div>
+                <div class="feature-content">
+                    <p class="feature-eyebrow">Connect</p>
+                    <h2>Community Events</h2>
+                    <p>Join your neighbors for exciting events, festivals, and activities throughout the year. From family movie nights to fitness challenges, there's always something happening in our vibrant community.</p>
+                    <ul class="feature-highlights">
+                        <li>Weekly community gatherings</li>
+                        <li>Seasonal festivals & celebrations</li>
+                        <li>Family-friendly activities</li>
+                        <li>Special interest clubs & groups</li>
+                    </ul>
+                    <a href="community-events.html#calendar" class="feature-btn">View Event Calendar</a>
+                </div>
+            </div>
+
+            <!-- Resources Feature -->
+            <div class="page-feature resources-feature fade-in-left hover-lift">
+                <div class="feature-image">
+                    <img src="Resources-index.jpg" alt="Community Resources">
+                    <div class="feature-overlay"></div>
+                </div>
+                <div class="feature-content">
+                    <p class="feature-eyebrow">Access</p>
+                    <h2>Community Resources</h2>
+                    <p>Everything you need is at your fingertips. Access important forms, contact information, facility hours, and helpful resources to make your community life seamless and convenient.</p>
+                    <ul class="feature-highlights">
+                        <li>Online forms & documents</li>
+                        <li>Contact directory</li>
+                        <li>Facility hours & locations</li>
+                        <li>Community guidelines</li>
+                    </ul>
+                    <a href="resource.html#resource-duo" class="feature-btn">Browse Resources</a>
+                </div>
             </div>
         </div>
 
-        <!-- Popular Resources -->
-        <div class="popular-resources-section fade-in-view">
-            <h2>Popular Resources</h2>
-            <p>Most-used services in our community</p>
-            <div class="resources-grid">
-                <div class="resource-card">
-                    <h3>Book a Personal Trainer</h3>
-                    <p>One-on-one guidance from certified fitness professionals</p>
-                    <a href="fitness-center.html" class="resource-link">Learn More</a>
+        <!-- Quick Stats -->
+        <div class="stats-section fade-in-up">
+            <h2>By the Numbers</h2>
+            <div class="stats-grid">
+                <div class="stat-card">
+                    <div class="stat-number">3</div>
+                    <div class="stat-label">Fitness Centers</div>
                 </div>
-                <div class="resource-card">
-                    <h3>Find a Park Near You</h3>
-                    <p>Interactive map with all parks, playgrounds, and trails</p>
-                    <a href="pools-parks.html" class="resource-link">View Map</a>
+                <div class="stat-card">
+                    <div class="stat-number">50+</div>
+                    <div class="stat-label">Weekly Classes</div>
                 </div>
-                <div class="resource-card">
-                    <h3>Pool Hours Today</h3>
-                    <p>Real-time hours and lap swim schedules</p>
-                    <a href="pools-parks.html" class="resource-link">Check Hours</a>
+                <div class="stat-card">
+                    <div class="stat-number">4</div>
+                    <div class="stat-label">Community Parks</div>
                 </div>
-                <div class="resource-card">
-                    <h3>Free Community Classes</h3>
-                    <p>From fitness to arts and crafts for all ages</p>
-                    <a href="resource.html" class="resource-link">View Classes</a>
-                </div>
-                <div class="resource-card">
-                    <h3>Youth Programs</h3>
-                    <p>Summer camps, sports, and enrichment activities</p>
-                    <a href="resource.html" class="resource-link">Explore</a>
-                </div>
-                <div class="resource-card">
-                    <h3>Community Contacts</h3>
-                    <p>Quick directory of local services and departments</p>
-                    <a href="resource.html" class="resource-link">View Contacts</a>
+                <div class="stat-card">
+                    <div class="stat-number">100+</div>
+                    <div class="stat-label">Annual Events</div>
                 </div>
             </div>
         </div>
 
-        <!-- How It Works -->
-        <div class="how-it-works-section fade-in-view">
-            <h2>How the Hub Works</h2>
-            <p>Get started in three simple steps</p>
-            <div class="steps-grid">
-                <div class="step-card">
-                    <div class="step-number">1</div>
-                    <h3>Browse</h3>
-                    <p>Explore all community resources, classes, events, and facilities available to you and your family.</p>
+        <!-- Featured Gallery Carousel -->
+        <div class="featured-gallery-section fade-in-view">
+            <h2>Community Gallery</h2>
+            <p class="gallery-subtitle">Explore the beauty and vibrancy of Lakes of Willowgate</p>
+            
+            <div class="carousel-container">
+                <button class="carousel-btn prev" id="prevBtn" aria-label="Previous image">❮</button>
+                
+                <div class="carousel-wrapper">
+                    <div class="carousel-slide">
+                        <img src="carousel-1.jpg" alt="Family enjoying community dock" class="carousel-image">
+                    </div>
+                    <div class="carousel-slide">
+                        <img src="carousel-2.jpg" alt="Beautiful lakeside property" class="carousel-image">
+                    </div>
+                    <div class="carousel-slide">
+                        <img src="carousel-3.jpg" alt="Scenic lake view" class="carousel-image">
+                    </div>
                 </div>
-                <div class="step-card">
-                    <div class="step-number">2</div>
-                    <h3>Find</h3>
-                    <p>Use our search tools and filters to discover activities and services that match your interests and schedule.</p>
-                </div>
-                <div class="step-card">
-                    <div class="step-number">3</div>
-                    <h3>Connect</h3>
-                    <p>Get involved, register for classes, volunteer, and stay connected with your community.</p>
+                
+                <button class="carousel-btn next" id="nextBtn" aria-label="Next image">❯</button>
+            </div>
+            
+            <div class="carousel-controls">
+                <div class="carousel-dots" id="carouselDots"></div>
+                <a href="gallery.html" class="see-more-btn">View All Images →</a>
+            </div>
+        </div>
+
+        <!-- Call to Action -->
+        <div class="cta-section fade-in-view">
+            <div class="cta-content">
+                <h2>Ready to Get Involved?</h2>
+                <p>Join our thriving community and discover everything Lakes of Willowgate has to offer. From fitness to family fun, your perfect lifestyle awaits.</p>
+                <div class="cta-buttons">
+                    <a href="community-events.html#upcoming-list" class="cta-btn primary">Upcoming Events</a>
+                    <a href="resource.html#community-forms-hub" class="cta-btn secondary">Volunteer Today</a>
                 </div>
             </div>
         </div>
@@ -170,16 +241,37 @@
 
     <footer class="fade-in-view">
         <div class="footer-inner">
-            <div class="footer-contacts">
-                <h2>Contact Us</h2>
-                <p>Email: community@willowgate.org</p>
-                <p>Phone: (555) 123-4567</p>
+            <!-- Contact Section -->
+            <div class="footer-section footer-contacts">
+                <h3>Contact</h3>
+                <a href="mailto:community@willowgate.org" class="footer-link">📧 community@willowgate.org</a>
+                <a href="tel:+15551234567" class="footer-link">📞 (555) 123-4567</a>
             </div>
-            <div class="footer-meta">
-                <p class="footer-line">Lakes of Willowgate Community Association</p>
-                <p class="footer-line">Copyright (c) 2026 Lakes of Willowgate. All rights reserved.</p>
-                <p class="footer-line">Lakes of Willowgate and the Lakes of Willowgate logo are trademarks of the Lakes of Willowgate Community Association.</p>
-                <p class="footer-line">This site is for community information only.</p>
+            
+            <!-- Quick Links -->
+            <div class="footer-section footer-links">
+                <h3>Quick Links</h3>
+                <a href="index.html" class="footer-link">Home</a>
+                <a href="amenities.html" class="footer-link">Amenities</a>
+                <a href="pools-parks.html" class="footer-link">Pools & Parks</a>
+                <a href="fitness-center.html" class="footer-link">Fitness Center</a>
+                <a href="community-events.html" class="footer-link">Events</a>
+                <a href="resource.html" class="footer-link">Resources</a>
+                <a href="references.html" class="footer-link">References</a>
+            </div>
+            
+            <!-- Hours Section -->
+            <div class="footer-section footer-hours">
+                <h3>Hours</h3>
+                <p class="footer-hours-text"><strong>Facilities:</strong></p>
+                <p class="footer-hours-text">Mon-Fri: 5:00 AM - 10:00 PM</p>
+                <p class="footer-hours-text">Weekends: 7:00 AM - 8:00 PM</p>
+            </div>
+            
+            <!-- Copyright -->
+            <div class="footer-section footer-legal">
+                <p class="footer-copyright">&copy; 2026 Lakes of Willowgate Community Association. All rights reserved.</p>
+                <p class="footer-small">This site is for community information only.</p>
             </div>
         </div>
     </footer>
@@ -206,67 +298,6 @@
                     'Explore available facilities and activities',
                     'Sign up for a membership or reserve time',
                     'Enjoy amenities and connect with neighbors'
-                ]
-            },
-            'pools-parks.html': {
-                title: 'Pools & Parks',
-                keywords: ['pools', 'parks', 'swimming', 'aquatic', 'outdoor', 'recreation'],
-                content: [
-                    'Community Pools & Parks',
-                    'Explore local pools, parks, hours, rules, and activities for all ages',
-                    'Operating Hours',
-                    'Pools & parks have seasonal and daily hours',
-                    'Locations',
-                    'Multiple community locations throughout the neighborhood',
-                    'Safety First',
-                    'Certified lifeguards on duty at all pools',
-                    'Family Friendly',
-                    'Open to all ages with activities and amenities',
-                    'Pool Hours',
-                    'Monday Friday 10:00 AM 8:00 PM',
-                    'Saturday 9:00 AM 9:00 PM',
-                    'Sunday 11:00 AM 7:00 PM',
-                    'Lap Swim',
-                    'Open Swim',
-                    'Adult-Only Swim',
-                    'Pool Rules',
-                    'Safety guidelines',
-                    'Park Locations',
-                    'Activities and amenities',
-                    'Playground equipment',
-                    'Walking trails',
-                    'Picnic areas',
-                    'Sports fields'
-                ]
-            },
-            'fitness-center.html': {
-                title: 'Fitness Centers',
-                keywords: ['fitness', 'gym', 'workout', 'trainers', 'exercise', 'health', 'athletic'],
-                content: [
-                    'Community Fitness Centers',
-                    'Find the right trainers, activities, and schedules',
-                    'Hours of Operation',
-                    'Monday Friday 5:00 AM 10:00 PM',
-                    'Saturday 7:00 AM 8:00 PM',
-                    'Sunday 8:00 AM 6:00 PM',
-                    'Downtown Fitness Hub',
-                    'Lakeside Athletic Complex',
-                    'Riverside Community Center',
-                    'Meet Our Trainers',
-                    'Experienced professionals',
-                    'Jordan Lee',
-                    'Strength & Conditioning',
-                    'Ava Martinez',
-                    'Yoga & Mobility',
-                    'Marcus Reid',
-                    'HIIT & Athletic Training',
-                    'Book a Trainer',
-                    'Personal training',
-                    'Group classes',
-                    'Cardio equipment',
-                    'Weight training',
-                    'Yoga studio',
-                    'Indoor track'
                 ]
             },
             'community-events.html': {
@@ -444,7 +475,7 @@
             }, observerOptions);
 
             // Observe all scrollable sections
-            document.querySelectorAll('.hero-section, .quick-access-section, .happening-now-section, .spotlight-section, .popular-resources-section, .how-it-works-section, footer').forEach(el => {
+            document.querySelectorAll('.hero-section, .quick-access-section, .happening-now-section, .spotlight-section, .popular-resources-section, .how-it-works-section, .featured-gallery-section, footer').forEach(el => {
                 observer.observe(el);
             });
         });
