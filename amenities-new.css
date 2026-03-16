@@ -1,0 +1,395 @@
+/* Import Cinzel Font */
+@import url('https://fonts.googleapis.com/css2?family=Cinzel:wght@400;500;600;700;800;900&display=swap');
+
+:root {
+    --primary: #0052a3;
+    --primary-dark: #003d82;
+    --secondary: #1c7ed6;
+    --text: #1a1a1a;
+    --text-muted: #5a5a5a;
+    --border: #ddd;
+    --bg-light: #f9f9f9;
+    --bg-cream: #fdf8f4;
+    --green-accent: #7bb462;
+    --shadow: rgba(0, 0, 0, 0.1);
+    --shadow-heavy: rgba(0, 0, 0, 0.15);
+}
+
+* {
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+    overflow-x: hidden;
+    scrollbar-gutter: stable;
+}
+
+body {
+    font-family: 'Open Sans', sans-serif;
+    line-height: 1.6;
+    color: var(--text);
+    background-color: var(--bg-cream);
+    margin: 0;
+    padding: 0;
+}
+
+/* Typography */
+h1, h2, h3, h4, h5, h6 {
+    font-family: 'Cinzel', 'BebasNeue', serif;
+    font-weight: 600;
+    line-height: 1.2;
+    margin-bottom: 1rem;
+    color: var(--text);
+}
+
+h1 {
+    font-size: 3rem;
+    font-weight: 700;
+}
+
+h2 {
+    font-size: 2.5rem;
+    font-weight: 600;
+}
+
+h3 {
+    font-size: 1.8rem;
+    font-weight: 600;
+}
+
+p {
+    margin-bottom: 1rem;
+    color: var(--text-muted);
+}
+
+/* Container */
+.container {
+    max-width: 1400px;
+    margin: 0 auto;
+    padding: 0 2rem;
+}
+
+/* Hero Section */
+.amenities-hero {
+    background: linear-gradient(135deg, var(--primary) 0%, var(--secondary) 100%);
+    color: white;
+    text-align: center;
+    padding: 8rem 2rem 6rem;
+    position: relative;
+    overflow: hidden;
+}
+
+.amenities-hero::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: url('Amenities.jpg') center/cover;
+    opacity: 0.2;
+    z-index: 0;
+}
+
+.hero-content {
+    position: relative;
+    z-index: 1;
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.hero-content h1 {
+    color: white;
+    margin-bottom: 1.5rem;
+    font-size: 4rem;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+}
+
+.hero-subtitle {
+    font-size: 1.3rem;
+    color: rgba(255, 255, 255, 0.95);
+    max-width: 600px;
+    margin: 0 auto;
+    font-weight: 300;
+}
+
+/* Amenities Section */
+.amenities-section {
+    padding: 6rem 0;
+    background: var(--bg-cream);
+}
+
+.amenities-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(500px, 1fr));
+    gap: 3rem;
+    margin-top: 2rem;
+}
+
+/* Amenity Cards */
+.amenity-card {
+    background: white;
+    border-radius: 20px;
+    overflow: hidden;
+    box-shadow: 0 10px 30px var(--shadow);
+    transition: all 0.3s ease;
+    border: 1px solid rgba(0, 82, 163, 0.08);
+}
+
+.amenity-card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 20px 50px var(--shadow-heavy);
+}
+
+.card-content {
+    display: flex;
+    min-height: 280px;
+}
+
+.amenity-info {
+    flex: 1;
+    padding: 2.5rem;
+    display: flex;
+    flex-direction: column;
+}
+
+.amenity-icon {
+    margin-bottom: 1.5rem;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+}
+
+.amenity-icon svg {
+    transition: transform 0.3s ease;
+}
+
+.amenity-card:hover .amenity-icon svg {
+    transform: scale(1.1);
+}
+
+.amenity-info h3 {
+    color: var(--primary);
+    margin-bottom: 1rem;
+    font-size: 1.8rem;
+    font-weight: 700;
+}
+
+.amenity-info p {
+    color: var(--text-muted);
+    line-height: 1.7;
+    font-size: 1rem;
+    flex-grow: 1;
+}
+
+.amenity-actions {
+    margin-top: 1.5rem;
+}
+
+.trainer-btn {
+    display: inline-block;
+    background: linear-gradient(135deg, var(--primary), var(--secondary));
+    color: white;
+    padding: 12px 24px;
+    border-radius: 30px;
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 0.9rem;
+    transition: all 0.3s ease;
+    border: none;
+    cursor: pointer;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+.trainer-btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 25px rgba(0, 82, 163, 0.3);
+    background: linear-gradient(135deg, var(--primary-dark), var(--primary));
+}
+
+.amenity-image {
+    flex: 0 0 300px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: var(--bg-light);
+    position: relative;
+    overflow: hidden;
+}
+
+.image-placeholder {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(135deg, #f0f8ff, #e8f1ff);
+    border: 2px dashed var(--primary);
+    color: var(--primary);
+    font-weight: 600;
+    font-size: 1.1rem;
+    transition: all 0.3s ease;
+}
+
+.amenity-card:hover .image-placeholder {
+    background: linear-gradient(135deg, #e8f1ff, #d0e8ff);
+    transform: scale(1.02);
+}
+
+/* Footer */
+.amenities-footer {
+    background: var(--primary);
+    color: white;
+    text-align: center;
+    padding: 3rem 2rem;
+    margin-top: 4rem;
+}
+
+.footer-content {
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.footer-content p {
+    color: rgba(255, 255, 255, 0.9);
+    margin-bottom: 0.5rem;
+}
+
+/* Responsive Design */
+@media (max-width: 1200px) {
+    .amenities-grid {
+        grid-template-columns: 1fr;
+        gap: 2.5rem;
+    }
+}
+
+@media (max-width: 768px) {
+    .hero-content h1 {
+        font-size: 2.8rem;
+    }
+    
+    .hero-subtitle {
+        font-size: 1.1rem;
+    }
+    
+    .amenities-hero {
+        padding: 6rem 1rem 4rem;
+    }
+    
+    .container {
+        padding: 0 1rem;
+    }
+    
+    .amenities-section {
+        padding: 4rem 0;
+    }
+    
+    .card-content {
+        flex-direction: column;
+        min-height: auto;
+    }
+    
+    .amenity-image {
+        flex: 0 0 200px;
+        order: -1;
+    }
+    
+    .amenity-info {
+        padding: 2rem;
+    }
+    
+    .amenity-info h3 {
+        font-size: 1.5rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .amenities-grid {
+        grid-template-columns: 1fr;
+        gap: 1.2rem;
+    }
+    .amenity-info {
+        padding: 1.2rem 0.7rem;
+    }
+    .hero-content h1 {
+        font-size: 1.5rem;
+    }
+    .amenities-hero {
+        padding: 2.5rem 0.5rem 2rem;
+    }
+}
+
+/* Animations */
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+/* Animation classes for scroll effects */
+.fade-in {
+    animation: fadeIn 0.8s ease-out;
+}
+
+.fade-in-up {
+    animation: fadeInUp 0.8s ease-out;
+}
+
+/* Accessibility improvements */
+@media (prefers-reduced-motion: reduce) {
+    * {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+    }
+    
+    .amenity-card:hover {
+        transform: none;
+    }
+    
+    .trainer-btn:hover {
+        transform: none;
+    }
+}
+
+/* Focus states for accessibility */
+.trainer-btn:focus {
+    outline: 3px solid rgba(0, 82, 163, 0.5);
+    outline-offset: 2px;
+}
+
+.amenity-card:focus-within {
+    outline: 2px solid var(--primary);
+    outline-offset: 4px;
+}
+
+/* Print styles */
+@media print {
+    .amenities-hero {
+        background: var(--primary) !important;
+        color: white;
+    }
+    
+    .amenity-card {
+        box-shadow: none !important;
+        border: 2px solid var(--border);
+        break-inside: avoid;
+        margin-bottom: 2rem;
+    }
+}

@@ -706,34 +706,7 @@ section {
 
 /* ===== RESPONSIVE ANIMATION ADJUSTMENTS ===== */
 
-@media (max-width: 768px) {
-    /* Reduce animations on mobile for performance */
-    .animate-on-scroll,
-    .fade-in-up,
-    .fade-in-down,
-    .fade-in-left,
-    .fade-in-right,
-    .zoom-in {
-        opacity: 1 !important;
-        transform: none !important;
-    }
-    
-    .stagger-children > * {
-        opacity: 1 !important;
-        transform: none !important;
-    }
-}
 
-@media (prefers-reduced-motion: reduce) {
-    /* Respect user's motion preferences */
-    *,
-    *::before,
-    *::after {
-        animation-duration: 0.01ms !important;
-        animation-iteration-count: 1 !important;
-        transition-duration: 0.01ms !important;
-    }
-}
 
 /* ===== NUMBER COUNTER ANIMATION ===== */
 

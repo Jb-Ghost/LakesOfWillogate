@@ -9,6 +9,7 @@ document.addEventListener('DOMContentLoaded', function() {
     initScrollProgress();
     initCounterAnimations();
     initParallaxEffects();
+    initStaircaseGallery();
 });
 
 /**
@@ -140,6 +141,36 @@ function initParallaxEffects() {
             const yPos = -(scrolled * speed);
             element.style.transform = `translateY(${yPos}px)`;
         });
+    });
+}
+
+/**
+ * Staircase Gallery scroll-based fade-in
+ */
+function initStaircaseGallery() {
+    const staircaseItems = document.querySelectorAll('.staircase-item');
+    
+    if (staircaseItems.length === 0) return;
+
+    const observerOptions = {
+        threshold: 0.2,
+        rootMargin: '0px 0px -100px 0px'
+    };
+
+    const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                const delay = parseInt(entry.target.getAttribute('data-delay')) || 0;
+                setTimeout(() => {
+                    entry.target.classList.add('fade-in');
+                }, delay);
+                observer.unobserve(entry.target);
+            }
+        });
+    }, observerOptions);
+
+    staircaseItems.forEach(item => {
+        observer.observe(item);
     });
 }
 

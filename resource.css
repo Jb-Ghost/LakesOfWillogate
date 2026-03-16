@@ -1,9 +1,177 @@
-/* Import Cinzel Font */
+        header {
+            min-height: 150px;
+        }
+    header {
+        min-height: 90px;
+    }
+@media (max-width: 320px) {
+    header {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+    }
+    .community-header {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        width: 100%;
+    }
+    .logo {
+        order: 1;
+        margin-bottom: 2px;
+    }
+    .community-header h1 {
+        font-size: 26px !important;
+        line-height: 1.15;
+        margin: 10px 0 8px 0;
+        word-break: break-word;
+        width: 100%;
+        order: 2;
+    }
+    nav.nav {
+        flex-direction: column;
+        align-items: stretch;
+        gap: 6px;
+        width: 100%;
+        margin-top: 6px;
+    }
+    .nav-links {
+        display: flex;
+        flex-direction: column;
+        gap: 4px;
+        width: 100%;
+    }
+    .nav-links a {
+        display: block;
+        width: 100%;
+        text-align: center;
+        font-size: 15px !important;
+        padding: 8px 0;
+        box-sizing: border-box;
+    }
+    .search-container {
+        margin-top: 8px;
+    }
+}
+@media (max-width: 320px) {
+    header h1, header h2, header h3, nav a, nav span {
+        font-size: 13px !important;
+        line-height: 1.1;
+        word-break: break-word;
+    }
+    nav {
+        flex-direction: column;
+        align-items: stretch;
+        gap: 2px;
+    }
+    .search-container {
+        margin-top: 4px;
+    }
+}
+@media (max-width: 425px) {
+    header, nav {
+        min-width: 0;
+        width: 100vw;
+        max-width: 100vw;
+        box-sizing: border-box;
+        overflow-x: visible;
+    }
+    nav {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 4px;
+        justify-content: space-between;
+        align-items: center;
+    }
+    .search-container {
+        width: 100%;
+        max-width: 100vw;
+        min-width: 0;
+        flex: 1 1 100%;
+        margin: 6px 0 0 0;
+        box-sizing: border-box;
+    }
+    .search-input {
+        width: 100%;
+        min-width: 0;
+        max-width: 100vw;
+        font-size: 13px;
+        padding: 8px 8px;
+    }
+    .search-btn {
+        width: 32px;
+        height: 32px;
+        font-size: 18px;
+    }
+}
+
+@media (max-width: 375px) {
+    .search-input {
+        font-size: 12px;
+        padding: 7px 6px;
+    }
+    .search-btn {
+        width: 28px;
+        height: 28px;
+        font-size: 16px;
+    }
+}
+
+@media (max-width: 320px) {
+    .search-input {
+        font-size: 11px;
+        padding: 5px 4px;
+    }
+    .search-btn {
+        width: 24px;
+        height: 24px;
+        font-size: 14px;
+    }
+}
+/* Extra mobile breakpoints for common phone sizes */
+@media (max-width: 425px) {
+    section { padding: 32px 8px 32px 8px; }
+    .hero-section, .welcome-section { min-height: 320px; }
+    .hero-content h1 { font-size: 22px; }
+    .hero-btn { font-size: 13px; padding: 8px 14px; }
+    nav { padding: 14px 6px; }
+    header { min-height: 60px; }
+}
+
+@media (max-width: 375px) {
+    section { padding: 28px 4px 28px 4px; }
+    .hero-section, .welcome-section { min-height: 280px; }
+    .hero-content h1 { font-size: 18px; }
+    .hero-btn { font-size: 12px; padding: 7px 10px; }
+    nav { padding: 10px 2px; }
+    header { min-height: 54px; }
+}
+
+@media (max-width: 320px) {
+    section { padding: 20px 2px 20px 2px; }
+    .hero-section, .welcome-section { min-height: 220px; }
+    .hero-content h1 { font-size: 15px; }
+    .hero-btn { font-size: 11px; padding: 5px 6px; }
+    nav { padding: 6px 0; }
+    header { min-height: 44px; }
+}
+/* Import modern fonts */
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Cinzel:wght@400;500;600;700;800;900&display=swap');
 
 /* Page-specific styles for Resources - main layout + friendly motion */
 
 /* Header styles inherited from index.css */
+
+/* Main section background matching index.css */
+main {
+    padding: 0 0 60px 0;
+    background: 
+        url("data:image/svg+xml,%3Csvg width='100' height='60' viewBox='0 0 100 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M0 30Q25 10 50 30T100 30' stroke='rgba(0,52,163,0.1)' stroke-width='2' fill='none'/%3E%3Cpath d='M0 40Q25 20 50 40T100 40' stroke='rgba(0,52,163,0.08)' stroke-width='1.5' fill='none'/%3E%3Cpath d='M0 20Q25 5 50 20T100 20' stroke='rgba(0,52,163,0.06)' stroke-width='1' fill='none'/%3E%3C/svg%3E"),
+        linear-gradient(135deg, #f5ede3 0%, #f9f3eb 50%, #fdf8f4 100%);
+    background-size: 100px 60px;
+}
 
 :root {
     --card-bg: rgba(255, 255, 255, 0.86);
@@ -20,7 +188,8 @@ html {
 
 /* Override eyebrow animation for resource page hero */
 .resources-hero .eyebrow {
-    color: #6a7a90;
+    font-family: 'BebasNeue', 'Montserrat', sans-serif;
+    color: rgba(255, 255, 255, 0.9);
     opacity: 0;
     animation: fadeInTitle 0.8s ease-out 0.2s forwards;
 }
@@ -37,29 +206,41 @@ html {
 }
 
 .resources-hero {
-    max-width: 1200px;
-    margin: 40px auto 60px auto;
-    padding: 50px 50px 10px 50px;
+    min-width: auto;
+    min-height: 430px;
+    padding: 50px 60px 10px 60px;
     display: grid;
-    grid-template-columns: 1.5fr 1fr;
+    grid-template-columns: 1fr 1fr;
     gap: 50px;
     align-items: center;
-    background: #ffffff;
-    border-radius: 22px;
+    width: 100%;
+    max-width: 100%;
+    margin: 0 0 40px 0;
+    background:
+        linear-gradient(rgba(68, 136, 188, 0.7), rgba(68, 136, 188, 0.7)),
+        url("lake and more.jpg");
+    background-color: rgb(68, 136, 188);
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    border-radius: 0px;
     box-shadow: 0 18px 40px rgba(0, 52, 163, 0.12);
 }
 
 .resources-hero .hero-text h1 {
     margin: 10px 0 20px 0;
-    color: #003d82 !important;
+    color: #ffffff;
 }
 
 .resources-hero .lede {
-    max-width: 640px;
-    color: #2f3a4a;
+    max-width: 100%;
+    color: rgba(255, 255, 255, 0.95);
     line-height: 1.7;
     font-size: 16px;
-    margin-bottom: 10px;
+    margin-bottom: -30px;
+    margin-left: 0;
+    margin-right: 0;
+    text-align: center;
 }
 
 .hero-actions {
@@ -67,8 +248,10 @@ html {
     grid-template-columns: repeat(2, 1fr);
     gap: 16px;
     margin-top: 36px;
-    max-width: 600px;
+
     padding: 20px;
+    margin-left: auto;
+    margin-right: auto;
 }
 
 .pill-btn {
@@ -76,7 +259,7 @@ html {
     align-items: center;
     justify-content: center;
     gap: 8px;
-    padding: 14px 24px;
+    padding: 12px 28px;
     border-radius: 999px;
     background: linear-gradient(135deg, #0052a3, #1c7ed6);
     color: white;
@@ -275,22 +458,26 @@ html {
 
 .rating-close {
     position: absolute;
-    top: 12px;
-    right: 12px;
+    top: 15px;
+    right: 15px;
+    font-size: 26px;
+    color: #ffffff;
+    cursor: pointer;
+    background: #e74c3c;
     border: none;
-    background: #f2f4f7;
-    color: #2d3645;
     width: 34px;
     height: 34px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
     border-radius: 50%;
-    font-size: 20px;
-    cursor: pointer;
-    transition: background 0.2s ease, transform 0.2s ease;
+    transition: all 0.3s ease;
+    z-index: 10;
 }
 
 .rating-close:hover {
-    background: #e6ebf2;
-    transform: rotate(8deg);
+    transform: rotate(90deg) scale(1.05);
+    filter: brightness(0.95);
 }
 
 .rating-desc {
@@ -557,12 +744,6 @@ html {
     gap: 14px;
 }
 
-@media (max-width: 700px) {
-    .form-row {
-        grid-template-columns: 1fr;
-    }
-}
-
 /* Scroll-based fade animations */
 .fade-in-view {
     animation: fadeInScroll 1.2s ease-out forwards;
@@ -598,18 +779,16 @@ html {
     display: flex;
     flex-direction: column;
     gap: 30px;
-    max-width: 1200px;
-    margin: 0 auto 80px auto;
-    padding: 0 40px;
+    margin: 0 0 80px 0;
+    padding: 0 60px;
 }
 
 .resource-duo {
     display: grid;
     grid-template-columns: repeat(2, minmax(0, 1fr));
     gap: 30px;
-    max-width: 1200px;
-    margin: 30px auto 60px auto;
-    padding: 0 40px;
+    margin: 30px 0 60px 0;
+    padding: 0 60px;
     align-items: stretch;
 }
 
@@ -622,14 +801,15 @@ html {
 .submit-resource-section {
     background: #ffffff;
     border-radius: 20px;
-    padding: 28px 24px;
+    padding: 36px 48px;
     border-top: 4px solid #0052a3;
     box-shadow: 0 8px 24px rgba(0, 0, 0, 0.12);
 }
 
 .submit-resource-section h2 {
     font-size: 24px;
-    font-family: BungeeInline;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 700;
     color: #003d82;
     text-align: center;
     margin: 0 0 10px 0;
@@ -1048,32 +1228,13 @@ html {
     transform: translateY(-2px) scale(1.05);
 }
 
-@media (max-width: 768px) {
-    .quick-nav-floating {
-        bottom: 20px;
-        right: 20px;
-        gap: 8px;
-    }
-    
-    .nav-btn {
-        width: 48px;
-        height: 48px;
-        font-size: 20px;
-    }
-    
-    .nav-btn::before {
-        display: none;
-    }
-}
-
 /* Community Forms Hub */
 .community-forms-hub {
     background: #f7f9fc;
     border-radius: 20px;
-    padding: 36px 28px;
+    padding: 36px 60px;
     border-top: 4px solid #0052a3;
-    margin: 30px auto;
-    max-width: 1200px;
+    margin: 30px 0;
     box-shadow: 0 8px 24px rgba(0, 0, 0, 0.12);
 }
 
@@ -1089,14 +1250,14 @@ html {
 
 .forms-hub-header h2 {
     font-size: 24px;
-    font-family: BungeeInline;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 700;
     color: #003d82;
     margin: 0 0 10px 0;
 }
 
 .hub-description {
     color: #4b5768;
-    max-width: 680px;
     margin: 0 auto;
     font-size: 14px;
     line-height: 1.6;
@@ -1156,27 +1317,21 @@ html {
     align-self: center;
 }
 
-@media (max-width: 768px) {
-    .forms-list {
-        grid-template-columns: 1fr;
-    }
-}
-
 /* Contacts Section */
 .contacts-section {
     background: #f0f4f8;
     border-radius: 20px;
-    padding: 36px 28px;
+    padding: 36px 60px;
     border-top: 4px solid #0052a3;
-    margin: 30px auto;
-    max-width: 1200px;
+    margin: 30px 0;
     box-shadow: 0 8px 24px rgba(0, 0, 0, 0.12);
     transition: all 0.4s ease;
 }
 
 .contacts-section h2 {
     font-size: 24px;
-    font-family: BungeeInline;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 700;
     color: #003d82;
     text-align: center;
     margin: 0 0 10px 0;
@@ -1213,16 +1368,16 @@ html {
 .forms-section {
     background: #f7f9fc;
     border-radius: 20px;
-    padding: 36px 28px;
+    padding: 36px 60px;
     border-top: 4px solid #0052a3;
-    margin: 30px auto;
-    max-width: 1200px;
+    margin: 30px 0;
     box-shadow: 0 8px 24px rgba(0, 0, 0, 0.12);
 }
 
 .forms-section h2 {
     font-size: 24px;
-    font-family: BungeeInline;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 700;
     color: #003d82;
     text-align: center;
     margin: 0 0 10px 0;
@@ -1237,10 +1392,9 @@ html {
 .hours-location-section {
     background: #ffffff;
     border-radius: 20px;
-    padding: 36px 28px;
+    padding: 36px 60px;
     border-top: 4px solid #0052a3;
-    margin: 30px auto;
-    max-width: 1200px;
+    margin: 30px 0;
     box-shadow: 0 8px 24px rgba(0, 0, 0, 0.12);
     opacity: 0;
     animation: slideInLeft 0.8s cubic-bezier(0.34, 1.56, 0.64, 1) 0.8s forwards;
@@ -1259,7 +1413,8 @@ html {
 
 .hours-location-section h2 {
     font-size: 24px;
-    font-family: BungeeInline;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 700;
     color: #003d82;
     text-align: center;
     margin: 0 0 10px 0;
@@ -1318,9 +1473,8 @@ html {
 
 /* Map Section */
 .map-section {
-    max-width: 1200px;
-    margin: 40px auto 70px auto;
-    padding: 40px;
+    margin: 40px 0 70px 0;
+    padding: 40px 60px;
     border-radius: 16px;
     background: linear-gradient(135deg, #eef4ff, #f7fbff);
     border: 1px solid rgba(0,82,163,0.12);
@@ -1383,7 +1537,8 @@ html {
 
 .map-section h2 {
     font-size: 24px;
-    font-family: BungeeInline;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 700;
     color: #003d82;
     transition: all 0.4s cubic-bezier(0.34, 1.56, 0.64, 1);
     position: relative;
@@ -1496,284 +1651,6 @@ html {
     border: 2px solid #c3e6cb;
 }
 
-/* Responsive Design */
-
-/* Small laptops (1024px - 1199px) */
-@media (max-width: 1199px) {
-    .resources-hero {
-        padding: 35px 35px 0 35px;
-        gap: 40px;
-    }
-
-    .hero-actions {
-        grid-template-columns: repeat(2, 1fr);
-        gap: 14px;
-    }
-
-    .resources-wrapper {
-        padding: 0 35px;
-    }
-
-    .section-card {
-        padding: 28px;
-    }
-}
-
-/* Tablets landscape (900px - 1023px) */
-@media (max-width: 1023px) {
-    .resources-hero {
-        grid-template-columns: 1fr;
-        padding: 30px 30px 0 30px;
-        gap: 30px;
-    }
-
-    .hero-stats {
-        grid-template-columns: repeat(4, 1fr);
-    }
-
-    .resources-wrapper {
-        padding: 0 30px;
-    }
-
-    .resources-content .section-container {
-        grid-template-columns: repeat(2, 1fr);
-        gap: 28px;
-    }
-}
-
-@media (max-width: 1024px) {
-    .resources-wrapper {
-        grid-template-columns: 1fr;
-        gap: 30px;
-    }
-
-    .resource-duo {
-        grid-template-columns: 1fr;
-        padding: 0 30px;
-    }
-
-    .contacts-section .scrollable-content {
-        overflow-y: visible;
-        padding-right: 0;
-    }
-}
-
-@media (max-width: 768px) {
-    .resources-wrapper {
-        padding: 0 15px;
-    }
-
-    .resource-duo {
-        padding: 0 15px;
-    }
-
-    .form-group label {
-        font-size: 12px;
-    }
-
-    .form-group input,
-    .form-group select,
-    .form-group textarea {
-        padding: 8px 10px;
-        font-size: 12px;
-    }
-
-    .submit-btn {
-        padding: 10px 16px;
-        font-size: 13px;
-    }
-}
-
-@media (max-width: 600px) {
-    .resources-wrapper {
-        grid-template-columns: 1fr;
-        gap: 20px;
-        padding: 0 10px;
-
-@media (max-width: 1024px) {
-    .resource-duo {
-        grid-template-columns: 1fr;
-    }
-}
-    }
-
-    .resource-duo {
-        padding: 0 10px;
-        gap: 20px;
-    }
-
-    .form-group {
-        margin-bottom: 15px;
-    }
-
-    .form-group label {
-        font-size: 11px;
-    }
-
-    .form-group input,
-    .form-group select,
-    .form-group textarea {
-        padding: 8px 10px;
-        font-size: 12px;
-    }
-
-    .form-group textarea {
-        min-height: 70px;
-    }
-
-    .submit-btn {
-        padding: 10px 16px;
-        font-size: 12px;
-    }
-}
-
-/* Small phones */
-@media (max-width: 480px) {
-    .resources-hero {
-        padding: 20px 15px 0 15px;
-    }
-
-    .resources-hero h1 {
-        font-size: 28px;
-    }
-
-    .resources-hero .lede {
-        font-size: 14px;
-    }
-
-    .hero-actions {
-        grid-template-columns: 1fr;
-        gap: 12px;
-        padding: 15px;
-    }
-
-    .pill-btn {
-        font-size: 14px;
-        padding: 12px 20px;
-    }
-
-    .hero-stats {
-        grid-template-columns: repeat(2, 1fr);
-        gap: 12px;
-    }
-
-    .stat-card {
-        padding: 18px 20px;
-    }
-
-    .stat-number {
-        font-size: 24px;
-    }
-
-    .resources-content .section-container {
-        grid-template-columns: 1fr;
-        gap: 20px;
-    }
-
-    .section-card {
-        padding: 20px;
-    }
-
-    .section-card h2 {
-        font-size: 24px;
-    }
-
-    .info-card {
-        padding: 18px;
-        min-height: 180px;
-    }
-}
-
-@media (max-width: 1024px) {
-    .resources-hero {
-        grid-template-columns: 1fr;
-        gap: 18px;
-    }
-
-    .hero-stats {
-        grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
-    }
-
-    .map-card {
-        grid-template-columns: 1fr;
-    }
-}
-
-@media (max-width: 640px) {
-    .resources-hero {
-        padding: 0 12px;
-        margin: 24px auto;
-    }
-
-    .resources-wrapper {
-        gap: 20px;
-        padding: 0 12px;
-    }
-
-    .section-card {
-        padding: 16px;
-    }
-
-    .card-grid.two, .card-grid.three {
-        grid-template-columns: 1fr;
-    }
-
-    .pill-btn {
-        width: 100%;
-        justify-content: center;
-    }
-}
-
-/* Ultra-compact mobile - 320px */
-@media (max-width: 320px) {
-    .resources-hero {
-        padding: 20px 10px !important;
-    }
-
-    .resources-wrapper {
-        padding: 0 10px !important;
-    }
-
-    .section-card {
-        padding: 15px !important;
-    }
-
-    .section-card h2 {
-        font-size: 19px !important;
-        margin-bottom: 10px !important;
-        line-height: 1.3 !important;
-    }
-
-    .section-card p {
-        line-height: 1.5 !important;
-    }
-}
-
-/* Extreme ultra-compact - 280px */
-@media (max-width: 280px) {
-    .resources-hero {
-        padding: 18px 8px !important;
-    }
-
-    .resources-wrapper {
-        padding: 0 8px !important;
-    }
-
-    .section-card {
-        padding: 12px !important;
-    }
-
-    .section-card h2 {
-        font-size: 17px !important;
-        margin-bottom: 8px !important;
-        line-height: 1.3 !important;
-    }
-
-    .section-card p {
-        line-height: 1.4 !important;
-    }
-}
-
 /* Enhanced Animations */
 .resources-hero.fade-in-view {
     animation: fadeInUp 0.8s ease-out;
@@ -1837,4 +1714,133 @@ html {
 .section-card:hover {
     transform: translateY(-4px);
     box-shadow: 0 10px 25px rgba(0, 82, 163, 0.1);
+}
+
+/* Keep the 4 hero stat cards fixed on hover (no clear/tint effect). */
+.resources-hero .stat-card:hover,
+.resources-hero .stat-card:focus,
+.resources-hero .stat-card:focus-visible {
+    background: var(--card-bg);
+    transform: none;
+    box-shadow: var(--card-shadow);
+}
+
+.resources-hero .stat-card:hover::before,
+.resources-hero .stat-card:focus::before,
+.resources-hero .stat-card:focus-visible::before {
+    content: none;
+    opacity: 0;
+}
+
+.resources-hero .stat-card:hover .stat-number,
+.resources-hero .stat-card:focus .stat-number,
+.resources-hero .stat-card:focus-visible .stat-number {
+    transform: none;
+    color: #003d82;
+}
+
+/* ============================================= */
+/* RESPONSIVE DESIGN - MEDIA QUERIES */
+/* ============================================= */
+
+/* Mobile Devices (480px and below) */
+@media (max-width: 480px) {
+    html, body { font-size: 14px; }
+    main [id] { scroll-margin-top: 160px; }
+    h1 { font-size: 24px; }
+    h2 { font-size: 20px; }
+    h3 { font-size: 18px; }
+    .welcome-section { min-height: 340px; }
+    .hero-section { min-height: 340px; }
+    .hero-content h1 { font-size: 28px; line-height: 1.2; }
+    .hero-content .lede { font-size: 14px; line-height: 1.4; margin: 12px 0; }
+    .hero-btn { padding: 10px 20px; font-size: 14px; }
+    section { padding: 40px 12px 40px 12px; }
+    .card, .resource-card, .step-card { padding: 20px 10px; }
+    .hero-actions { flex-direction: column; gap: 12px; }
+    nav { padding: 18px 10px; }
+    header { height: auto; min-height: 70px; }
+}
+
+/* Tablet Devices (481px - 768px) */
+@media (min-width: 481px) and (max-width: 768px) {
+    html, body { font-size: 15px; }
+    h1 { font-size: 28px; }
+    h2 { font-size: 22px; }
+    h3 { font-size: 20px; }
+    .welcome-section { min-height: 400px; }
+    .hero-section { min-height: 320px; }
+    .hero-content h1 { font-size: 32px; line-height: 1.3; }
+    .hero-content .lede { font-size: 15px; line-height: 1.5; margin: 14px 0; }
+    .hero-btn { padding: 12px 24px; font-size: 15px; }
+    section { padding: 40px 30px; }
+    .card, .resource-card, .step-card { padding: 18px; }
+    nav { padding: 14px 25px; }
+    header { height: auto; min-height: 70px; }
+}
+
+/* Laptops (769px - 1024px) */
+@media (min-width: 769px) and (max-width: 1024px) {
+    h1 { font-size: 32px; }
+    h2 { font-size: 26px; }
+    h3 { font-size: 22px; }
+    .welcome-section { min-height: 480px; }
+    .hero-section { min-height: 380px; }
+    .hero-content h1 { font-size: 38px; }
+    .hero-content .lede { font-size: 16px; margin: 16px 0; }
+    section { padding: 50px 40px; }
+    .card, .resource-card, .step-card { padding: 20px; }
+}
+
+/* Desktop (1025px - 1440px) */
+@media (min-width: 1025px) and (max-width: 1440px) {
+    h1 { font-size: 36px; }
+    h2 { font-size: 28px; }
+    h3 { font-size: 24px; }
+    .welcome-section { min-height: 530px; }
+    .hero-section { min-height: 420px; }
+    .hero-content h1 { font-size: 42px; }
+    .hero-content .lede { font-size: 17px; margin: 18px 0; }
+    section { padding: 60px 50px; }
+}
+
+/* Large Screens (1441px and above) */
+@media (min-width: 1441px) and (max-width: 2559px) {
+    h1 { font-size: 40px; }
+    h2 { font-size: 32px; }
+    h3 { font-size: 26px; }
+    .welcome-section { min-height: 490px; max-width: fit-content; }
+    .hero-content h1 { font-size: 48px; }
+    .hero-content .lede { font-size: 18px; margin: 20px 0; }
+    section { padding: 70px 60px; }
+    
+}
+/* Ultra HD Screens (2560px and above) */
+@media (min-width: 2560px) {
+    h1 { font-size: 64px; }
+    h2 { font-size: 48px; }
+    h3 { font-size: 36px; }
+    .hero-section p { font-size: 100px;}
+    .welcome-section { min-height: 880px; min-width: 2460px}
+    .hero-content h1 { font-size: 72px; }
+    .resources-hero .lede { font-size: 36px; margin: 24px 0; }
+    section { padding: 80px 70px; }
+    .hero-btn { padding: 16px 40px; font-size: 24px; }
+    .scroll-text { font-size: 26px; margin: 0 0 -100px 0; }
+    .scroll-arrow svg { width: 40px; height: 40px; margin: 100px 0 -100px 0; }
+    .nav-links a { font-size: 28px; }
+    .community-header h1 { font-size: 134px; }
+    .feature-eyebrow { font-size: 18px; letter-spacing: 3px; }
+    .feature-content h2 { font-size: 64px; margin: 0 0 30px 0; }
+    .feature-content p { font-size: 28px; line-height: 1.8; margin: 0 0 35px 0; }
+    .feature-highlights li { font-size: 24px; padding: 15px 0 15px 40px; }
+    .feature-btn { font-size: 24px; padding: 16px 40px; }
+    .search-input { width: 300px; padding: 16px 24px; font-size: 28px; }
+    .search-input::placeholder { font-size: 28px; }
+    .search-btn { width: 84px; height: 80px; font-size: 64px; }
+    .search-btn::before { font-size: 64px; line-height: 0.8; }
+    .pill-btn { font-size: 28px; padding: 16px 40px; }
+    .hero-stats .stat-card { padding: 30px; }
+    .stat-label { font-size: 28px; }
+    .stat-number { font-size: 48px; }
 }

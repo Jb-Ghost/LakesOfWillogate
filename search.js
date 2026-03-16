@@ -603,10 +603,11 @@ function initializeRatingPrompt() {
     window.__ratingGlobalInitialized = true;
     window.__ratingGlobal = true;
 
-    const minDelayMs = 180000;
-    const maxDelayMs = 180000;
+    const minDelayMs = 420000; // 7 minutes
+    const maxDelayMs = 420000; // 7 minutes
     const pageId = (window.location.pathname.split('/').pop() || 'index').replace('.html', '') || 'index';
     const ratingStoreKey = 'pageRatings:' + pageId;
+    const feedbackSubmittedKey = 'feedbackSubmitted'; // Global flag, not page-specific
     let ratingTimerId = null;
 
     const ensureRatingModal = () => {
@@ -677,7 +678,7 @@ function initializeRatingPrompt() {
         document.body.dataset.scrollY = scrollY;
     };
 
-    const closeRatingModal = () => {
+    const closeRatingModal = (feedbackSubmitted = false) => {
         const modal = document.getElementById('siteRatingModal');
         if (!modal) {
             return;
@@ -698,7 +699,11 @@ function initializeRatingPrompt() {
         if (form) {
             form.reset();
         }
-        scheduleNextPrompt();
+        
+        // Only reschedule if feedback wasn't submitted
+        if (!feedbackSubmitted) {
+            scheduleNextPrompt();
+        }
     };
 
     const getRandomDelay = () => {
@@ -706,12 +711,22 @@ function initializeRatingPrompt() {
     };
 
     const scheduleNextPrompt = () => {
+        // Don't schedule if user has already submitted feedback for this page
+        if (localStorage.getItem(feedbackSubmittedKey) === 'true') {
+            return;
+        }
+        
         if (ratingTimerId) {
             clearTimeout(ratingTimerId);
         }
 
         const delay = getRandomDelay();
         ratingTimerId = setTimeout(() => {
+            // Check again before showing modal
+            if (localStorage.getItem(feedbackSubmittedKey) === 'true') {
+                return;
+            }
+            
             const modal = ensureRatingModal();
             if (!modal) {
                 scheduleNextPrompt();
@@ -769,13 +784,21 @@ function initializeRatingPrompt() {
             const ratings = JSON.parse(localStorage.getItem(ratingStoreKey) || '[]');
             ratings.push(payload);
             localStorage.setItem(ratingStoreKey, JSON.stringify(ratings));
+            
+            // Mark feedback as submitted for this page
+            localStorage.setItem(feedbackSubmittedKey, 'true');
 
             alert('Thanks for your feedback!');
-            closeRatingModal();
+            
+            // Close modal and don't reschedule
+            closeRatingModal(true);
         });
     }
 
-    scheduleNextPrompt();
+    // Only start showing prompts if user hasn't submitted feedback yet
+    if (localStorage.getItem(feedbackSubmittedKey) !== 'true') {
+        scheduleNextPrompt();
+    }
 }
 
 // Initialize when DOM is loaded
