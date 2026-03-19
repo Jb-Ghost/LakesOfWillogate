@@ -1,0 +1,665 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Schools & Education — Lakes of Willowgate</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="index.css">
+    <link rel="stylesheet" href="amenities.css">
+    <link rel="stylesheet" href="schools.css">
+    <link rel="stylesheet" href="animations.css">
+    <script src="search.js" defer></script>
+    <script src="animations.js" defer></script>
+    <script>
+        // Compact header on scroll - More robust version
+        document.addEventListener('DOMContentLoaded', function() {
+            // Reset any lingering body styles from previous page modals
+            document.body.style.position = '';
+            document.body.style.top = '';
+            document.body.style.width = '';
+            document.body.style.overflow = '';
+            document.body.style.paddingRight = '';
+            
+            const header = document.querySelector('header');
+            const scrollThreshold = 100;
+            
+            if (!header) {
+                console.warn('Header element not found');
+                return;
+            }
+            
+            console.log('Scroll listener initialized');
+            
+            window.addEventListener('scroll', function() {
+                const isCompact = window.scrollY > scrollThreshold;
+                const hasCompactClass = header.classList.contains('is-compact');
+                
+                if (isCompact && !hasCompactClass) {
+                    header.classList.add('is-compact');
+                    console.log('Header compacted at scroll:', window.scrollY);
+                } else if (!isCompact && hasCompactClass) {
+                    header.classList.remove('is-compact');
+                    console.log('Header expanded');
+                }
+            }, { passive: true });
+
+            // Scroll indicator click handler
+            const scrollIndicator = document.querySelector('.scroll-indicator');
+            if (scrollIndicator) {
+                scrollIndicator.addEventListener('click', function() {
+                    const districtSection = document.querySelector('#district-overview');
+                    if (districtSection) {
+                        districtSection.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                    }
+                });
+
+                // Hide scroll indicator when user scrolls
+                let hasScrolled = false;
+                window.addEventListener('scroll', function() {
+                    if (!hasScrolled && window.scrollY > 50) {
+                        hasScrolled = true;
+                        scrollIndicator.classList.add('hidden');
+                    }
+                }, { passive: true });
+            }
+
+            // Filter functionality
+            const filterBtns = document.querySelectorAll('.filter-btn');
+            const schoolCards = document.querySelectorAll('.school-card');
+            let currentFilters = { district: 'all', level: 'all' };
+
+            filterBtns.forEach(btn => {
+                btn.addEventListener('click', function() {
+                    const filterType = this.dataset.filter;
+                    const filterValue = this.dataset.value;
+
+                    // Update active state
+                    this.parentElement.querySelectorAll('.filter-btn').forEach(b => b.classList.remove('active'));
+                    this.classList.add('active');
+
+                    // Update current filters
+                    currentFilters[filterType] = filterValue;
+
+                    // Filter schools based on both filters
+                    schoolCards.forEach(card => {
+                        const cardDistrict = card.dataset.district;
+                        const cardLevel = card.dataset.level;
+                        
+                        const districtMatch = currentFilters.district === 'all' || cardDistrict === currentFilters.district;
+                        const levelMatch = currentFilters.level === 'all' || cardLevel === currentFilters.level;
+                        
+                        if (districtMatch && levelMatch) {
+                            card.style.display = 'block';
+                        } else {
+                            card.style.display = 'none';
+                        }
+                    });
+                });
+            });
+
+            // Checklist functionality removed - now just a static list
+        });
+    </script>
+</head>
+<body style="margin: 0">
+    <header>
+        <div class="community-header">
+            <h1 class="lakes"><a href="index.html">Lakes of Willowgate</a></h1>
+        </div>
+        <nav class="nav">
+            <div class="nav-links">
+                <a href="index.html">HOME</a>
+                <a href="amenities.html">AMENITIES</a>
+                <a href="community-events.html">COMMUNITY EVENTS</a>
+                <a href="schools.html">SCHOOLS</a>
+                <a href="resource.html">RESOURCES</a>
+                <a href="references.html">REFERENCES</a>
+            </div>
+            <div class="search-container">
+                <input type="text" class="search-input" id="searchInput" placeholder="Search the site...">
+                <button class="search-btn" onclick="performSearch()" aria-label="Search">
+                    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <circle cx="11" cy="11" r="7" stroke="white" stroke-width="2"/>
+                        <line x1="16.5" y1="16.5" x2="21" y2="21" stroke="white" stroke-width="2" stroke-linecap="round"/>
+                    </svg>
+                </button>
+            </div>
+        </nav>
+    </header>
+
+    <main>
+        <!-- Hero Section -->
+        <div class="welcome-section">
+            <div class="hero-image-container">
+                <img src="https://images.unsplash.com/photo-1503676260728-1c00da094a0b?w=1600" alt="Schools & Education" class="hero-background">
+                <div class="hero-overlay"></div>
+            </div>
+            <div class="hero-content">
+                <p class="eyebrow">Lakes of Willowgate</p>
+                <h1>Schools & Education</h1>
+                <p>Award-winning schools serving the Fulshear and Katy communities through Katy ISD and Lamar CISD. Discover information about enrollment, programs, and school listings.</p>
+                <div class="hero-buttons">
+                    <a href="#district-overview" class="hero-btn primary-btn">District Info</a>
+                    <a href="#school-listings" class="hero-btn secondary-btn">View Schools</a>
+                    <a href="#enrollment" class="hero-btn secondary-btn">Enrollment</a>
+                </div>
+                <div class="scroll-indicator">
+                    <div class="scroll-text">Scroll Down</div>
+                    <div class="scroll-arrow">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M12 5L12 19M12 19L6 13M12 19L18 13" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                        </svg>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- District Overview Section -->
+        <section id="district-overview" class="district-overview-section">
+            <div class="section-header">
+                <h2>District Overview & Contacts</h2>
+                <p class="section-subtitle">Award-winning school districts serving our community</p>
+            </div>
+
+            <div class="district-cards-container">
+                <!-- Katy ISD Card -->
+                <div class="district-card fade-in-view">
+                    <div class="district-header">
+                        <h3>Katy Independent School District</h3>
+                        <span class="rating-badge">A+ Rated</span>
+                    </div>
+                    
+                    <div class="district-stats">
+                        <div class="stat-item">
+                            <span class="stat-label">Total Enrollment</span>
+                            <span class="stat-value">85,000+</span>
+                        </div>
+                        <div class="stat-item">
+                            <span class="stat-label">Schools</span>
+                            <span class="stat-value">80+</span>
+                        </div>
+                        <div class="stat-item">
+                            <span class="stat-label">TEA Rating</span>
+                            <span class="stat-value">A</span>
+                        </div>
+                    </div>
+
+                    <div class="district-contacts">
+                        <h4>Key Contacts</h4>
+                        <div class="contact-item">
+                            <strong>Main Office:</strong> (281) 396-6000
+                        </div>
+                        <div class="contact-item">
+                            <strong>Superintendent:</strong> Dr. Ken Gregorski
+                        </div>
+                        <div class="contact-item">
+                            <strong>Transportation:</strong> (281) 396-2365
+                        </div>
+                        <div class="contact-item">
+                            <strong>Special Education:</strong> (281) 396-2187
+                        </div>
+                    </div>
+
+                    <div class="district-actions">
+                        <a href="https://www.katyisd.org" target="_blank" class="pill-btn">Visit Katy ISD Website</a>
+                    </div>
+                </div>
+
+                <!-- Lamar CISD Card -->
+                <div class="district-card fade-in-view">
+                    <div class="district-header">
+                        <h3>Lamar Consolidated ISD</h3>
+                        <span class="rating-badge">A Rated</span>
+                    </div>
+                    
+                    <div class="district-stats">
+                        <div class="stat-item">
+                            <span class="stat-label">Total Enrollment</span>
+                            <span class="stat-value">37,000+</span>
+                        </div>
+                        <div class="stat-item">
+                            <span class="stat-label">Schools</span>
+                            <span class="stat-value">42</span>
+                        </div>
+                        <div class="stat-item">
+                            <span class="stat-label">TEA Rating</span>
+                            <span class="stat-value">A</span>
+                        </div>
+                    </div>
+
+                    <div class="district-contacts">
+                        <h4>Key Contacts</h4>
+                        <div class="contact-item">
+                            <strong>Main Office:</strong> (832) 223-0000
+                        </div>
+                        <div class="contact-item">
+                            <strong>Superintendent:</strong> Dr. Roosevelt Nivens
+                        </div>
+                        <div class="contact-item">
+                            <strong>Transportation:</strong> (832) 223-0050
+                        </div>
+                        <div class="contact-item">
+                            <strong>Special Education:</strong> (832) 223-0270
+                        </div>
+                    </div>
+
+                    <div class="district-actions">
+                        <a href="https://www.lcisd.org" target="_blank" class="pill-btn">Visit Lamar CISD Website</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- School Listings Section -->
+        <section id="school-listings" class="school-listings-section">
+            <div class="section-header">
+                <h2>School Listings</h2>
+                <p class="section-subtitle">Schools serving our community</p>
+            </div>
+
+            <!-- Filter Bar -->
+            <div class="filter-bar fade-in-view">
+                <div class="filter-group">
+                    <label>District:</label>
+                    <button class="filter-btn active" data-filter="district" data-value="all">All</button>
+                    <button class="filter-btn" data-filter="district" data-value="katy">Katy ISD</button>
+                    <button class="filter-btn" data-filter="district" data-value="lamar">Lamar CISD</button>
+                </div>
+                <div class="filter-group">
+                    <label>Level:</label>
+                    <button class="filter-btn active" data-filter="level" data-value="all">All</button>
+                    <button class="filter-btn" data-filter="level" data-value="elementary">Elementary</button>
+                    <button class="filter-btn" data-filter="level" data-value="middle">Middle</button>
+                    <button class="filter-btn" data-filter="level" data-value="high">High</button>
+                </div>
+            </div>
+
+            <!-- Schools Grid -->
+            <div class="schools-grid">
+                <!-- Regional Schools (Serving Lakes of Willowgate) -->
+                
+                <!-- Katy ISD - Regional -->
+                <div class="school-card fade-in-view" data-district="katy" data-level="high">
+                    <div class="school-image">
+                        <div class="placeholder-image"></div>
+                    </div>
+                    <div class="school-content">
+                        <div class="school-header">
+                            <h3>Jordan High School</h3>
+                            <span class="tea-badge">A</span>
+                        </div>
+                        <p class="school-district">Katy ISD</p>
+                        <p class="school-grades">Grades 9-12</p>
+                        <div class="school-info">
+                            <p><strong>Address:</strong> 11915 Gaston Rd, Fulshear, TX 77441</p>
+                            <p><strong>Phone:</strong> (281) 237-1700</p>
+                            <p><strong>Principal:</strong> Dr. Linda Macias</p>
+                        </div>
+                        <a href="https://jordan.katyisd.org" target="_blank" class="school-link">Visit School Website →</a>
+                    </div>
+                </div>
+
+                <div class="school-card fade-in-view" data-district="katy" data-level="middle">
+                    <div class="school-image">
+                        <div class="placeholder-image"></div>
+                    </div>
+                    <div class="school-content">
+                        <div class="school-header">
+                            <h3>Adams Junior High School</h3>
+                            <span class="tea-badge">A</span>
+                        </div>
+                        <p class="school-district">Katy ISD</p>
+                        <p class="school-grades">Grades 7-8</p>
+                        <div class="school-info">
+                            <p><strong>Address:</strong> 27800 Sawtooth School Rd, Fulshear, TX 77441</p>
+                            <p><strong>Phone:</strong> (281) 237-1300</p>
+                            <p><strong>Principal:</strong> Shawn Gallagher</p>
+                        </div>
+                        <a href="https://adams.katyisd.org" target="_blank" class="school-link">Visit School Website →</a>
+                    </div>
+                </div>
+
+                <div class="school-card fade-in-view" data-district="katy" data-level="elementary">
+                    <div class="school-image">
+                        <div class="placeholder-image"></div>
+                    </div>
+                    <div class="school-content">
+                        <div class="school-header">
+                            <h3>Amy Campbell Elementary</h3>
+                            <span class="tea-badge">A</span>
+                        </div>
+                        <p class="school-district">Katy ISD</p>
+                        <p class="school-grades">Grades PK-5</p>
+                        <div class="school-info">
+                            <p><strong>Address:</strong> 27910 Sawtooth School Rd, Fulshear, TX 77441</p>
+                            <p><strong>Phone:</strong> (281) 237-2200</p>
+                            <p><strong>Principal:</strong> Kelly Heyen</p>
+                        </div>
+                        <a href="https://campbell.katyisd.org" target="_blank" class="school-link">Visit School Website →</a>
+                    </div>
+                </div>
+
+                <!-- Lamar CISD - Regional -->
+                <div class="school-card fade-in-view" data-district="lamar" data-level="high">
+                    <div class="school-image">
+                        <div class="placeholder-image"></div>
+                    </div>
+                    <div class="school-content">
+                        <div class="school-header">
+                            <h3>Fulshear High School</h3>
+                            <span class="tea-badge">A</span>
+                        </div>
+                        <p class="school-district">Lamar CISD</p>
+                        <p class="school-grades">Grades 9-12</p>
+                        <div class="school-info">
+                            <p><strong>Address:</strong> 9302 Charger Way, Fulshear, TX 77441</p>
+                            <p><strong>Phone:</strong> (832) 223-4000</p>
+                            <p><strong>Principal:</strong> Keri Schmidt</p>
+                        </div>
+                        <a href="https://www.lcisd.org/fulshearhigh" target="_blank" class="school-link">Visit School Website →</a>
+                    </div>
+                </div>
+
+                <div class="school-card fade-in-view" data-district="lamar" data-level="middle">
+                    <div class="school-image">
+                        <div class="placeholder-image"></div>
+                    </div>
+                    <div class="school-content">
+                        <div class="school-header">
+                            <h3>Roberts Middle School</h3>
+                            <span class="tea-badge">A</span>
+                        </div>
+                        <p class="school-district">Lamar CISD</p>
+                        <p class="school-grades">Grades 6-8</p>
+                        <div class="school-info">
+                            <p><strong>Address:</strong> 7935 FM 359 S, Fulshear, TX 77441</p>
+                            <p><strong>Phone:</strong> (832) 223-3500</p>
+                            <p><strong>Principal:</strong> Sonya Lewis</p>
+                        </div>
+                        <a href="https://www.lcisd.org/robertsmiddle" target="_blank" class="school-link">Visit School Website →</a>
+                    </div>
+                </div>
+
+                <div class="school-card fade-in-view" data-district="lamar" data-level="elementary">
+                    <div class="school-image">
+                        <div class="placeholder-image"></div>
+                    </div>
+                    <div class="school-content">
+                        <div class="school-header">
+                            <h3>Huggins Elementary</h3>
+                            <span class="tea-badge">A</span>
+                        </div>
+                        <p class="school-district">Lamar CISD</p>
+                        <p class="school-grades">Grades PK-5</p>
+                        <div class="school-info">
+                            <p><strong>Address:</strong> 7503 FM 1093, Fulshear, TX 77441</p>
+                            <p><strong>Phone:</strong> (832) 223-3000</p>
+                            <p><strong>Principal:</strong> Kimberly Williams</p>
+                        </div>
+                        <a href="https://www.lcisd.org/hugginselementary" target="_blank" class="school-link">Visit School Website →</a>
+                    </div>
+                </div>
+
+                <div class="school-card fade-in-view" data-district="lamar" data-level="elementary">
+                    <div class="school-image">
+                        <div class="placeholder-image"></div>
+                    </div>
+                    <div class="school-content">
+                        <div class="school-header">
+                            <h3>Morgan Elementary</h3>
+                            <span class="tea-badge">A</span>
+                        </div>
+                        <p class="school-district">Lamar CISD</p>
+                        <p class="school-grades">Grades PK-5</p>
+                        <div class="school-info">
+                            <p><strong>Address:</strong> 9650 Charger Way, Fulshear, TX 77441</p>
+                            <p><strong>Phone:</strong> (832) 223-4500</p>
+                            <p><strong>Principal:</strong> Dr. Julie Davis</p>
+                        </div>
+                        <a href="https://www.lcisd.org/morganelementary" target="_blank" class="school-link">Visit School Website →</a>
+                    </div>
+                </div>
+
+                <!-- Nearby Prominent Schools -->
+                <div class="school-card fade-in-view" data-district="katy" data-level="high">
+                    <div class="school-image">
+                        <div class="placeholder-image"></div>
+                    </div>
+                    <div class="school-content">
+                        <div class="school-header">
+                            <h3>Seven Lakes High School</h3>
+                            <span class="tea-badge">A</span>
+                        </div>
+                        <p class="school-district">Katy ISD • Nearby</p>
+                        <p class="school-grades">Grades 9-12</p>
+                        <div class="school-info">
+                            <p><strong>Address:</strong> 9251 S Fry Rd, Katy, TX 77494</p>
+                            <p><strong>Phone:</strong> (281) 237-2400</p>
+                            <p><strong>Principal:</strong> Tyler Cain</p>
+                        </div>
+                        <a href="https://sevenlakes.katyisd.org" target="_blank" class="school-link">Visit School Website →</a>
+                    </div>
+                </div>
+
+                <div class="school-card fade-in-view" data-district="katy" data-level="high">
+                    <div class="school-image">
+                        <div class="placeholder-image"></div>
+                    </div>
+                    <div class="school-content">
+                        <div class="school-header">
+                            <h3>Katy High School</h3>
+                            <span class="tea-badge">A</span>
+                        </div>
+                        <p class="school-district">Katy ISD • Nearby</p>
+                        <p class="school-grades">Grades 9-12</p>
+                        <div class="school-info">
+                            <p><strong>Address:</strong> 6331 Hwy Blvd, Katy, TX 77494</p>
+                            <p><strong>Phone:</strong> (281) 396-2400</p>
+                            <p><strong>Principal:</strong> Nakia Dewhurst</p>
+                        </div>
+                        <a href="https://katy.katyisd.org" target="_blank" class="school-link">Visit School Website →</a>
+                    </div>
+                </div>
+
+                <div class="school-card fade-in-view" data-district="lamar" data-level="high">
+                    <div class="school-image">
+                        <div class="placeholder-image"></div>
+                    </div>
+                    <div class="school-content">
+                        <div class="school-header">
+                            <h3>Foster High School</h3>
+                            <span class="tea-badge">A</span>
+                        </div>
+                        <p class="school-district">Lamar CISD • Nearby</p>
+                        <p class="school-grades">Grades 9-12</p>
+                        <div class="school-info">
+                            <p><strong>Address:</strong> 4400 FM 723 Rd, Richmond, TX 77406</p>
+                            <p><strong>Phone:</strong> (832) 223-1200</p>
+                            <p><strong>Principal:</strong> Greg Glenn</p>
+                        </div>
+                        <a href="https://www.lcisd.org/fosterhigh" target="_blank" class="school-link">Visit School Website →</a>
+                    </div>
+                </div>
+
+                <div class="school-card fade-in-view" data-district="katy" data-level="middle">
+                    <div class="school-image">
+                        <div class="placeholder-image"></div>
+                    </div>
+                    <div class="school-content">
+                        <div class="school-header">
+                            <h3>Beckendorff Junior High</h3>
+                            <span class="tea-badge">A</span>
+                        </div>
+                        <p class="school-district">Katy ISD • Nearby</p>
+                        <p class="school-grades">Grades 7-8</p>
+                        <div class="school-info">
+                            <p><strong>Address:</strong> 9720 Kingspoint Rd, Katy, TX 77494</p>
+                            <p><strong>Phone:</strong> (281) 237-1000</p>
+                            <p><strong>Principal:</strong> David Springer</p>
+                        </div>
+                        <a href="https://beckendorff.katyisd.org" target="_blank" class="school-link">Visit School Website →</a>
+                    </div>
+                </div>
+
+                <div class="school-card fade-in-view" data-district="katy" data-level="elementary">
+                    <div class="school-image">
+                        <div class="placeholder-image"></div>
+                    </div>
+                    <div class="school-content">
+                        <div class="school-header">
+                            <h3>Golbow Elementary</h3>
+                            <span class="tea-badge">A</span>
+                        </div>
+                        <p class="school-district">Katy ISD • Nearby</p>
+                        <p class="school-grades">Grades PK-5</p>
+                        <div class="school-info">
+                            <p><strong>Address:</strong> 23111 Stockdick School Rd, Katy, TX 77449</p>
+                            <p><strong>Phone:</strong> (281) 237-1500</p>
+                            <p><strong>Principal:</strong> Michelle Hudson</p>
+                        </div>
+                        <a href="https://golbow.katyisd.org" target="_blank" class="school-link">Visit School Website →</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Enrollment & Registration Section -->
+        <section id="enrollment" class="enrollment-section">
+            <div class="section-header">
+                <h2>Enrollment & Registration</h2>
+                <p class="section-subtitle">Key information for enrolling your child</p>
+            </div>
+
+            <div class="enrollment-cards-container">
+                <!-- Katy ISD Enrollment -->
+                <div class="enrollment-card fade-in-view">
+                    <h3>Katy ISD Enrollment</h3>
+                    
+                    <div class="enrollment-section-block">
+                        <h4>Online Registration</h4>
+                        <p>Complete enrollment online at katyisd.org before visiting campus. All registration must be completed through the district portal.</p>
+                    </div>
+
+                    <div class="enrollment-section-block">
+                        <h4>Attendance Boundaries</h4>
+                        <p>Use the district boundary tool at katyisd.org to determine which schools serve your address.</p>
+                    </div>
+
+                    <div class="enrollment-section-block">
+                        <h4>Key Programs</h4>
+                        <ul class="program-list">
+                            <li>Pre-K Programs</li>
+                            <li>Magnet Programs (STEM, Fine Arts)</li>
+                            <li>Gifted & Talented</li>
+                            <li>Career & Technical Education</li>
+                            <li>Transfer & Open Enrollment</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Lamar CISD Enrollment -->
+                <div class="enrollment-card fade-in-view">
+                    <h3>Lamar CISD Enrollment</h3>
+                    
+                    <div class="enrollment-section-block">
+                        <h4>Online Registration</h4>
+                        <p>Complete enrollment online at lcisd.org before visiting campus. All registration must be completed through the district portal.</p>
+                    </div>
+
+                    <div class="enrollment-section-block">
+                        <h4>Attendance Boundaries</h4>
+                        <p>Use the zone finder at lcisd.org to determine which schools serve your address.</p>
+                    </div>
+
+                    <div class="enrollment-section-block">
+                        <h4>Key Programs</h4>
+                        <ul class="program-list">
+                            <li>Pre-K Programs</li>
+                            <li>Dual Language Programs</li>
+                            <li>Gifted & Talented</li>
+                            <li>Career & Technical Education</li>
+                            <li>Transfer Options</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Required Documents -->
+            <div class="documents-list fade-in-view">
+                <h3>Required Documents for Enrollment</h3>
+                <p class="documents-intro">Have these documents ready when registering your child:</p>
+                
+                <div class="documents-grid">
+                    <div class="document-item">
+                        <div class="item-content">
+                            <strong>Proof of Residency</strong>
+                            <p>Current lease/mortgage, utility bill, or affidavit of residence</p>
+                        </div>
+                    </div>
+                    <div class="document-item">
+                        <div class="item-content">
+                            <strong>Birth Certificate</strong>
+                            <p>Official birth certificate (certified copy)</p>
+                        </div>
+                    </div>
+                    <div class="document-item">
+                        <div class="item-content">
+                            <strong>Immunization Records</strong>
+                            <p>Up-to-date Texas immunization records</p>
+                        </div>
+                    </div>
+                    <div class="document-item">
+                        <div class="item-content">
+                            <strong>Photo ID</strong>
+                            <p>Parent/guardian driver's license or state ID</p>
+                        </div>
+                    </div>
+                    <div class="document-item">
+                        <div class="item-content">
+                            <strong>Social Security Card</strong>
+                            <p>Student's social security card (if available)</p>
+                        </div>
+                    </div>
+                    <div class="document-item">
+                        <div class="item-content">
+                            <strong>Previous School Records</strong>
+                            <p>Report cards, transcripts (if transferring)</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Footer -->
+        <footer>
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>Lakes of Willowgate</h3>
+                    <p>A premier residential community in Fulshear, Texas</p>
+                </div>
+                <div class="footer-section">
+                    <h4>Quick Links</h4>
+                    <ul>
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="amenities.html">Amenities</a></li>
+                        <li><a href="community-events.html">Community Events</a></li>
+                        <li><a href="schools.html">Schools</a></li>
+                        <li><a href="resource.html">Resources</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>Contact</h4>
+                    <p>For more information about our community</p>
+                    <p>Email: info@lakesofwillowgate.com</p>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2026 Lakes of Willowgate. All rights reserved.</p>
+            </div>
+        </footer>
+    </main>
+</body>
+</html>
