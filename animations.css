@@ -5,130 +5,15 @@
 
 /* ===== NAVIGATION BUTTON ANIMATIONS ===== */
 
-/* Sliding gradient background effect */
-@keyframes gradientSlide {
-    0% {
-        background-position: 0% 50%;
-    }
-    50% {
-        background-position: 100% 50%;
-    }
-    100% {
-        background-position: 0% 50%;
-    }
-}
-
-/* Neon glow pulse effect */
-@keyframes neonGlow {
-    0%, 100% {
-        box-shadow: 
-            0 0 5px rgba(255, 255, 255, 0.2),
-            0 0 10px rgba(255, 255, 255, 0.2),
-            0 0 15px rgba(100, 180, 255, 0.4),
-            0 0 20px rgba(100, 180, 255, 0.3);
-    }
-    50% {
-        box-shadow: 
-            0 0 10px rgba(255, 255, 255, 0.4),
-            0 0 20px rgba(255, 255, 255, 0.3),
-            0 0 30px rgba(100, 180, 255, 0.6),
-            0 0 40px rgba(100, 180, 255, 0.5);
-    }
-}
-
-/* Border wave/ripple effect */
-@keyframes borderWave {
-    0% {
-        border-color: rgba(255, 255, 255, 0.3);
-        border-width: 1px;
-    }
-    50% {
-        border-color: rgba(255, 255, 255, 0.8);
-        border-width: 2px;
-    }
-    100% {
-        border-color: rgba(255, 255, 255, 0.3);
-        border-width: 1px;
-    }
-}
-
-/* Shimmer effect for background */
-@keyframes navShimmer {
-    0% {
-        background-position: -200% center;
-    }
-    100% {
-        background-position: 200% center;
-    }
-}
-
-/* Bounce hover effect */
-@keyframes navBounce {
-    0%, 100% {
-        transform: translateY(-3px) scale(1.05);
-    }
-    50% {
-        transform: translateY(-6px) scale(1.08);
-    }
-}
-
-/* Underline expand animation */
-@keyframes underlineExpand {
-    0% {
-        width: 0;
-        opacity: 0;
-    }
-    50% {
-        opacity: 1;
-    }
-    100% {
-        width: calc(100% - 28px);
-        opacity: 1;
-    }
-}
-
-/* Rotate border effect */
-@keyframes rotateBorderGlow {
-    0% {
-        filter: hue-rotate(0deg) brightness(1);
-    }
-    50% {
-        filter: hue-rotate(180deg) brightness(1.2);
-    }
-    100% {
-        filter: hue-rotate(360deg) brightness(1);
-    }
-}
-
-/* 3D flip on hover */
-@keyframes flip3D {
-    0% {
-        transform: perspective(400px) rotateX(0deg);
-    }
-    100% {
-        transform: perspective(400px) rotateX(360deg);
-    }
-}
-
-/* Scale pulse effect */
-@keyframes scalePulse {
-    0%, 100% {
-        transform: scale(1);
-    }
-    50% {
-        transform: scale(1.08);
-    }
-}
-
 /* Staggered entrance animation for nav buttons */
 @keyframes navSlideIn {
     0% {
         opacity: 0;
-        transform: translateY(-20px) scale(0.9);
+        transform: translateY(-10px);
     }
     100% {
         opacity: 1;
-        transform: translateY(0) scale(1);
+        transform: translateY(0);
     }
 }
 
