@@ -194,13 +194,29 @@ html {
     background: white;
     border: 2px solid #0052a3;
     border-radius: 12px;
-    padding: 16px;
+    padding: 0;
     box-shadow: 0 8px 32px rgba(0, 52, 163, 0.25);
     z-index: 1000;
-    max-width: 320px;
+    max-width: 420px;
     transform: translate(-50%, -100%);
     animation: tooltipFadeIn 0.2s ease-out;
     pointer-events: none;
+    display: flex;
+    gap: 0;
+    overflow: hidden;
+}
+
+.tooltip-image {
+    width: 120px;
+    min-width: 120px;
+    background-size: cover;
+    background-position: center;
+    border-radius: 10px 0 0 10px;
+}
+
+.tooltip-content {
+    padding: 16px;
+    flex: 1;
 }
 
 .event-tooltip.fade-out {
@@ -544,7 +560,7 @@ html {
     font-weight: 600;
     font-size: 14px;
     cursor: pointer;
-    transition: all 0.3s cubic-bezier(0.34, 1.56, 0.64, 1);
+    transition: all 0.25s ease;
     position: relative;
     overflow: hidden;
     opacity: 1;
@@ -566,7 +582,7 @@ html {
     border-radius: 50%;
     background: rgba(0, 82, 163, 0.1);
     transform: translate(-50%, -50%);
-    transition: width 0.4s ease, height 0.4s ease;
+    transition: width 0.3s ease, height 0.3s ease;
 }
 
 .filter-btn:hover::before {
@@ -577,8 +593,12 @@ html {
 .filter-btn:hover {
     color: #0052a3;
     border-color: #0052a3;
-    transform: translateY(-2px);
+    transform: translateY(-1px);
     box-shadow: 0 4px 12px rgba(0, 82, 163, 0.15);
+}
+
+.filter-btn.active:hover {
+    transform: translateY(0);
 }
 
 .filter-btn.active {
@@ -586,7 +606,7 @@ html {
     color: white;
     border-color: #003d82;
     box-shadow: 0 4px 15px rgba(0, 52, 163, 0.25);
-    transform: scale(1.05);
+    transform: translateY(0);
 }
 
 .events-list {
@@ -595,6 +615,13 @@ html {
     gap: 16px;
     position: relative;
     z-index: 1;
+    opacity: 1;
+    transition: opacity 0.3s ease;
+}
+
+.events-list.updating {
+    opacity: 0.4;
+    pointer-events: none;
 }
 
 .event-card {
@@ -655,6 +682,25 @@ html {
     font-weight: 700;
     transition: all 0.4s ease;
     position: relative;
+    background-position: center;
+    background-repeat: no-repeat;
+    overflow: hidden;
+}
+
+.event-date-badge::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: rgba(40, 40, 40, 0.65);
+    border-radius: 10px;
+    z-index: 0;
+}
+
+.event-date-badge .event-day,
+.event-date-badge .event-month {
+    position: relative;
+    z-index: 1;
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
 }
 
 .event-date-badge::before {
@@ -1378,7 +1424,11 @@ html {
         inset 0 1px 0 rgba(255,255,255,0.3);
     position: relative;
     text-shadow: 0 0 3px rgba(0, 0, 0, 0.5), 0 1px 2px rgba(0, 0, 0, 0.3);
+    background-size: cover;
+    background-position: center;
 }
+
+
 
 .calendar-day.event-day::after {
     content: '';
@@ -1391,6 +1441,7 @@ html {
     border-radius: 50%;
     box-shadow: 0 0 8px rgba(0,255,136,0.6);
     animation: pulse 2s infinite;
+    z-index: 2;
 }
 
 @keyframes pulse {

@@ -255,30 +255,21 @@
 .school-image {
     width: 100%;
     height: 200px;
-    background: linear-gradient(135deg, #e3f2fd, #bbdefb);
-    display: flex;
-    align-items: center;
-    justify-content: center;
     position: relative;
     overflow: hidden;
+    background: #f0f0f0;
 }
 
-.school-image::before {
-    content: '';
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    width: 80px;
-    height: 80px;
-    background: rgba(0, 61, 130, 0.1);
-    border-radius: 50%;
+.school-img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+    transition: transform 0.4s ease;
 }
 
-.placeholder-image {
-    font-size: 72px;
-    position: relative;
-    z-index: 1;
+.school-card:hover .school-img {
+    transform: scale(1.05);
 }
 
 .school-content {

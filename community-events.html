@@ -121,10 +121,10 @@
         <section id="upcoming-list" class="upcoming-section">
             <h2>Upcoming Events</h2>
             <div class="event-filters">
-                <button class="filter-btn active" data-filter="all">All Events</button>
+                <button class="filter-btn" data-filter="all">All Events</button>
                 <button class="filter-btn" data-filter="today">Today</button>
                 <button class="filter-btn" data-filter="week">This Week</button>
-                <button class="filter-btn" data-filter="month">This Month</button>
+                <button class="filter-btn active" data-filter="month">This Month</button>
             </div>
             <div class="events-list" id="eventsList"></div>
         </section>
@@ -416,6 +416,26 @@
 
         const communityEvents = Object.keys(eventDetails);
 
+        // Event image mappings
+        const eventImages = {
+            'New Year Community Kickoff': 'NewYearCommunityKickoff.jpg',
+            'Winter Wellness Walk': 'WinterWellnessWalk.jpg',
+            'Local Business Spotlight Night': 'LocalBuisnessSpotlightEvent.jpg',
+            'Spring Clean-Up Day': 'SpringCleanup.jpg',
+            'Community Gardening Day': 'Gardening.jpg',
+            'Teen & Youth Game Night': 'GameNight.jpg',
+            'Outdoor Movie Night': 'MovieNight.jpg',
+            'Summer Fitness Pop-Up': 'SummerFitness.jpg',
+            'Neighborhood BBQ & Potluck': 'BbqPotluck.jpg',
+            'Back-to-School Supply Drive': 'BackToSchool.jpg',
+            'Community Talent Showcase': 'CommunityTalentShow.jpg',
+            'Fall Festival & Craft Fair': 'FallFestival.jpg',
+            'Community Safety & Resource Night': 'SafetyMeeting.jpg',
+            'Thank-You Volunteers Dinner': 'VolunteerDinner.jpg',
+            'Holiday Market & Toy Drive': 'HolidayToyDrive.jpg',
+            'Winter Arts & Crafts Workshop': 'WinterArtsAndCrafts.jpg'
+        };
+
         let currentDate = new Date();
 
         function renderCalendar() {
@@ -492,10 +512,15 @@
             const existingTooltip = document.querySelector('.event-tooltip');
             if (existingTooltip) existingTooltip.remove();
             
+            // Get event image
+            const eventImage = eventImages[event.name];
+            const imageHTML = eventImage ? `<div class="tooltip-image" style="background-image: url('${eventImage}')"></div>` : '';
+            
             // Create tooltip
             const tooltip = document.createElement('div');
             tooltip.className = 'event-tooltip';
             tooltip.innerHTML = `
+                ${imageHTML}
                 <div class="tooltip-content">
                     <h3>${event.name}</h3>
                     <div class="tooltip-detail">
@@ -523,11 +548,17 @@
             // Adjust if tooltip goes off-screen
             setTimeout(() => {
                 const tooltipRect = tooltip.getBoundingClientRect();
-                if (tooltipRect.right > window.innerWidth) {
-                    tooltip.style.left = (rect.left - tooltipRect.width / 2 + rect.width / 2) + 'px';
+                const padding = 10; // padding from screen edge
+                
+                if (tooltipRect.right > window.innerWidth - padding) {
+                    // Shift left to fit
+                    const overflow = tooltipRect.right - (window.innerWidth - padding);
+                    tooltip.style.left = (rect.left + rect.width / 2 - overflow) + 'px';
                 }
-                if (tooltipRect.left < 0) {
-                    tooltip.style.left = '10px';
+                
+                if (tooltipRect.left < padding) {
+                    // Shift right to fit
+                    tooltip.style.left = padding + (tooltipRect.width / 2) + 'px';
                 }
             }, 0);
         }
@@ -934,7 +965,7 @@
         });
 
         // Upcoming Events List Functionality
-        let currentFilter = 'all';
+        let currentFilter = 'month';
 
         function getEventsList() {
             const today = new Date();
@@ -989,31 +1020,42 @@
             const events = filterEvents(currentFilter);
             const listContainer = document.getElementById('eventsList');
             
-            if (events.length === 0) {
-                listContainer.innerHTML = '<p class="no-events">No events found for this period.</p>';
-                return;
-            }
-
-            listContainer.innerHTML = events.map(event => {
-                const dateObj = new Date(event.dateStr);
-                const options = { weekday: 'short', month: 'short', day: 'numeric' };
-                const formattedDate = dateObj.toLocaleDateString('en-US', options);
+            // Add smooth transition
+            listContainer.classList.add('updating');
+            
+            setTimeout(() => {
+                if (events.length === 0) {
+                    listContainer.innerHTML = '<p class="no-events">No events found for this period.</p>';
+                } else {
+                    listContainer.innerHTML = events.map(event => {
+                        const dateObj = new Date(event.dateStr);
+                        const options = { weekday: 'short', month: 'short', day: 'numeric' };
+                        const formattedDate = dateObj.toLocaleDateString('en-US', options);
+                        const eventImage = eventImages[event.name];
+                        const imageStyle = eventImage ? `style="background-image: url('${eventImage}'); background-size: cover; background-position: center;"` : '';
+                        
+                        return `
+                            <div class="event-card">
+                                <div class="event-date-badge" ${imageStyle}>
+                                    <div class="event-day">${dateObj.getDate()}</div>
+                                    <div class="event-month">${dateObj.toLocaleDateString('en-US', { month: 'short' })}</div>
+                                </div>
+                                <div class="event-content">
+                                    <h3>${event.name}</h3>
+                                    <p class="event-meta"><strong>Time:</strong> ${event.time}</p>
+                                    <p class="event-meta"><strong>Location:</strong> ${event.location}</p>
+                                    <p class="event-description">${event.description}</p>
+                                </div>
+                            </div>
+                        `;
+                    }).join('');
+                }
                 
-                return `
-                    <div class="event-card">
-                        <div class="event-date-badge">
-                            <div class="event-day">${dateObj.getDate()}</div>
-                            <div class="event-month">${dateObj.toLocaleDateString('en-US', { month: 'short' })}</div>
-                        </div>
-                        <div class="event-content">
-                            <h3>${event.name}</h3>
-                            <p class="event-meta"><strong>Time:</strong> ${event.time}</p>
-                            <p class="event-meta"><strong>Location:</strong> ${event.location}</p>
-                            <p class="event-description">${event.description}</p>
-                        </div>
-                    </div>
-                `;
-            }).join('');
+                // Remove transition class after content is loaded
+                setTimeout(() => {
+                    listContainer.classList.remove('updating');
+                }, 50);
+            }, 200);
         }
 
         // Filter button event listeners
@@ -1083,11 +1125,8 @@
             button.querySelector('.guideline-toggle').textContent = isOpen ? '+' : '−';
         }
 
-        // Initialize events list on page load with today's events as default
+        // Initialize events list on page load with this month's events as default
         document.addEventListener('DOMContentLoaded', function() {
-            currentFilter = 'today';
-            document.querySelector('[data-filter="today"]').classList.add('active');
-            document.querySelector('[data-filter="all"]').classList.remove('active');
             renderEventsList();
         });
 
