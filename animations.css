@@ -223,7 +223,7 @@
 /* Base state for all animated elements */
 .animate-on-scroll {
     opacity: 0;
-    transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+    transition: opacity 0.7s ease-out, transform 0.7s ease-out;
 }
 
 .animate-on-scroll.animated {
@@ -234,69 +234,69 @@
 .fade-in-up {
     opacity: 0;
     transform: translateY(30px);
+    transition: opacity 0.8s ease-out, transform 0.8s ease-out;
 }
 
 .fade-in-up.animated {
     opacity: 1;
     transform: translateY(0);
-    transition: opacity 0.8s ease-out, transform 0.8s ease-out;
 }
 
 .fade-in-down {
     opacity: 0;
     transform: translateY(-30px);
+    transition: opacity 0.8s ease-out, transform 0.8s ease-out;
 }
 
 .fade-in-down.animated {
     opacity: 1;
     transform: translateY(0);
-    transition: opacity 0.8s ease-out, transform 0.8s ease-out;
 }
 
 .fade-in-left {
     opacity: 0;
     transform: translateX(-30px);
+    transition: opacity 0.8s ease-out, transform 0.8s ease-out;
 }
 
 .fade-in-left.animated {
     opacity: 1;
     transform: translateX(0);
-    transition: opacity 0.8s ease-out, transform 0.8s ease-out;
 }
 
 .fade-in-right {
     opacity: 0;
     transform: translateX(30px);
+    transition: opacity 0.8s ease-out, transform 0.8s ease-out;
 }
 
 .fade-in-right.animated {
     opacity: 1;
     transform: translateX(0);
-    transition: opacity 0.8s ease-out, transform 0.8s ease-out;
 }
 
 /* Zoom Variants */
 .zoom-in {
     opacity: 0;
     transform: scale(0.9);
+    transition: opacity 0.8s ease-out, transform 0.8s ease-out;
 }
 
 .zoom-in.animated {
     opacity: 1;
     transform: scale(1);
-    transition: opacity 0.8s ease-out, transform 0.8s ease-out;
 }
 
 /* Flip Variants */
 .flip-in-x {
     opacity: 0;
     transform: perspective(400px) rotateX(-15deg);
+    transition: opacity 0.8s ease-out, transform 0.8s ease-out;
 }
 
 .flip-in-x.animated {
     opacity: 1;
     transform: perspective(400px) rotateX(0deg);
-    transition: opacity 0.8s ease-out, transform 0.8s ease-out;
 }
 
 /* ===== STAGGER ANIMATIONS ===== */

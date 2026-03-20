@@ -27,13 +27,8 @@ function initScrollAnimations() {
         entries.forEach(entry => {
             if (entry.isIntersecting) {
                 entry.target.classList.add('animated');
-                
-                // Optional: unobserve after animation (one-time animation)
-                // observer.unobserve(entry.target);
-            } else {
-                // Remove class when out of view for repeating animations
-                // Comment out if you want one-time animations only
-                entry.target.classList.remove('animated');
+                // Unobserve after animation so it only plays once
+                observer.unobserve(entry.target);
             }
         });
     }, observerOptions);

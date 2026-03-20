@@ -12,67 +12,6 @@
     --bg-light: #f9f9f9;
 }
 
-/* Compact Header Styles */
-header.is-compact {
-    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.25) !important;
-    background-color: red !important;
-    transition: all 0.3s ease !important;
-}
-
-header.is-compact .community-header {
-    height: 65px !important;
-    padding: 8px 20px !important;
-    gap: 12px !important;
-    justify-content: flex-start !important;
-}
-
-header.is-compact .community-header::before {
-    width: 50px !important;
-    height: 50px !important;
-}
-
-header.is-compact .logo {
-    width: 50px !important;
-    height: 50px !important;
-}
-
-header.is-compact .lakes {
-    font-size: 38px !important;
-    letter-spacing: 1.5px !important;
-    flex-grow: 1;
-}
-
-header.is-compact .nav {
-    position: relative !important;
-    right: auto !important;
-    top: auto !important;
-    background-color: transparent !important;
-    height: auto !important;
-    min-height: 0 !important;
-    padding: 12px 20px 12px 0 !important;
-    gap: 18px !important;
-    margin-left: auto;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
-
-header.is-compact .nav-links {
-    gap: 18px !important;
-    margin: 0 !important;
-    flex-wrap: wrap;
-    justify-content: flex-end;
-}
-
-header.is-compact .search-container {
-    display: none !important;
-}
-
-header.is-compact .nav a {
-    font-size: 13px !important;
-    padding: 4px 7px !important;
-}
-
 html {
     scroll-behavior: smooth;
     overflow-x: hidden;
@@ -86,7 +25,7 @@ body {
     overflow-x: hidden;
     margin: 0;
     padding: 0;
-    background: #fdf8f4;
+    background: #ffffff;
     width: 100%;
     box-sizing: border-box;
 }

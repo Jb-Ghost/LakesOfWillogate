@@ -2,9 +2,7 @@
 
 .featured-gallery-section {
     padding: 48px 40px;
-    background:
-        radial-gradient(600px 240px at 10% -10%, rgba(0, 82, 163, 0.12), transparent 60%),
-        linear-gradient(135deg, #eaf3fb 0%, #ffffff 60%, #e6f0fb 100%);
+    background: #ffffff;
     text-align: center;
     margin: 60px 0;
     border-radius: 16px;
@@ -12,47 +10,19 @@
     box-shadow: 0 12px 28px rgba(0, 0, 0, 0.08);
     position: relative;
     overflow: hidden;
-    animation: ocean-shift 18s ease-in-out infinite;
-    background-size: 160% 160%;
 }
 
 .featured-gallery-section.fade-in-view {
-    animation: ocean-shift 18s ease-in-out infinite, fadeInScroll 1.2s ease-out forwards;
+    animation: fadeInScroll 1.2s ease-out forwards;
 }
 
 .featured-gallery-section.fade-out-view {
-    animation: ocean-shift 18s ease-in-out infinite, fadeOutScroll 0.8s ease-in forwards;
+    animation: fadeOutScroll 0.8s ease-in forwards;
 }
 
 .featured-gallery-section::before,
 .featured-gallery-section::after {
-    content: "";
-    position: absolute;
-    left: -10%;
-    right: -10%;
-    height: 140px;
-    background-repeat: repeat-x;
-    pointer-events: none;
-    z-index: 0;
-}
-
-.featured-gallery-section::before {
-    top: -35px;
-    background-image: url("data:image/svg+xml,%3Csvg%20width%3D%271200%27%20height%3D%27140%27%20viewBox%3D%270%200%201200%20140%27%20xmlns%3D%27http%3A//www.w3.org/2000/svg%27%3E%3Cpath%20d%3D%27M0%2060%20Q150%2020%20300%2060%20T600%2060%20T900%2060%20T1200%2060%20V140%20H0%20Z%27%20fill%3D%27%230052a3%27%20fill-opacity%3D%270.12%27/%3E%3Cpath%20d%3D%27M0%2080%20Q150%2040%20300%2080%20T600%2080%20T900%2080%20T1200%2080%20V140%20H0%20Z%27%20fill%3D%27%2300a0d2%27%20fill-opacity%3D%270.08%27/%3E%3C/svg%3E");
-    background-size: 600px 140px;
-    opacity: 0.5;
-    animation: wave-drift 20s linear infinite;
-    transform: scaleY(-1);
-    background-position: 0 0;
-}
-
-.featured-gallery-section::after {
-    bottom: -30px;
-    background-image: url("data:image/svg+xml,%3Csvg%20width%3D%271200%27%20height%3D%27140%27%20viewBox%3D%270%200%201200%20140%27%20xmlns%3D%27http%3A//www.w3.org/2000/svg%27%3E%3Cpath%20d%3D%27M0%2065%20Q150%20105%20300%2065%20T600%2065%20T900%2065%20T1200%2065%20V140%20H0%20Z%27%20fill%3D%27%230052a3%27%20fill-opacity%3D%270.1%27/%3E%3Cpath%20d%3D%27M0%2085%20Q150%20125%20300%2085%20T600%2085%20T900%2085%20T1200%2085%20V140%20H0%20Z%27%20fill%3D%27%2300a0d2%27%20fill-opacity%3D%270.06%27/%3E%3C/svg%3E");
-    background-size: 700px 140px;
-    opacity: 0.4;
-    animation: wave-drift 28s linear infinite reverse;
-    background-position: 0 0;
+    display: none;
 }
 
 .featured-gallery-section > * {
