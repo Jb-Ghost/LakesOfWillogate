@@ -185,8 +185,8 @@ html {
     margin: 0;
     text-align: center;
     border-bottom: 2px solid #ddd;
-    min-height: 70vh;
-    height: 70vh;
+    min-height: 50vh;
+    height: 50vh;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -1343,7 +1343,7 @@ html {
     h2 { font-size: 32px; }
     h3 { font-size: 26px; }
     .welcome-section { min-height: 600px; }
-    .hero-section { min-height: 480px; }
+    .hero-section { min-height: 50vh; height: 50vh; }
     .hero-content h1 { font-size: 48px; }
     .hero-content .lede { font-size: 18px; margin: 20px 0; }
     section { padding: 70px 60px; }
@@ -1355,7 +1355,7 @@ html {
     h2 { font-size: 48px; }
     h3 { font-size: 36px; }
     .hero-section.references-hero p { font-size: 36px;}
-    .hero-section.references-hero { min-height: 60vh; height: 60vh; }
+    .hero-section.references-hero { min-height: 45vh; height: 45vh; }
     
     .hero-content {
         max-width: 1200px;
