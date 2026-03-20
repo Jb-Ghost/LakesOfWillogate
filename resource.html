@@ -1770,23 +1770,16 @@
         // Form submission
         // Smooth Scroll Fade In/Out Effect using Intersection Observer
         const observerOptions = {
-            threshold: [0, 0.2, 0.5],
-            rootMargin: '0px 0px -100px 0px'
+            threshold: 0.2,
+            rootMargin: '0px 0px -60px 0px'
         };
 
         const observer = new IntersectionObserver((entries) => {
             entries.forEach(entry => {
-                if (entry.isIntersecting) {
-                    if (!entry.target.dataset.fadedIn) {
-                        entry.target.classList.add('fade-in-view');
-                        entry.target.dataset.fadedIn = 'true';
-                    }
-                    entry.target.classList.remove('fade-out-view');
-                } else {
-                    if (entry.target.dataset.fadedIn && !entry.target.dataset.fadedOut) {
-                        entry.target.classList.add('fade-out-view');
-                        entry.target.dataset.fadedOut = 'true';
-                    }
+                if (entry.isIntersecting && !entry.target.dataset.fadedIn) {
+                    entry.target.classList.add('fade-in-view');
+                    entry.target.dataset.fadedIn = 'true';
+                    observer.unobserve(entry.target);
                 }
             });
         }, observerOptions);
