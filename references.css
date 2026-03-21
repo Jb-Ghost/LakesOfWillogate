@@ -472,9 +472,9 @@ html {
 /* Copyright Checklist Section */
 .copyright-section {
     padding: 50px 40px;
-    background: #0052a3;
+    background: #ffffff;
     border-radius: 8px;
-    border: 1px solid rgba(255, 255, 255, 0.15);
+    border: 1px solid rgba(0, 0, 0, 0.08);
     opacity: 0;
     animation: slideInUp 0.8s ease-out 0.2s forwards;
 }
@@ -483,13 +483,13 @@ html {
     font-size: 36px;
     font-family: 'Montserrat', sans-serif;
     font-weight: 700;
-    color: #ffffff;
+    color: #0052a3;
     text-align: center;
     margin: 0 0 15px 0;
 }
 
-/* Copyright section: white text overrides for blue band */
-.copyright-section .section-description { color: rgba(255, 255, 255, 0.8); }
+/* Copyright section: dark text overrides for white background */
+.copyright-section .section-description { color: #4a5568; }
 
 .copyright-container {
     max-width: 900px;

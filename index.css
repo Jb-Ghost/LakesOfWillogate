@@ -1355,6 +1355,7 @@ main {
 .featured-pages-section {
     background: #f5f7fa;
     padding: 0;
+    margin-top: 48px;
 }
 
 .page-feature {

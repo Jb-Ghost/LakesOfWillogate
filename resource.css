@@ -1269,6 +1269,23 @@ html {
     gap: 18px;
 }
 
+/* Staircase animation overrides for form cards */
+.forms-list .staircase-item {
+    opacity: 0;
+    transform: translateY(24px);
+    transition: opacity 0.7s ease-out, transform 0.7s ease-out, box-shadow 0.2s ease, border-color 0.2s ease;
+}
+
+.forms-list .staircase-item.fade-in {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* Override index.css grid-row rules for form cards */
+.forms-list .staircase-item:nth-child(n) {
+    grid-row: auto;
+}
+
 .form-list-card {
     border: 1px solid rgba(0, 0, 0, 0.08);
     background: #ffffff;
@@ -1430,6 +1447,9 @@ html {
 }
 
 .hours-location-section .info-card {
+    background: rgba(255, 255, 255, 0.1);
+    border-color: rgba(255, 255, 255, 0.15);
+    box-shadow: none;
     padding: 16px;
     min-height: auto;
     gap: 8px;
@@ -1438,7 +1458,7 @@ html {
 .hours-location-section .info-card h3 {
     margin-top: 0;
     margin-bottom: 8px;
-    color: #0052a3;
+    color: #ffffff;
     font-size: 15px;
     font-weight: 800;
 }
@@ -1452,8 +1472,10 @@ html {
 
 .location-info p strong,
 .hours-info p strong {
-    color: #0052a3;
-    font-size: 12px;
+    color: rgba(255, 255, 255, 0.65);
+    font-size: 11px;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
     display: block;
     margin-bottom: 4px;
 }
@@ -1461,7 +1483,7 @@ html {
 .location-info p,
 .hours-info p {
     margin: 0 0 4px 0;
-    color: #2f3a4a;
+    color: rgba(255, 255, 255, 0.85);
     font-size: 12px;
     line-height: 1.5;
 }
@@ -1473,8 +1495,9 @@ html {
 
 .hours-info .plain-list li {
     padding-left: 8px;
-    border-left: 3px solid rgba(0, 82, 163, 0.2);
+    border-left: 3px solid rgba(255, 255, 255, 0.25);
     margin-bottom: 3px;
+    color: rgba(255, 255, 255, 0.85);
 }
 
 /* Hours & Location section: white text overrides for blue band */
@@ -1754,12 +1777,7 @@ html {
     box-shadow: 0 12px 28px rgba(0, 82, 163, 0.15);
 }
 
-/* Forms Hub Card Animations */
-.form-list-card {
-    animation: fadeIn 0.6s ease-out forwards;
-    opacity: 0;
-    transition: all 0.3s ease;
-}
+/* Forms Hub Card Animations - Removed conflicting fadeIn animation to allow staircase scroll animation */
 
 .form-list-card:hover {
     transform: translateX(8px);
