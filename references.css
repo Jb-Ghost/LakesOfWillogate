@@ -171,7 +171,7 @@ html {
 
 /* Hero Section - uses same styling as index.html */
 .hero-section.references-hero {
-    --hero-image: url("reference.jpg");
+    --hero-image: url("ReferenceImage.jpg");
     background:
         linear-gradient(rgba(68, 136, 188, 0.7), rgba(68, 136, 188, 0.7)),
         var(--hero-image);
@@ -234,7 +234,7 @@ html {
 .references-hero {
     background-image:
         linear-gradient(rgba(68, 136, 188, 0.7), rgba(68, 136, 188, 0.7)),
-        url("reference.jpg");
+        url("ReferenceImage.jpg");
     background-color: rgb(68, 136, 188);
     background-size: cover;
     background-position: center;

@@ -755,10 +755,13 @@ body {
 .amenities-grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    grid-auto-rows: auto;
     gap: 0;
     border: 1px solid #e4ecf7;
     border-radius: 12px;
     overflow: hidden;
+    max-width: none;
+    padding: 0;
 }
 
 .amenity-item {
@@ -769,7 +772,28 @@ body {
     display: flex;
     flex-direction: column;
     gap: 3px;
-    transition: background 0.2s ease;
+    transition: background 0.2s ease, opacity 0.7s ease-out, transform 0.7s ease-out;
+    border-radius: 0;
+    overflow: visible;
+}
+
+/* Cancel grid-row spans from index.css staircase — flat grid for amenity items */
+.amenities-grid.staircase-grid .amenity-item.staircase-item:nth-child(1),
+.amenities-grid.staircase-grid .amenity-item.staircase-item:nth-child(2),
+.amenities-grid.staircase-grid .amenity-item.staircase-item:nth-child(3),
+.amenities-grid.staircase-grid .amenity-item.staircase-item:nth-child(4),
+.amenities-grid.staircase-grid .amenity-item.staircase-item:nth-child(5),
+.amenities-grid.staircase-grid .amenity-item.staircase-item:nth-child(6),
+.amenities-grid.staircase-grid .amenity-item.staircase-item:nth-child(7),
+.amenities-grid.staircase-grid .amenity-item.staircase-item:nth-child(8),
+.amenities-grid.staircase-grid .amenity-item.staircase-item:nth-child(9),
+.amenities-grid.staircase-grid .amenity-item.staircase-item:nth-child(10) {
+    grid-row: span 1;
+}
+
+/* Block the dark hover overlay from index.css staircase-item::after */
+.amenities-grid.staircase-grid .amenity-item.staircase-item::after {
+    display: none;
 }
 
 .amenity-item:hover {

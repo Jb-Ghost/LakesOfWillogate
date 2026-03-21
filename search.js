@@ -11,8 +11,8 @@ const POPULAR_SEARCHES = [
     "Parks",
     "Contact",
     "Forms",
-    "Volunteer",
-    "Youth Programs"
+    "Schools",
+    "Gallery"
 ];
 
 // Comprehensive search database with extensive keywords
@@ -63,16 +63,41 @@ const searchDatabase = [
         description: "Find volunteer opportunities in the community"
     },
     
+    // FITNESS CENTER PAGE (dedicated)
+    {
+        title: "Fitness Center",
+        url: "fitness-center.html",
+        category: "Fitness",
+        keywords: ["fitness center", "gym", "fitness page", "workout", "exercise", "athletic", "fitness hub"],
+        description: "Full fitness center page — trainers, classes, facilities and hours"
+    },
+
     // FITNESS CENTER - Trainers Section
     { 
         title: "Personal Trainers", 
-        url: "amenities.html#trainers", 
+        url: "fitness-center.html#trainers", 
         category: "Fitness",
         keywords: ["trainers", "personal trainer", "fitness trainer", "book trainer", "training", "coaching", "personal training", "fitness coach", "certified trainer", "Jordan Lee", "Ava Martinez", "Marcus Reid", "Sophie Chen", "Dylan Brooks", "Elena Cruz"],
         description: "Meet our certified personal trainers and book sessions"
     },
     
+    // FITNESS CENTER - Trainers (amenities page)
+    { 
+        title: "Personal Trainers", 
+        url: "amenities.html#trainers", 
+        category: "Fitness",
+        keywords: ["trainers", "personal trainer", "fitness trainer", "book trainer", "training", "coaching", "personal training", "fitness coach", "certified trainer", "Jordan Lee", "Ava Martinez", "Marcus Reid", "Sophie Chen", "Dylan Brooks", "Amina Hassan"],
+        description: "Meet our certified personal trainers and book sessions"
+    },
+    
     // FITNESS CENTER - Classes
+    { 
+        title: "Fitness Classes Schedule", 
+        url: "fitness-center.html", 
+        category: "Fitness",
+        keywords: ["classes", "fitness classes", "group classes", "class schedule", "weekly classes", "yoga", "pilates", "zumba", "spin", "hiit", "boxing", "dance fitness", "bootcamp", "cardio", "strength training", "core training", "stretching", "meditation", "wellness workshop"],
+        description: "View weekly fitness class schedule and activities"
+    },
     { 
         title: "Fitness Classes Schedule", 
         url: "amenities.html#classes", 
@@ -104,20 +129,43 @@ const searchDatabase = [
         title: "Fitness Facilities & Amenities", 
         url: "amenities.html#fitness", 
         category: "Fitness",
-        keywords: ["gym equipment", "facilities", "amenities", "strength room", "cardio machines", "weights", "treadmill", "elliptical", "locker rooms", "showers", "childcare", "wifi", "outdoor track", "group studio"],
+        keywords: ["gym equipment", "facilities", "amenities", "strength room", "cardio machines", "weights", "treadmill", "elliptical", "locker rooms", "showers", "childcare", "wifi", "outdoor track", "group studio", "hydration stations", "parking", "membership access"],
         description: "View all fitness center facilities and amenities"
     },
     
+    // POOLS & PARKS PAGE (dedicated)
+    {
+        title: "Pools & Parks",
+        url: "pools-parks.html",
+        category: "Pools & Parks",
+        keywords: ["pools parks", "aquatic recreation", "outdoor facilities", "swimming parks", "pools and parks page"],
+        description: "Full pools and parks page — hours, locations, rules and activities"
+    },
+
     // POOLS & PARKS - Pool Hours
     { 
         title: "Pool Hours & Schedule", 
-        url: "amenities.html#pool-hours", 
+        url: "pools-parks.html#pool-hours", 
         category: "Pools & Parks",
         keywords: ["pool hours", "pool schedule", "swimming hours", "when is pool open", "pool times", "lap swim", "open swim", "adult swim", "family swim", "swim times", "aquatic hours"],
         description: "View operating hours for all community pools"
     },
+    { 
+        title: "Pool Hours & Schedule", 
+        url: "amenities.html#pool-hours", 
+        category: "Pools & Parks",
+        keywords: ["pool hours", "pool schedule", "swimming hours", "when is pool open", "pool times", "lap swim", "open swim", "adult swim", "family swim"],
+        description: "View operating hours for all community pools"
+    },
     
     // POOLS & PARKS - Pool Locations
+    { 
+        title: "Pool Locations", 
+        url: "pools-parks.html#pool-hours", 
+        category: "Pools & Parks",
+        keywords: ["pool location", "pools", "swimming pool", "aquatic center", "lakeside aquatic center", "riverside community pool", "downtown fitness pool", "where to swim", "pool address"],
+        description: "Find all pool locations and addresses"
+    },
     { 
         title: "Pool Locations", 
         url: "amenities.html#pools", 
@@ -129,6 +177,13 @@ const searchDatabase = [
     // POOLS & PARKS - Pool Rules
     { 
         title: "Pool Rules & Safety", 
+        url: "pools-parks.html#pool-rules", 
+        category: "Pools & Parks",
+        keywords: ["pool rules", "pool safety", "swimming rules", "pool regulations", "safety guidelines", "pool requirements", "lifeguard", "pool policy"],
+        description: "Safety guidelines and pool regulations"
+    },
+    { 
+        title: "Pool Rules & Safety", 
         url: "amenities.html#pool-rules", 
         category: "Pools & Parks",
         keywords: ["pool rules", "pool safety", "swimming rules", "pool regulations", "safety guidelines", "pool requirements", "lifeguard", "pool policy"],
@@ -136,6 +191,13 @@ const searchDatabase = [
     },
     
     // POOLS & PARKS - Park Locations
+    { 
+        title: "Park Locations", 
+        url: "pools-parks.html#park-locations", 
+        category: "Pools & Parks",
+        keywords: ["park", "parks", "park locations", "playground", "outdoor", "central park", "lakeside park", "sports complex", "nature reserve", "where is park", "park address"],
+        description: "Find parks and their addresses"
+    },
     { 
         title: "Park Locations", 
         url: "amenities.html#park-locations", 
@@ -147,6 +209,13 @@ const searchDatabase = [
     // POOLS & PARKS - Activities
     { 
         title: "Park & Pool Activities", 
+        url: "pools-parks.html#activities", 
+        category: "Pools & Parks",
+        keywords: ["activities", "things to do", "park activities", "swimming", "hiking", "walking", "sports", "basketball", "tennis", "soccer", "picnic", "playground", "splash pad", "fishing", "trails", "bike paths"],
+        description: "Activities available at community parks and pools"
+    },
+    { 
+        title: "Park & Pool Activities", 
         url: "amenities.html#activities", 
         category: "Pools & Parks",
         keywords: ["activities", "things to do", "park activities", "swimming", "hiking", "walking", "sports", "basketball", "tennis", "soccer", "picnic", "playground", "splash pad", "fishing", "trails", "bike paths"],
@@ -156,12 +225,97 @@ const searchDatabase = [
     // POOLS & PARKS - Specific Facilities
     { 
         title: "Splash Pad", 
-        url: "amenities.html#pools", 
+        url: "pools-parks.html#pool-hours", 
         category: "Pools & Parks",
         keywords: ["splash pad", "water play", "kids splash", "children water", "spray park"],
         description: "Splash pad information and location"
     },
-    
+
+    // SCHOOLS PAGE
+    {
+        title: "Schools",
+        url: "schools.html",
+        category: "Schools",
+        keywords: ["schools", "school", "education", "school page", "fulshear", "katy", "willowgate schools"],
+        description: "Schools serving the Lakes of Willowgate community"
+    },
+    {
+        title: "District Overview",
+        url: "schools.html#district-overview",
+        category: "Schools",
+        keywords: ["district", "school district", "willowgate unified", "willowgate unified school district", "gateway independent", "gateway independent school district", "district info", "district overview", "district contacts", "district stats"],
+        description: "Overview and contact info for Willowgate Unified and Gateway Independent school districts"
+    },
+    {
+        title: "School Listings",
+        url: "schools.html#school-listings",
+        category: "Schools",
+        keywords: ["school listings", "list of schools", "schools in community", "all schools", "Willowgate High School", "Willow Creek Middle", "Lakeview Elementary", "Gateway High School", "Lakeside Middle School", "Willow Park Elementary", "Lakewood Elementary", "Riverside High School", "Meadowbrook High", "Clearwater High", "Gateway Middle", "Willowbrook Elementary", "high school", "middle school", "elementary school"],
+        description: "Full listing of all schools serving the Lakes of Willowgate community"
+    },
+    {
+        title: "School Enrollment & Registration",
+        url: "schools.html#enrollment",
+        category: "Schools",
+        keywords: ["enrollment", "registration", "enroll", "register", "school enrollment", "how to enroll", "required documents", "enrollment documents", "sign up school", "school registration", "transfer", "new student"],
+        description: "Enrollment and registration information for Willowgate Unified and Gateway Independent districts"
+    },
+    {
+        title: "Willowgate High School",
+        url: "schools.html#school-listings",
+        category: "Schools",
+        keywords: ["willowgate high", "willowgate high school", "whs", "high school katy"],
+        description: "Willowgate High School — Willowgate Unified School District"
+    },
+    {
+        title: "Gateway High School",
+        url: "schools.html#school-listings",
+        category: "Schools",
+        keywords: ["gateway high", "gateway high school", "high school gateway"],
+        description: "Gateway High School — Gateway Independent School District"
+    },
+    {
+        title: "Riverside High School",
+        url: "schools.html#school-listings",
+        category: "Schools",
+        keywords: ["riverside high", "riverside high school"],
+        description: "Riverside High School — schools listing"
+    },
+
+    // GALLERY PAGE
+    {
+        title: "Photo Gallery",
+        url: "gallery.html",
+        category: "Gallery",
+        keywords: ["gallery", "photos", "pictures", "photo gallery", "community photos", "images", "community pictures", "visual", "photo tour", "neighborhood photos"],
+        description: "A visual journey through the beauty, amenities, and vibrant life at Lakes of Willowgate"
+    },
+
+    // REFERENCES PAGE
+    {
+        title: "References & Attributions",
+        url: "references.html",
+        category: "About",
+        keywords: ["references", "attributions", "credits", "sources", "copyright", "image sources", "licenses", "acknowledgements", "worklog", "development log"],
+        description: "Sources, tools, and resources used in creating this website"
+    },
+    {
+        title: "Worklog",
+        url: "references.html",
+        scrollTo: ".worklog-section",
+        category: "About",
+        keywords: ["worklog", "work log", "development log", "project log", "timeline", "development timeline", "project updates"],
+        description: "Visual documentation of the development process and project timeline"
+    },
+    {
+        title: "Copyright Checklist",
+        url: "references.html",
+        scrollTo: ".copyright-section",
+        category: "About",
+        keywords: ["copyright", "copyright checklist", "licensing", "image license", "proper use", "media credits"],
+        description: "Documentation of proper licensing and attribution"
+    },
+
     // RESOURCES - Contacts
     { 
         title: "Contact Directory", 
@@ -220,24 +374,52 @@ const searchDatabase = [
     // SPECIFIC TRAINER SEARCHES
     { 
         title: "Jordan Lee - Strength Training", 
-        url: "amenities.html#trainers", 
+        url: "fitness-center.html#trainers", 
         category: "Fitness",
         keywords: ["jordan lee", "strength", "conditioning", "weight training", "muscle building", "powerlifting"],
         description: "Book Jordan Lee for strength and conditioning training"
     },
     { 
         title: "Ava Martinez - Yoga", 
-        url: "amenities.html#trainers", 
+        url: "fitness-center.html#trainers", 
         category: "Fitness",
         keywords: ["ava martinez", "yoga", "mobility", "flexibility", "meditation", "mindfulness"],
         description: "Book Ava Martinez for yoga and mobility sessions"
     },
     { 
         title: "Marcus Reid - HIIT Training", 
-        url: "amenities.html#trainers", 
+        url: "fitness-center.html#trainers", 
         category: "Fitness",
         keywords: ["marcus reid", "hiit", "high intensity", "athletic training", "interval training", "sports training"],
         description: "Book Marcus Reid for HIIT and athletic training"
+    },
+    {
+        title: "Sophie Chen - Pilates",
+        url: "fitness-center.html#trainers",
+        category: "Fitness",
+        keywords: ["sophie chen", "pilates", "core", "flexibility", "balance training"],
+        description: "Book Sophie Chen for Pilates and core training"
+    },
+    {
+        title: "Dylan Brooks - Bootcamp",
+        url: "fitness-center.html#trainers",
+        category: "Fitness",
+        keywords: ["dylan brooks", "bootcamp", "boot camp", "cardio", "endurance", "group fitness"],
+        description: "Book Dylan Brooks for bootcamp and cardio training"
+    },
+    {
+        title: "Elena Cruz - Dance Fitness",
+        url: "fitness-center.html#trainers",
+        category: "Fitness",
+        keywords: ["elena cruz", "dance fitness", "zumba", "latin dance", "dance class"],
+        description: "Book Elena Cruz for dance fitness and Zumba"
+    },
+    {
+        title: "Amina Hassan",
+        url: "amenities.html#trainers",
+        category: "Fitness",
+        keywords: ["amina hassan", "amina", "hassan", "trainer"],
+        description: "Book Amina Hassan for personal training sessions"
     },
     
     // SPECIFIC CLASS TYPES
@@ -275,9 +457,9 @@ const searchDatabase = [
     // SEASONAL & SPECIAL
     { 
         title: "Holiday Hours", 
-        url: "amenities.html#pools", 
+        url: "pools-parks.html", 
         category: "Pools & Parks",
-        keywords: ["holiday", "holiday hours", "christmas", "new year", "seasonal", "winter schedule", "summer schedule"],
+        keywords: ["holiday", "holiday hours", "christmas", "new year", "seasonal", "winter schedule", "summer schedule", "seasonal updates"],
         description: "Holiday and seasonal facility hours"
     },
     
