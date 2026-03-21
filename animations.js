@@ -144,29 +144,33 @@ function initParallaxEffects() {
  */
 function initStaircaseGallery() {
     const staircaseItems = document.querySelectorAll('.staircase-item');
-    
-    if (staircaseItems.length === 0) return;
+    const staircaseGrid = document.querySelector('.staircase-grid');
+
+    if (staircaseItems.length === 0 || !staircaseGrid) return;
+
+    // Assign each item its stagger delay before observing
+    staircaseItems.forEach((item, index) => {
+        item.style.transitionDelay = (index * 80) + 'ms';
+    });
 
     const observerOptions = {
-        threshold: 0.2,
-        rootMargin: '0px 0px -100px 0px'
+        threshold: 0.1,
+        rootMargin: '0px 0px -60px 0px'
     };
 
     const observer = new IntersectionObserver((entries) => {
         entries.forEach(entry => {
             if (entry.isIntersecting) {
-                const delay = parseInt(entry.target.getAttribute('data-delay')) || 0;
-                setTimeout(() => {
-                    entry.target.classList.add('fade-in');
-                }, delay);
+                // All items fade in with their pre-assigned stagger delay
+                staircaseItems.forEach(item => {
+                    item.classList.add('fade-in');
+                });
                 observer.unobserve(entry.target);
             }
         });
     }, observerOptions);
 
-    staircaseItems.forEach(item => {
-        observer.observe(item);
-    });
+    observer.observe(staircaseGrid);
 }
 
 /**

@@ -143,7 +143,7 @@
 
             <!-- Fitness Hours & Locations -->
             <div class="subsection">
-                <h3 class="subsection-title">Hours & Locations</h3>
+                <h3 class="subsection-title fade-in-up">Hours & Locations</h3>
                 <div class="hours-location-grid">
                     <div class="hours-card">
                         <h4>Operating Hours</h4>
@@ -163,7 +163,7 @@
 
             <!-- Meet Our Trainers Section -->
             <div class="subsection">
-                <h3 class="subsection-title" id="trainers">Meet Our Trainers</h3>
+                <h3 class="subsection-title fade-in-up" id="trainers">Meet Our Trainers</h3>
                 <p class="section-subtitle">Experienced professionals ready to help you achieve your fitness goals</p>
                 
                 <div class="trainers-grid">
@@ -184,7 +184,7 @@
                             </div>
                             <p class="rate">$65/session</p>
                             <div class="trainer-actions">
-                                <a href="#" class="trainer-read-more">Read more ›</a>
+                                <a href="#" class="trainer-read-more" onclick="openProfileModal('Jordan Lee'); return false;">Read more ›</a>
                                 <a href="#" class="trainer-btn" onclick="openBookingModal('Jordan Lee', 'Strength & Conditioning', '$65/session', 'JordanLee.jpg'); return false;">Book Now</a>
                             </div>
                         </div>
@@ -207,7 +207,7 @@
                             </div>
                             <p class="rate">$55/session</p>
                             <div class="trainer-actions">
-                                <a href="#" class="trainer-read-more">Read more ›</a>
+                                <a href="#" class="trainer-read-more" onclick="openProfileModal('Ava Martinez'); return false;">Read more ›</a>
                                 <a href="#" class="trainer-btn" onclick="openBookingModal('Ava Martinez', 'Yoga & Mobility', '$55/session', 'AvaMartinez.jpg'); return false;">Book Now</a>
                             </div>
                         </div>
@@ -230,7 +230,7 @@
                             </div>
                             <p class="rate">$70/session</p>
                             <div class="trainer-actions">
-                                <a href="#" class="trainer-read-more">Read more ›</a>
+                                <a href="#" class="trainer-read-more" onclick="openProfileModal('Marcus Reid'); return false;">Read more ›</a>
                                 <a href="#" class="trainer-btn" onclick="openBookingModal('Marcus Reid', 'HIIT & Athletic Training', '$70/session', 'MarcusReid.jpg'); return false;">Book Now</a>
                             </div>
                         </div>
@@ -253,7 +253,7 @@
                             </div>
                             <p class="rate">$60/session</p>
                             <div class="trainer-actions">
-                                <a href="#" class="trainer-read-more">Read more ›</a>
+                                <a href="#" class="trainer-read-more" onclick="openProfileModal('Sophie Chen'); return false;">Read more ›</a>
                                 <a href="#" class="trainer-btn" onclick="openBookingModal('Sophie Chen', 'Dance Fitness & Pilates', '$60/session', 'SophieChen .jpg'); return false;">Book Now</a>
                             </div>
                         </div>
@@ -276,7 +276,7 @@
                             </div>
                             <p class="rate">$65/session</p>
                             <div class="trainer-actions">
-                                <a href="#" class="trainer-read-more">Read more ›</a>
+                                <a href="#" class="trainer-read-more" onclick="openProfileModal('Dylan Brooks'); return false;">Read more ›</a>
                                 <a href="#" class="trainer-btn" onclick="openBookingModal('Dylan Brooks', 'Boxing & Cardio', '$65/session', 'DykanBrooks.jpg'); return false;">Book Now</a>
                             </div>
                         </div>
@@ -299,7 +299,7 @@
                             </div>
                             <p class="rate">$75/session</p>
                             <div class="trainer-actions">
-                                <a href="#" class="trainer-read-more">Read more ›</a>
+                                <a href="#" class="trainer-read-more" onclick="openProfileModal('Amina Hassan'); return false;">Read more ›</a>
                                 <a href="#" class="trainer-btn" onclick="openBookingModal('Amina Hassan', 'Nutrition & Training', '$75/session', 'ElenaCruz.jpg'); return false;">Book Now</a>
                             </div>
                         </div>
@@ -309,70 +309,70 @@
 
             <!-- Weekly Schedule Section -->
             <div class="subsection">
-                <h3 class="subsection-title" id="classes">Weekly Classes & Activities</h3>
+                <h3 class="subsection-title fade-in-up" id="classes">Weekly Classes & Activities</h3>
                 <p class="section-subtitle">Find the perfect class for your fitness level</p>
                 
                 <div class="schedule-table">
                     <div class="schedule-day">
-                        <div class="day-name">Monday</div>
+                        <div class="day-name"><span class="day-label">MON</span><span class="day-full">Monday</span></div>
                         <div class="day-activities">
-                            <span class="activity-tag">HIIT Class</span>
-                            <span class="activity-tag">Yoga</span>
-                            <span class="activity-tag">Weight Training</span>
+                            <span class="activity-tag tag-strength">HIIT Class</span>
+                            <span class="activity-tag tag-mind">Yoga</span>
+                            <span class="activity-tag tag-strength">Weight Training</span>
                         </div>
                     </div>
 
                     <div class="schedule-day">
-                        <div class="day-name">Tuesday</div>
+                        <div class="day-name"><span class="day-label">TUE</span><span class="day-full">Tuesday</span></div>
                         <div class="day-activities">
-                            <span class="activity-tag">Dance Fitness</span>
-                            <span class="activity-tag">Strength 101</span>
-                            <span class="activity-tag">Pilates</span>
+                            <span class="activity-tag tag-cardio">Dance Fitness</span>
+                            <span class="activity-tag tag-strength">Strength 101</span>
+                            <span class="activity-tag tag-mind">Pilates</span>
                         </div>
                     </div>
 
                     <div class="schedule-day">
-                        <div class="day-name">Wednesday</div>
+                        <div class="day-name"><span class="day-label">WED</span><span class="day-full">Wednesday</span></div>
                         <div class="day-activities">
-                            <span class="activity-tag">Zumba</span>
-                            <span class="activity-tag">Wellness Workshop</span>
-                            <span class="activity-tag">Core Training</span>
+                            <span class="activity-tag tag-cardio">Zumba</span>
+                            <span class="activity-tag tag-wellness">Wellness Workshop</span>
+                            <span class="activity-tag tag-strength">Core Training</span>
                         </div>
                     </div>
 
                     <div class="schedule-day">
-                        <div class="day-name">Thursday</div>
+                        <div class="day-name"><span class="day-label">THU</span><span class="day-full">Thursday</span></div>
                         <div class="day-activities">
-                            <span class="activity-tag">Core Crusher</span>
-                            <span class="activity-tag">Stretching</span>
-                            <span class="activity-tag">Bootcamp</span>
+                            <span class="activity-tag tag-strength">Core Crusher</span>
+                            <span class="activity-tag tag-mind">Stretching</span>
+                            <span class="activity-tag tag-strength">Bootcamp</span>
                         </div>
                     </div>
 
                     <div class="schedule-day">
-                        <div class="day-name">Friday</div>
+                        <div class="day-name"><span class="day-label">FRI</span><span class="day-full">Friday</span></div>
                         <div class="day-activities">
-                            <span class="activity-tag">Boxing</span>
-                            <span class="activity-tag">Cardio Circuits</span>
-                            <span class="activity-tag">Spin Class</span>
+                            <span class="activity-tag tag-cardio">Boxing</span>
+                            <span class="activity-tag tag-cardio">Cardio Circuits</span>
+                            <span class="activity-tag tag-cardio">Spin Class</span>
                         </div>
                     </div>
 
-                    <div class="schedule-day">
-                        <div class="day-name">Saturday</div>
+                    <div class="schedule-day schedule-day--weekend">
+                        <div class="day-name"><span class="day-label">SAT</span><span class="day-full">Saturday</span></div>
                         <div class="day-activities">
-                            <span class="activity-tag">Family Fitness</span>
-                            <span class="activity-tag">Community Walk</span>
-                            <span class="activity-tag">Functional Training</span>
+                            <span class="activity-tag tag-wellness">Family Fitness</span>
+                            <span class="activity-tag tag-wellness">Community Walk</span>
+                            <span class="activity-tag tag-strength">Functional Training</span>
                         </div>
                     </div>
 
-                    <div class="schedule-day">
-                        <div class="day-name">Sunday</div>
+                    <div class="schedule-day schedule-day--weekend">
+                        <div class="day-name"><span class="day-label">SUN</span><span class="day-full">Sunday</span></div>
                         <div class="day-activities">
-                            <span class="activity-tag">Yoga & Meditation</span>
-                            <span class="activity-tag">Mobility</span>
-                            <span class="activity-tag">Relaxation</span>
+                            <span class="activity-tag tag-mind">Yoga & Meditation</span>
+                            <span class="activity-tag tag-mind">Mobility</span>
+                            <span class="activity-tag tag-wellness">Relaxation</span>
                         </div>
                     </div>
                 </div>
@@ -380,37 +380,37 @@
 
             <!-- Fitness Facilities -->
             <div class="subsection">
-                <h3 class="subsection-title">Fitness Center Amenities</h3>
+                <h3 class="subsection-title fade-in-up">Fitness Center Amenities</h3>
                 <div class="amenities-grid">
-                    <div class="amenity-item">
+                    <div class="amenity-item card-entrance">
                         <h4>Strength Room</h4>
                         <p>State-of-the-art weights and equipment</p>
                     </div>
-                    <div class="amenity-item">
+                    <div class="amenity-item card-entrance">
                         <h4>Cardio Machines</h4>
                         <p>Treadmills, ellipticals, bikes & more</p>
                     </div>
-                    <div class="amenity-item">
+                    <div class="amenity-item card-entrance">
                         <h4>Group Studio</h4>
                         <p>Classes, group training, workshops</p>
                     </div>
-                    <div class="amenity-item">
+                    <div class="amenity-item card-entrance">
                         <h4>Showers & Lockers</h4>
                         <p>Clean facilities and secure storage</p>
                     </div>
-                    <div class="amenity-item">
+                    <div class="amenity-item card-entrance">
                         <h4>Personal Training</h4>
                         <p>Private training area with expert coaches</p>
                     </div>
-                    <div class="amenity-item">
+                    <div class="amenity-item card-entrance">
                         <h4>Outdoor Track</h4>
                         <p>Half-mile running and walking path</p>
                     </div>
-                    <div class="amenity-item">
+                    <div class="amenity-item card-entrance">
                         <h4>Free Wi-Fi</h4>
                         <p>Stay connected while working out</p>
                     </div>
-                    <div class="amenity-item">
+                    <div class="amenity-item card-entrance">
                         <h4>Childcare Available</h4>
                         <p>Safe, supervised play area</p>
                     </div>
@@ -425,17 +425,17 @@
 
             <!-- Pool Hours -->
             <div class="subsection" id="pool-hours">
-                <h3 class="subsection-title">Pool Hours</h3>
+                <h3 class="subsection-title fade-in-up">Pool Hours</h3>
                 <div class="hours-grid">
-                    <div class="hour-card">
+                    <div class="hour-card card-entrance">
                         <div class="day-label">Monday – Friday</div>
                         <div class="time">10:00 AM – 8:00 PM</div>
                     </div>
-                    <div class="hour-card">
+                    <div class="hour-card card-entrance">
                         <div class="day-label">Saturday</div>
                         <div class="time">9:00 AM – 9:00 PM</div>
                     </div>
-                    <div class="hour-card">
+                    <div class="hour-card card-entrance">
                         <div class="day-label">Sunday</div>
                         <div class="time">11:00 AM – 7:00 PM</div>
                     </div>
@@ -459,9 +459,9 @@
 
             <!-- Pool Locations -->
             <div class="subsection">
-                <h3 class="subsection-title">Pool Locations</h3>
+                <h3 class="subsection-title fade-in-up">Pool Locations</h3>
                 <div class="pools-grid">
-                    <div class="pool-card">
+                    <div class="pool-card card-entrance">
                         <h4>Lakeside Aquatic Center</h4>
                         <p class="address">123 Lake Drive, Willowgate</p>
                         <p class="phone">(555) 123-4501</p>
@@ -474,7 +474,7 @@
                         </div>
                     </div>
 
-                    <div class="pool-card">
+                    <div class="pool-card card-entrance">
                         <h4>Riverside Community Pool</h4>
                         <p class="address">456 River Way, Willowgate</p>
                         <p class="phone">(555) 123-4502</p>
@@ -487,7 +487,7 @@
                         </div>
                     </div>
 
-                    <div class="pool-card">
+                    <div class="pool-card card-entrance">
                         <h4>Downtown Fitness Pool</h4>
                         <p class="address">789 Main Street, Willowgate</p>
                         <p class="phone">(555) 123-4503</p>
@@ -504,7 +504,7 @@
 
             <!-- Pool Rules -->
             <div class="subsection" id="pool-rules">
-                <h3 class="subsection-title">Pool Rules & Safety</h3>
+                <h3 class="subsection-title fade-in-up">Pool Rules & Safety</h3>
                 <div class="rules-container">
                     <ul class="rules-list">
                         <li>Swimwear required at all times</li>
@@ -527,9 +527,9 @@
 
             <!-- Park Locations -->
             <div class="subsection" id="park-locations">
-                <h3 class="subsection-title">Park Locations</h3>
+                <h3 class="subsection-title fade-in-up">Park Locations</h3>
                 <div class="parks-grid">
-                    <div class="park-card">
+                    <div class="park-card card-entrance">
                         <h4>Central Park</h4>
                         <p class="address">200 Park Avenue, Willowgate</p>
                         <p class="hours">Sunrise – Sunset</p>
@@ -541,7 +541,7 @@
                         </div>
                     </div>
 
-                    <div class="park-card">
+                    <div class="park-card card-entrance">
                         <h4>Lakeside Park</h4>
                         <p class="address">301 Waterfront Rd, Willowgate</p>
                         <p class="hours">Sunrise – Sunset</p>
@@ -553,7 +553,7 @@
                         </div>
                     </div>
 
-                    <div class="park-card">
+                    <div class="park-card card-entrance">
                         <h4>Sports Complex</h4>
                         <p class="address">550 Athletic Way, Willowgate</p>
                         <p class="hours">7:00 AM – 9:00 PM</p>
@@ -565,7 +565,7 @@
                         </div>
                     </div>
 
-                    <div class="park-card">
+                    <div class="park-card card-entrance">
                         <h4>Nature Reserve</h4>
                         <p class="address">750 Forest Lane, Willowgate</p>
                         <p class="hours">Sunrise – Sunset</p>
@@ -599,30 +599,30 @@
 
         <!-- Activities Section -->
         <div class="activities-section" id="activities">
-            <h2>Popular Activities</h2>
-            <p class="section-subtitle">Things to do at our fitness centers, pools, and parks</p>
+            <h2 class="fade-in-left">Popular Activities</h2>
+            <p class="section-subtitle fade-in-left">Things to do at our fitness centers, pools, and parks</p>
             <div class="activities-grid">
-                <div class="activity-card">
+                <div class="activity-card card-entrance">
                     <h4>Swimming</h4>
                     <p>Lap swim, open swim, and lessons for all ages</p>
                 </div>
-                <div class="activity-card">
+                <div class="activity-card card-entrance">
                     <h4>Fitness Classes</h4>
                     <p>HIIT, yoga, pilates, dance, boxing, and more</p>
                 </div>
-                <div class="activity-card">
+                <div class="activity-card card-entrance">
                     <h4>Hiking & Walking</h4>
                     <p>Scenic trails and nature paths through the parks</p>
                 </div>
-                <div class="activity-card">
+                <div class="activity-card card-entrance">
                     <h4>Sports & Games</h4>
                     <p>Basketball, tennis, soccer, and more</p>
                 </div>
-                <div class="activity-card">
+                <div class="activity-card card-entrance">
                     <h4>Personal Training</h4>
                     <p>One-on-one sessions with certified trainers</p>
                 </div>
-                <div class="activity-card">
+                <div class="activity-card card-entrance">
                     <h4>Family Fun</h4>
                     <p>Playgrounds, splash pads, and picnic areas</p>
                 </div>
@@ -631,17 +631,17 @@
 
         <!-- Seasonal Notices -->
         <div class="seasonal-notices">
-            <h2>Seasonal Updates</h2>
+            <h2 class="fade-in-left">Seasonal Updates</h2>
             <div class="notices-grid">
-                <div class="notice-card notice-warning">
+                <div class="notice-card notice-warning card-entrance">
                     <strong>Winter Schedule</strong>
                     <p>Outdoor pools close November 15 – March 15. Indoor facilities open year-round.</p>
                 </div>
-                <div class="notice-card notice-info">
+                <div class="notice-card notice-info card-entrance">
                     <strong>Maintenance Notice</strong>
                     <p>Central Park playground under renovation through February. All other amenities remain open.</p>
                 </div>
-                <div class="notice-card notice-holiday">
+                <div class="notice-card notice-holiday card-entrance">
                     <strong>Holiday Hours</strong>
                     <p>All facilities closed Dec 25 and Jan 1. Regular hours resume the following day.</p>
                 </div>
@@ -649,6 +649,38 @@
         </div>
 
     </main>
+
+    <!-- Trainer Profile Modal -->
+    <div id="profileModal" class="modal">
+        <div class="modal-content profile-modal-content">
+            <span class="close-modal" onclick="closeProfileModal()">&times;</span>
+            <div class="profile-modal-header">
+                <div class="profile-modal-img">
+                    <img id="profileImg" src="" alt="">
+                </div>
+                <div class="profile-modal-meta">
+                    <p class="profile-modal-role" id="profileRole"></p>
+                    <h2 id="profileName"></h2>
+                    <p class="profile-modal-specialty" id="profileSpecialty"></p>
+                    <div class="profile-modal-badges">
+                        <span class="profile-badge" id="profileCerts"></span>
+                        <span class="profile-badge profile-badge-exp" id="profileExp"></span>
+                        <span class="profile-badge profile-badge-rate" id="profileRate"></span>
+                    </div>
+                </div>
+            </div>
+            <div class="profile-modal-body">
+                <h4 class="profile-section-label">About</h4>
+                <p id="profileBio"></p>
+                <h4 class="profile-section-label" style="margin-top:20px">Areas of Focus</h4>
+                <div class="profile-focus-tags" id="profileFocus"></div>
+            </div>
+            <div class="profile-modal-footer">
+                <button class="btn-cancel" onclick="closeProfileModal()">Close</button>
+                <button class="btn-submit" id="profileBookBtn">Book a Session</button>
+            </div>
+        </div>
+    </div>
 
     <!-- Booking Modal -->
     <div id="bookingModal" class="modal">
@@ -813,11 +845,127 @@
             closeBookingModal();
         }
 
-        window.onclick = function(event) {
-            const modal = document.getElementById('bookingModal');
-            if (event.target == modal) {
-                closeBookingModal();
+        const trainerData = {
+            'Jordan Lee': {
+                role: 'Certified Personal Trainer',
+                specialty: 'Strength & Conditioning',
+                bio: 'With over a decade of experience, Jordan specializes in building strength and enhancing athletic performance. His personalized approach helps clients achieve their fitness goals safely and effectively. Jordan creates customized programs that balance challenge with sustainability, ensuring long-term progress.',
+                certs: 'CPT • NASM',
+                experience: '10+ years',
+                rate: '$65/session',
+                img: 'JordanLee.jpg',
+                focus: ['Strength Training', 'Athletic Performance', 'Weight Management', 'Injury Prevention', 'Muscle Building']
+            },
+            'Ava Martinez': {
+                role: 'Yoga & Wellness Specialist',
+                specialty: 'Yoga & Mobility',
+                bio: 'Ava brings mindfulness and movement together to help clients improve flexibility, reduce stress, and find balance. Her holistic approach creates lasting wellness transformations. She tailors every session to each individual, blending breathwork, restorative poses, and mindful movement.',
+                certs: 'RYT-200 • ACE',
+                experience: '8+ years',
+                rate: '$55/session',
+                img: 'AvaMartinez.jpg',
+                focus: ['Yoga & Breathwork', 'Flexibility & Mobility', 'Stress Reduction', 'Mindful Movement', 'Restorative Practice']
+            },
+            'Marcus Reid': {
+                role: 'Athletic Performance Coach',
+                specialty: 'HIIT & Athletic Training',
+                bio: 'Marcus pushes boundaries with high-intensity training designed to maximize results. His expertise in sports performance helps athletes and fitness enthusiasts reach peak condition. He uses data-driven methods and progressive overload principles to consistently elevate performance.',
+                certs: 'CPT • ISSF',
+                experience: '12+ years',
+                rate: '$70/session',
+                img: 'MarcusReid.jpg',
+                focus: ['HIIT Training', 'Speed & Agility', 'Endurance Building', 'Sports Performance', 'Metabolic Conditioning']
+            },
+            'Sophie Chen': {
+                role: 'Dance & Pilates Instructor',
+                specialty: 'Dance Fitness & Pilates',
+                bio: 'Sophie combines the joy of dance with core-strengthening Pilates to create fun, effective workouts. Her energetic classes build strength while keeping fitness enjoyable and engaging. Sophie believes movement should be a source of joy, not just results.',
+                certs: 'CPT • Pilates Pro',
+                experience: '7+ years',
+                rate: '$60/session',
+                img: 'SophieChen .jpg',
+                focus: ['Dance Fitness', 'Pilates Core Work', 'Posture & Alignment', 'Group Motivation', 'Coordination & Balance']
+            },
+            'Dylan Brooks': {
+                role: 'Boxing & Cardio Specialist',
+                specialty: 'Boxing & Cardio',
+                bio: 'Dylan delivers high-energy boxing and cardio workouts that build endurance and confidence. His dynamic training style helps clients unleash their inner fighter while getting in peak shape. Sessions are equal parts technique, power, and cardio conditioning.',
+                certs: 'CPT • Boxing Coach',
+                experience: '9+ years',
+                rate: '$65/session',
+                img: 'DykanBrooks.jpg',
+                focus: ['Boxing Technique', 'Cardio Endurance', 'Confidence Building', 'Fat Burning', 'Core & Power']
+            },
+            'Amina Hassan': {
+                role: 'Nutrition & Fitness Expert',
+                specialty: 'Nutrition & Training',
+                bio: 'Amina takes a comprehensive approach to wellness, combining personalized nutrition guidance with targeted training. Her integrated programs create sustainable lifestyle changes for lasting results. She works closely with clients to align their eating habits and fitness routines for maximum impact.',
+                certs: 'CPT • Nutritionist',
+                experience: '11+ years',
+                rate: '$75/session',
+                img: 'ElenaCruz.jpg',
+                focus: ['Nutrition Coaching', 'Lifestyle & Habits', 'Functional Fitness', 'Weight Loss', 'Holistic Wellness']
             }
+        };
+
+        function openProfileModal(name) {
+            const t = trainerData[name];
+            if (!t) return;
+            const modal = document.getElementById('profileModal');
+            document.getElementById('profileImg').src = t.img;
+            document.getElementById('profileImg').alt = name;
+            document.getElementById('profileName').textContent = name;
+            document.getElementById('profileRole').textContent = t.role;
+            document.getElementById('profileSpecialty').textContent = 'Specialty: ' + t.specialty;
+            document.getElementById('profileCerts').textContent = t.certs;
+            document.getElementById('profileExp').textContent = t.experience;
+            document.getElementById('profileRate').textContent = t.rate;
+            document.getElementById('profileBio').textContent = t.bio;
+            const focusEl = document.getElementById('profileFocus');
+            focusEl.innerHTML = '';
+            t.focus.forEach(f => {
+                const tag = document.createElement('span');
+                tag.className = 'profile-focus-tag';
+                tag.textContent = f;
+                focusEl.appendChild(tag);
+            });
+            document.getElementById('profileBookBtn').onclick = function() {
+                closeProfileModal();
+                openBookingModal(name, t.specialty, t.rate, t.img);
+            };
+            const scrollY = window.scrollY || window.pageYOffset;
+            modal.style.display = 'flex';
+            modal.style.opacity = '1';
+            document.body.style.position = 'fixed';
+            document.body.style.top = `-${scrollY}px`;
+            document.body.style.width = '100%';
+            document.body.style.overflow = 'hidden';
+            document.body.dataset.scrollY = scrollY;
+            requestAnimationFrame(() => modal.classList.add('is-open'));
+        }
+
+        function closeProfileModal() {
+            const modal = document.getElementById('profileModal');
+            if (!modal) return;
+            modal.classList.remove('is-open');
+            modal.style.opacity = '0';
+            setTimeout(() => {
+                modal.style.display = 'none';
+                const scrollY = parseInt(document.body.dataset.scrollY || '0', 10);
+                document.body.style.position = '';
+                document.body.style.top = '';
+                document.body.style.width = '';
+                document.body.style.overflow = '';
+                delete document.body.dataset.scrollY;
+                window.scrollTo(0, scrollY);
+            }, 300);
+        }
+
+        window.onclick = function(event) {
+            const bookingModal = document.getElementById('bookingModal');
+            const profileModal = document.getElementById('profileModal');
+            if (event.target == bookingModal) closeBookingModal();
+            if (event.target == profileModal) closeProfileModal();
         };
     </script>
 </body>

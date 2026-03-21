@@ -4,7 +4,7 @@ header {
     top: 0;
     z-index: 1100;
     transition: all 0.3s ease;
-    background-color: #003d82;
+    background-color: #0052a3;
 }
     
 @media (max-width: 320px) {
@@ -232,7 +232,7 @@ html, body {
 }
 
 ::-webkit-scrollbar-thumb:hover {
-  background: linear-gradient(180deg, #003d82, #0052a3);
+  background: linear-gradient(180deg, #0046a0, #0052a3);
 }
 
 main [id] {
@@ -565,7 +565,7 @@ h1, h2, h3, h4, h5, h6 {
 .rating-modal-content h2 {
   margin: 4px 0 8px 0;
   font-size: 28px;
-  color: #003d82;
+  color: #0052a3;
 }
 
 .rating-modal-content .form-field {
@@ -648,60 +648,44 @@ header {
   top: 0;
   z-index: 1100;
   transition: all 0.3s ease;
-  background-color: #003d82;
+  background-color: #0052a3;
 }
 
 header.is-compact {
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.2);
 }
 
 header.is-compact .community-header {
-  height: 80px;
-  padding: 10px 20px;
-  gap: 15px;
-  justify-content: flex-start;
+  height: 0;
+  min-height: 0;
+  padding: 0;
+  overflow: hidden;
+  gap: 0;
 }
 
 header.is-compact .community-header::before {
-  width: 60px;
-  height: 60px;
+  opacity: 0;
 }
 
 header.is-compact .lakes {
-  font-size: 45px;
-  letter-spacing: 2px;
-  flex-grow: 1;
+  opacity: 0;
 }
 
 header.is-compact .nav {
-  position: relative;
-  right: auto;
-  top: auto;
-  background-color: transparent;
-  height: auto;
-  min-height: 0;
-  padding: 15px 20px 15px 0;
-  gap: 20px;
-  margin-left: auto;
-  display: flex;
-  justify-content: center;
-  align-items: center;
+  padding: 8px 24px;
 }
 
 header.is-compact .nav-links {
   gap: 20px;
-  margin: 0;
-  flex-wrap: wrap;
-  justify-content: flex-end;
 }
 
 header.is-compact .search-container {
-  display: none;
+  display: flex;
 }
 
 header.is-compact .nav a {
-  font-size: 14px;
-  padding: 5px 8px;
+  font-size: 15px;
+  padding: 6px 12px;
 }
 
 .community-header {
@@ -709,7 +693,7 @@ header.is-compact .nav a {
     align-items: center;
     justify-content: center;
     gap: 30px;
-    background-color: #003d82;
+    background-color: #003d7a;
     height: 155px;
     text-align: center;
     padding: 0 40px;
@@ -746,7 +730,7 @@ header.is-compact .nav a {
     background-repeat: no-repeat;
     border-radius: 50%;
     flex-shrink: 0;
-    transition: width 0.3s ease, height 0.3s ease;
+    transition: width 0.3s ease, height 0.3s ease, opacity 0.3s ease;
 }
 
 .lakes {
@@ -757,7 +741,7 @@ header.is-compact .nav a {
     letter-spacing: 4px;
     margin: 0;
     text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3), 0 0 20px rgba(0, 102, 204, 0.4);
-    transition: font-size 0.3s ease, letter-spacing 0.3s ease;
+    transition: font-size 0.3s ease, letter-spacing 0.3s ease, opacity 0.3s ease;
 }
 
 .lakes a {
@@ -959,7 +943,7 @@ header.is-compact .nav a {
 
 .suggestion-title {
     font-weight: 600;
-    color: #003d82;
+    color: #0052a3;
     font-size: 14px;
 }
 
@@ -1024,7 +1008,7 @@ header.is-compact .nav a {
 }
 
 .search-btn:hover {
-    background: linear-gradient(135deg, #003d82, #0052a3);
+    background: linear-gradient(135deg, #0046a0, #0052a3);
     transform: translateY(-3px) scale(1.08);
     box-shadow: 0 6px 16px rgba(0, 82, 163, 0.4);
 }
@@ -1357,6 +1341,17 @@ main {
 }
 
 /* Featured Pages Section */
+/* Slower, calmer entrance animations for the three homepage feature cards */
+.page-feature.fade-in-left,
+.page-feature.fade-in-right {
+    transition: opacity 1.4s cubic-bezier(0.25, 0.46, 0.45, 0.94),
+                transform 1.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+}
+
+.amenities-feature  { transition-delay: 0s; }
+.events-feature     { transition-delay: 0.18s; }
+.resources-feature  { transition-delay: 0.36s; }
+
 .featured-pages-section {
     background: #f5f7fa;
     padding: 0;
@@ -1474,7 +1469,7 @@ main {
 }
 
 .feature-btn:hover {
-    background: #003d7a;
+    background: #0046a0;
     transform: translateY(-2px);
     box-shadow: 0 6px 20px rgba(0, 82, 163, 0.3);
 }
@@ -1588,8 +1583,8 @@ main {
     overflow: hidden;
     border-radius: 20px;
     opacity: 0;
-    transform: translateY(50px);
-    transition: all 0.8s cubic-bezier(0.34, 1.56, 0.64, 1);
+    transform: translateY(24px);
+    transition: opacity 0.7s ease-out, transform 0.7s ease-out;
 }
 
 .staircase-item.fade-in {
@@ -2598,9 +2593,8 @@ main {
     font-size: 48px;
     font-family: 'Montserrat', sans-serif;
     font-weight: 700;
-    color: #003d82;
+    color: #0052a3;
     margin: 0 0 15px 0;
-    text-shadow: 2px 2px 5px rgba(0, 52, 163, 0.1);
 }
 
 .welcome-section p {
@@ -2808,7 +2802,7 @@ main {
 
 /* Footer */
 footer {
-  background: linear-gradient(135deg, #001a4d 0%, #003d7a 100%);
+  background: #0d2137;
     padding: 60px 40px;
     margin-top: 0;
     position: relative;
@@ -2856,11 +2850,11 @@ footer.fade-in-view {
 .footer-section h3 {
     font-size: 16px;
     font-weight: 700;
-    color: white;
+    color: #ffffff;
     text-transform: uppercase;
     letter-spacing: 1px;
     margin: 0 0 18px 0;
-    border-bottom: 2px solid rgba(255, 255, 255, 0.3);
+    border-bottom: 2px solid rgba(255, 255, 255, 0.2);
     padding-bottom: 10px;
     transition: all 0.3s ease;
 }
@@ -2868,7 +2862,7 @@ footer.fade-in-view {
 
 .footer-link {
     display: inline-block;
-    color: rgba(255, 255, 255, 0.9);
+    color: rgba(255, 255, 255, 0.8);
     text-decoration: none;
     font-size: 14px;
     margin-bottom: 12px;
@@ -2878,21 +2872,21 @@ footer.fade-in-view {
 
 
 .footer-hours-text {
-    color: rgba(255, 255, 255, 0.85);
+    color: rgba(255, 255, 255, 0.75);
     font-size: 14px;
     margin: 8px 0;
     line-height: 1.6;
 }
 
 .footer-copyright {
-    color: rgba(255, 255, 255, 0.85);
+    color: rgba(255, 255, 255, 0.7);
     font-size: 13px;
     margin: 0 0 12px 0;
     line-height: 1.6;
 }
 
 .footer-small {
-    color: rgba(255, 255, 255, 0.65);
+    color: rgba(255, 255, 255, 0.45);
     font-size: 12px;
     margin: 0;
     font-style: italic;
@@ -3063,7 +3057,7 @@ html, body {
     letter-spacing: 0.08em;
     text-transform: uppercase;
     text-shadow: none;
-    color: #003d7a;
+    color: #0052a3;
     transform: translateX(3px);
 }
 
@@ -3328,10 +3322,9 @@ html, body {
     font-size: 70px;
     font-family: 'Montserrat', sans-serif;
     font-weight: 700;
-    color: #003d82;
+    color: #0052a3;
     letter-spacing: 2px;
     margin: 0 0 20px 0;
-    text-shadow: 2px 2px 5px rgba(0,52,163,0.1);
     animation: fadeIn 0.7s ease-out;
 }
 
@@ -3719,4 +3712,29 @@ html, body {
         width: 24px;
         height: 24px;
     }
+}
+
+/* =============================================
+   3-Color Theme Overrides (palette: #ffffff, #0052a3, #f0f7ff)
+   ============================================= */
+.section-card h2 {
+    color: #0052a3;
+    text-shadow: none;
+}
+
+.neighborhood-map-section h2 {
+    color: #0052a3;
+    text-shadow: none;
+}
+
+.resource-link:hover {
+    color: #0046a0;
+}
+
+.spotlight-link:hover {
+    color: #0046a0;
+}
+
+.search-btn:hover {
+    background: #0046a0;
 }

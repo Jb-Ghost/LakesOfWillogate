@@ -152,9 +152,11 @@ html {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
     gap: 25px;
-    max-width: 1200px;
-    margin: 50px auto;
-    padding: 0 20px;
+    width: 100%;
+    box-sizing: border-box;
+    padding: 52px max(40px, calc((100% - 1200px) / 2));
+    background: #f0f7ff;
+    border-top: 1px solid #e8eef7;
 }
 
 .info-box {
@@ -258,7 +260,7 @@ html {
 
 .view-map-btn:hover,
 .booking-btn:hover {
-    background: #003d7a;
+    background: #0046a0;
     padding-right: 35px;
     transform: translateX(3px);
     box-shadow: 0 4px 12px rgba(0, 82, 163, 0.3);
@@ -272,20 +274,28 @@ html {
 
 /* Trainers Section */
 .trainers-section {
-    background: white;
-    padding: 60px 40px;
-    margin: 60px auto;
-    max-width: 1200px;
-    border-radius: 4px;
-    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+    width: 100%;
+    box-sizing: border-box;
+    padding: 70px max(40px, calc((100% - 1200px) / 2)) 60px;
+    background: #0052a3;
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
 }
 
 .trainers-section h2 {
     font-size: 42px;
-    color: var(--primary);
+    color: #ffffff;
     text-align: center;
     margin: 0 0 10px 0;
 }
+
+/* Trainers section: white text overrides for blue band */
+.trainers-section .section-subtitle { color: rgba(255, 255, 255, 0.7); }
+.trainers-section .trainer-card { background: rgba(255, 255, 255, 0.08); border-color: rgba(255, 255, 255, 0.12); }
+.trainers-section .trainer-card:hover { background: rgba(255, 255, 255, 0.14); }
+.trainers-section .trainer-card h3 { color: #ffffff; }
+.trainers-section .trainer-card .specialty { color: rgba(255, 255, 255, 0.65); }
+.trainers-section .trainer-card p { color: rgba(255, 255, 255, 0.8); }
+.trainers-section .trainer-btn { background: #ffffff; color: #0052a3; }
 
 .section-subtitle {
     text-align: center;
@@ -437,7 +447,7 @@ html {
     width: 0;
     height: 0;
     border-radius: 50%;
-    background: #003d7a;
+    background: #0046a0;
     transform: translate(-50%, -50%);
     transition: width 0.4s ease, height 0.4s ease;
     z-index: -1;
@@ -456,12 +466,11 @@ html {
 
 /* Schedule Section */
 .schedule-section {
-    background: white;
-    padding: 60px 40px;
-    margin: 60px auto;
-    max-width: 1200px;
-    border-radius: 4px;
-    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+    width: 100%;
+    box-sizing: border-box;
+    padding: 70px max(40px, calc((100% - 1200px) / 2)) 60px;
+    background: #ffffff;
+    border-top: 1px solid #e8eef7;
 }
 
 .schedule-section h2 {
@@ -544,12 +553,11 @@ html {
 
 /* Facilities Section */
 .facilities-section {
-    background: white;
-    padding: 60px 40px;
-    margin: 60px auto;
-    max-width: 1200px;
-    border-radius: 4px;
-    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+    width: 100%;
+    box-sizing: border-box;
+    padding: 70px max(40px, calc((100% - 1200px) / 2)) 60px;
+    background: #f0f7ff;
+    border-top: 1px solid #e8eef7;
 }
 
 .facilities-section h2 {
@@ -1117,7 +1125,7 @@ html {
 }
 
 .btn-submit:hover {
-    background: #003d7a;
+    background: #0046a0;
     transform: translateY(-1px);
     box-shadow: 0 4px 12px rgba(0, 82, 163, 0.3);
 }

@@ -399,23 +399,21 @@ html {
 /* Worklog Section */
 .worklog-section {
     padding: 50px 40px;
-    background: white;
-    border-radius: 22px;
-    box-shadow: 0 18px 40px rgba(0, 52, 163, 0.12);
-    border-top: 4px solid #0052a3;
+    background: #f0f7ff;
+    border-radius: 8px;
+    border-top: 3px solid #0052a3;
+    border: 1px solid #e8eef7;
     opacity: 0;
     animation: slideInUp 0.8s ease-out 0.2s forwards;
-    border: 1px solid rgba(0, 82, 163, 0.08);
 }
 
 .worklog-section h2 {
     font-size: 36px;
     font-family: 'Montserrat', sans-serif;
     font-weight: 700;
-    color: #003d82;
+    color: #0052a3;
     text-align: center;
     margin: 0 0 15px 0;
-    text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.1);
 }
 
 .section-description {
@@ -474,24 +472,24 @@ html {
 /* Copyright Checklist Section */
 .copyright-section {
     padding: 50px 40px;
-    background: white;
-    border-radius: 22px;
-    box-shadow: 0 18px 40px rgba(0, 52, 163, 0.12);
-    border-top: 4px solid #0052a3;
+    background: #0052a3;
+    border-radius: 8px;
+    border: 1px solid rgba(255, 255, 255, 0.15);
     opacity: 0;
     animation: slideInUp 0.8s ease-out 0.2s forwards;
-    border: 1px solid rgba(0, 82, 163, 0.08);
 }
 
 .copyright-section h2 {
     font-size: 36px;
     font-family: 'Montserrat', sans-serif;
     font-weight: 700;
-    color: #003d82;
+    color: #ffffff;
     text-align: center;
     margin: 0 0 15px 0;
-    text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.1);
 }
+
+/* Copyright section: white text overrides for blue band */
+.copyright-section .section-description { color: rgba(255, 255, 255, 0.8); }
 
 .copyright-container {
     max-width: 900px;
@@ -515,26 +513,22 @@ html {
 
 /* References Section */
 .references-section {
-    max-width: 1200px;
-    margin: 0 auto 60px auto;
-    padding: 50px 40px;
-    background: #f7f9fc;
-    border-radius: 22px;
-    box-shadow: 0 18px 40px rgba(0, 52, 163, 0.12);
-    border-top: 4px solid #0052a3;
+    width: 100%;
+    box-sizing: border-box;
+    padding: 70px max(40px, calc((100% - 1200px) / 2)) 60px;
+    background: #ffffff;
+    border-top: 1px solid #e8eef7;
     opacity: 0;
     animation: slideInUp 0.8s ease-out 0.4s forwards;
-    border: 1px solid rgba(0, 82, 163, 0.08);
 }
 
 .references-section h2 {
     font-size: 36px;
     font-family: 'Montserrat', sans-serif;
     font-weight: 700;
-    color: #003d82;
+    color: #0052a3;
     text-align: center;
     margin: 0 0 15px 0;
-    text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.1);
 }
 
 .reference-container {
@@ -580,7 +574,7 @@ html {
 
 .reference-card h3 {
     font-size: 22px;
-    color: #003d82;
+    color: #0052a3;
     margin: 0 0 20px 0;
     font-weight: 800;
     font-family: 'Cinzel', serif;
@@ -976,7 +970,7 @@ html {
 }
 
 .feature-btn:hover {
-  background: #003d7a;
+  background: #0046a0;
   transform: translateY(-2px);
   box-shadow: 0 6px 20px rgba(0, 82, 163, 0.3);
 }

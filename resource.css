@@ -174,7 +174,7 @@ main {
     --card-bg: rgba(255, 255, 255, 0.86);
     --card-shadow: 0 12px 30px rgba(0,0,0,0.08);
     --pill-bg: rgba(0,82,163,0.12);
-    --pill-text: #003d82;
+    --pill-text: #0052a3;
 }
 
 html {
@@ -408,7 +408,7 @@ html {
 .stat-number {
     font-size: 28px;
     font-weight: 800;
-    color: #003d82;
+    color: #0052a3;
     transition: all 0.3s ease;
 }
 
@@ -717,7 +717,7 @@ html {
 
 .btn-primary:hover,
 .btn-submit:hover {
-    background: linear-gradient(135deg, #003d7a, var(--primary, #0052a3));
+    background: linear-gradient(135deg, #0046a0, var(--primary, #0052a3));
     box-shadow: 0 4px 12px rgba(0, 82, 163, 0.3);
     transform: translateY(-1px);
 }
@@ -807,7 +807,7 @@ html {
     font-size: 24px;
     font-family: 'Montserrat', sans-serif;
     font-weight: 700;
-    color: #003d82;
+    color: #0052a3;
     text-align: center;
     margin: 0 0 10px 0;
 }
@@ -866,7 +866,7 @@ html {
 }
 
 .submit-resource-section .submit-btn:hover {
-    background: #003d82;
+    background: #0046a0;
 }
 
 .form-message {
@@ -963,6 +963,9 @@ html {
 
 .card-grid.two { grid-template-columns: repeat(auto-fit, minmax(400px, 1fr)); }
 .card-grid.three { grid-template-columns: repeat(auto-fit, minmax(350px, 1fr)); }
+.card-grid.four { grid-template-columns: repeat(4, 1fr); gap: 14px; }
+.card-grid.row { display: flex; flex-wrap: nowrap; gap: 16px; }
+.card-grid.row > * { flex: 1 1 0; min-width: 0; }
 
 .info-card {
     background: white;
@@ -1024,7 +1027,7 @@ html {
 
 .badge {
     background: rgba(0,82,163,0.1);
-    color: #003d82;
+    color: #0052a3;
     padding: 4px 8px;
     border-radius: 999px;
     font-size: 11px;
@@ -1137,7 +1140,7 @@ html {
     background: repeating-linear-gradient(45deg, rgba(0,82,163,0.08) 0, rgba(0,82,163,0.08) 12px, transparent 12px, transparent 24px);
     border-radius: 12px;
     padding: 24px;
-    color: #003d82;
+    color: #0052a3;
     font-weight: 700;
     text-align: center;
     border: 1px dashed rgba(0,82,163,0.2);
@@ -1200,7 +1203,7 @@ html {
     content: attr(data-tooltip);
     position: absolute;
     right: 70px;
-    background: #003d82;
+    background: #0052a3;
     color: white;
     padding: 8px 14px;
     border-radius: 8px;
@@ -1227,12 +1230,12 @@ html {
 
 /* Community Forms Hub */
 .community-forms-hub {
-    background: #f7f9fc;
-    border-radius: 20px;
+    background: #f0f7ff;
+    border-radius: 8px;
     padding: 36px 60px;
-    border-top: 4px solid #0052a3;
+    border-top: 3px solid #0052a3;
+    border: 1px solid #e8eef7;
     margin: 30px 0;
-    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.12);
 }
 
 .forms-hub-container {
@@ -1249,7 +1252,7 @@ html {
     font-size: 24px;
     font-family: 'Montserrat', sans-serif;
     font-weight: 700;
-    color: #003d82;
+    color: #0052a3;
     margin: 0 0 10px 0;
 }
 
@@ -1316,12 +1319,12 @@ html {
 
 /* Contacts Section */
 .contacts-section {
-    background: #f0f4f8;
-    border-radius: 20px;
+    background: #ffffff;
+    border-radius: 8px;
     padding: 36px 60px;
-    border-top: 4px solid #0052a3;
+    border-top: 3px solid #0052a3;
+    border: 1px solid #e8eef7;
     margin: 30px 0;
-    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.12);
     transition: all 0.4s ease;
 }
 
@@ -1329,7 +1332,7 @@ html {
     font-size: 24px;
     font-family: 'Montserrat', sans-serif;
     font-weight: 700;
-    color: #003d82;
+    color: #0052a3;
     text-align: center;
     margin: 0 0 10px 0;
 }
@@ -1363,19 +1366,19 @@ html {
 
 /* Forms Section */
 .forms-section {
-    background: #f7f9fc;
-    border-radius: 20px;
+    background: #f0f7ff;
+    border-radius: 8px;
     padding: 36px 60px;
-    border-top: 4px solid #0052a3;
+    border-top: 3px solid #0052a3;
+    border: 1px solid #e8eef7;
     margin: 30px 0;
-    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.12);
 }
 
 .forms-section h2 {
     font-size: 24px;
     font-family: 'Montserrat', sans-serif;
     font-weight: 700;
-    color: #003d82;
+    color: #0052a3;
     text-align: center;
     margin: 0 0 10px 0;
 }
@@ -1387,12 +1390,11 @@ html {
 
 /* Hours & Location Section */
 .hours-location-section {
-    background: #ffffff;
-    border-radius: 20px;
-    padding: 36px 60px;
-    border-top: 4px solid #0052a3;
+    background: #0052a3;
+    border-radius: 8px;
+    padding: 36px 32px;
+    border: 1px solid rgba(255, 255, 255, 0.15);
     margin: 30px 0;
-    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.12);
     opacity: 0;
     animation: slideInLeft 0.8s cubic-bezier(0.34, 1.56, 0.64, 1) 0.8s forwards;
 }
@@ -1412,7 +1414,7 @@ html {
     font-size: 24px;
     font-family: 'Montserrat', sans-serif;
     font-weight: 700;
-    color: #003d82;
+    color: #ffffff;
     text-align: center;
     margin: 0 0 10px 0;
 }
@@ -1427,55 +1429,122 @@ html {
     padding-right: 10px;
 }
 
+.hours-location-section .info-card {
+    padding: 16px;
+    min-height: auto;
+    gap: 8px;
+}
+
 .hours-location-section .info-card h3 {
     margin-top: 0;
-    margin-bottom: 16px;
-    color: #003d82;
-    font-size: 18px;
+    margin-bottom: 8px;
+    color: #0052a3;
+    font-size: 15px;
     font-weight: 800;
 }
 
 .location-info,
 .hours-info {
-    margin-bottom: 16px;
-    padding: 12px;
-    border-radius: 10px;
+    margin-bottom: 8px;
+    padding: 8px;
+    border-radius: 8px;
 }
 
 .location-info p strong,
 .hours-info p strong {
     color: #0052a3;
-    font-size: 14px;
+    font-size: 12px;
     display: block;
-    margin-bottom: 6px;
+    margin-bottom: 4px;
 }
 
 .location-info p,
 .hours-info p {
-    margin: 0 0 8px 0;
+    margin: 0 0 4px 0;
     color: #2f3a4a;
-    font-size: 14px;
-    line-height: 1.6;
+    font-size: 12px;
+    line-height: 1.5;
 }
 
 .hours-info .plain-list {
-    margin-top: 8px;
-    font-size: 14px;
+    margin-top: 6px;
+    font-size: 12px;
 }
 
 .hours-info .plain-list li {
     padding-left: 8px;
     border-left: 3px solid rgba(0, 82, 163, 0.2);
+    margin-bottom: 3px;
+}
+
+/* Hours & Location section: white text overrides for blue band */
+.hours-location-section .eyebrow { color: rgba(255, 255, 255, 0.6); }
+
+.hours-strip {
+    display: flex;
+    flex-wrap: nowrap;
+    gap: 16px;
+    margin-top: 24px;
+}
+
+.hours-card {
+    flex: 1 1 0;
+    min-width: 0;
+    background: rgba(255, 255, 255, 0.12);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    border-radius: 12px;
+    padding: 20px;
+    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.2);
+}
+
+.hours-card-icon {
+    font-size: 24px;
+    margin-bottom: 8px;
+}
+
+.hours-card h3 {
+    margin: 0 0 6px 0;
+    font-size: 15px;
+    font-weight: 700;
+    color: #ffffff;
+}
+
+.hours-location-text {
+    font-size: 12px;
+    color: rgba(255, 255, 255, 0.6);
+    margin: 0 0 12px 0;
+}
+
+.hours-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    font-size: 13px;
+}
+
+.hours-list li {
+    display: flex;
+    justify-content: space-between;
+    color: rgba(255, 255, 255, 0.85);
+    padding: 4px 0;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.hours-list li:last-child { border-bottom: none; }
+
+.hours-list span {
+    color: rgba(255, 255, 255, 0.55);
+    font-weight: 600;
+    margin-right: 8px;
 }
 
 /* Map Section */
 .map-section {
-    margin: 40px 0 70px 0;
+    margin: 40px 0 0 0;
     padding: 40px 60px;
     border-radius: 16px;
-    background: linear-gradient(135deg, #eef4ff, #f7fbff);
+    background: #f0f7ff;
     border: 1px solid rgba(0,82,163,0.12);
-    box-shadow: 0 14px 30px rgba(0,0,0,0.08);
     opacity: 0;
     animation: fadeInStagger 0.6s ease-out 0.8s forwards;
     transition: all 0.5s cubic-bezier(0.34, 1.56, 0.64, 1);
@@ -1536,13 +1605,7 @@ html {
     font-size: 24px;
     font-family: 'Montserrat', sans-serif;
     font-weight: 700;
-    color: #003d82;
-    transition: all 0.4s cubic-bezier(0.34, 1.56, 0.64, 1);
-    position: relative;
-    background: linear-gradient(45deg, #003d82, #0052a3, #1c7ed6, #0052a3, #003d82);
-    background-size: 300% 300%;
-    -webkit-background-clip: text;
-    background-clip: text;
+    color: #0052a3;
 }
 
 .resource-form {
@@ -1559,7 +1622,7 @@ html {
     display: block;
     margin-bottom: 8px;
     font-weight: 600;
-    color: #003d82;
+    color: #0052a3;
     font-size: 14px;
 }
 
@@ -1733,7 +1796,7 @@ html {
 .resources-hero .stat-card:focus .stat-number,
 .resources-hero .stat-card:focus-visible .stat-number {
     transform: none;
-    color: #003d82;
+    color: #0052a3;
 }
 
 /* ============================================= */

@@ -169,9 +169,11 @@ html {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
     gap: 25px;
-    max-width: 1200px;
-    margin: 60px auto;
-    padding: 0 20px;
+    width: 100%;
+    box-sizing: border-box;
+    padding: 52px max(40px, calc((100% - 1200px) / 2));
+    background: #f0f7ff;
+    border-top: 1px solid #e8eef7;
 }
 
 .info-card {
@@ -237,23 +239,53 @@ html {
 }
 
 /* Section Titles */
-.pools-section,
-.parks-section {
-    background: white;
-    border-radius: 4px;
-    padding: 50px 40px;
-    margin: 60px auto;
-    max-width: 1200px;
-    box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+.pools-section {
+    width: 100%;
+    box-sizing: border-box;
+    padding: 70px max(40px, calc((100% - 1200px) / 2)) 60px;
+    background: #0052a3;
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
 }
 
-.pools-section h2,
+.parks-section {
+    width: 100%;
+    box-sizing: border-box;
+    padding: 70px max(40px, calc((100% - 1200px) / 2)) 60px;
+    background: #ffffff;
+    border-top: 1px solid #e8eef7;
+}
+
+.pools-section h2 {
+    font-size: 48px;
+    color: #ffffff;
+    text-align: center;
+    margin: 0 0 10px 0;
+}
+
 .parks-section h2 {
     font-size: 48px;
     color: var(--primary);
     text-align: center;
     margin: 0 0 10px 0;
 }
+
+/* Pools section: white text overrides for blue band */
+.pools-section .section-subtitle { color: rgba(255, 255, 255, 0.7); }
+.pools-section .subsection-title { color: rgba(255, 255, 255, 0.55); border-bottom-color: rgba(255,255,255,0.2); }
+.pools-section .hour-card { background: rgba(255, 255, 255, 0.1); border-color: rgba(255, 255, 255, 0.15); }
+.pools-section .day-label { color: rgba(255, 255, 255, 0.65); }
+.pools-section .time { color: #ffffff; }
+.pools-section .special-hours { background: rgba(255, 255, 255, 0.1); border-left-color: rgba(255, 255, 255, 0.4); }
+.pools-section .special-hours h4 { color: #ffffff; }
+.pools-section .time-item { color: rgba(255, 255, 255, 0.8); }
+.pools-section .pool-card { background: rgba(255, 255, 255, 0.07); border-color: rgba(255, 255, 255, 0.12); }
+.pools-section .pool-card:hover { background: rgba(255, 255, 255, 0.13); }
+.pools-section .pool-card h4 { color: #ffffff; }
+.pools-section .address, .pools-section .hours, .pools-section .phone { color: rgba(255, 255, 255, 0.78); }
+.pools-section .amenity-badge { background: rgba(255, 255, 255, 0.1); color: rgba(255, 255, 255, 0.85); border-color: rgba(255, 255, 255, 0.15); }
+.pools-section .rules-container { background: rgba(255, 255, 255, 0.07); border-color: rgba(255, 255, 255, 0.15); }
+.pools-section .rules-list li { color: rgba(255, 255, 255, 0.75); }
+.pools-section .rules-list li::before { color: rgba(255, 255, 255, 0.5); }
 
 .section-subtitle {
     text-align: center;
@@ -483,24 +515,32 @@ html {
 
 /* Activities Section */
 .activities-section {
-    background: white;
-    border-radius: 4px;
-    padding: 50px 40px;
-    margin: 60px auto;
-    max-width: 1200px;
-    box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+    width: 100%;
+    box-sizing: border-box;
+    padding: 70px max(40px, calc((100% - 1200px) / 2)) 60px;
+    background: #0052a3;
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
     position: relative;
     overflow: hidden;
 }
 
 .activities-section h2 {
     font-size: 48px;
-    color: var(--primary);
+    color: #ffffff;
     text-align: center;
     margin: 0 0 10px 0;
     position: relative;
     z-index: 1;
 }
+
+/* Activities section: white text overrides for blue band */
+.activities-section .section-subtitle { color: rgba(255, 255, 255, 0.7); }
+.activities-section .activity-card { background: rgba(255, 255, 255, 0.08); border-color: rgba(255, 255, 255, 0.12); }
+.activities-section .activity-card:hover { background: rgba(255, 255, 255, 0.14); }
+.activities-section .activity-card h4 { color: #ffffff; }
+.activities-section .activity-card:hover h4 { color: rgba(255, 255, 255, 0.9); }
+.activities-section .activity-card p { color: rgba(255, 255, 255, 0.78); }
+.activities-section .activity-card:hover p { color: rgba(255, 255, 255, 0.9); }
 
 .activities-grid {
     display: grid;
@@ -551,15 +591,13 @@ html {
 
 /* Seasonal Notices */
 .seasonal-notices {
-    background: white;
-    border-radius: 4px;
-    padding: 50px 40px;
-    margin: 60px auto;
-    max-width: 1200px;
-    box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+    width: 100%;
+    box-sizing: border-box;
+    padding: 70px max(40px, calc((100% - 1200px) / 2)) 60px;
+    background: #f0f7ff;
+    border-top: 1px solid #e8eef7;
     position: relative;
     overflow: hidden;
-    transition: all 0.4s ease;
 }
 
 .seasonal-notices h2 {
@@ -636,7 +674,7 @@ html {
     .quick-info-section {
         grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
         gap: 20px;
-        padding: 0 35px;
+        padding: 52px 35px;
     }
 
     .pools-section,
