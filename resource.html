@@ -4,6 +4,9 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Resources — Lakes of Willowgate</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="index.css">
     <link rel="stylesheet" href="resource.css">
     <link rel="stylesheet" href="animations.css">
@@ -103,7 +106,7 @@
         </section>
 
         <!-- Community Forms Hub -->
-        <section class="community-forms-hub fade-in-up" id="community-forms-hub">
+        <section class="community-forms-hub" id="community-forms-hub">
             <div class="forms-hub-container">
                 <div class="forms-hub-header">
                     <p class="eyebrow">Community Services</p>
@@ -111,9 +114,9 @@
                     <p class="hub-description">Access all the forms and services you need to connect with our community resources.</p>
                 </div>
 
-                <div class="forms-list">
+                <div class="forms-list staircase-grid">
                     <!-- 1. Resource Request Form -->
-                    <button class="form-list-card" onclick="openFormModal('resourceRequest')">
+                    <button class="form-list-card staircase-item" onclick="openFormModal('resourceRequest')">
                         <div class="form-list-content">
                             <h3>Resource Request Form</h3>
                             <p>Request specific help or materials for housing, tutoring, food, jobs, mental health, and more.</p>
@@ -122,7 +125,7 @@
                     </button>
 
                     <!-- 2. Volunteer Sign-Up Form -->
-                    <button class="form-list-card" onclick="openFormModal('volunteer')">
+                    <button class="form-list-card staircase-item" onclick="openFormModal('volunteer')">
                         <div class="form-list-content">
                             <h3>Volunteer Sign-Up Form</h3>
                             <p>Join our community volunteers and share your skills in teaching, tech help, event planning, and more.</p>
@@ -131,7 +134,7 @@
                     </button>
 
                     <!-- 3. Resource Submission Form -->
-                    <button class="form-list-card" onclick="openFormModal('resourceSubmission')">
+                    <button class="form-list-card staircase-item" onclick="openFormModal('resourceSubmission')">
                         <div class="form-list-content">
                             <h3>Resource Submission Form</h3>
                             <p>Suggest new resources and organizations that could help our community members.</p>
@@ -140,7 +143,7 @@
                     </button>
 
                     <!-- 4. Feedback Form -->
-                    <button class="form-list-card" onclick="openFormModal('feedback')">
+                    <button class="form-list-card staircase-item" onclick="openFormModal('feedback')">
                         <div class="form-list-content">
                             <h3>Feedback Form</h3>
                             <p>Share your thoughts on our services and help us improve the community hub experience.</p>
@@ -149,7 +152,7 @@
                     </button>
 
                     <!-- 5. Event Registration Form -->
-                    <button class="form-list-card" onclick="openFormModal('eventRegistration')">
+                    <button class="form-list-card staircase-item" onclick="openFormModal('eventRegistration')">
                         <div class="form-list-content">
                             <h3>Event Registration Form</h3>
                             <p>Register for workshops, info sessions, or community events happening in our area.</p>
@@ -158,7 +161,7 @@
                     </button>
 
                     <!-- 6. Mentorship Match Form -->
-                    <button class="form-list-card" onclick="openFormModal('mentorship')">
+                    <button class="form-list-card staircase-item" onclick="openFormModal('mentorship')">
                         <div class="form-list-content">
                             <h3>Mentorship Match Form</h3>
                             <p>Connect with mentors or become a mentor to support others in our community.</p>
@@ -167,7 +170,7 @@
                     </button>
 
                     <!-- 7. Emergency Assistance Intake Form -->
-                    <button class="form-list-card urgent" onclick="openFormModal('emergency')">
+                    <button class="form-list-card staircase-item urgent" onclick="openFormModal('emergency')">
                         <div class="form-list-content">
                             <h3>Emergency Assistance Intake Form</h3>
                             <p>Request immediate assistance for urgent household or safety needs.</p>
@@ -176,7 +179,7 @@
                     </button>
 
                     <!-- 8. Community Skills Exchange Form -->
-                    <button class="form-list-card" onclick="openFormModal('skillsExchange')">
+                    <button class="form-list-card staircase-item" onclick="openFormModal('skillsExchange')">
                         <div class="form-list-content">
                             <h3>Community Skills Exchange Form</h3>
                             <p>Trade skills with neighbors and build a stronger, more connected community.</p>
@@ -185,7 +188,7 @@
                     </button>
 
                     <!-- 9. Survey on Community Needs -->
-                    <button class="form-list-card" onclick="openFormModal('survey')">
+                    <button class="form-list-card staircase-item" onclick="openFormModal('survey')">
                         <div class="form-list-content">
                             <h3>Survey on Community Needs</h3>
                             <p>Help us understand gaps in services and what resources are most needed.</p>
@@ -194,7 +197,7 @@
                     </button>
 
                     <!-- 10. Success Story Submission Form -->
-                    <button class="form-list-card" onclick="openFormModal('successStory')">
+                    <button class="form-list-card staircase-item" onclick="openFormModal('successStory')">
                         <div class="form-list-content">
                             <h3>Success Story Submission Form</h3>
                             <p>Share your inspiring story and help build trust within our community.</p>
@@ -209,65 +212,45 @@
             <div class="scrollable-content">
                 <p class="eyebrow">Facility Information</p>
                 <h2>Hours & Locations</h2>
-                <div class="card-grid four">
-                    <div class="info-card">
+                <div class="hours-strip">
+                    <div class="hours-card">
+                        <div class="hours-card-icon">🏢</div>
                         <h3>Community Office</h3>
-                        <div class="location-info">
-                            <p><strong> Location:</strong></p>
-                            <p>1234 Willowgate Drive<br>Willowgate Commons, Suite 100</p>
-                        </div>
-                        <div class="hours-info">
-                            <p><strong> Hours:</strong></p>
-                            <ul class="plain-list">
-                                <li>Monday - Friday: 8:00 AM - 6:00 PM</li>
-                                <li>Saturday: 9:00 AM - 3:00 PM</li>
-                                <li>Sunday: Closed</li>
-                            </ul>
-                        </div>
+                        <p class="hours-location-text">1234 Willowgate Drive, Suite 100</p>
+                        <ul class="hours-list">
+                            <li><span>Mon–Fri</span> 8:00 AM – 6:00 PM</li>
+                            <li><span>Saturday</span> 9:00 AM – 3:00 PM</li>
+                            <li><span>Sunday</span> Closed</li>
+                        </ul>
                     </div>
-                    <div class="info-card">
-                        <h3>Pools & Aquatic Centers</h3>
-                        <div class="location-info">
-                            <p><strong> Multiple Locations:</strong></p>
-                            <p>Main Pool: Lakeside Drive<br>North Pool: Riverside Avenue</p>
-                        </div>
-                        <div class="hours-info">
-                            <p><strong> Hours (Seasonal):</strong></p>
-                            <ul class="plain-list">
-                                <li>Monday - Friday: 10:00 AM - 8:00 PM</li>
-                                <li>Saturday: 9:00 AM - 9:00 PM</li>
-                                <li>Sunday: 11:00 AM - 7:00 PM</li>
-                            </ul>
-                        </div>
+                    <div class="hours-card">
+                        <div class="hours-card-icon">🏊</div>
+                        <h3>Pools & Aquatic</h3>
+                        <p class="hours-location-text">Lakeside Drive · Riverside Ave</p>
+                        <ul class="hours-list">
+                            <li><span>Mon–Fri</span> 10:00 AM – 8:00 PM</li>
+                            <li><span>Saturday</span> 9:00 AM – 9:00 PM</li>
+                            <li><span>Sunday</span> 11:00 AM – 7:00 PM</li>
+                        </ul>
                     </div>
-                    <div class="info-card">
+                    <div class="hours-card">
+                        <div class="hours-card-icon">💪</div>
                         <h3>Fitness Centers</h3>
-                        <div class="location-info">
-                            <p><strong> Locations:</strong></p>
-                            <p>Downtown Fitness Hub<br>Lakeside Athletic Complex<br>Riverside Community Center</p>
-                        </div>
-                        <div class="hours-info">
-                            <p><strong> Hours:</strong></p>
-                            <ul class="plain-list">
-                                <li>Monday - Friday: 5:00 AM - 10:00 PM</li>
-                                <li>Saturday: 7:00 AM - 8:00 PM</li>
-                                <li>Sunday: 8:00 AM - 6:00 PM</li>
-                            </ul>
-                        </div>
+                        <p class="hours-location-text">Downtown · Lakeside · Riverside</p>
+                        <ul class="hours-list">
+                            <li><span>Mon–Fri</span> 5:00 AM – 10:00 PM</li>
+                            <li><span>Saturday</span> 7:00 AM – 8:00 PM</li>
+                            <li><span>Sunday</span> 8:00 AM – 6:00 PM</li>
+                        </ul>
                     </div>
-                    <div class="info-card">
+                    <div class="hours-card">
+                        <div class="hours-card-icon">🌳</div>
                         <h3>Parks & Recreation</h3>
-                        <div class="location-info">
-                            <p><strong> Multiple Locations:</strong></p>
-                            <p>Central Park, Willow Park<br>Meadow Fields, Lakefront Trail</p>
-                        </div>
-                        <div class="hours-info">
-                            <p><strong>Hours:</strong></p>
-                            <ul class="plain-list">
-                                <li>Daily: Dawn to Dusk</li>
-                                <li>Lighted areas: Until 10:00 PM</li>
-                            </ul>
-                        </div>
+                        <p class="hours-location-text">Central · Willow · Meadow · Lakefront</p>
+                        <ul class="hours-list">
+                            <li><span>Daily</span> Dawn to Dusk</li>
+                            <li><span>Lit areas</span> Until 10:00 PM</li>
+                        </ul>
                     </div>
                 </div>
             </div>
@@ -1275,16 +1258,14 @@
                 <h3>Quick Links</h3>
                 <a href="index.html" class="footer-link">Home</a>
                 <a href="amenities.html" class="footer-link">Amenities</a>
-                <a href="pools-parks.html" class="footer-link">Pools & Parks</a>
-                <a href="fitness-center.html" class="footer-link">Fitness Center</a>
-                <a href="community-events.html" class="footer-link">Events</a>
+                <a href="community-events.html" class="footer-link">Community Events</a>
+                <a href="schools.html" class="footer-link">Schools</a>
                 <a href="resource.html" class="footer-link">Resources</a>
                 <a href="references.html" class="footer-link">References</a>
             </div>
             <div class="footer-section footer-hours">
                 <h3>Hours</h3>
-                <p class="footer-hours-text"><strong>Office:</strong> Mon–Fri 8:00 AM – 6:00 PM · Sat 9:00 AM – 3:00 PM</p>
-                <p class="footer-hours-text"><strong>Facilities:</strong> Mon–Fri 5:00 AM – 10:00 PM · Weekends 7:00 AM – 9:00 PM</p>
+                <p class="footer-hours-text">Office Hours: Mon-Fri 9am-5pm<br>Facilities: 6am-11pm Daily<br>Emergencies: 24/7</p>
             </div>
             <div class="footer-section footer-legal">
                 <p class="footer-copyright">© 2026 Lakes of Willowgate Community Association</p>
