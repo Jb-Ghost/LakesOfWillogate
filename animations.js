@@ -165,6 +165,14 @@ function initStaircaseGallery() {
                 staircaseItems.forEach(item => {
                     item.classList.add('fade-in');
                 });
+                // After the longest stagger delay, clear transitionDelay so
+                // hover animations on all rows respond instantly
+                const clearDelay = staircaseItems.length * 80 + 700;
+                setTimeout(() => {
+                    staircaseItems.forEach(item => {
+                        item.style.transitionDelay = '0ms';
+                    });
+                }, clearDelay);
                 observer.unobserve(entry.target);
             }
         });

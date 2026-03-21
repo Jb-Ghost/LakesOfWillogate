@@ -1181,6 +1181,17 @@ html {
     }
 }
 
+@keyframes fadeInDown {
+    from {
+        opacity: 0;
+        transform: translateY(-20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
 .nav-btn {
     display: flex;
     align-items: center;
@@ -1288,7 +1299,7 @@ html {
 }
 
 .form-list-card {
-    border: 1px solid rgba(0, 0, 0, 0.08);
+    border: 1.5px solid rgba(0, 0, 0, 0.08);
     background: #ffffff;
     border-radius: 16px;
     padding: 18px 20px;
@@ -1297,14 +1308,21 @@ html {
     gap: 16px;
     text-align: left;
     cursor: pointer;
-    box-shadow: 0 10px 22px rgba(0, 0, 0, 0.06);
-    transition: transform 0.2s ease, box-shadow 0.2s ease, border-color 0.2s ease;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+    will-change: transform;
+    transition: transform 0.08s ease, border-color 0.08s ease;
+}
+
+/* Block the global staircase dark overlay from index.css applying to form cards */
+.form-list-card::after {
+    display: none !important;
 }
 
 .form-list-card:hover {
-    transform: translateY(-4px);
-    box-shadow: 0 16px 30px rgba(0, 82, 163, 0.18);
-    border-color: rgba(0, 82, 163, 0.25);
+    transform: translateY(-3px);
+    border-color: #0052a3;
+    box-shadow: 0 8px 20px rgba(0, 82, 163, 0.12);
+    background: #ffffff;
 }
 
 .form-list-card.urgent {
@@ -1333,6 +1351,11 @@ html {
     font-size: 18px;
     color: #0052a3;
     align-self: center;
+    transition: transform 0.08s ease;
+}
+
+.form-list-card:hover .form-list-arrow {
+    transform: translateX(5px);
 }
 
 /* Contacts Section */
@@ -1737,7 +1760,7 @@ html {
 
 /* Enhanced Animations */
 .resources-hero.fade-in-view {
-    animation: fadeInUp 0.8s ease-out;
+    animation: fadeInDown 0.8s ease-out;
     position: relative;
     overflow: hidden;
 }
@@ -1779,11 +1802,6 @@ html {
 }
 
 /* Forms Hub Card Animations - Removed conflicting fadeIn animation to allow staircase scroll animation */
-
-.form-list-card:hover {
-    transform: translateX(8px);
-    box-shadow: 0 12px 28px rgba(0, 82, 163, 0.15);
-}
 
 /* Section Card Hover Effects */
 .section-card {
