@@ -1457,6 +1457,25 @@ body {
     .btn-submit {
         width: 100%;
     }
+
+    /* Amenities grid: 2 columns on mobile/tablet */
+    .amenities-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+    /* Reset 4-column border rules */
+    .amenities-grid > .amenity-item:nth-child(5) {
+        border-right: 1px solid #e4ecf7;
+    }
+    .amenities-grid > .amenity-item:nth-child(n+6) {
+        border-bottom: 1px solid #e4ecf7;
+    }
+    /* Apply 2-column border rules */
+    .amenities-grid > .amenity-item:nth-child(2n) {
+        border-right: none;
+    }
+    .amenities-grid > .amenity-item:nth-child(n+7) {
+        border-bottom: none;
+    }
 }
 
 /* Community Showcase */
@@ -2253,6 +2272,11 @@ body {
     .trainer-overlay h3 { font-size: 24px; }
     .trainer-content { padding: 20px; }
     .subsection-title { font-size: 24px; }
+
+    /* Amenity items: tighter on small phones */
+    .amenity-item { padding: 10px 8px 8px 8px; }
+    .amenity-item h4 { font-size: 13px; }
+    .amenity-item p { font-size: 11px; }
 }
 
 /* Tablet Devices (481px - 768px) */
