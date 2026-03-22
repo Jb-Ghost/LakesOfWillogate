@@ -1233,6 +1233,8 @@ main {
     flex-wrap: wrap;
     max-width: 800px;
     margin: 0 auto 20px auto;
+    opacity: 0;
+    animation: slideInUp 0.8s ease-out 0.8s forwards;
 }
 
 .hero-btn {
