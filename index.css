@@ -182,6 +182,7 @@ header {
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800&family=Open+Sans:wght@300;400;500;600;700&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Cinzel:wght@400;500;600;700;800;900&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Bungee+Inline&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Gilda+Display&display=swap');
 
 * {
   scroll-behavior: smooth;
@@ -693,7 +694,7 @@ header.is-compact .nav a {
     align-items: center;
     justify-content: center;
     gap: 30px;
-    background-color: #0052a3;
+    background-color: #003d7a;
     height: 155px;
     text-align: center;
     padding: 0 40px;
@@ -735,8 +736,8 @@ header.is-compact .nav a {
 
 .lakes {
     font-size: 95px;
-    font-family: 'Playfair Display', serif;
-    font-weight: 700;
+    font-family: 'Gilda Display', serif;
+    font-weight: 400;
     color: white;
     letter-spacing: 4px;
     margin: 0;
@@ -757,7 +758,7 @@ header.is-compact .nav a {
     padding: 6px 20px;
     font-size: 17px;
     font-family: Roboto, Arial, sans-serif;
-    background-color: #004080;
+    background-color: #0052a3;
     height: auto;
     gap: 20px;
     min-height: 30px;
@@ -2803,7 +2804,7 @@ main {
 
 /* Footer */
 footer {
-  background: #003d7a;
+  background: #0d2137;
     padding: 60px 40px;
     margin-top: 0;
     position: relative;
