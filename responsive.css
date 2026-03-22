@@ -668,6 +668,32 @@ img {
         transition: box-shadow 0.3s ease !important;
     }
 
+    /* Fitness center hours grid — single column on small phones */
+    .hours-location-grid {
+        grid-template-columns: 1fr !important;
+    }
+
+    /* Booking modal — fix trainer circle: container must match img size */
+    .modal-trainer-image {
+        width: 100px !important;
+        height: 100px !important;
+    }
+
+    /* Event tooltip — smaller on mobile */
+    .event-tooltip {
+        max-width: 260px !important;
+        font-size: 13px !important;
+    }
+
+    .tooltip-image {
+        width: 80px !important;
+        min-width: 80px !important;
+    }
+
+    .tooltip-content {
+        padding: 10px 12px !important;
+    }
+
     /* Districts / schools cards — guard against min-width overflows */
     .district-cards-container,
     .enrollment-cards-container {
