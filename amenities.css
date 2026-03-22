@@ -1014,8 +1014,27 @@ body {
 /* Activities Grid */
 .activities-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    grid-template-columns: repeat(6, 1fr);
     gap: 16px;
+}
+
+/* Cancel index.css staircase-item overrides for activity cards */
+.activities-grid.staircase-grid .activity-card.staircase-item:nth-child(1),
+.activities-grid.staircase-grid .activity-card.staircase-item:nth-child(2),
+.activities-grid.staircase-grid .activity-card.staircase-item:nth-child(3),
+.activities-grid.staircase-grid .activity-card.staircase-item:nth-child(4),
+.activities-grid.staircase-grid .activity-card.staircase-item:nth-child(5),
+.activities-grid.staircase-grid .activity-card.staircase-item:nth-child(6) {
+    grid-row: span 1;
+}
+
+.activities-grid.staircase-grid .activity-card.staircase-item {
+    border-radius: 12px;
+    overflow: visible;
+}
+
+.activities-grid.staircase-grid .activity-card.staircase-item::after {
+    display: none;
 }
 
 .activity-card {
@@ -1024,7 +1043,7 @@ body {
     padding: 24px 20px;
     border: 1px solid #e4ecf7;
     border-top: 3px solid #0052a3;
-    transition: box-shadow 0.25s ease, transform 0.25s ease;
+    transition: opacity 0.7s ease-out, transform 0.7s ease-out, box-shadow 0.25s ease;
 }
 
 .activity-card:hover {

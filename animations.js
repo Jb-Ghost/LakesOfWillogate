@@ -143,42 +143,46 @@ function initParallaxEffects() {
  * Staircase Gallery scroll-based fade-in
  */
 function initStaircaseGallery() {
-    const staircaseItems = document.querySelectorAll('.staircase-item');
-    const staircaseGrid = document.querySelector('.staircase-grid');
+    const staircaseGrids = document.querySelectorAll('.staircase-grid');
 
-    if (staircaseItems.length === 0 || !staircaseGrid) return;
-
-    // Assign each item its stagger delay before observing
-    staircaseItems.forEach((item, index) => {
-        item.style.transitionDelay = (index * 80) + 'ms';
-    });
+    if (staircaseGrids.length === 0) return;
 
     const observerOptions = {
         threshold: 0.1,
         rootMargin: '0px 0px -60px 0px'
     };
 
-    const observer = new IntersectionObserver((entries) => {
-        entries.forEach(entry => {
-            if (entry.isIntersecting) {
-                // All items fade in with their pre-assigned stagger delay
-                staircaseItems.forEach(item => {
-                    item.classList.add('fade-in');
-                });
-                // After the longest stagger delay, clear transitionDelay so
-                // hover animations on all rows respond instantly
-                const clearDelay = staircaseItems.length * 80 + 700;
-                setTimeout(() => {
-                    staircaseItems.forEach(item => {
-                        item.style.transitionDelay = '0ms';
-                    });
-                }, clearDelay);
-                observer.unobserve(entry.target);
-            }
-        });
-    }, observerOptions);
+    staircaseGrids.forEach(grid => {
+        const items = grid.querySelectorAll('.staircase-item');
+        if (items.length === 0) return;
 
-    observer.observe(staircaseGrid);
+        // Assign each item its stagger delay before observing
+        items.forEach((item, index) => {
+            item.style.transitionDelay = (index * 80) + 'ms';
+        });
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    // Animate only the items within this grid
+                    items.forEach(item => {
+                        item.classList.add('fade-in');
+                    });
+                    // After the longest stagger delay, clear transitionDelay so
+                    // hover animations respond instantly
+                    const clearDelay = items.length * 80 + 700;
+                    setTimeout(() => {
+                        items.forEach(item => {
+                            item.style.transitionDelay = '0ms';
+                        });
+                    }, clearDelay);
+                    observer.unobserve(entry.target);
+                }
+            });
+        }, observerOptions);
+
+        observer.observe(grid);
+    });
 }
 
 /**

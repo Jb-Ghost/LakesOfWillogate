@@ -1558,7 +1558,7 @@ html {
 
 .hours-location-text {
     font-size: 12px;
-    color: rgba(255, 255, 255, 0.6);
+    color: #ffffff;
     margin: 0 0 12px 0;
 }
 
@@ -1572,7 +1572,7 @@ html {
 .hours-list li {
     display: flex;
     justify-content: space-between;
-    color: rgba(255, 255, 255, 0.85);
+    color: #ffffff;
     padding: 4px 0;
     border-bottom: 1px solid rgba(255, 255, 255, 0.1);
 }
@@ -1580,7 +1580,7 @@ html {
 .hours-list li:last-child { border-bottom: none; }
 
 .hours-list span {
-    color: rgba(255, 255, 255, 0.55);
+    color: #ffffff;
     font-weight: 600;
     margin-right: 8px;
 }
