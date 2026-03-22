@@ -185,8 +185,8 @@ html {
     margin: 0;
     text-align: center;
     border-bottom: 2px solid #ddd;
-    min-height: 60vh;
-    height: 60vh;
+    min-height: 55vh;
+    height: 55vh;
     display: flex;
     flex-direction: column;
     align-items: center;
