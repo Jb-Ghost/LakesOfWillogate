@@ -970,13 +970,19 @@
         // Upcoming Events List Functionality
         let currentFilter = 'month';
 
+        // Parse YYYY-MM-DD as local midnight to avoid UTC offset shifting the date
+        function parseLocalDate(dateStr) {
+            const [y, m, d] = dateStr.split('-').map(Number);
+            return new Date(y, m - 1, d);
+}
+
         function getEventsList() {
             const today = new Date();
             const events = [];
 
             // Convert event details to array format
             for (const [dateStr, details] of Object.entries(eventDetails)) {
-                const eventDate = new Date(dateStr);
+                const eventDate = parseLocalDate(dateStr);
                 events.push({
                     date: eventDate,
                     dateStr: dateStr,
@@ -997,22 +1003,21 @@
 
             if (filter === 'today') {
                 return allEvents.filter(e => {
-                    const eventDate = new Date(e.dateStr);
-                    eventDate.setHours(0, 0, 0, 0);
+                    const eventDate = parseLocalDate(e.dateStr);
                     return eventDate.getTime() === today.getTime();
                 });
             } else if (filter === 'week') {
                 const weekEnd = new Date(today);
                 weekEnd.setDate(weekEnd.getDate() + 7);
                 return allEvents.filter(e => {
-                    const eventDate = new Date(e.dateStr);
+                    const eventDate = parseLocalDate(e.dateStr);
                     return eventDate >= today && eventDate <= weekEnd;
                 });
             } else if (filter === 'month') {
                 const monthEnd = new Date(today);
                 monthEnd.setMonth(monthEnd.getMonth() + 1);
                 return allEvents.filter(e => {
-                    const eventDate = new Date(e.dateStr);
+                    const eventDate = parseLocalDate(e.dateStr);
                     return eventDate >= today && eventDate <= monthEnd;
                 });
             }
@@ -1031,7 +1036,7 @@
                     listContainer.innerHTML = '<p class="no-events">No events found for this period.</p>';
                 } else {
                     listContainer.innerHTML = events.map(event => {
-                        const dateObj = new Date(event.dateStr);
+                        const dateObj = parseLocalDate(event.dateStr);
                         const options = { weekday: 'short', month: 'short', day: 'numeric' };
                         const formattedDate = dateObj.toLocaleDateString('en-US', options);
                         const eventImage = eventImages[event.name];
