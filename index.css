@@ -2,7 +2,7 @@
 
 @font-face {
     font-family: 'Oregon LDO';
-    src: local('Oregon LDO'), local('OregonLDO');
+    src: url('OregonLdo-d9q7.ttf') format('truetype'), local('Oregon LDO'), local('OregonLDO');
     font-weight: normal;
     font-style: normal;
 }
@@ -744,13 +744,8 @@ header.is-compact .nav a {
 
 .lakes {
     font-size: 95px;
-<<<<<<< Updated upstream
-    font-family: 'Gilda Display', serif;
-    font-weight: 400;
-=======
     font-family: 'Oregon LDO', 'Playfair Display', serif;
     font-weight: normal;
->>>>>>> Stashed changes
     color: white;
     letter-spacing: 4px;
     margin: 0;
