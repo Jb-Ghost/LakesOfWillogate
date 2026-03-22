@@ -105,7 +105,7 @@
                 });
             });
 
-            // Staircase fade-in helper
+            // Staircase fade-in helper (used for filter re-trigger on desktop)
             function staggerCards(cards) {
                 const isMobile = window.innerWidth <= 768;
                 const delay = isMobile ? 60 : 140;
@@ -116,21 +116,36 @@
                 });
             }
 
-            // Initial staircase on page load via IntersectionObserver
+            // Initial fade-in: each card observed individually so it appears as it scrolls into view
             const gridEl = document.querySelector('.schools-grid');
             if (gridEl) {
                 const isMobile = window.innerWidth <= 768;
-                const margin = isMobile ? '0px 0px 10px 0px' : '0px 0px 80px 0px';
-                const initObserver = new IntersectionObserver((entries, obs) => {
-                    entries.forEach(entry => {
-                        if (entry.isIntersecting) {
-                            const allCards = Array.from(gridEl.querySelectorAll('.school-card'));
-                            staggerCards(allCards);
-                            obs.unobserve(entry.target);
-                        }
-                    });
-                }, { threshold: 0, rootMargin: margin });
-                initObserver.observe(gridEl);
+                const allCards = Array.from(gridEl.querySelectorAll('.school-card'));
+
+                if (isMobile) {
+                    // On mobile, observe every card individually — no stagger delay
+                    const cardObserver = new IntersectionObserver((entries, obs) => {
+                        entries.forEach(entry => {
+                            if (entry.isIntersecting) {
+                                entry.target.style.transitionDelay = '0ms';
+                                entry.target.classList.add('card-visible');
+                                obs.unobserve(entry.target);
+                            }
+                        });
+                    }, { threshold: 0, rootMargin: '0px 0px 60px 0px' });
+                    allCards.forEach(card => cardObserver.observe(card));
+                } else {
+                    // On desktop, trigger stagger when the grid top enters view
+                    const initObserver = new IntersectionObserver((entries, obs) => {
+                        entries.forEach(entry => {
+                            if (entry.isIntersecting) {
+                                staggerCards(allCards);
+                                obs.unobserve(entry.target);
+                            }
+                        });
+                    }, { threshold: 0, rootMargin: '0px 0px 80px 0px' });
+                    initObserver.observe(gridEl);
+                }
             }
 
             // Checklist functionality removed - now just a static list
