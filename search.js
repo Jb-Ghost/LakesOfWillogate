@@ -1,7 +1,6 @@
 // Enhanced Search Functionality for Lakes of Willowgate Website
 
 // Popular search keywords to suggest
-// Popular search keywords to suggest
 const POPULAR_SEARCHES = [
     "Calendar",
     "Events",
@@ -12,7 +11,7 @@ const POPULAR_SEARCHES = [
     "Contact",
     "Forms",
     "Schools",
-    "Gallery"
+    "References"
 ];
 
 // Comprehensive search database with extensive keywords
@@ -20,8 +19,7 @@ const searchDatabase = [
     // COMMUNITY EVENTS PAGE - Calendar Section
     { 
         title: "Community Calendar", 
-        url: "community-events.html", 
-        scrollTo: ".calendar-section",
+        url: "community-events.html#calendar",
         category: "Events", 
         keywords: ["calendar", "community calendar", "event calendar", "dates", "schedule", "monthly calendar", "event dates", "days", "activities schedule", "community events dates", "days for activities", "when", "what day", "date picker"],
         description: "View the full community events calendar with all scheduled activities"
@@ -54,7 +52,7 @@ const searchDatabase = [
         description: "Rules and guidelines for hosting community events"
     },
     
-    // COMMUNITY EVENTS - Specific Events
+    // COMMUNITY EVENTS - Volunteer
     { 
         title: "Volunteer Opportunities", 
         url: "community-events.html", 
@@ -62,42 +60,26 @@ const searchDatabase = [
         keywords: ["volunteer", "volunteering", "community service", "give back", "help out", "volunteer work", "service opportunities", "volunteer events"],
         description: "Find volunteer opportunities in the community"
     },
-    
-    // FITNESS CENTER PAGE (dedicated)
+
+    // AMENITIES - Fitness Section
     {
         title: "Fitness Center",
-        url: "fitness-center.html",
+        url: "amenities.html#fitness",
         category: "Fitness",
-        keywords: ["fitness center", "gym", "fitness page", "workout", "exercise", "athletic", "fitness hub"],
-        description: "Full fitness center page — trainers, classes, facilities and hours"
+        keywords: ["fitness center", "gym", "fitness page", "workout", "exercise", "athletic", "fitness hub", "amenities"],
+        description: "Fitness center section — trainers, classes, facilities and hours"
     },
 
-    // FITNESS CENTER - Trainers Section
-    { 
-        title: "Personal Trainers", 
-        url: "fitness-center.html#trainers", 
-        category: "Fitness",
-        keywords: ["trainers", "personal trainer", "fitness trainer", "book trainer", "training", "coaching", "personal training", "fitness coach", "certified trainer", "Jordan Lee", "Ava Martinez", "Marcus Reid", "Sophie Chen", "Dylan Brooks", "Elena Cruz"],
-        description: "Meet our certified personal trainers and book sessions"
-    },
-    
-    // FITNESS CENTER - Trainers (amenities page)
+    // AMENITIES - Trainers
     { 
         title: "Personal Trainers", 
         url: "amenities.html#trainers", 
         category: "Fitness",
-        keywords: ["trainers", "personal trainer", "fitness trainer", "book trainer", "training", "coaching", "personal training", "fitness coach", "certified trainer", "Jordan Lee", "Ava Martinez", "Marcus Reid", "Sophie Chen", "Dylan Brooks", "Amina Hassan"],
+        keywords: ["trainers", "personal trainer", "fitness trainer", "book trainer", "training", "coaching", "personal training", "fitness coach", "certified trainer", "Jordan Lee", "Ava Martinez", "Marcus Reid", "Sophie Chen", "Dylan Brooks", "Elena Cruz", "Amina Hassan"],
         description: "Meet our certified personal trainers and book sessions"
     },
     
-    // FITNESS CENTER - Classes
-    { 
-        title: "Fitness Classes Schedule", 
-        url: "fitness-center.html", 
-        category: "Fitness",
-        keywords: ["classes", "fitness classes", "group classes", "class schedule", "weekly classes", "yoga", "pilates", "zumba", "spin", "hiit", "boxing", "dance fitness", "bootcamp", "cardio", "strength training", "core training", "stretching", "meditation", "wellness workshop"],
-        description: "View weekly fitness class schedule and activities"
-    },
+    // AMENITIES - Classes
     { 
         title: "Fitness Classes Schedule", 
         url: "amenities.html#classes", 
@@ -106,66 +88,25 @@ const searchDatabase = [
         description: "View weekly fitness class schedule and activities"
     },
     
-    // FITNESS CENTER - Hours
+    // AMENITIES - Fitness Hours & Locations
     { 
-        title: "Fitness Center Hours", 
+        title: "Fitness Center Hours & Locations", 
         url: "amenities.html#fitness", 
         category: "Fitness",
-        keywords: ["gym hours", "fitness hours", "fitness center hours", "operating hours", "open hours", "when open", "hours of operation", "gym schedule"],
-        description: "Fitness center operating hours and schedule"
+        keywords: ["gym hours", "fitness hours", "fitness center hours", "operating hours", "open hours", "when open", "hours of operation", "gym schedule", "gym location", "fitness location", "fitness centers", "downtown fitness hub", "lakeside athletic complex", "riverside community center", "where is gym", "gym address", "gym equipment", "facilities", "strength room", "cardio machines", "weights", "treadmill", "elliptical", "locker rooms", "showers", "outdoor track", "group studio"],
+        description: "Fitness center operating hours, locations, and facilities"
     },
     
-    // FITNESS CENTER - Locations
-    { 
-        title: "Fitness Center Locations", 
-        url: "amenities.html#fitness", 
-        category: "Fitness",
-        keywords: ["gym location", "fitness location", "fitness centers", "downtown fitness hub", "lakeside athletic complex", "riverside community center", "where is gym", "gym address"],
-        description: "Find fitness center locations and addresses"
-    },
-    
-    // FITNESS CENTER - Facilities
-    { 
-        title: "Fitness Facilities & Amenities", 
-        url: "amenities.html#fitness", 
-        category: "Fitness",
-        keywords: ["gym equipment", "facilities", "amenities", "strength room", "cardio machines", "weights", "treadmill", "elliptical", "locker rooms", "showers", "childcare", "wifi", "outdoor track", "group studio", "hydration stations", "parking", "membership access"],
-        description: "View all fitness center facilities and amenities"
-    },
-    
-    // POOLS & PARKS PAGE (dedicated)
-    {
-        title: "Pools & Parks",
-        url: "pools-parks.html",
-        category: "Pools & Parks",
-        keywords: ["pools parks", "aquatic recreation", "outdoor facilities", "swimming parks", "pools and parks page"],
-        description: "Full pools and parks page — hours, locations, rules and activities"
-    },
-
-    // POOLS & PARKS - Pool Hours
-    { 
-        title: "Pool Hours & Schedule", 
-        url: "pools-parks.html#pool-hours", 
-        category: "Pools & Parks",
-        keywords: ["pool hours", "pool schedule", "swimming hours", "when is pool open", "pool times", "lap swim", "open swim", "adult swim", "family swim", "swim times", "aquatic hours"],
-        description: "View operating hours for all community pools"
-    },
+    // AMENITIES - Pool Hours
     { 
         title: "Pool Hours & Schedule", 
         url: "amenities.html#pool-hours", 
         category: "Pools & Parks",
-        keywords: ["pool hours", "pool schedule", "swimming hours", "when is pool open", "pool times", "lap swim", "open swim", "adult swim", "family swim"],
+        keywords: ["pool hours", "pool schedule", "swimming hours", "when is pool open", "pool times", "lap swim", "open swim", "adult swim", "family swim", "swim times", "aquatic hours", "splash pad", "water play", "kids splash", "spray park"],
         description: "View operating hours for all community pools"
     },
     
-    // POOLS & PARKS - Pool Locations
-    { 
-        title: "Pool Locations", 
-        url: "pools-parks.html#pool-hours", 
-        category: "Pools & Parks",
-        keywords: ["pool location", "pools", "swimming pool", "aquatic center", "lakeside aquatic center", "riverside community pool", "downtown fitness pool", "where to swim", "pool address"],
-        description: "Find all pool locations and addresses"
-    },
+    // AMENITIES - Pool Locations
     { 
         title: "Pool Locations", 
         url: "amenities.html#pools", 
@@ -174,14 +115,7 @@ const searchDatabase = [
         description: "Find all pool locations and addresses"
     },
     
-    // POOLS & PARKS - Pool Rules
-    { 
-        title: "Pool Rules & Safety", 
-        url: "pools-parks.html#pool-rules", 
-        category: "Pools & Parks",
-        keywords: ["pool rules", "pool safety", "swimming rules", "pool regulations", "safety guidelines", "pool requirements", "lifeguard", "pool policy"],
-        description: "Safety guidelines and pool regulations"
-    },
+    // AMENITIES - Pool Rules
     { 
         title: "Pool Rules & Safety", 
         url: "amenities.html#pool-rules", 
@@ -190,14 +124,7 @@ const searchDatabase = [
         description: "Safety guidelines and pool regulations"
     },
     
-    // POOLS & PARKS - Park Locations
-    { 
-        title: "Park Locations", 
-        url: "pools-parks.html#park-locations", 
-        category: "Pools & Parks",
-        keywords: ["park", "parks", "park locations", "playground", "outdoor", "central park", "lakeside park", "sports complex", "nature reserve", "where is park", "park address"],
-        description: "Find parks and their addresses"
-    },
+    // AMENITIES - Park Locations
     { 
         title: "Park Locations", 
         url: "amenities.html#park-locations", 
@@ -206,29 +133,13 @@ const searchDatabase = [
         description: "Find parks and their addresses"
     },
     
-    // POOLS & PARKS - Activities
-    { 
-        title: "Park & Pool Activities", 
-        url: "pools-parks.html#activities", 
-        category: "Pools & Parks",
-        keywords: ["activities", "things to do", "park activities", "swimming", "hiking", "walking", "sports", "basketball", "tennis", "soccer", "picnic", "playground", "splash pad", "fishing", "trails", "bike paths"],
-        description: "Activities available at community parks and pools"
-    },
+    // AMENITIES - Activities
     { 
         title: "Park & Pool Activities", 
         url: "amenities.html#activities", 
         category: "Pools & Parks",
         keywords: ["activities", "things to do", "park activities", "swimming", "hiking", "walking", "sports", "basketball", "tennis", "soccer", "picnic", "playground", "splash pad", "fishing", "trails", "bike paths"],
         description: "Activities available at community parks and pools"
-    },
-    
-    // POOLS & PARKS - Specific Facilities
-    { 
-        title: "Splash Pad", 
-        url: "pools-parks.html#pool-hours", 
-        category: "Pools & Parks",
-        keywords: ["splash pad", "water play", "kids splash", "children water", "spray park"],
-        description: "Splash pad information and location"
     },
 
     // SCHOOLS PAGE
@@ -282,15 +193,6 @@ const searchDatabase = [
         description: "Riverside High School — schools listing"
     },
 
-    // GALLERY PAGE
-    {
-        title: "Photo Gallery",
-        url: "gallery.html",
-        category: "Gallery",
-        keywords: ["gallery", "photos", "pictures", "photo gallery", "community photos", "images", "community pictures", "visual", "photo tour", "neighborhood photos"],
-        description: "A visual journey through the beauty, amenities, and vibrant life at Lakes of Willowgate"
-    },
-
     // REFERENCES PAGE
     {
         title: "References & Attributions",
@@ -321,17 +223,84 @@ const searchDatabase = [
         title: "Contact Directory", 
         url: "resource.html#contacts", 
         category: "Resources",
-        keywords: ["contact", "contacts", "phone number", "email", "contact us", "community office", "reach us", "get in touch", "directory", "phone", "call", "555-123-4567", "community@willowgate.org"],
-        description: "Contact information for community services"
+        keywords: ["contact", "contacts", "phone number", "email", "contact us", "community office", "reach us", "get in touch", "directory", "phone", "call", "555-123-4567", "community@willowgate.org", "emergency", "urgent", "911", "emergency contact", "help", "crisis", "security", "safety emergency"],
+        description: "Contact information and emergency contacts for community services"
     },
     
-    // RESOURCES - Forms
+    // RESOURCES - Forms Hub
     { 
-        title: "Forms & Documents", 
-        url: "resource.html#forms", 
+        title: "Community Forms Hub", 
+        url: "resource.html#community-forms-hub", 
         category: "Resources",
-        keywords: ["forms", "documents", "downloads", "paperwork", "applications", "membership form", "event form", "facility reservation", "community guidelines", "pdf", "download forms"],
-        description: "Download community forms and documents"
+        keywords: ["forms", "documents", "paperwork", "applications", "community forms", "forms hub", "resource request", "volunteer sign up", "resource submission", "feedback form", "event registration", "mentorship", "emergency assistance", "skills exchange", "community survey", "success story", "download", "fill out form"],
+        description: "Access all community forms — resource requests, volunteer sign-up, feedback, and more"
+    },
+
+    // RESOURCES - Specific Forms
+    {
+        title: "Resource Request Form",
+        url: "resource.html#community-forms-hub",
+        category: "Resources",
+        keywords: ["resource request", "request help", "housing help", "tutoring", "food assistance", "job help", "mental health", "request materials"],
+        description: "Request specific help for housing, tutoring, food, jobs, mental health, and more"
+    },
+    {
+        title: "Volunteer Sign-Up Form",
+        url: "resource.html#community-forms-hub",
+        category: "Resources",
+        keywords: ["volunteer sign up", "volunteer form", "sign up volunteer", "join volunteers", "volunteer", "community volunteers", "teaching", "tech help", "event planning"],
+        description: "Join our community volunteers and share your skills"
+    },
+    {
+        title: "Emergency Assistance Form",
+        url: "resource.html#community-forms-hub",
+        category: "Resources",
+        keywords: ["emergency assistance", "urgent help", "immediate help", "emergency form", "household emergency", "safety needs", "urgent intake form"],
+        description: "Request immediate assistance for urgent household or safety needs"
+    },
+    {
+        title: "Mentorship Match Form",
+        url: "resource.html#community-forms-hub",
+        category: "Resources",
+        keywords: ["mentorship", "mentor", "mentee", "mentorship match", "find mentor", "become mentor"],
+        description: "Connect with mentors or become a mentor to support others in the community"
+    },
+    {
+        title: "Event Registration Form",
+        url: "resource.html#community-forms-hub",
+        category: "Resources",
+        keywords: ["event registration", "register event", "register for workshop", "info session", "sign up event"],
+        description: "Register for workshops, info sessions, or community events"
+    },
+    {
+        title: "Feedback Form",
+        url: "resource.html#community-forms-hub",
+        category: "Resources",
+        keywords: ["feedback", "feedback form", "suggestions", "improve community", "share thoughts", "community feedback"],
+        description: "Share your thoughts on services and help improve the community hub"
+    },
+    {
+        title: "Community Skills Exchange Form",
+        url: "resource.html#community-forms-hub",
+        category: "Resources",
+        keywords: ["skills exchange", "trade skills", "skill swap", "neighbor skills", "community skills"],
+        description: "Trade skills with neighbors and build a stronger community"
+    },
+    {
+        title: "Community Needs Survey",
+        url: "resource.html#community-forms-hub",
+        category: "Resources",
+        keywords: ["survey", "community survey", "community needs", "service gaps", "what resources needed"],
+        description: "Help identify gaps in services and most needed resources"
+    },
+
+    // RESOURCES - Suggest a Resource
+    {
+        title: "Suggest a Resource",
+        url: "resource.html#resource-duo",
+        category: "Resources",
+        keywords: ["suggest resource", "submit resource", "add resource", "new resource", "community resource", "suggest service", "recommend resource"],
+        description: "Suggest a new service, form, or contact to add to the community hub"
     },
     
     // RESOURCES - Hours & Locations
@@ -339,7 +308,7 @@ const searchDatabase = [
         title: "Facility Hours & Locations", 
         url: "resource.html#hours", 
         category: "Resources",
-        keywords: ["hours", "operating hours", "locations", "addresses", "when open", "facility hours", "office hours", "location map"],
+        keywords: ["hours", "operating hours", "locations", "addresses", "when open", "facility hours", "office hours", "community office hours", "main office", "office location", "administration", "pools aquatic hours", "parks recreation hours"],
         description: "Hours and locations for all community facilities"
     },
     
@@ -348,18 +317,8 @@ const searchDatabase = [
         title: "Community Map", 
         url: "resource.html#map", 
         category: "Resources",
-        keywords: ["map", "location map", "google maps", "directions", "where", "address", "find us", "navigate"],
+        keywords: ["map", "location map", "google maps", "directions", "where", "address", "find us", "navigate", "neighborhood map"],
         description: "Interactive map of Lakes of Willowgate"
-    },
-    
-    // RESOURCES - Emergency
-    { 
-        title: "Emergency Contacts", 
-        url: "resource.html", 
-        scrollTo: ".contacts-section",
-        category: "Resources",
-        keywords: ["emergency", "urgent", "911", "emergency contact", "help", "crisis", "security", "safety emergency"],
-        description: "24/7 emergency support contacts"
     },
     
     // HOME PAGE
@@ -374,48 +333,48 @@ const searchDatabase = [
     // SPECIFIC TRAINER SEARCHES
     { 
         title: "Jordan Lee - Strength Training", 
-        url: "fitness-center.html#trainers", 
+        url: "amenities.html#trainers", 
         category: "Fitness",
         keywords: ["jordan lee", "strength", "conditioning", "weight training", "muscle building", "powerlifting"],
         description: "Book Jordan Lee for strength and conditioning training"
     },
     { 
         title: "Ava Martinez - Yoga", 
-        url: "fitness-center.html#trainers", 
+        url: "amenities.html#trainers", 
         category: "Fitness",
         keywords: ["ava martinez", "yoga", "mobility", "flexibility", "meditation", "mindfulness"],
         description: "Book Ava Martinez for yoga and mobility sessions"
     },
     { 
         title: "Marcus Reid - HIIT Training", 
-        url: "fitness-center.html#trainers", 
+        url: "amenities.html#trainers", 
         category: "Fitness",
         keywords: ["marcus reid", "hiit", "high intensity", "athletic training", "interval training", "sports training"],
         description: "Book Marcus Reid for HIIT and athletic training"
     },
     {
         title: "Sophie Chen - Pilates",
-        url: "fitness-center.html#trainers",
+        url: "amenities.html#trainers",
         category: "Fitness",
         keywords: ["sophie chen", "pilates", "core", "flexibility", "balance training"],
         description: "Book Sophie Chen for Pilates and core training"
     },
     {
         title: "Dylan Brooks - Bootcamp",
-        url: "fitness-center.html#trainers",
+        url: "amenities.html#trainers",
         category: "Fitness",
         keywords: ["dylan brooks", "bootcamp", "boot camp", "cardio", "endurance", "group fitness"],
         description: "Book Dylan Brooks for bootcamp and cardio training"
     },
     {
         title: "Elena Cruz - Dance Fitness",
-        url: "fitness-center.html#trainers",
+        url: "amenities.html#trainers",
         category: "Fitness",
         keywords: ["elena cruz", "dance fitness", "zumba", "latin dance", "dance class"],
         description: "Book Elena Cruz for dance fitness and Zumba"
     },
     {
-        title: "Amina Hassan",
+        title: "Amina Hassan - Personal Training",
         url: "amenities.html#trainers",
         category: "Fitness",
         keywords: ["amina hassan", "amina", "hassan", "trainer"],
@@ -448,7 +407,7 @@ const searchDatabase = [
     // MEMBERSHIP & REGISTRATION
     { 
         title: "Membership Information", 
-        url: "resource.html#forms", 
+        url: "resource.html#community-forms-hub", 
         category: "Resources",
         keywords: ["membership", "join", "sign up", "register", "membership application", "become a member", "enrollment"],
         description: "Community membership information and application"
@@ -457,24 +416,16 @@ const searchDatabase = [
     // SEASONAL & SPECIAL
     { 
         title: "Holiday Hours", 
-        url: "pools-parks.html", 
-        category: "Pools & Parks",
+        url: "resource.html#hours", 
+        category: "Resources",
         keywords: ["holiday", "holiday hours", "christmas", "new year", "seasonal", "winter schedule", "summer schedule", "seasonal updates"],
         description: "Holiday and seasonal facility hours"
     },
     
     // ADDITIONAL USEFUL SEARCHES
     { 
-        title: "Community Office", 
-        url: "resource.html", 
-        scrollTo: ".hours-location-section",
-        category: "Resources",
-        keywords: ["community office", "main office", "office location", "office hours", "administration"],
-        description: "Community office location and hours"
-    },
-    { 
         title: "Youth Programs", 
-        url: "resource.html#forms", 
+        url: "resource.html#community-forms-hub", 
         category: "Resources",
         keywords: ["youth", "kids", "children", "youth programs", "summer camp", "kids activities", "children programs"],
         description: "Youth programs and activities"
@@ -569,7 +520,7 @@ function showPopularSearchesDropdown() {
         <div style="padding: 12px 20px; font-size: 11px; color: #0052a3; text-transform: uppercase; letter-spacing: 0.5px; font-weight: 600; border-bottom: 1px solid #f0f0f0;">Popular Searches</div>
         ${POPULAR_SEARCHES.map((search) => `
             <div class="search-suggestion-item" onclick="document.getElementById('searchInput').value='${search}'; performSearch();">
-                <div class="suggestion-title">🔍 ${search}</div>
+                <div class="suggestion-title">${search}</div>
                 <div class="suggestion-description">Search for ${search.toLowerCase()}</div>
             </div>
         `).join('')}

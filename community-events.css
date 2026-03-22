@@ -1,9 +1,3 @@
-        header {
-            min-height: 150px;
-        }
-    header {
-        min-height: 90px;
-    }
 @media (max-width: 320px) {
     header {
         display: flex;
@@ -516,14 +510,6 @@ html {
     pointer-events: none;
 }
 
-.upcoming-section:hover::before {
-    opacity: 1;
-}
-
-.upcoming-section:hover {
-    border-top-color: #0052a3;
-}
-
 .upcoming-section h2 {
     font-size: 36px;
     font-family: 'Montserrat', sans-serif;
@@ -795,14 +781,6 @@ html {
     pointer-events: none;
 }
 
-.submit-event-section:hover::before {
-    left: 100%;
-}
-
-.submit-event-section:hover {
-    border-top-color: #0052a3;
-}
-
 .submit-event-section h2 {
     font-size: 36px;
     font-family: 'Montserrat', sans-serif;
@@ -929,14 +907,6 @@ html {
     transition: top 0.8s ease;
     z-index: 0;
     pointer-events: none;
-}
-
-.guidelines-section:hover::before {
-    top: 100%;
-}
-
-.guidelines-section:hover {
-    border-top-color: #0052a3;
 }
 
 .guidelines-section h2 {
@@ -1171,19 +1141,6 @@ html {
     50% { background-position: 100% 50%; }
     100% { background-position: 0% 50%; }
 }
-
-.calendar-section:hover::before {
-    opacity: 0.7;
-}
-
-.calendar-section:hover::after {
-    opacity: 1;
-}
-
-.calendar-section:hover {
-    border-top-color: #0052a3;
-}
-
 
 .calendar-section::before {
     content: '';
@@ -1466,10 +1423,6 @@ html {
     border-radius: 8px;
     box-shadow: 0 2px 8px rgba(0,0,0,0.05);
     transition: transform 0.2s;
-}
-
-.legend-item:hover {
-    transform: translateY(-2px);
 }
 
 .legend-box {
@@ -2257,10 +2210,11 @@ footer.fade-out-view {
     h2 { font-size: 28px; }
     h3 { font-size: 24px; }
     .welcome-section { min-height: 420px; }
-}    .hero-section { min-height: 420px; }
+    .hero-section { min-height: 420px; }
     .hero-content h1 { font-size: 42px; }
     .hero-content .lede { font-size: 17px; margin: 18px 0; }
     section { padding: 60px 50px; }
+}
 
 
 /* Large Screens (1441px and above) */
@@ -2269,11 +2223,12 @@ footer.fade-out-view {
     h2 { font-size: 32px; }
     h3 { font-size: 26px; }
     .welcome-section { min-height: 490px; }
-}    .hero-section { min-height: 70vh; height: 70vh; }
+    .hero-section { min-height: 70vh; height: 70vh; }
     .hero-content h1 { font-size: 48px; }
     .hero-content .lede { font-size: 18px; margin: 20px 0; }
     section { padding: 70px 60px; }
     .scroll-arrow svg { width: 32px; height: 32px; margin-bottom: 35px; }
+}
 
 /* Ultra HD Screens (2560px and above) */
 @media (min-width: 2560px) {

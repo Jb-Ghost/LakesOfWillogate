@@ -46,7 +46,7 @@ header {
     }
     .logo {
         order: 1;
-        margin-bottom: none;
+        margin-bottom: 0;
     }
     .community-header h1 {
         font-size: 26px !important;
@@ -81,7 +81,7 @@ header {
         margin-top: 8px;
     }
     header a {
-        font-size:32p !important;
+        font-size:32px !important;
 
     }
 }
@@ -1540,12 +1540,6 @@ main {
     border: 1px solid rgba(255, 255, 255, 0.2);
 }
 
-.stat-card:hover {
-    transform: translateY(-10px);
-    background: rgba(255, 255, 255, 0.15);
-    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
-}
-
 .stat-number {
     font-size: 64px;
     font-weight: 700;
@@ -1649,10 +1643,6 @@ main {
     transition: transform 0.5s ease;
 }
 
-.staircase-item:hover img {
-    transform: scale(1.08);
-}
-
 .staircase-item::after {
     content: '';
     position: absolute;
@@ -1660,10 +1650,6 @@ main {
     background: linear-gradient(180deg, transparent 0%, rgba(0, 0, 0, 0.3) 100%);
     opacity: 0;
     transition: opacity 0.3s ease;
-}
-
-.staircase-item:hover::after {
-    opacity: 1;
 }
 
 .gallery-view-all {

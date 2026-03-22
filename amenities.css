@@ -256,11 +256,6 @@ body {
 .info-card:nth-child(3) { animation-delay: 0.3s; }
 .info-card:nth-child(4) { animation-delay: 0.4s; }
 
-.info-card:hover {
-    box-shadow: 0 8px 28px rgba(0, 82, 163, 0.18);
-    transform: translateY(-4px);
-}
-
 .info-card h3 {
     font-size: 17px;
     color: var(--primary);
@@ -329,10 +324,6 @@ body {
     background: rgba(255, 255, 255, 0.07);
     border-color: rgba(255, 255, 255, 0.12);
 }
-.pools-section .hour-card:hover {
-    background: rgba(255, 255, 255, 0.13);
-    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.3);
-}
 .pools-section .day-label {
     color: rgba(255, 255, 255, 0.55);
 }
@@ -354,10 +345,6 @@ body {
 .pools-section .pool-card {
     background: rgba(255, 255, 255, 0.07);
     border-color: rgba(255, 255, 255, 0.12);
-}
-.pools-section .pool-card:hover {
-    background: rgba(255, 255, 255, 0.13);
-    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.3);
 }
 .pools-section .pool-card h4 {
     color: #ffffff;
@@ -406,10 +393,6 @@ body {
     background: #ffffff;
     border-color: #e4ecf7;
 }
-.parks-section .park-card:hover {
-    background: #ffffff;
-    box-shadow: 0 6px 20px rgba(0, 82, 163, 0.12);
-}
 .parks-section .park-card h4 {
     color: #1a1a2e;
 }
@@ -451,10 +434,6 @@ body {
     background: rgba(255, 255, 255, 0.12);
     border-color: rgba(255, 255, 255, 0.15);
     border-top-color: rgba(255, 255, 255, 0.5);
-}
-.activities-section .activity-card:hover {
-    background: rgba(255, 255, 255, 0.2);
-    box-shadow: 0 6px 18px rgba(0, 0, 0, 0.2);
 }
 .activities-section .activity-card h4 {
     color: #ffffff;
@@ -748,11 +727,6 @@ body {
     transition: transform 0.2s ease, box-shadow 0.2s ease;
 }
 
-.schedule-day:hover {
-    transform: translateY(-4px);
-    box-shadow: 0 8px 24px rgba(0, 82, 163, 0.13);
-}
-
 .schedule-day--weekend {
     border-top-color: #2e86de;
     background: #f8fbff;
@@ -854,12 +828,6 @@ body {
     display: none;
 }
 
-.amenity-item:hover {
-    background: #f4f8ff;
-    transform: none;
-    box-shadow: none;
-}
-
 .amenity-item::before {
     display: none;
 }
@@ -894,11 +862,6 @@ body {
     text-align: center;
     border: 1px solid #e4ecf7;
     transition: box-shadow 0.25s ease, transform 0.25s ease;
-}
-
-.hour-card:hover {
-    box-shadow: 0 4px 16px rgba(0,82,163,0.10);
-    transform: translateY(-2px);
 }
 
 .day-label {
@@ -969,12 +932,6 @@ body {
     padding: 24px 22px;
     border: 1px solid #e4ecf7;
     transition: box-shadow 0.25s ease, transform 0.25s ease;
-}
-
-.pool-card:hover,
-.park-card:hover {
-    box-shadow: 0 6px 20px rgba(0,82,163,0.12);
-    transform: translateY(-3px);
 }
 
 .pool-card h4,
@@ -1080,11 +1037,6 @@ body {
     transition: box-shadow 0.25s ease, transform 0.25s ease;
 }
 
-.activity-card:hover {
-    box-shadow: 0 6px 18px rgba(0,82,163,0.12);
-    transform: translateY(-3px);
-}
-
 .activity-card h4 {
     font-size: 15px;
     color: #1a1a2e;
@@ -1146,12 +1098,6 @@ body {
 .notice-warning  { border-left-color: #f59f00; }
 .notice-info     { border-left-color: #4dabf7; }
 .notice-holiday  { border-left-color: #51cf66; }
-
-.notice-card:hover {
-    background: #f4f8ff;
-    box-shadow: 0 4px 20px rgba(0, 82, 163, 0.1);
-    transform: translateY(-2px);
-}
 
 .notice-card strong {
     display: block;
@@ -1589,24 +1535,11 @@ body {
     transition: opacity 0.4s ease;
 }
 
-.showcase-image:hover::before {
-    opacity: 0.8;
-}
-
-.showcase-image:hover {
-    transform: translateY(-8px) scale(1.02);
-    box-shadow: 0 15px 40px rgba(0, 0, 0, 0.4);
-}
-
 .showcase-image img {
     width: 100%;
     height: 100%;
     object-fit: cover;
     transition: transform 0.4s ease;
-}
-
-.showcase-image:hover img {
-    transform: scale(1.1);
 }
 
 .image-caption {
@@ -1622,10 +1555,6 @@ body {
     text-align: left;
     transform: translateY(0);
     transition: transform 0.4s ease;
-}
-
-.showcase-image:hover .image-caption {
-    transform: translateY(-5px);
 }
 
 /* Responsive breakpoints */
@@ -1663,11 +1592,6 @@ body {
 /* Subsection Title Animation */
 .subsection-title {
     transition: all 0.3s ease;
-}
-
-.subsection-title:hover {
-    color: #1c7ed6;
-    transform: translateX(10px);
 }
 
 /* ===== Trainer Profile Modal ===== */
@@ -2133,10 +2057,6 @@ body {
   transition: transform 0.3s ease;
 }
 
-.stat-card:hover {
-  transform: translateY(-10px);
-}
-
 .stat-number {
   font-size: 64px;
   font-weight: 700;
@@ -2196,20 +2116,11 @@ body {
   grid-column: span 2;
 }
 
-.gallery-item:hover {
-  transform: translateY(-8px);
-  box-shadow: 0 12px 30px rgba(0, 82, 163, 0.2);
-}
-
 .gallery-item img {
   width: 100%;
   height: 100%;
   object-fit: cover;
   transition: transform 0.4s ease;
-}
-
-.gallery-item:hover img {
-  transform: scale(1.1);
 }
 
 .gallery-caption {
@@ -2224,10 +2135,6 @@ body {
   font-weight: 700;
   transform: translateY(100%);
   transition: transform 0.4s ease;
-}
-
-.gallery-item:hover .gallery-caption {
-  transform: translateY(0);
 }
 
 /* Call to Action Section */

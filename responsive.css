@@ -1,0 +1,835 @@
+/*
+ * responsive.css — Lakes of Willowgate
+ *
+ * Loaded LAST on every page — overrides all other stylesheets.
+ *
+ * Breakpoint strategy:
+ *   ≥ 1441px  — large desktop / 4K
+ *   1281–1440 — standard laptop / desktop
+ *   1025–1280 — small laptop (nav must shrink to fit 6 links)
+ *   ≤ 1024px  — hamburger menu (tablet landscape, tablet, all mobile)
+ *   ≤  768px  — tablet portrait (further content adjustments)
+ *   ≤  480px  — large phone
+ *   ≤  375px  — small phone
+ *   ≤  320px  — very small phone
+ */
+
+/* ============================================================
+   GLOBAL BASE — prevent horizontal overflow on every page
+   ============================================================ */
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+}
+
+html,
+body {
+    max-width: 100%;
+    overflow-x: hidden;
+}
+
+img {
+    max-width: 100%;
+    height: auto;
+    display: block;
+}
+
+/* Scroll indicator — nudge closer to bottom of hero section */
+.scroll-indicator {
+    bottom: 12px;
+}
+
+/* ============================================================
+   HAMBURGER BUTTON
+   Hidden on desktop (≥1025px), flex on tablet/mobile (≤1024px)
+   ============================================================ */
+.hamburger-btn {
+    display: none;           /* default: hidden */
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 5px;
+    background: transparent;
+    border: none;
+    cursor: pointer;
+    padding: 8px;
+    z-index: 1200;
+    flex-shrink: 0;
+}
+
+.hamburger-btn span {
+    display: block;
+    width: 24px;
+    height: 2px;
+    background: white;
+    border-radius: 2px;
+    transition: transform 0.3s ease, opacity 0.3s ease;
+    pointer-events: none;
+}
+
+/* Animated X when menu is open */
+.hamburger-btn.is-open span:nth-child(1) {
+    transform: translateY(7px) rotate(45deg);
+}
+.hamburger-btn.is-open span:nth-child(2) {
+    opacity: 0;
+    transform: scaleX(0);
+}
+.hamburger-btn.is-open span:nth-child(3) {
+    transform: translateY(-7px) rotate(-45deg);
+}
+
+/* ============================================================
+   4K / ULTRA-WIDE (≥ 2560px)
+   ============================================================ */
+@media (min-width: 2560px) {
+    .community-header {
+        height: 200px;
+    }
+    .community-header::before {
+        width: 175px;
+        height: 175px;
+    }
+    .logo {
+        width: 175px;
+        height: 175px;
+    }
+    .welcome-section,
+    .hero-section {
+        max-width: 100%;
+        width: 100%;
+    }
+}
+
+/* ============================================================
+   LARGE DESKTOP (1441px – 2559px)
+   Keep base CSS intact — only ensure no overflow
+   ============================================================ */
+@media (min-width: 1441px) and (max-width: 2559px) {
+    .welcome-section,
+    .hero-section {
+        max-width: 100%;
+        width: 100%;
+    }
+}
+
+/* ============================================================
+   STANDARD LAPTOP / DESKTOP (1281px – 1440px)
+   Nav fits comfortably without changes; just minor refinements
+   ============================================================ */
+@media (min-width: 1281px) and (max-width: 1440px) {
+    .community-header {
+        height: 145px;
+    }
+    .lakes {
+        font-size: 85px;
+    }
+    .community-header::before,
+    .logo {
+        width: 120px;
+        height: 120px;
+    }
+    .nav-links {
+        gap: 28px;
+    }
+    .nav a {
+        font-size: 17px;
+    }
+    .search-input {
+        width: 190px;
+    }
+}
+
+/* ============================================================
+   SMALL LAPTOP / TIGHT DESKTOP (1025px – 1280px)
+   6 nav links + search must fit — shrink everything to ~800px total
+   ============================================================ */
+@media (min-width: 1025px) and (max-width: 1280px) {
+    .community-header {
+        height: 120px;
+        padding: 0 24px;
+        gap: 20px;
+    }
+    .community-header::before,
+    .logo {
+        width: 95px;
+        height: 95px;
+    }
+    .lakes {
+        font-size: 64px;
+        letter-spacing: 3px;
+    }
+    .nav {
+        padding: 5px 16px;
+        gap: 10px;
+    }
+    .nav-links {
+        gap: 4px;
+        flex-shrink: 1;
+    }
+    .nav a {
+        font-size: 13px;
+        padding: 6px 10px;
+        letter-spacing: 0;
+    }
+    .search-input {
+        width: 140px;
+        font-size: 13px;
+    }
+}
+
+/* ============================================================
+   HAMBURGER ZONE — all sizes ≤ 1024px
+   Nav collapses into a dropdown; hamburger button appears
+   ============================================================ */
+@media (max-width: 1024px) {
+    /* Show the hamburger button */
+    .hamburger-btn {
+        display: flex;
+    }
+
+    /* Nav becomes a wrapping bar: hamburger + search, centred */
+    .nav {
+        flex-wrap: wrap;
+        justify-content: center;
+        align-items: center;
+        padding: 8px 16px;
+        gap: 20px;
+    }
+
+    .hamburger-btn {
+        order: 1;
+        flex-shrink: 0;
+    }
+
+    .search-container {
+        order: 2;
+        flex-shrink: 0;
+        margin: 0;
+    }
+
+    /* Nav links dropdown — hidden until .is-open toggled by JS */
+    .nav-links {
+        order: 3;
+        flex: 0 0 100%;
+        display: none;
+        flex-direction: column;
+        gap: 0;
+        padding: 4px 0 8px;
+        background-color: #0052a3;
+        border-top: 1px solid rgba(255, 255, 255, 0.15);
+        margin: 0 -16px;   /* bleed to nav edges */
+        padding-left: 16px;
+        padding-right: 16px;
+    }
+
+    .nav-links.is-open {
+        display: flex;
+    }
+
+    /* Nav link items — reset stagger animation, show at 1 */
+    .nav-links a {
+        display: block;
+        width: 100%;
+        text-align: left;
+        padding: 12px 16px;
+        font-size: 15px !important;
+        opacity: 1 !important;
+        animation: none !important;
+        border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+        border-radius: 0;
+        letter-spacing: 0.03em;
+    }
+
+    .nav-links a:last-child {
+        border-bottom: none;
+    }
+
+    /* Community header scaled for tablet landscape */
+    .community-header {
+        height: auto;
+        min-height: 90px;
+        padding: 12px 20px;
+        gap: 14px;
+    }
+
+    .community-header::before,
+    .logo {
+        width: 65px;
+        height: 65px;
+    }
+
+    .lakes {
+        font-size: 52px;
+        letter-spacing: 2px;
+    }
+
+    /* Search bar a bit narrower */
+    .search-input {
+        width: 170px;
+        font-size: 14px;
+        text-align: center;
+    }
+}
+
+/* ============================================================
+   TABLET PORTRAIT (≤ 768px)
+   ============================================================ */
+@media (max-width: 768px) {
+    /* Shrink header further */
+    .community-header {
+        min-height: 75px;
+        padding: 10px 16px;
+        gap: 10px;
+    }
+
+    .community-header::before,
+    .logo {
+        width: 52px;
+        height: 52px;
+    }
+
+    .lakes {
+        font-size: 38px;
+        letter-spacing: 1px;
+    }
+
+    .nav {
+        padding: 6px 14px;
+    }
+
+    .nav-links {
+        margin: 0 -14px;
+        padding-left: 14px;
+        padding-right: 14px;
+    }
+
+    .nav-links a {
+        font-size: 14px !important;
+        padding: 11px 14px;
+    }
+
+    .search-input {
+        width: 150px;
+        text-align: center;
+    }
+
+    /* Hero sections */
+    .welcome-section,
+    .hero-section {
+        min-height: 380px;
+    }
+
+    .hero-content {
+        padding: 36px 20px 42px;
+    }
+
+    .hero-content h1 {
+        font-size: 38px !important;
+    }
+
+    .hero-content p,
+    .hero-content .lede {
+        font-size: 15px;
+    }
+
+    .hero-buttons {
+        flex-direction: column;
+        gap: 10px;
+        align-items: center;
+    }
+
+    .hero-btn {
+        font-size: 14px;
+        padding: 10px 20px;
+    }
+
+    /* Section spacing */
+    section {
+        padding: 40px 20px !important;
+    }
+
+    .section-header h2 {
+        font-size: 28px;
+    }
+
+    /* Footer */
+    .footer-content {
+        grid-template-columns: 1fr !important;
+        gap: 24px;
+    }
+
+    /* Featured pages 2-col → 1-col */
+    .featured-pages-section {
+        grid-template-columns: 1fr !important;
+        gap: 16px;
+    }
+
+    /* Fix 3: Page-feature sections (index home): single column so image is visible */
+    .page-feature {
+        grid-template-columns: 1fr;
+        min-height: auto;
+    }
+
+    .feature-image {
+        height: 240px;
+        min-height: auto;
+    }
+
+    .page-feature.reverse {
+        direction: ltr;
+    }
+
+    .feature-content {
+        padding: 30px 20px;
+    }
+
+    /* Fix 4: Calendar nav buttons — properly sized, not restricted */
+    .calendar-nav-btn {
+        padding: 5px 10px !important;
+        font-size: 12px !important;
+        max-width: none !important;
+    }
+
+    /* Rules list — prevent dashes from overflowing box on mobile */
+    .rules-list {
+        grid-template-columns: 1fr !important;
+    }
+
+    .rules-container {
+        padding: 16px 14px !important;
+    }
+
+    /* Contacts section heavy padding squishes content on mobile */
+    .contacts-section {
+        padding: 24px 16px !important;
+    }
+
+    .forms-section {
+        padding: 24px 16px !important;
+    }
+
+    /* Community Forms Hub — reduce side padding and collapse grid */
+    .community-forms-hub {
+        padding: 28px 20px !important;
+    }
+
+    .forms-list {
+        grid-template-columns: 1fr !important;
+    }
+
+    /* Suggest a New Resource / Key Contacts — info-top wraps on narrow screens */
+    .info-top {
+        flex-wrap: wrap !important;
+        gap: 4px 8px !important;
+    }
+
+    .contact-value {
+        word-break: break-word !important;
+        overflow-wrap: break-word !important;
+        font-size: 12px !important;
+    }
+
+    /* Fix 6: Resources page — collapse multi-column layouts */
+    .resources-hero {
+        grid-template-columns: 1fr !important;
+        padding: 30px 20px !important;
+        gap: 24px !important;
+        min-height: auto !important;
+    }
+
+    .resources-content .section-container {
+        grid-template-columns: 1fr !important;
+    }
+
+    .card-grid.two,
+    .card-grid.three {
+        grid-template-columns: 1fr !important;
+    }
+
+    .card-grid.four {
+        grid-template-columns: repeat(2, 1fr) !important;
+        gap: 10px !important;
+    }
+
+    .card-grid.row {
+        flex-wrap: wrap !important;
+    }
+
+    .hours-strip {
+        flex-wrap: wrap !important;
+    }
+
+    .hours-card {
+        flex: 1 1 calc(50% - 8px) !important;
+        min-width: 180px !important;
+    }
+
+    .map-card {
+        grid-template-columns: 1fr !important;
+    }
+
+    .resource-duo {
+        grid-template-columns: 1fr !important;
+        padding: 0 20px !important;
+        gap: 20px !important;
+    }
+
+    .submit-resource-section {
+        padding: 24px 20px !important;
+    }
+
+    /* Fix 7: References — collapse dual-section to single column */
+    .dual-section-container {
+        grid-template-columns: 1fr !important;
+        padding: 0 16px !important;
+    }
+
+    .worklog-section,
+    .copyright-section {
+        padding: 30px 20px !important;
+    }
+}
+
+/* ============================================================
+   LARGE PHONE (≤ 480px)
+   ============================================================ */
+@media (max-width: 480px) {
+    /* Community header — compact */
+    .community-header {
+        min-height: 64px;
+        padding: 8px 12px;
+        gap: 8px;
+    }
+
+    .community-header::before,
+    .logo {
+        width: 42px;
+        height: 42px;
+    }
+
+    .lakes {
+        font-size: 28px;
+        letter-spacing: 0.5px;
+    }
+
+    .nav {
+        padding: 5px 12px;
+    }
+
+    .nav-links {
+        margin: 0 -12px;
+        padding-left: 12px;
+        padding-right: 12px;
+    }
+
+    .nav-links a {
+        font-size: 13px !important;
+        padding: 10px 12px;
+    }
+
+    .search-container {
+        padding: 3px 6px;
+        flex: 0 0 auto !important;
+        width: auto !important;
+    }
+
+    .search-input {
+        width: 130px;
+        font-size: 13px;
+        padding: 7px 10px;
+    }
+
+    .search-btn {
+        width: 32px;
+        height: 32px;
+    }
+
+    /* Hero — larger text to match amenities page */
+    .welcome-section,
+    .hero-section {
+        min-height: 340px;
+    }
+
+    .hero-content {
+        padding: 32px 18px 42px;
+    }
+
+    .hero-content h1 {
+        font-size: 28px !important;
+        line-height: 1.2;
+    }
+
+    .hero-content p,
+    .hero-content .lede {
+        font-size: 14px;
+    }
+
+    .eyebrow {
+        font-size: 12px;
+    }
+
+    .hero-buttons {
+        flex-direction: column;
+        gap: 10px;
+        align-items: center;
+    }
+
+    .hero-btn {
+        font-size: 14px;
+        padding: 10px 20px;
+    }
+
+    /* Ensure nav stays centred even if other stylesheets override at this width */
+    .nav {
+        justify-content: center !important;
+    }
+
+    .search-container {
+        flex: 0 0 auto !important;
+        width: auto !important;
+    }
+
+    /* Calendar — smaller buttons on phone */
+    .calendar-nav-btn {
+        padding: 4px 8px !important;
+        font-size: 11px !important;
+    }
+
+    /* Hide scroll indicator on phones */
+    .scroll-indicator {
+        display: none !important;
+    }
+
+    /* Sections */
+    section {
+        padding: 28px 12px !important;
+    }
+
+    .section-header h2 {
+        font-size: 24px !important;
+    }
+
+    /* Community Forms Hub — tight padding on small phones */
+    .community-forms-hub {
+        padding: 20px 14px !important;
+    }
+
+    .form-list-card {
+        padding: 14px 14px !important;
+        gap: 12px !important;
+    }
+
+    .form-list-content h3 {
+        font-size: 15px !important;
+    }
+
+    /* Suggest a New Resource + Key Contacts — tight padding on small phones */
+    .resource-duo {
+        padding: 0 !important;
+    }
+
+    .submit-resource-section {
+        padding: 18px 14px !important;
+        border-radius: 12px !important;
+    }
+
+    .contacts-section {
+        padding: 18px 14px !important;
+    }
+
+    .info-card {
+        padding: 16px 14px !important;
+        min-height: auto !important;
+    }
+
+    /* Trainers grid — it uses auto-fit/minmax so just set a min col width floor */
+    .trainers-grid {
+        grid-template-columns: 1fr !important;
+    }
+
+    /* Featured-pages uses explicit 1fr 1fr — force to 1 col */
+    .featured-pages-section {
+        grid-template-columns: 1fr !important;
+        gap: 14px;
+    }
+
+    /* Footer */
+    .footer-content {
+        grid-template-columns: 1fr !important;
+        gap: 18px;
+    }
+
+    /* Districts / schools cards — guard against min-width overflows */
+    .district-cards-container,
+    .enrollment-cards-container {
+        grid-template-columns: 1fr !important;
+    }
+
+    /* filter bar */
+    .filter-bar {
+        flex-direction: column !important;
+        gap: 10px;
+    }
+
+    .filter-group {
+        justify-content: center;
+        width: 100%;
+        flex-wrap: wrap;
+    }
+
+    .pill-btn,
+    .filter-btn {
+        font-size: 13px;
+        padding: 8px 16px;
+    }
+
+    /* Map iframe / embed */
+    .map-section iframe,
+    .map-section embed,
+    .map-section object {
+        width: 100%;
+        height: 280px;
+    }
+
+    /* Modal overlays */
+    .form-modal-content,
+    .trainer-modal,
+    .trainer-modal-content {
+        width: 96vw;
+        max-width: 96vw;
+        padding: 20px 14px;
+        max-height: 95vh;
+        overflow-y: auto;
+    }
+
+    .form-row {
+        grid-template-columns: 1fr !important;
+    }
+
+    .form-actions {
+        flex-direction: column-reverse;
+        gap: 8px;
+    }
+
+    .btn-primary,
+    .btn-secondary {
+        width: 100%;
+    }
+
+    /* Resources — full-width cards on small phones */
+    .card-grid.four {
+        grid-template-columns: 1fr !important;
+    }
+
+    .hours-card {
+        flex: 1 1 100% !important;
+    }
+}
+
+/* ============================================================
+   SMALL PHONE (≤ 375px)
+   ============================================================ */
+@media (max-width: 375px) {
+    .community-header {
+        padding: 7px 10px;
+        gap: 6px;
+    }
+
+    .community-header::before,
+    .logo {
+        width: 35px;
+        height: 35px;
+    }
+
+    .lakes {
+        font-size: 22px;
+    }
+
+    .nav {
+        padding: 4px 10px;
+    }
+
+    .nav-links a {
+        font-size: 12px !important;
+        padding: 9px 10px;
+    }
+
+    .hero-content h1 {
+        font-size: 18px !important;
+    }
+
+    .hero-btn {
+        font-size: 11px;
+        padding: 7px 12px;
+    }
+
+    section {
+        padding: 22px 10px !important;
+    }
+
+    .section-header h2 {
+        font-size: 21px !important;
+    }
+}
+
+/* ============================================================
+   VERY SMALL PHONE (≤ 320px)
+   ============================================================ */
+@media (max-width: 320px) {
+    .community-header {
+        padding: 6px 8px;
+        gap: 5px;
+    }
+
+    .community-header::before,
+    .logo {
+        width: 30px;
+        height: 30px;
+    }
+
+    .lakes {
+        font-size: 18px;
+        letter-spacing: 0;
+    }
+
+    .nav {
+        padding: 4px 8px;
+    }
+
+    .nav-links a {
+        font-size: 11px !important;
+        padding: 8px 8px;
+    }
+
+    .hero-content h1 {
+        font-size: 15px !important;
+    }
+
+    .hero-btn {
+        font-size: 10px;
+        padding: 6px 10px;
+    }
+
+    section {
+        padding: 18px 8px !important;
+    }
+
+    .section-header h2 {
+        font-size: 18px !important;
+    }
+
+    .search-input {
+        width: 100px;
+        font-size: 11px;
+        padding: 6px 8px;
+    }
+
+    .search-btn {
+        width: 28px;
+        height: 28px;
+    }
+}
+
+

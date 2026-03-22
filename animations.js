@@ -358,4 +358,38 @@ const throttledScroll = throttle(() => {
 
 window.addEventListener('scroll', throttledScroll);
 
-console.log('🎨 Animations loaded and initialized!');
+console.log('Animations loaded and initialized!');
+
+/**
+ * HAMBURGER MENU — mobile nav toggle
+ * Works with .hamburger-btn and .nav-links.is-open classes in responsive.css
+ */
+(function initHamburgerMenu() {
+    const btn = document.querySelector('.hamburger-btn');
+    const navLinks = document.querySelector('.nav-links');
+    if (!btn || !navLinks) return;
+
+    btn.addEventListener('click', function () {
+        const isOpen = navLinks.classList.toggle('is-open');
+        btn.classList.toggle('is-open', isOpen);
+        btn.setAttribute('aria-expanded', String(isOpen));
+    });
+
+    // Close menu when a nav link is clicked (navigating away or same-page anchor)
+    navLinks.querySelectorAll('a').forEach(function (link) {
+        link.addEventListener('click', function () {
+            navLinks.classList.remove('is-open');
+            btn.classList.remove('is-open');
+            btn.setAttribute('aria-expanded', 'false');
+        });
+    });
+
+    // Close menu when clicking outside the nav
+    document.addEventListener('click', function (e) {
+        if (!btn.contains(e.target) && !navLinks.contains(e.target)) {
+            navLinks.classList.remove('is-open');
+            btn.classList.remove('is-open');
+            btn.setAttribute('aria-expanded', 'false');
+        }
+    });
+}());
