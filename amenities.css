@@ -1012,11 +1012,6 @@ body {
 }
 
 /* Activities Grid */
-.activities-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-    gap: 16px;
-}
 
 .activity-card {
     background: #f7f9fc;
@@ -1068,7 +1063,19 @@ body {
     grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
     gap: 16px;
 }
+        display: flex;
+        flex-direction: row;
+        gap: 16px;
+        overflow-x: auto;
+        padding-bottom: 8px;
+        scrollbar-width: thin;
+        scrollbar-color: #0052a3 #e4ecf7;
+    }
 
+    .activities-grid .activity-card {
+        min-width: 220px;
+        flex: 0 0 auto;
+    }
 .notice-card {
     border-radius: 12px;
     padding: 22px 20px;
