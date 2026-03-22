@@ -123,17 +123,11 @@
                 const allCards = Array.from(gridEl.querySelectorAll('.school-card'));
 
                 if (isMobile) {
-                    // On mobile, observe every card individually — no stagger delay
-                    const cardObserver = new IntersectionObserver((entries, obs) => {
-                        entries.forEach(entry => {
-                            if (entry.isIntersecting) {
-                                entry.target.style.transitionDelay = '0ms';
-                                entry.target.classList.add('card-visible');
-                                obs.unobserve(entry.target);
-                            }
-                        });
-                    }, { threshold: 0, rootMargin: '0px 0px 60px 0px' });
-                    allCards.forEach(card => cardObserver.observe(card));
+                    // On mobile, skip animation — show all cards immediately
+                    allCards.forEach(card => {
+                        card.style.transitionDelay = '0ms';
+                        card.classList.add('card-visible');
+                    });
                 } else {
                     // On desktop, trigger stagger when the grid top enters view
                     const initObserver = new IntersectionObserver((entries, obs) => {
@@ -323,7 +317,7 @@
             </div>
 
             <!-- Schools Grid -->
-            <div class="schools-grid fade-in-up">
+            <div class="schools-grid">
                 <!-- Regional Schools (Serving Lakes of Willowgate) -->
                 
                 <!-- Willowgate Unified School District - Regional -->

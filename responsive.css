@@ -661,9 +661,11 @@ img {
         gap: 18px;
     }
 
-    /* Schools page — faster card fade-in transition on mobile */
+    /* Schools page — cards always visible on mobile, no fade-in animation */
     .school-card {
-        transition: opacity 0.7s ease-out, transform 0.7s ease-out, box-shadow 0.3s ease !important;
+        opacity: 1 !important;
+        transform: translateY(0) !important;
+        transition: box-shadow 0.3s ease !important;
     }
 
     /* Districts / schools cards — guard against min-width overflows */
