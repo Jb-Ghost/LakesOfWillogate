@@ -119,7 +119,16 @@
                 </div>
 
                 <div class="forms-list staircase-grid">
-                    <!-- 1. Resource Request Form -->
+                    <!-- 1. Emergency Assistance Intake Form -->
+                    <button class="form-list-card staircase-item urgent" onclick="openFormModal('emergency')">
+                        <div class="form-list-content">
+                            <h3>Emergency Assistance Intake Form</h3>
+                            <p>Request immediate assistance for urgent household or safety needs.</p>
+                        </div>
+                        <div class="form-list-arrow">→</div>
+                    </button>
+
+                    <!-- 2. Resource Request Form -->
                     <button class="form-list-card staircase-item" onclick="openFormModal('resourceRequest')">
                         <div class="form-list-content">
                             <h3>Resource Request Form</h3>
@@ -128,7 +137,7 @@
                         <div class="form-list-arrow">→</div>
                     </button>
 
-                    <!-- 2. Volunteer Sign-Up Form -->
+                    <!-- 3. Volunteer Sign-Up Form -->
                     <button class="form-list-card staircase-item" onclick="openFormModal('volunteer')">
                         <div class="form-list-content">
                             <h3>Volunteer Sign-Up Form</h3>
@@ -137,7 +146,7 @@
                         <div class="form-list-arrow">→</div>
                     </button>
 
-                    <!-- 3. Resource Submission Form -->
+                    <!-- 4. Resource Submission Form -->
                     <button class="form-list-card staircase-item" onclick="openFormModal('resourceSubmission')">
                         <div class="form-list-content">
                             <h3>Resource Submission Form</h3>
@@ -146,7 +155,7 @@
                         <div class="form-list-arrow">→</div>
                     </button>
 
-                    <!-- 4. Feedback Form -->
+                    <!-- 5. Feedback Form -->
                     <button class="form-list-card staircase-item" onclick="openFormModal('feedback')">
                         <div class="form-list-content">
                             <h3>Feedback Form</h3>
@@ -155,7 +164,7 @@
                         <div class="form-list-arrow">→</div>
                     </button>
 
-                    <!-- 5. Event Registration Form -->
+                    <!-- 6. Event Registration Form -->
                     <button class="form-list-card staircase-item" onclick="openFormModal('eventRegistration')">
                         <div class="form-list-content">
                             <h3>Event Registration Form</h3>
@@ -164,20 +173,11 @@
                         <div class="form-list-arrow">→</div>
                     </button>
 
-                    <!-- 6. Mentorship Match Form -->
+                    <!-- 7. Mentorship Match Form -->
                     <button class="form-list-card staircase-item" onclick="openFormModal('mentorship')">
                         <div class="form-list-content">
                             <h3>Mentorship Match Form</h3>
                             <p>Connect with mentors or become a mentor to support others in our community.</p>
-                        </div>
-                        <div class="form-list-arrow">→</div>
-                    </button>
-
-                    <!-- 7. Emergency Assistance Intake Form -->
-                    <button class="form-list-card staircase-item urgent" onclick="openFormModal('emergency')">
-                        <div class="form-list-content">
-                            <h3>Emergency Assistance Intake Form</h3>
-                            <p>Request immediate assistance for urgent household or safety needs.</p>
                         </div>
                         <div class="form-list-arrow">→</div>
                     </button>
@@ -314,6 +314,13 @@
                     <p class="eyebrow">Directory</p>
                     <h2>Key contacts</h2>
                     <div class="card-grid three">
+                        <div class="info-card alert">
+                            <div class="info-top">
+                                <span class="pill">Emergency</span>
+                                <span class="contact-value">911</span>
+                            </div>
+                            <p>For critical emergencies only. For property/security: (555) 000-0000</p>
+                        </div>
                         <div class="info-card">
                             <div class="info-top">
                                 <span class="pill">Community Office</span>
@@ -342,13 +349,6 @@
                                 <span class="contact-value">community@willowgate.org</span>
                             </div>
                             <p>Submit and manage community events and guidelines.</p>
-                        </div>
-                        <div class="info-card alert">
-                            <div class="info-top">
-                                <span class="pill">Emergency</span>
-                                <span class="contact-value">911</span>
-                            </div>
-                            <p>For critical emergencies only. For property/security: (555) 000-0000</p>
                         </div>
                     </div>
                 </div>
