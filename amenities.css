@@ -1,3 +1,52 @@
+.amenities-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 0;
+    border: 1px solid #e4ecf7;
+    border-radius: 20px;
+    overflow: hidden;
+    background: #fff;
+    margin-top: 24px;
+    margin-bottom: 0;
+}
+
+.amenity-item {
+    background: #fff;
+    padding: 14px 12px 10px 12px;
+    border-right: 1px solid #e4ecf7;
+    border-bottom: 1px solid #e4ecf7;
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+    transition: background 0.2s, box-shadow 0.2s;
+    border-radius: 0;
+    min-height: 60px;
+}
+
+.amenity-item:last-child,
+.amenities-grid > .amenity-item:nth-child(5),
+.amenities-grid > .amenity-item:nth-child(10) {
+    border-right: none;
+}
+.amenities-grid > .amenity-item:nth-child(n+6) {
+    border-bottom: none;
+}
+
+.amenity-item h4 {
+    font-size: 16px;
+    color: #1a1a2e;
+    margin: 0 0 4px 0;
+    font-weight: 800;
+    letter-spacing: -0.5px;
+}
+
+.amenity-item p {
+    color: #888;
+    font-size: 13px;
+    line-height: 1.35;
+    margin: 0;
+    font-weight: 500;
+}
 /* Amenities Page Specific Styles */
 /* Header and navigation styles are inherited from index.css */
 
@@ -752,7 +801,8 @@ body {
 .tag-wellness  { background: #fef5e4; color: #b7770d; }
 
 /* Amenities Grid */
-.activities-grid.staircase-grid {
+
+.activities-section .activities-grid.staircase-grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
     gap: 18px;
@@ -760,7 +810,7 @@ body {
     max-width: 100%;
 }
 
-.activities-grid.staircase-grid .activity-card.staircase-item {
+.activities-section .activities-grid.staircase-grid .activity-card.staircase-item {
     border-radius: 12px;
     grid-row: span 1;
     opacity: 0;
@@ -768,7 +818,7 @@ body {
     transition: opacity 0.7s cubic-bezier(0.16, 1, 0.3, 1), transform 0.7s cubic-bezier(0.16, 1, 0.3, 1);
 }
 
-.activities-grid.staircase-grid .activity-card.staircase-item.fade-in {
+.activities-section .activities-grid.staircase-grid .activity-card.staircase-item.fade-in {
     opacity: 1;
     transform: translateY(0);
 }
