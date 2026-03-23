@@ -35,11 +35,6 @@ img {
     display: block;
 }
 
-/* Scroll indicator — nudge closer to bottom of hero section */
-.scroll-indicator {
-    bottom: 12px;
-}
-
 /* ============================================================
    HAMBURGER BUTTON
    Hidden on desktop (≥1025px), flex on tablet/mobile (≤1024px)

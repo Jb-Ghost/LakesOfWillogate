@@ -357,7 +357,8 @@ html {
     padding: 0;
     box-shadow: inset 0 -1px 0 rgba(255, 255, 255, 0.08);
     border-radius: 0;
-    min-height: 500px;
+    min-height: 70vh;
+    height: 70vh;
 }
 
 .welcome-section .hero-image-container {
@@ -384,16 +385,16 @@ html {
 }
 
 .welcome-section .hero-content {
-    position: relative;
+    position: static;
     z-index: 2;
     text-align: center;
     color: #ffffff;
     max-width: 900px;
-    padding: 40px 40px 50px 40px;
+    padding: 30px 40px 50px 40px;
 }
 
 .welcome-section .eyebrow {
-    font-size: 24px;
+    font-size: 13px;
     font-weight: 700;
     letter-spacing: 2px;
     text-transform: uppercase;
@@ -404,13 +405,13 @@ html {
 }
 
 .welcome-section h1 {
-    font-size: 64px;
+    font-size: 44px;
     font-family: 'Montserrat', sans-serif;
     font-weight: 700;
     color: #ffffff;
-    margin: 0 0 20px 0;
+    margin: 0 0 18px 0;
     line-height: 1.2;
-    letter-spacing: 2px;
+    letter-spacing: 0.5px;
     text-shadow: 2px 2px 5px rgba(0, 52, 163, 0.1);
     opacity: 0;
     animation: fadeInScale 0.8s ease-out 0.4s forwards;
@@ -430,22 +431,10 @@ html {
 .welcome-section p:not(.eyebrow) {
     font-size: 18px;
     color: rgba(255, 255, 255, 0.9);
-    margin: 0 0 30px 0;
-    line-height: 1.6;
+    margin: 0 0 20px 0;
+    line-height: 1.5;
     opacity: 0;
     animation: slideInUp 0.8s ease-out 0.6s forwards;
-}
-
-.welcome-section .eyebrow {
-    color: rgba(255, 255, 255, 0.8);
-}
-
-.welcome-section h1 {
-    color: #ffffff;
-}
-
-.welcome-section p:not(.eyebrow) {
-    color: rgba(255, 255, 255, 0.9);
 }
 
 /* Hero Buttons */
@@ -1665,7 +1654,7 @@ footer.fade-out-view {
 }
 
 .hero-content {
-  position: relative;
+  position: static;
   z-index: 2;
   text-align: center;
   color: white;
@@ -1687,7 +1676,7 @@ footer.fade-out-view {
 /* Scroll Indicator */
 .scroll-indicator {
   position: absolute;
-  bottom: 39px;
+  bottom: 25px;
   left: 50%;
   transform: translateX(-50%);
   z-index: 10;

@@ -1121,7 +1121,7 @@ main {
     display: flex;
     align-items: center;
     justify-content: center;
-    overflow: hidden;
+    overflow: visible;
     margin: 0;
     background: none;
     border-radius: 0;
@@ -1153,7 +1153,7 @@ main {
 }
 
 .hero-content {
-    position: relative;
+    position: static;
     z-index: 2;
     text-align: center;
     color: white;
@@ -1245,15 +1245,40 @@ main {
     text-decoration: none;
     transition: all 0.3s ease;
     cursor: pointer;
-    border: none;
+    border: 2px solid #ffffff;
     text-transform: uppercase;
     letter-spacing: 0.5px;
+}
+
+.hero-btn.primary-btn {
+    background: white;
+    color: #0052a3;
+    border-color: white;
+}
+
+.hero-btn.primary-btn:hover {
+    background: #f0f0f0;
+    transform: translateY(-3px);
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.2);
+}
+
+.hero-btn.secondary-btn {
+    background: #0052a3;
+    color: white;
+    border-color: white;
+}
+
+.hero-btn.secondary-btn:hover {
+    background: rgba(255, 255, 255, 0.1);
+    transform: translateY(-3px);
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.2);
+    border-color: rgba(255, 255, 255, 0.3);
 }
 
 /* Scroll Indicator */
 .scroll-indicator {
     position: absolute;
-    bottom: 25px;
+    bottom: 135px;
     left: 50%;
     transform: translateX(-50%);
     z-index: 10;
