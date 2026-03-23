@@ -1121,7 +1121,7 @@ main {
     display: flex;
     align-items: center;
     justify-content: center;
-    overflow: visible;
+    overflow: hidden;
     margin: 0;
     background: none;
     border-radius: 0;
@@ -1238,16 +1238,17 @@ main {
 }
 
 .hero-btn {
-    padding: 14px 36px;
+    padding: 12px 28px;
     border-radius: 4px;
-    font-weight: 700;
-    font-size: 15px;
+    font-weight: 600;
+    font-size: 14px;
     text-decoration: none;
     transition: all 0.3s ease;
     cursor: pointer;
     border: 2px solid #ffffff;
-    text-transform: uppercase;
-    letter-spacing: 0.5px;
+    text-transform: none;
+    letter-spacing: 0;
+    box-shadow: 0 4px 12px rgba(0, 52, 163, 0.2);
 }
 
 .hero-btn.primary-btn {
@@ -1277,10 +1278,8 @@ main {
 
 /* Scroll Indicator */
 .scroll-indicator {
-    position: absolute;
-    bottom: 135px;
-    left: 50%;
-    transform: translateX(-50%);
+    position: static;
+    margin-top: 50px;
     z-index: 10;
     cursor: pointer;
     opacity: 1;

@@ -1877,10 +1877,8 @@ body {
 
 /* Scroll Indicator */
 .scroll-indicator {
-  position: absolute;
-  bottom: 25px;
-  left: 50%;
-  transform: translateX(-50%);
+  position: static;
+  margin-top: 50px;
   z-index: 10;
   cursor: pointer;
   opacity: 1;
